@@ -2,7 +2,7 @@
  * Redimensionne et compresse une photo sur l'appareil (aucun envoi réseau).
  * Taille max ~1280 px, JPEG qualité 0,8 : suffisant pour se souvenir du plat.
  */
-export async function compressImage(file: File, maxSide = 1280, quality = 0.8): Promise<Blob> {
+export async function compressImage(file: Blob, maxSide = 1280, quality = 0.8): Promise<Blob> {
   const url = URL.createObjectURL(file);
   try {
     const img = await new Promise<HTMLImageElement>((resolve, reject) => {
@@ -23,4 +23,9 @@ export async function compressImage(file: File, maxSide = 1280, quality = 0.8): 
   } finally {
     URL.revokeObjectURL(url);
   }
+}
+
+/** Version réduite envoyée à l'analyse IA (1024 px suffisent ; moins de données transmises). */
+export function prepareForAi(photo: Blob): Promise<Blob> {
+  return compressImage(photo, 1024, 0.8);
 }

@@ -38,6 +38,7 @@ export function MealComposer({ route }: { route: Route }) {
   const [photoNotice, setPhotoNotice] = useState(false);
   const [identifyPhoto, setIdentifyPhoto] = useState<string | null>(null);
   const [quickText, setQuickText] = useState('');
+  const [pickRecipe, setPickRecipe] = useState<string | undefined>(undefined);
   const cameraInput = useRef<HTMLInputElement>(null);
   const galleryInput = useRef<HTMLInputElement>(null);
   const originalPhoto = useRef<string | undefined>(undefined);
@@ -218,7 +219,7 @@ export function MealComposer({ route }: { route: Route }) {
         )}
         {photoNotice && (
           <Notice className="mb-3">
-            📷 Photo gardée sur ton téléphone. <b>L’analyse automatique par IA n’est pas encore disponible</b> : identifie le plat en un geste (<button type="button" className="font-semibold text-brand" onClick={() => setIdentifyPhoto(draft.photoId ?? null)}>choisir</button>), puis corrige si besoin.
+            📷 Photo gardée sur ton téléphone. <button type="button" className="font-semibold text-brand" onClick={() => setIdentifyPhoto(draft.photoId ?? null)}>Identifier ou analyser le plat</button>, puis corrige si besoin.
           </Notice>
         )}
 
@@ -314,7 +315,7 @@ export function MealComposer({ route }: { route: Route }) {
       )}
 
       <FoodPickerSheet open={sheet === 'search'} onClose={() => setSheet(null)} onAdd={(it) => add([it], 'database')} />
-      <RecipePickerSheet open={sheet === 'recipe'} initialRecipeId={initialRecipe} onClose={() => setSheet(null)} onAdd={(it) => add([it], 'recipe')} />
+      <RecipePickerSheet open={sheet === 'recipe'} initialRecipeId={pickRecipe ?? initialRecipe} onClose={() => { setSheet(null); setPickRecipe(undefined); }} onAdd={(it) => add([it], 'recipe')} />
       <GuidedSheet open={sheet === 'guided'} onClose={() => setSheet(null)} onAdd={(items, a) => add(items, 'guided', a)} />
       <ManualSheet open={sheet === 'manual'} onClose={() => setSheet(null)} onAdd={(it) => add([it], 'manual')} />
       <ManualSheet open={sheet === 'quick'} quick onClose={() => setSheet(null)} onAdd={(it) => add([it], 'quick')} />
@@ -323,7 +324,9 @@ export function MealComposer({ route }: { route: Route }) {
       <FastFoodSheet open={sheet === 'fastfood'} onClose={() => setSheet(null)} onAdd={(items, name) => { add(items, 'guided'); if (!draftStore.get()?.name && name) set({ name }); if (draft.place === 'home') set({ place: 'restaurant' }); }} />
       <PhotoIdentifySheet photoId={identifyPhoto} onClose={() => setIdentifyPhoto(null)}
         onText={(t) => { setIdentifyPhoto(null); setQuickText(t); setSheet('text'); }}
-        onHomeDish={() => { setIdentifyPhoto(null); setSheet('guided'); }} />
+        onHomeDish={() => { setIdentifyPhoto(null); setSheet('guided'); }}
+        onAnalyzed={(items, assumptions, name) => { setIdentifyPhoto(null); setPhotoNotice(false); add(items, 'ai', assumptions); if (!draftStore.get()?.name && name) set({ name }); }}
+        onUseRecipe={(rid) => { setIdentifyPhoto(null); setPhotoNotice(false); setPickRecipe(rid); setSheet('recipe'); }} />
       <RecentSheet open={sheet === 'recent'} onClose={() => setSheet(null)}
         onPickItem={(it) => add([{ ...it, id: newId('li') }], it.estimate ? 'guided' : it.recipeId ? 'recipe' : it.source.kind === 'manual' ? 'manual' : 'database')}
         onPick={(m) => {

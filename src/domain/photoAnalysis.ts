@@ -1,9 +1,10 @@
 /**
- * Analyse de photo : interface prévue pour un futur service de vision.
+ * Analyse de photo : interface commune aux services de vision.
  *
- * Aujourd'hui AUCUN service n'est configuré : l'analyse renvoie « indisponible » et
- * l'application propose une identification rapide manuelle. On n'affiche jamais un
+ * Sans service configuré (ou en cas d'échec), l'analyse renvoie « indisponible » / « erreur »
+ * et l'application propose une identification rapide manuelle. On n'affiche jamais un
  * résultat présenté comme venant d'une IA si aucune analyse réelle n'a eu lieu.
+ * L'implémentation réelle (relais vers un modèle de vision) est dans data/aiClient.ts.
  */
 export interface PhotoAnalysisResult {
   status: 'ok' | 'unavailable' | 'error';
@@ -13,6 +14,10 @@ export interface PhotoAnalysisResult {
   unknown?: string[];
   /** Description utilisable par la saisie libre (« kebab, frites »). */
   description?: string;
+  /** Résultat structuré d'une analyse réelle (voir domain/aiAnalysis.ts). */
+  analysis?: import('./aiAnalysis').AiAnalysis;
+  /** Service et modèle ayant réellement produit l'analyse. */
+  provider?: string;
   message: string;
 }
 
@@ -43,6 +48,7 @@ export const QUICK_IDENTIFY: { label: string; emoji: string; text: string }[] = 
 ];
 
 export async function analyzePhoto(photo: Blob, analyzer: PhotoAnalyzer | null, hint?: string): Promise<PhotoAnalysisResult> {
+  // Aucun service configuré : on le dit, sans fabriquer de résultat.
   if (!analyzer) {
     return {
       status: 'unavailable',

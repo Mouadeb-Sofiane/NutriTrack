@@ -4,7 +4,7 @@ Application personnelle de suivi nutritionnel : calories, macronutriments, recet
 
 > Nom provisoire. Outil d'information et de suivi, **pas un dispositif médical** : les besoins caloriques et les valeurs des repas sont des estimations.
 
-## Ce qui fonctionne aujourd'hui (v0.2)
+## Ce qui fonctionne aujourd'hui (v0.3)
 
 | Fonction | État |
 |---|---|
@@ -32,7 +32,7 @@ Application personnelle de suivi nutritionnel : calories, macronutriments, recet
 | Recherche de produits Open Food Facts (nom, code-barres, scan caméra sur Chrome Android) | ✅ implémentée, **non testée en réel** (voir limites) |
 | Export / restauration JSON (fusion sans doublons ou remplacement) | ✅ |
 | Hors ligne + installation sur l'écran d'accueil (PWA) | ✅ |
-| **Analyse automatique des photos par IA** | ❌ pas encore — la photo est gardée et une identification en un geste (kebab, pizza, churros…) ou en quelques mots est proposée |
+| **Analyse photo par IA** (Google Gemini via ton relais Cloudflare gratuit) : aliments, portions en fourchette, visible / supposé / inconnu, estimations moyenne et haute, questions, relance avec précisions, suggestion de tes recettes | ✅ implémentée et testée de bout en bout **avec un modèle simulé** ; à activer avec ta clé (voir [docs/analyse-photo-ia.md](docs/analyse-photo-ia.md)). Sans configuration : identification manuelle en un geste. |
 | Thème sombre | ❌ prévu (couleurs déjà centralisées) |
 
 ## Utiliser l'application sur ton téléphone
@@ -116,10 +116,12 @@ src/
 
 Le schéma de données est versionné (`SCHEMA_VERSION`, `db.version(n)`) pour les migrations futures.
 
-## Analyse photo par IA (prochaine étape)
+## Analyse photo par IA
 
-Aucune analyse n'est simulée. Pistes étudiées pour la suite, à valider (conditions et quotas à vérifier au moment de l'intégration) :
-- **Clé API personnelle** (fournie par toi, stockée uniquement sur ton téléphone, jamais dans le code) vers un modèle de vision disposant d'une offre gratuite ou peu coûteuse, avec consentement explicite avant chaque envoi de photo.
-- **Modèle local** dans le navigateur : gratuit et privé mais lourd à télécharger et peu fiable pour estimer des portions.
+Guide d'installation pas à pas : **[docs/analyse-photo-ia.md](docs/analyse-photo-ia.md)**.
 
-Dans tous les cas, la validation humaine restera obligatoire et l'application continuera de fonctionner sans IA.
+- **Architecture** : application → **ton relais** ([`proxy/worker.js`](proxy/worker.js), Cloudflare Workers, gratuit) → **Google Gemini**. La clé API reste dans le relais ; l'application n'envoie qu'un code d'accès personnel.
+- **Répartition des rôles** : l'IA identifie les aliments et estime des portions (fourchette basse / moyenne / haute en grammes) ; l'application calcule les calories avec ses tables. Les valeurs proposées par l'IA ne servent qu'en dernier recours et sont marquées « non vérifiées ». La correspondance avec les tables est stricte : mieux vaut « valeurs inconnues » qu'un aliment approchant à tort.
+- **Confidentialité** : rien n'est envoyé sans appui sur « Analyser avec l'IA » ; seule la photo (1024 px) et ta précision éventuelle partent ; le relais ne stocke rien ; la configuration n'est pas incluse dans les sauvegardes JSON.
+- **Coût** : relais gratuit ; Gemini gratuit dans la limite du quota, ou environ 0,1 à 1 centime par photo avec la facturation activée (recommandée dans l'UE, voir le guide). Aucun abonnement.
+- **Pourquoi Gemini** (recherche d'octobre 2026, à revérifier) : meilleure combinaison qualité / coût / sortie structurée. Groq et OpenRouter ont des quotas gratuits mais des modèles moins adaptés ou des politiques de données variables ; Mistral entraîne sur les données du plan gratuit par défaut ; Cloudflare Workers AI est gratuit mais son format d'image n'a pas pu être vérifié et des délais d'attente sont signalés ; un modèle local dans le navigateur est trop lourd et peu fiable pour estimer des portions sur téléphone.
