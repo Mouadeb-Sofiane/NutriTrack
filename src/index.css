@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+
+/*
+ * Identité visuelle : fond clair légèrement verdi, vert profond pour l'action,
+ * couleurs dédiées aux macronutriments. Les couleurs passent par des variables
+ * pour permettre un thème sombre plus tard sans réécrire les composants.
+ */
+@theme {
+  --color-bg: #f6f8f5;
+  --color-surface: #ffffff;
+  --color-ink: #17221d;
+  --color-muted: #5f6f67;
+  --color-line: #e3e9e4;
+  --color-brand: #0f7a5c;
+  --color-brand-strong: #0b5f47;
+  --color-brand-soft: #e3f4ec;
+  --color-accent: #f28c38;
+  --color-protein: #5b6cf0;
+  --color-carbs: #e9a72c;
+  --color-fat: #e06a8c;
+  --color-warn: #b45309;
+  --color-warn-soft: #fff4e5;
+  --color-danger: #c2410c;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --radius-card: 1.25rem;
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+/* Évite le zoom automatique d'iOS sur les champs (taille ≥ 16 px). */
+input,
+select,
+textarea {
+  font-size: 16px;
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+@keyframes sheet-in {
+  from { transform: translateY(24px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.anim-sheet { animation: sheet-in 0.18s ease-out; }
+.anim-fade { animation: fade-in 0.15s ease-out; }
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-sheet, .anim-fade { animation: none; }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }

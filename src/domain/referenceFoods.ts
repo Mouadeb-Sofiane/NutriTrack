@@ -25,7 +25,7 @@ const ROWS: Row[] = [
   // Féculents
   ['rice-raw', 'Riz blanc cru', 'Féculents', 355, 7, 79, 0.6, { density: 0.85, servings: [['1 verre (cru)', 170, 'approx']] , aliases: 'riz basmati thai' }],
   ['rice-cooked', 'Riz blanc cuit', 'Féculents', 130, 2.7, 28, 0.3, { density: 0.8, servings: [['1 assiette moyenne', 200, 'rough'], ['1 bol', 250, 'rough']], aliases: 'riz basmati thai' }],
-  ['pasta-dry', 'Pâtes sèches (crues)', 'Féculents', 360, 12.5, 72, 1.5, { servings: [['1 portion (crue)', 90, 'approx']], aliases: 'spaghetti penne coquillettes macaroni' }],
+  ['pasta-dry', 'Pâtes sèches (crues)', 'Féculents', 360, 12.5, 72, 1.5, { servings: [['1 portion (crue)', 90, 'approx']], aliases: 'spaghetti penne coquillettes macaroni vermicelle nouilles' }],
   ['pasta-cooked', 'Pâtes cuites', 'Féculents', 155, 5.5, 30, 0.9, { servings: [['1 assiette moyenne', 250, 'rough']], aliases: 'spaghetti penne nouilles' }],
   ['couscous-dry', 'Semoule de couscous (crue)', 'Féculents', 365, 12.5, 74, 1, { density: 0.7, servings: [['1 verre (crue)', 140, 'approx']], aliases: 'graine couscous' }],
   ['couscous-cooked', 'Semoule de couscous cuite', 'Féculents', 112, 3.8, 23, 0.2, { servings: [['1 assiette moyenne', 200, 'rough']] }],

@@ -82,9 +82,16 @@ describe('conseiller', () => {
   });
   it('observations calculées à partir des données réelles', () => {
     expect(buildInsights([], null, '2026-10-01', '2026-10-07')).toEqual([]);
-    const meals = [meal('2026-10-01', 300, 'Mayonnaise', 'ref:mayonnaise'), meal('2026-10-01', 400)];
-    const ins = buildInsights(meals, { kcal: 2000, protein: 120, carbs: 200, fat: 60, trackMacros: true, manual: false, updatedAt: 'x' }, '2026-10-01', '2026-10-07');
+    const goals = { kcal: 2000, protein: 120, carbs: 200, fat: 60, trackMacros: true, manual: false, updatedAt: 'x' };
+    const oneDay = [meal('2026-10-01', 300, 'Mayonnaise', 'ref:mayonnaise'), meal('2026-10-01', 400)];
+    const few = buildInsights(oneDay, goals, '2026-10-01', '2026-10-07');
+    // Un seul jour noté : pas de moyenne présentée comme une tendance, mais l'idée d'alternative reste.
+    expect(few.find((i) => i.id === 'protein-low')).toBeFalsy();
+    expect(few.find((i) => i.swapId === 'mayo-yogurt')).toBeTruthy();
+    const days = [...oneDay, meal('2026-10-02', 1500), meal('2026-10-03', 1500), meal('2026-10-07', 200)];
+    const ins = buildInsights(days, goals, '2026-10-01', '2026-10-07', { averagesTo: '2026-10-06' });
     expect(ins.find((i) => i.id === 'protein-low')).toBeTruthy();
-    expect(ins.find((i) => i.swapId === 'mayo-yogurt')).toBeTruthy();
+    // la journée en cours (07, incomplète) est exclue de la moyenne : (700 + 1500 + 1500) / 3
+    expect(ins.find((i) => i.id === 'kcal-gap')!.text).toContain('1233');
   });
 });

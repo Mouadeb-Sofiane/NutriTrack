@@ -2,7 +2,7 @@
  * Recettes : calcul des totaux, des portions et de la consommation.
  * Une recette est une RÉFÉRENCE réutilisable ; un repas est ce qui a été réellement mangé.
  */
-import type { LineItem, Nutrients, Precision, Recipe } from './types';
+import type { LineItem, Nutrients, Precision, Recipe, RecipeConsumption } from './types';
 import { cleanNutrients, isValidNumber, multiplyNutrients, PRECISION_MARGIN, rangeFor, sumItems, type Totals } from './nutrition';
 
 export interface RecipeNutrition {
@@ -51,7 +51,8 @@ export function recipeNutrition(r: Pick<Recipe, 'ingredients' | 'servings' | 'ma
   }
   const total = sumItems(r.ingredients);
   const missingQuantities = r.ingredients.filter((i) => i.quantity == null).length;
-  const precision = weakestPrecision(r.ingredients.map((i) => i.precision));
+  // Les lignes sans calories ne sont pas comptées : elles ne doivent pas non plus dégrader la précision affichée.
+  const precision = weakestPrecision(r.ingredients.filter((i) => i.nutrients.kcal != null).map((i) => i.precision));
   return { total, perServing: scaleTotals(total, 1 / servings), basis: 'ingredients', precision, missingQuantities };
 }
 
@@ -67,10 +68,8 @@ export const PORTION_SIZE_LABEL: Record<PortionSize, string> = { small: 'Petite'
  */
 export const UNEVEN_PORTION_MARGIN = 0.15;
 
-export type Consumption =
-  | { kind: 'servings'; servings: number; size: PortionSize }
-  | { kind: 'fraction'; fraction: number } // part du plat entier, ex. 0,25
-  | { kind: 'grams'; grams: number }; // nécessite le poids total de la recette
+/** servings : n portions ; fraction : part du plat entier (0,25) ; grams : nécessite le poids total. */
+export type Consumption = RecipeConsumption;
 
 export function consumptionFactor(r: Pick<Recipe, 'servings' | 'totalWeightG'>, c: Consumption): number | null {
   const servings = safeServings(r.servings);
@@ -118,7 +117,7 @@ export function lineFromRecipe(r: Recipe, c: Consumption, id: string): LineItem 
       quantity: c.kind === 'servings' ? c.servings : c.kind === 'fraction' ? c.fraction : c.grams,
       unit: c.kind === 'grams' ? 'g' : 'portion', unitLabel: describeConsumption(c),
       nutrients: { kcal: null, protein: null, carbs: null, fat: null }, kcalRange: null,
-      precision: 'rough', source: { kind: 'recipe', label: 'Recette sans valeurs nutritionnelles' },
+      precision: 'rough', source: { kind: 'recipe', label: 'Recette sans valeurs nutritionnelles' }, consumption: c,
     };
   }
   const t = nut.total;
@@ -145,7 +144,19 @@ export function lineFromRecipe(r: Recipe, c: Consumption, id: string): LineItem 
     kcalRange,
     precision,
     source: { kind: 'recipe', label: nut.basis === 'manual' ? 'Recette (total estimé)' : 'Recette (somme des ingrédients)' },
+    consumption: c,
   };
+}
+
+/**
+ * Recalcule, À LA DEMANDE de l'utilisateur, les lignes d'un repas issues d'une recette
+ * avec sa nouvelle version. Les autres lignes ne sont pas touchées.
+ */
+export function refreshRecipeLines(items: LineItem[], r: Recipe): LineItem[] {
+  return items.map((it) => {
+    if (it.recipeId !== r.id || !it.consumption) return it;
+    return lineFromRecipe(r, it.consumption, it.id) ?? it;
+  });
 }
 
 /** Crée une variante (nouvel objet) sans modifier la recette d'origine. */

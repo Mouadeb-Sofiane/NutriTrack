@@ -70,7 +70,7 @@ export const SWAPS: Swap[] = [
   },
   {
     id: 'vinaigrette',
-    title: 'Vinaigrette maison allégée',
+    title: 'Doser l’huile (vinaigrette, cuisson)',
     triggers: ['ref:olive-oil', 'ref:sunflower-oil'],
     why: 'L’huile est indispensable (et bénéfique) mais très concentrée : 1 c. à soupe ≈ 120 kcal. Doser la quantité change beaucoup le total.',
     original: { title: 'Vinaigrette avec 2 c. à soupe d’huile', ingredients: [{ refId: 'olive-oil', amount: 27 }] },
@@ -184,17 +184,19 @@ export interface Insight {
 }
 
 /** Observations sur les 7 derniers jours enregistrés. */
-export function buildInsights(meals: MealEntry[], goals: Goals | null, from: string, to: string): Insight[] {
+export function buildInsights(meals: MealEntry[], goals: Goals | null, from: string, to: string, opts: { averagesTo?: string } = {}): Insight[] {
   const out: Insight[] = [];
   const summary = periodSummary(meals, from, to);
   if (summary.loggedDays === 0) return out;
-  const avg = summary.avg!;
+  // Les moyennes ignorent la journée en cours (incomplète) et demandent au moins 3 jours notés.
+  const complete = periodSummary(meals, from, opts.averagesTo ?? to);
+  const avg = complete.loggedDays >= 3 ? complete.avg : null;
 
   if (summary.loggedDays >= 5) {
     out.push({ id: 'regular', tone: 'positive', title: 'Belle régularité', text: `Tu as noté tes repas ${summary.loggedDays} jours sur ${summary.totalDays}. La régularité compte plus que la perfection.` });
   }
 
-  if (goals?.trackMacros && goals.protein) {
+  if (avg && goals?.trackMacros && goals.protein) {
     const ratio = avg.protein / goals.protein;
     if (ratio < 0.75) {
       out.push({
@@ -207,7 +209,7 @@ export function buildInsights(meals: MealEntry[], goals: Goals | null, from: str
     }
   }
 
-  if (goals && avg.kcal > 0) {
+  if (avg && goals && avg.kcal > 0) {
     const diff = avg.kcal - goals.kcal;
     if (Math.abs(diff) <= goals.kcal * 0.08) {
       out.push({ id: 'kcal-on-track', tone: 'positive', title: 'Proche de ton objectif', text: `Moyenne de ${Math.round(avg.kcal)} kcal sur les jours notés, pour un objectif de ${goals.kcal} kcal.` });

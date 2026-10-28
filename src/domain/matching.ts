@@ -47,7 +47,7 @@ export function lineFromParsed(foods: Food[], p: ParsedLine, id: string): { item
     const serving = food.servings.find((s) => normalize(s.label).includes(normalize(p.unit!)));
     if (serving) item = lineFromFood(food, { unit: serving.id, count: p.quantity }, id);
     else item = lineFromFood(food, { unit: 'ml', count: p.quantity * HOUSEHOLD_ML[p.unit] }, id, 'approx');
-    if (item) item = { ...item, unitLabel: `${fmt(p.quantity)} ${p.unit}`, unit: 'serving', quantity: p.quantity };
+    if (item) item = { ...item, unitLabel: p.unit, unit: 'serving', quantity: p.quantity };
   } else if (p.unit === 'pièce' || p.unit === 'tranche') {
     const serving = food.servings.find((s) => /^1 /.test(s.label) && !/c\. à|verre|bol|poign|louche|portion/.test(s.label));
     if (serving) item = lineFromFood(food, { unit: serving.id, count: p.quantity }, id);

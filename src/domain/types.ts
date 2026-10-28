@@ -92,7 +92,14 @@ export interface LineItem {
   precision: Precision;
   source: SourceInfo;
   note?: string;
+  /** Pour une ligne issue d'une recette : part consommée (permet un recalcul explicite). */
+  consumption?: RecipeConsumption;
 }
+
+export type RecipeConsumption =
+  | { kind: 'servings'; servings: number; size: 'small' | 'usual' | 'large' }
+  | { kind: 'fraction'; fraction: number }
+  | { kind: 'grams'; grams: number };
 
 export type MealType = 'breakfast' | 'lunch' | 'dinner' | 'snack' | 'other';
 export type MealPlace = 'home' | 'restaurant';
