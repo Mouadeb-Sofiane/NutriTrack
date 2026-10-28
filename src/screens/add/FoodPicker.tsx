@@ -13,8 +13,11 @@ import { Sheet } from '../../ui/Sheet';
 import { Button, Chip, Field, Notice, NumberInput, PrecisionBadge, Segmented, SourceBadge, TextInput } from '../../ui/kit';
 import { IconBarcode, IconSearch, IconStar } from '../../ui/icons';
 import { useFeedback } from '../../ui/feedback';
+import { PhotoMassChoice, type PhotoMassState } from '../../ui/PhotoMassChoice';
+import { EstimatePanel } from '../../ui/EstimatePanel';
+import { foodLineFromPhoto, type MassRange } from '../../domain/photoMass';
 
-export function FoodPickerSheet({ open, onClose, onAdd, initialFoodId }: { open: boolean; onClose: () => void; onAdd: (item: LineItem) => void; initialFoodId?: string }) {
+export function FoodPickerSheet({ open, onClose, onAdd, initialFoodId, photoMass }: { open: boolean; onClose: () => void; onAdd: (item: LineItem) => void; initialFoodId?: string; photoMass?: MassRange | null }) {
   const [q, setQ] = useState('');
   const [selected, setSelected] = useState<Food | null>(null);
   const [online, setOnline] = useState<Food[] | null>(null);
@@ -72,7 +75,7 @@ export function FoodPickerSheet({ open, onClose, onAdd, initialFoodId }: { open:
   return (
     <Sheet open={open} onClose={onClose} title={selected ? 'Quantité' : 'Rechercher un aliment'}>
       {selected ? (
-        <QuantityPicker food={selected} onBack={() => setSelected(null)} onAdd={(it) => { onAdd(it); onClose(); }} />
+        <QuantityPicker food={selected} photoMass={photoMass} onBack={() => setSelected(null)} onAdd={(it) => { onAdd(it); onClose(); }} />
       ) : (
         <div>
           <div className="sticky top-0 z-10 -mx-4 bg-bg px-4 pb-2">
@@ -169,7 +172,10 @@ export function FoodList({ foods, onPick }: { foods: Food[]; onPick: (f: Food) =
   );
 }
 
-export function QuantityPicker({ food, onAdd, onBack }: { food: Food; onAdd: (item: LineItem) => void; onBack?: () => void }) {
+export function QuantityPicker({ food, onAdd, onBack, photoMass }: { food: Food; onAdd: (item: LineItem) => void; onBack?: () => void; photoMass?: MassRange | null }) {
+  const usable = !!photoMass && food.basis === 'g';
+  const [pm, setPm] = useState<PhotoMassState>({ on: usable, share: photoMass?.defaultShare ?? 1 });
+  const photoOn = usable && pm.on;
   const { toast } = useFeedback();
   const units = [
     { id: food.basis, label: food.basis },
@@ -179,7 +185,7 @@ export function QuantityPicker({ food, onAdd, onBack }: { food: Food; onAdd: (it
   const [unit, setUnit] = useState(food.servings[0]?.id ?? food.basis);
   const [count, setCount] = useState<number | null>(food.servings[0] ? 1 : 100);
   const [precision, setPrecision] = useState<Precision | null>(null);
-  const item = count ? lineFromFood(food, { unit, count }, newId('li'), precision ?? undefined) : null;
+  const item = photoOn ? foodLineFromPhoto(food, photoMass!, pm.share, newId('li')) : count ? lineFromFood(food, { unit, count }, newId('li'), precision ?? undefined) : null;
   const saved = food.id.startsWith('ref:') ? null : food;
   const check = checkPer100(food.per100, food.basis);
 
@@ -202,6 +208,8 @@ export function QuantityPicker({ food, onAdd, onBack }: { food: Food; onAdd: (it
         {check.warnings.map((w) => <Notice key={w} tone="warn" className="mt-2">{w}</Notice>)}
         {Object.values(food.per100).some((v) => v == null) && <Notice tone="warn" className="mt-2">Certaines valeurs sont absentes de la fiche : elles seront signalées comme manquantes.</Notice>}
       </div>
+      {usable && <PhotoMassChoice mass={photoMass!} state={pm} onChange={setPm} />}
+      {!photoOn && <>
       <Field label="Unité">
         <div className="flex flex-wrap gap-2">
           {units.map((u) => <Chip key={u.id} active={unit === u.id} onClick={() => { setUnit(u.id); setCount(u.id === 'g' || u.id === 'ml' ? 100 : 1); }}>{u.label}</Chip>)}
@@ -217,7 +225,9 @@ export function QuantityPicker({ food, onAdd, onBack }: { food: Food; onAdd: (it
           options={[{ value: 'exact', label: 'Pesé / lu' }, { value: 'approx', label: 'À peu près' }, { value: 'rough', label: 'À l’œil' }]}
         />
       </Field>
-      {item && (
+      </>}
+      {item?.estimate && photoOn && <div className="mb-3"><EstimatePanel estimate={item.estimate} /></div>}
+      {item && !photoOn && (
         <div className="mb-3 flex items-center justify-between rounded-2xl bg-brand-soft px-4 py-3">
           <div>
             <div className="text-2xl font-extrabold tabular-nums text-brand-strong">{fmtKcal(item.nutrients.kcal)} kcal</div>

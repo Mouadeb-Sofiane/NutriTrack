@@ -8,8 +8,10 @@ import { Sheet } from '../../ui/Sheet';
 import { Button, Chip, Field, NumberInput, TextInput } from '../../ui/kit';
 import { IconSearch } from '../../ui/icons';
 import { EstimatePanel } from '../../ui/EstimatePanel';
+import { PhotoMassChoice, type PhotoMassState } from '../../ui/PhotoMassChoice';
+import { photoMassReasons, shareOf, type MassRange } from '../../domain/photoMass';
 
-export function CatalogSheet({ open, onClose, onAdd, initialGroup = 'snack', initialEntryId }: { open: boolean; onClose: () => void; onAdd: (item: LineItem) => void; initialGroup?: CatalogGroup; initialEntryId?: string }) {
+export function CatalogSheet({ open, onClose, onAdd, initialGroup = 'snack', initialEntryId, photoMass }: { open: boolean; onClose: () => void; onAdd: (item: LineItem) => void; initialGroup?: CatalogGroup; initialEntryId?: string; photoMass?: MassRange | null }) {
   const [q, setQ] = useState('');
   const [group, setGroup] = useState<CatalogGroup>(initialGroup);
   const [entry, setEntry] = useState<CatalogEntry | null>(null);
@@ -19,7 +21,7 @@ export function CatalogSheet({ open, onClose, onAdd, initialGroup = 'snack', ini
   return (
     <Sheet open={open} onClose={onClose} title={entry ? entry.name : 'Snacks, street food & fast-food'}>
       {entry ? (
-        <EntryPicker entry={entry} onBack={() => setEntry(null)} onAdd={(it) => { onAdd(it); onClose(); }} />
+        <EntryPicker entry={entry} photoMass={photoMass} onBack={() => setEntry(null)} onAdd={(it) => { onAdd(it); onClose(); }} />
       ) : (
         <>
           <div className="relative mb-2">
@@ -49,7 +51,17 @@ export function CatalogSheet({ open, onClose, onAdd, initialGroup = 'snack', ini
 
 const FRACTIONS: [number, string][] = [[1, 'Tout'], [0.75, '¾'], [0.5, 'La moitié'], [0.25, 'Un quart']];
 
-export function EntryPicker({ entry, onAdd, onBack, initial }: { entry: CatalogEntry; onAdd: (item: LineItem) => void; onBack?: () => void; initial?: LineItem }) {
+/** Le poids d'assiette de la photo n'a de sens que pour un aliment solide servi en portion (pas une boisson). */
+export function photoMassFits(entry: CatalogEntry) {
+  return entry.basis === 'g' && entry.role !== 'drink';
+}
+
+export function EntryPicker({ entry, onAdd, onBack, initial, photoMass }: { entry: CatalogEntry; onAdd: (item: LineItem) => void; onBack?: () => void; initial?: LineItem; photoMass?: MassRange | null }) {
+  const usable = !!photoMass && photoMassFits(entry);
+  // Pour un aliment en pièces (burger, kebab, churros…), la photo contient souvent autre chose : option proposée mais pas activée.
+  const pieceBased = entry.portions.find((p) => p.id === entry.defaultPortion)?.piece ?? false;
+  const [pm, setPm] = useState<PhotoMassState>({ on: usable && !pieceBased, share: photoMass?.defaultShare ?? 1 });
+  const photoOn = usable && pm.on;
   const [portionId, setPortionId] = useState(initial?.estimate?.portionId && initial.estimate.portionId !== 'custom' ? initial.estimate.portionId : entry.defaultPortion);
   const [count, setCount] = useState<number | null>(initial?.estimate?.count ?? entry.defaultCount?.mean ?? 1);
   const [fraction, setFraction] = useState(initial?.estimate?.fraction ?? 1);
@@ -58,13 +70,19 @@ export function EntryPicker({ entry, onAdd, onBack, initial }: { entry: CatalogE
   const [choice, setChoice] = useState<{ c: 'mean' | 'high' | 'custom'; v?: number | null }>({ c: initial?.estimate?.chosen ?? 'mean', v: initial?.estimate?.custom?.kcal });
   const portion = entry.portions.find((p) => p.id === portionId) ?? entry.portions[0];
 
-  let item = lineFromEntry(entry, useCustom ? { customAmount: custom, fraction } : { portionId, count: portion.piece ? count ?? undefined : undefined, fraction }, initial?.id ?? newId('li'));
-  if (item && useCustom && custom == null) item = null;
-  if (item && portion.piece && !useCustom && (!count || count <= 0)) item = null;
+  const range = photoOn ? shareOf(photoMass!, pm.share) : null;
+  const why = range ? photoMassReasons(range, pm.share) : null;
+  let item = lineFromEntry(entry, range
+    ? { amountRange: { low: range.low, mean: range.normal, high: range.high, reason: why!.assumption, highReason: why!.high } }
+    : useCustom ? { customAmount: custom, fraction } : { portionId, count: portion.piece ? count ?? undefined : undefined, fraction }, initial?.id ?? newId('li'));
+  if (item && !range && useCustom && custom == null) item = null;
+  if (item && !range && portion.piece && !useCustom && (!count || count <= 0)) item = null;
   if (item && choice.c !== 'mean') item = chooseEstimate(item, choice.c, choice.v);
 
   return (
     <div>
+      {usable && <PhotoMassChoice mass={photoMass!} state={pm} onChange={setPm} />}
+      {!photoOn && <>
       <Field label="Portion">
         <div className="flex flex-wrap gap-2">
           {entry.portions.map((p) => <Chip key={p.id} active={!useCustom && portionId === p.id} onClick={() => { setUseCustom(false); setPortionId(p.id); }}>{p.label}</Chip>)}
@@ -85,6 +103,7 @@ export function EntryPicker({ entry, onAdd, onBack, initial }: { entry: CatalogE
       <Field label="Part mangée">
         <div className="flex flex-wrap gap-2">{FRACTIONS.map(([f, l]) => <Chip key={f} active={fraction === f} onClick={() => setFraction(f)}>{l}</Chip>)}</div>
       </Field>
+      </>}
       {item?.estimate && (
         <div className="mb-3">
           <EstimatePanel estimate={item.estimate} onChoose={(c, v) => setChoice({ c, v })} />

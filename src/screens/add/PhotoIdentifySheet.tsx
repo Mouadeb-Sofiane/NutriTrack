@@ -11,6 +11,7 @@ import { CONFIDENCE_LABEL, recipesForProposals, type LabelTarget, type Proposal 
 import { db } from '../../data/db';
 import { repo } from '../../state/app';
 import { recognize, type LocalRecognition } from '../../vision/recognizer';
+import type { MassRange } from '../../domain/photoMass';
 import { installedManifest } from '../../vision/modelStore';
 import { ModelInstaller } from '../VisionSettings';
 import { Sheet } from '../../ui/Sheet';
@@ -29,7 +30,7 @@ export function PhotoIdentifySheet({ photoId, open, added, onClose, onText, onHo
   onClose: () => void;
   onText: (text: string) => void;
   onHomeDish: () => void;
-  onPick: (labelId: string, target: LabelTarget) => void;
+  onPick: (labelId: string, target: LabelTarget, mass: MassRange | null) => void;
   onPickRecipe: (recipe: Recipe) => void;
 }) {
   const recipes = useLiveQuery(() => db.recipes.toArray(), []) ?? [];
@@ -86,13 +87,27 @@ export function PhotoIdentifySheet({ photoId, open, added, onClose, onText, onHo
         <div className="mb-4">
           {result.notFood && <Notice tone="warn" className="mb-2">La photo ne ressemble pas clairement à un plat. Les propositions ci-dessous sont peu fiables.</Notice>}
           {!result.notFood && result.uncertain && <Notice className="mb-2">Reconnaissance hésitante : vérifie, ou identifie le plat toi-même plus bas.</Notice>}
+          {result.mass && !result.notFood && (
+            <div className="mb-3 rounded-2xl bg-brand-soft/60 px-3.5 py-3">
+              <div className="flex items-baseline justify-between">
+                <span className="text-[13px] font-semibold">Poids estimé de l’assiette</span>
+                <span className="text-lg font-extrabold tabular-nums">~{result.mass.normal} g</span>
+              </div>
+              <div className="flex items-baseline justify-between text-[13px]">
+                <span className="text-accent">Estimation haute</span><span className="font-semibold tabular-nums">{result.mass.high} g</span>
+              </div>
+              <p className="mt-1 text-[11.5px] leading-snug text-muted">
+                Fourchette {result.mass.low}–{result.mass.high} g. Calculé sur la photo, pas pesé : erreur typique ±20 %, plus fiable pour une assiette entière photographiée du dessus. Peu adapté à un sandwich emballé, un bol vu de côté ou une boisson. Il sera proposé (modifiable) quand tu choisis la portion.
+              </p>
+            </div>
+          )}
           <div className="mb-1.5 text-[13px] font-semibold">Propositions (touche pour ajouter et choisir la portion)</div>
           <ul className="space-y-1.5">
             {result.proposals.map((p: Proposal) => {
               const done = added.includes(p.label.id);
               return (
                 <li key={p.label.id}>
-                  <button type="button" onClick={() => onPick(p.label.id, p.label.target)} className={cx('flex w-full items-center gap-3 rounded-2xl px-3.5 py-3 text-left active:bg-bg', done ? 'bg-brand-soft' : 'bg-surface')}>
+                  <button type="button" onClick={() => onPick(p.label.id, p.label.target, result.notFood ? null : result.mass)} className={cx('flex w-full items-center gap-3 rounded-2xl px-3.5 py-3 text-left active:bg-bg', done ? 'bg-brand-soft' : 'bg-surface')}>
                     <span className="flex-1">
                       <span className="block font-semibold">{p.label.fr}</span>
                       <span className="block text-[12px] text-muted">{CONFIDENCE_LABEL[p.confidence]} · score relatif {p.p < 0.01 ? "< 1" : Math.min(99, Math.round(p.p * 100))} %{p.fromZone ? ' · repéré dans une partie de la photo' : ''}</span>

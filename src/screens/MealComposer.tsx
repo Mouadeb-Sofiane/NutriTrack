@@ -21,6 +21,7 @@ import { PhotoIdentifySheet } from './add/PhotoIdentifySheet';
 import { EstimateBadge } from '../ui/EstimatePanel';
 import { findDuplicateItem, findRecentDuplicateMeal, scenarioTotals } from '../domain/estimates';
 import { getLabel } from '../domain/recognition';
+import type { MassRange } from '../domain/photoMass';
 import { ManualSheet } from './add/ManualSheet';
 import { GuidedSheet } from './add/GuidedSheet';
 import { RecipePickerSheet } from './add/RecipePicker';
@@ -43,6 +44,8 @@ export function MealComposer({ route }: { route: Route }) {
   const [pendingLabel, setPendingLabel] = useState<string | null>(null);
   const [addedLabels, setAddedLabels] = useState<string[]>([]);
   const [initialPick, setInitialPick] = useState<{ catalog?: string; template?: string; food?: string }>({});
+  /** Poids de l'assiette estimé sur la photo, proposé dans l'écran de portion suivant. */
+  const [photoMass, setPhotoMass] = useState<MassRange | null>(null);
   const [quickText, setQuickText] = useState('');
   const [pickRecipe, setPickRecipe] = useState<string | undefined>(undefined);
   const cameraInput = useRef<HTMLInputElement>(null);
@@ -103,6 +106,7 @@ export function MealComposer({ route }: { route: Route }) {
   const closePicker = () => {
     setSheet(null);
     setInitialPick({});
+    setPhotoMass(null);
     if (pendingLabel) { setPendingLabel(null); setPhotoSheetOpen(true); }
   };
 
@@ -337,21 +341,23 @@ export function MealComposer({ route }: { route: Route }) {
         </p>
       )}
 
-      <FoodPickerSheet open={sheet === 'search'} initialFoodId={initialPick.food} onClose={closePicker} onAdd={(it) => addRecognized([it], 'database')} />
+      <FoodPickerSheet open={sheet === 'search'} initialFoodId={initialPick.food} photoMass={photoMass} onClose={closePicker} onAdd={(it) => addRecognized([it], 'database')} />
       <RecipePickerSheet open={sheet === 'recipe'} initialRecipeId={pickRecipe ?? initialRecipe} onClose={() => { setPickRecipe(undefined); closePicker(); }} onAdd={(it) => addRecognized([it], 'recipe')} />
-      <GuidedSheet open={sheet === 'guided'} initialTemplate={initialPick.template} onClose={closePicker} onAdd={(items, a) => addRecognized(items, 'guided', a)} />
+      <GuidedSheet open={sheet === 'guided'} initialTemplate={initialPick.template} photoMass={photoMass} onClose={closePicker} onAdd={(items, a) => addRecognized(items, 'guided', a)} />
       <ManualSheet open={sheet === 'manual'} onClose={() => setSheet(null)} onAdd={(it) => add([it], 'manual')} />
       <ManualSheet open={sheet === 'quick'} quick onClose={() => setSheet(null)} onAdd={(it) => add([it], 'quick')} />
       <QuickTextSheet open={sheet === 'text'} initialText={quickText} onClose={() => setSheet(null)} onAdd={(items, name) => { add(items, 'guided'); if (!draftStore.get()?.name && name) set({ name }); }} />
-      <CatalogSheet open={sheet === 'catalog'} initialEntryId={initialPick.catalog} onClose={closePicker} onAdd={(it) => addRecognized([it], 'guided')} />
+      <CatalogSheet open={sheet === 'catalog'} initialEntryId={initialPick.catalog} photoMass={photoMass} onClose={closePicker} onAdd={(it) => addRecognized([it], 'guided')} />
       <FastFoodSheet open={sheet === 'fastfood'} onClose={() => setSheet(null)} onAdd={(items, name) => { add(items, 'guided'); if (!draftStore.get()?.name && name) set({ name }); if (draft.place === 'home') set({ place: 'restaurant' }); }} />
       <PhotoIdentifySheet photoId={identifyPhoto} open={photoSheetOpen} added={addedLabels}
         onClose={() => { setPhotoSheetOpen(false); if (addedLabels.length) setPhotoNotice(false); }}
         onText={(t) => { setPhotoSheetOpen(false); setQuickText(t); setSheet('text'); }}
         onHomeDish={() => { setPhotoSheetOpen(false); setInitialPick({}); setSheet('guided'); }}
-        onPick={(labelId, target) => {
+        onPick={(labelId, target, mass) => {
           setPhotoSheetOpen(false);
           setPendingLabel(labelId);
+          // Le poids couvre toute l'assiette : pour un 2e aliment de la même photo, on propose la moitié.
+          setPhotoMass(mass ? { ...mass, defaultShare: addedLabels.length ? 0.5 : 1 } : null);
           if (target.kind === 'catalog') { setInitialPick({ catalog: target.id }); setSheet('catalog'); }
           else if (target.kind === 'template') { setInitialPick({ template: target.id }); setSheet('guided'); }
           else { setInitialPick({ food: target.id }); setSheet('search'); }

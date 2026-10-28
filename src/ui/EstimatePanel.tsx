@@ -28,7 +28,7 @@ export function EstimatePanel({ estimate, onChoose, compact }: { estimate: Estim
     return (
       <div className="rounded-2xl bg-brand-soft px-4 py-3 text-brand-strong">
         <div className="text-2xl font-extrabold tabular-nums">~{fmtKcal(estimate.mean.kcal)} kcal</div>
-        <div className="text-[12.5px]">Estimation peu incertaine : pas d’écart notable entre scénario moyen et haut.</div>
+        <div className="text-[12.5px]">Peu d’écart en calories entre scénario moyen et haut (aliment peu calorique ou quantité connue).</div>
       </div>
     );
   }

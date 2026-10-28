@@ -32,7 +32,7 @@ Application personnelle de suivi nutritionnel : calories, macronutriments, recet
 | Recherche de produits Open Food Facts (nom, code-barres, scan caméra sur Chrome Android) | ✅ implémentée, **non testée en réel** (voir limites) |
 | Export / restauration JSON (fusion sans doublons ou remplacement) | ✅ |
 | Hors ligne + installation sur l'écran d'accueil (PWA) | ✅ |
-| **Reconnaissance des photos sur le téléphone** (modèle libre OpenCLIP, 96 Mo téléchargés une fois, hors ligne, sans frais) : propositions de plats, plusieurs aliments par photo, puis portion choisie avec estimations moyenne et haute | ✅ testée sur 431 vraies photos (≈ 78 % bon plat en tête, 91–94 % dans les 3 premières) — voir [docs/reconnaissance-photo.md](docs/reconnaissance-photo.md). Identification manuelle si le modèle n'est pas installé. |
+| **Reconnaissance des photos sur le téléphone** (modèle libre OpenCLIP, 96 Mo téléchargés une fois, hors ligne, sans frais) : propositions de plats, plusieurs aliments par photo, **poids estimé en grammes (normal / haut)**, puis estimations moyenne et haute | ✅ testée sur 431 vraies photos (≈ 78 % bon plat en tête, 91–94 % dans les 3 premières) — voir [docs/reconnaissance-photo.md](docs/reconnaissance-photo.md). Identification manuelle si le modèle n'est pas installé. |
 | Thème sombre | ❌ prévu (couleurs déjà centralisées) |
 
 ## Utiliser l'application sur ton téléphone
@@ -121,6 +121,6 @@ Le schéma de données est versionné (`SCHEMA_VERSION`, `db.version(n)`) pour l
 Tout est détaillé dans **[docs/reconnaissance-photo.md](docs/reconnaissance-photo.md)** (résultats mesurés, contraintes matérielles, licences).
 
 - **100 % gratuit et local** : modèle OpenCLIP ViT-B/32 (MIT) exécuté dans le navigateur par ONNX Runtime Web (MIT), servi par le site de l'application lui-même. Aucune API, aucun compte, aucun quota, aucune photo envoyée.
-- **Rôle du modèle** : proposer les plats probables ; **la portion est choisie par toi** (une photo ne donne ni le poids ni l'huile), puis l'application calcule les estimations moyenne et haute habituelles.
+- **Rôle du modèle** : proposer les plats probables et **estimer le poids de l'assiette en grammes** (normal, haut, fourchette), entraîné sur 2 755 assiettes pesées (Nutrition5k). Erreur mesurée : **~40 g en moyenne (≈ 20 %)** ; le poids réel est sous l'estimation haute dans ~8 cas sur 10. Tu valides ou corriges, puis l'application calcule les estimations moyenne et haute des calories. L'huile et les ingrédients cachés restent invisibles.
 - **Contraintes** : ~110 Mo à télécharger une fois (Wi-Fi conseillé), 3 Go de RAM conseillés, quelques secondes par photo sur téléphone (non mesuré sur un vrai appareil).
 - **Mode dégradé** : identification manuelle en un geste ou en quelques mots, toujours disponible.

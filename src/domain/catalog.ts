@@ -219,6 +219,8 @@ export interface EntryEstimateInput {
   fraction?: number;
   /** Quantité personnalisée connue (g/ml) : remplace les hypothèses de portion. */
   customAmount?: number | null;
+  /** Fourchette de quantité estimée sur la photo (g) : remplace les hypothèses de portion. */
+  amountRange?: { low: number; mean: number; high: number; reason: string; highReason: string } | null;
 }
 
 export interface EntryEstimate {
@@ -257,7 +259,11 @@ export function estimateEntry(entry: CatalogEntry, input: EntryEstimateInput = {
   const count = portion.piece ? toRange(input.count, entry.defaultCount ?? { low: 1, mean: 1, high: 1 }) : { low: 1, mean: 1, high: 1 };
   if ([count.low, count.mean, count.high].some((c) => !isValidNumber(c) || c <= 0)) return null;
 
-  const amounts = custom != null
+  const range = input.amountRange;
+  if (range && !(range.low > 0 && range.mean >= range.low && range.high >= range.mean)) return null;
+  const amounts = range
+    ? { low: range.low * fraction, mean: range.mean * fraction, high: range.high * fraction }
+    : custom != null
     ? { low: custom * fraction, mean: custom * fraction, high: custom * fraction }
     : {
         low: portion.low * count.low * fraction,
@@ -271,11 +277,16 @@ export function estimateEntry(entry: CatalogEntry, input: EntryEstimateInput = {
   const assumptions: string[] = [];
   const highReasons: string[] = [];
 
-  const label = custom != null
+  const label = range
+    ? `~${fmt(amounts.mean)} ${unit} (photo)`
+    : custom != null
     ? `${fmt(custom)} ${unit}${fraction !== 1 ? ` × ${fmt(fraction)}` : ''}`
     : `${portion.piece ? (count.low === count.high ? `${fmt(count.mean)} × ` : `${fmt(count.low)} à ${fmt(count.high)} × `) : ''}${portion.label.replace(/ \(pièce\)$/, '')}${fraction !== 1 ? ` (${fraction < 1 ? `${Math.round(fraction * 100)} % mangé` : `× ${fmt(fraction)}`})` : ''}`;
 
-  if (custom != null) {
+  if (range) {
+    assumptions.push(range.reason);
+    if (amounts.high > amounts.mean) highReasons.push(range.highReason);
+  } else if (custom != null) {
     assumptions.push(`Quantité indiquée : ${fmt(amounts.mean)} ${unit}.`);
   } else {
     assumptions.push(`${portion.label} : environ ${fmt(portion.mean)} ${unit}${portion.piece ? ' par pièce' : ''} (hypothèse moyenne).`);
@@ -290,9 +301,10 @@ export function estimateEntry(entry: CatalogEntry, input: EntryEstimateInput = {
 
   if (entry.topping) {
     const t = entry.topping;
-    const per = custom != null ? 1 : count.mean;
-    const perHigh = custom != null ? 1 : count.high;
-    const perLow = custom != null ? 1 : count.low;
+    const fixed = custom != null || !!range;
+    const per = fixed ? 1 : count.mean;
+    const perHigh = fixed ? 1 : count.high;
+    const perLow = fixed ? 1 : count.low;
     mean = addNutrients(mean, scalePer100(t.per100, t.mean * per * fraction));
     low = addNutrients(low, scalePer100(t.per100, t.mean * perLow * fraction));
     high = addNutrients(high, scalePer100(t.per100, t.high * perHigh * fraction));
@@ -300,7 +312,7 @@ export function estimateEntry(entry: CatalogEntry, input: EntryEstimateInput = {
     highReasons.push(`${t.label} généreux : ${fmt(t.high)} g au lieu de ${fmt(t.mean)} g par pièce.`);
   }
 
-  const highlightHigh = custom == null && entry.unknown && highReasons.length ? entry.unknown : null;
+  const highlightHigh = custom == null && !range && entry.unknown && highReasons.length ? entry.unknown : null;
   return { low: round(low), mean: round(mean), high: round(high), amounts, assumptions, highReasons, highlightHigh, label };
 }
 
@@ -317,7 +329,7 @@ function round(n: Nutrients): Nutrients {
 export function lineFromEntry(entry: CatalogEntry, input: EntryEstimateInput, id: string): LineItem | null {
   const est = estimateEntry(entry, input);
   if (!est) return null;
-  const custom = input.customAmount != null;
+  const custom = input.customAmount != null || !!input.amountRange;
   const info: EstimateInfo = {
     mean: est.mean,
     high: est.high,
@@ -327,7 +339,7 @@ export function lineFromEntry(entry: CatalogEntry, input: EntryEstimateInput, id
     highReasons: est.highReasons,
     assumptions: est.assumptions,
     highlightHigh: est.highlightHigh,
-    method: input.count != null && typeof input.count !== 'number' ? 'text' : 'catalog',
+    method: input.amountRange ? 'visual' : input.count != null && typeof input.count !== 'number' ? 'text' : 'catalog',
     catalogId: entry.id,
     portionId: custom ? 'custom' : input.portionId ?? entry.defaultPortion,
     count: typeof input.count === 'number' ? input.count : undefined,
@@ -337,14 +349,14 @@ export function lineFromEntry(entry: CatalogEntry, input: EntryEstimateInput, id
     id,
     name: entry.name,
     // La quantité se modifie en recalculant l'estimation (nombre, portion, part mangée).
-    quantity: custom ? input.customAmount! * (input.fraction ?? 1) : null,
+    quantity: custom ? est.amounts.mean : null,
     unit: custom ? entry.basis : 'portion',
     unitLabel: est.label,
     baseAmount: est.amounts.mean,
     baseUnit: entry.basis,
     nutrients: est.mean,
     kcalRange: null,
-    precision: custom ? 'approx' : 'rough',
+    precision: input.customAmount != null ? 'approx' : 'rough',
     source: { kind: 'estimate', label: CATALOG_SOURCE_LABEL },
   };
   return withEstimate(base, info);

@@ -3,6 +3,8 @@
  * Aucune photo n'est envoyée ; aucun coût par analyse.
  */
 import { proposalsFromZones, scoreZones, zoneRects, type RecognitionResult } from '../domain/recognition';
+import { estimatePlateMass, type MassModel, type MassRange } from '../domain/photoMass';
+import massModel from './massModel.json';
 import { loadModelFiles, type VisionManifest } from './modelStore';
 import wasmUrl from 'onnxruntime-web/ort-wasm-simd-threaded.wasm?url';
 import mjsUrl from 'onnxruntime-web/ort-wasm-simd-threaded.mjs?url';
@@ -83,6 +85,8 @@ async function pixelsFor(photo: Blob, m: VisionManifest, fast: boolean): Promise
 export interface LocalRecognition extends RecognitionResult {
   ms: number;
   zones: number;
+  /** Poids estimé de l'assiette (normal / haut / bas), null si non calculable. */
+  mass: MassRange | null;
 }
 
 /**
@@ -95,5 +99,6 @@ export async function recognize(photo: Blob, opts: { fast?: boolean } = {}): Pro
   const { data, count } = await pixelsFor(photo, e.manifest, !!opts.fast);
   const r = await call<{ embeddings: Float32Array }>(e.worker, { type: 'embed', pixels: data, count, size: e.manifest.input.size }, [data.buffer]);
   const zones = scoreZones(r.embeddings, count, e.labels, e.manifest.labels.ids, e.manifest.logitScale);
-  return { ...proposalsFromZones(zones), ms: performance.now() - t0, zones: count };
+  const mass = estimatePlateMass(r.embeddings, count, massModel as unknown as MassModel);
+  return { ...proposalsFromZones(zones), ms: performance.now() - t0, zones: count, mass };
 }

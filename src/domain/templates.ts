@@ -110,12 +110,27 @@ function lowFatAmount(t: DishTemplate, fat: FatLevel): number {
  * - bas de fourchette : un cran en dessous.
  * Le paramètre `newId` permet de fournir des identifiants stables (tests).
  */
-export function buildTemplateItems(t: DishTemplate, size: PlateSize, fat: FatLevel, newId: () => string = tmpId): { items: LineItem[]; assumptions: string[] } {
-  const f = PLATE_FACTOR[size];
-  const fh = highPlateFactor(size);
-  const fl = lowPlateFactor(size);
+/** Poids d'une assiette moyenne du modèle (ingrédients + matière grasse « normale »), en g. */
+export function templateMass(t: DishTemplate): number {
+  return t.base.reduce((s, [, g]) => s + g, 0) + t.fat.amounts.medium;
+}
+
+/**
+ * Facteurs d'assiette déduits du poids estimé sur la photo (au lieu de petite / moyenne / grande).
+ */
+export function photoFactors(t: DishTemplate, mass: { low: number; normal: number; high: number }) {
+  const m = templateMass(t);
+  return { mean: mass.normal / m, high: mass.high / m, low: mass.low / m, mass };
+}
+
+export function buildTemplateItems(t: DishTemplate, size: PlateSize, fat: FatLevel, newId: () => string = tmpId, photo?: ReturnType<typeof photoFactors>): { items: LineItem[]; assumptions: string[] } {
+  const f = photo ? photo.mean : PLATE_FACTOR[size];
+  const fh = photo ? photo.high : highPlateFactor(size);
+  const fl = photo ? photo.low : lowPlateFactor(size);
   const items: LineItem[] = [];
-  const sizeReason = `Assiette plus copieuse (×${fmt(fh)} au lieu de ×${fmt(f)} une assiette moyenne).`;
+  const sizeReason = photo
+    ? `Poids haut estimé sur la photo : ${photo.mass.high} g au lieu de ${photo.mass.normal} g pour l’assiette.`
+    : `Assiette plus copieuse (×${fmt(fh)} au lieu de ×${fmt(f)} une assiette moyenne).`;
   for (const [refId, amount] of t.base) {
     const food = refFood(refId);
     const mean = Math.round(amount * f);
@@ -151,10 +166,14 @@ export function buildTemplateItems(t: DishTemplate, size: PlateSize, fat: FatLev
     }));
   }
   const assumptions = [
-    `Modèle « ${t.label} », portion ${PLATE_LABEL[size].toLowerCase()} (×${fmt(f)} par rapport à une assiette moyenne).`,
+    photo
+      ? `Modèle « ${t.label} » ajusté au poids estimé sur la photo : ~${photo.mass.normal} g (fourchette ${photo.mass.low}–${photo.mass.high} g), soit ×${fmt(f)} une assiette moyenne.`
+      : `Modèle « ${t.label} », portion ${PLATE_LABEL[size].toLowerCase()} (×${fmt(f)} par rapport à une assiette moyenne).`,
     `${t.fat.label} : ${FAT_LABEL[fat].toLowerCase()} (${fatAmount} ${fatFood.basis}).`,
     'Quantités estimées visuellement, sans pesée : corrige les ingrédients si tu en sais plus.',
-    `Scénario haut : assiette un cran plus copieuse et ${t.fat.label.toLowerCase()} un cran plus généreuse.`,
+    photo
+      ? `Scénario haut : poids haut de la photo et ${t.fat.label.toLowerCase()} un cran plus généreuse.`
+      : `Scénario haut : assiette un cran plus copieuse et ${t.fat.label.toLowerCase()} un cran plus généreuse.`,
   ];
   return { items, assumptions };
 }

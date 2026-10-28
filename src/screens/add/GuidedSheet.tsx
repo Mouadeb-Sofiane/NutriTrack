@@ -7,11 +7,14 @@ import type { LineItem } from '../../domain/types';
 import { buildTemplateItems, DISH_TEMPLATES, FAT_LABEL, PLATE_LABEL, type FatLevel, type PlateSize } from '../../domain/templates';
 import { fmtKcal, multiplyNutrients, sumItems } from '../../domain/nutrition';
 import { scenarioTotals } from '../../domain/estimates';
+import { photoFactors } from '../../domain/templates';
+import { shareOf, type MassRange } from '../../domain/photoMass';
+import { PhotoMassChoice, type PhotoMassState } from '../../ui/PhotoMassChoice';
 import { newId } from '../../data/ids';
 import { Sheet } from '../../ui/Sheet';
 import { Button, Field, Notice, Segmented, cx } from '../../ui/kit';
 
-export function GuidedSheet({ open, onClose, onAdd, title = 'Estimation sans balance', multiplier = 1, multiplierLabel, initialTemplate }: {
+export function GuidedSheet({ open, onClose, onAdd, title = 'Estimation sans balance', multiplier = 1, multiplierLabel, initialTemplate, photoMass }: {
   open: boolean;
   onClose: () => void;
   onAdd: (items: LineItem[], assumptions: string[]) => void;
@@ -21,14 +24,18 @@ export function GuidedSheet({ open, onClose, onAdd, title = 'Estimation sans bal
   multiplierLabel?: string;
   /** Modèle présélectionné (ex. plat reconnu sur la photo). */
   initialTemplate?: string;
+  /** Poids de l'assiette estimé sur la photo. */
+  photoMass?: MassRange | null;
 }) {
+  const [pm, setPm] = useState<PhotoMassState>({ on: !!photoMass, share: photoMass?.defaultShare ?? 1 });
   const [tpl, setTpl] = useState<string | null>(null);
   const [size, setSize] = useState<PlateSize>('medium');
   const [fat, setFat] = useState<FatLevel>('medium');
-  useEffect(() => { if (open) { setTpl(initialTemplate ?? null); setSize('medium'); setFat('medium'); } }, [open, initialTemplate]);
+  useEffect(() => { if (open) { setTpl(initialTemplate ?? null); setSize('medium'); setFat('medium'); setPm({ on: !!photoMass, share: photoMass?.defaultShare ?? 1 }); } }, [open, initialTemplate, photoMass]);
 
   const t = DISH_TEMPLATES.find((x) => x.id === tpl);
-  const built = t ? buildTemplateItems(t, size, fat, () => newId('li')) : null;
+  const photoOn = !!photoMass && pm.on;
+  const built = t ? buildTemplateItems(t, size, fat, () => newId('li'), photoOn ? photoFactors(t, shareOf(photoMass!, pm.share)) : undefined) : null;
   const scaled = built && multiplier !== 1
     ? built.items.map((i) => ({
         ...i,
@@ -61,9 +68,12 @@ export function GuidedSheet({ open, onClose, onAdd, title = 'Estimation sans bal
       </div>
       {t && built && totals && (
         <div className="anim-fade">
+          {photoMass && <PhotoMassChoice mass={photoMass} state={pm} onChange={setPm} />}
+          {!photoOn && (
           <Field label="Taille de la portion">
             <Segmented<PlateSize> value={size} onChange={setSize} options={(['small', 'medium', 'large'] as PlateSize[]).map((v) => ({ value: v, label: PLATE_LABEL[v] }))} />
           </Field>
+          )}
           <Field label={t.fat.label}>
             <Segmented<FatLevel> value={fat} onChange={setFat} options={(['low', 'medium', 'high'] as FatLevel[]).map((v) => ({ value: v, label: FAT_LABEL[v] }))} />
           </Field>

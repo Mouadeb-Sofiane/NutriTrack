@@ -6,15 +6,35 @@
 
 | Elle fait | Elle ne fait pas |
 |---|---|
-| Proposer les plats ou aliments probables parmi ~80 libellés (fast-food, snacks, fête foraine, plats maison et du monde, fruits, boissons…), avec un score relatif | Mesurer le poids, la quantité d'huile, une sauce cachée ou la recette |
+| Proposer les plats ou aliments probables parmi ~80 libellés (fast-food, snacks, fête foraine, plats maison et du monde, fruits, boissons…), avec un score relatif | Peser exactement, voir la quantité d'huile, une sauce cachée ou la recette |
 | Repérer plusieurs aliments sur une même photo (analyse de l'image entière + 4 zones) | Reconnaître un plat absent de sa liste : elle proposera alors le libellé le plus proche (d'où la correction manuelle toujours disponible) |
-| Fonctionner hors ligne, sans frais par photo | Calculer seule les calories : tu choisis la portion, l'application calcule les estimations **moyenne et haute** comme pour toute saisie |
+| Fonctionner hors ligne, sans frais par photo | Calculer seule les calories : elle **propose un poids** (voir ci-dessous), tu le valides ou le corriges, puis l'application calcule les estimations **moyenne et haute** |
 
 Parcours : **Photo → propositions → tu touches le bon plat → écran habituel de portion (petite / moyenne / grande, pièces, part mangée) → estimations moyenne et haute → tu peux ajouter un 2ᵉ aliment → Terminer → tu vérifies le repas → Enregistrer.** Rien n'est enregistré sans ta validation. Si une de tes recettes correspond (« Couscous familial » quand un couscous est reconnu), elle est proposée.
 
 **Mode dégradé** : si le modèle n'est pas installé, si le téléphone n'y arrive pas ou si les propositions sont fausses, l'identification manuelle en un geste (kebab, pizza, churros…) ou en quelques mots reste juste en dessous. Sur un téléphone lent, un bouton « mode rapide » analyse seulement l'image entière.
 
-## Résultats mesurés sur de vraies photos
+## Poids estimé sur la photo (grammes, normal et haut)
+
+Après la reconnaissance, l'application affiche **le poids estimé de l'assiette** : une estimation **normale**, une estimation **haute** et une fourchette. Dans l'écran de portion, l'option « D'après la photo » est proposée par défaut ; tu indiques quelle **part de l'assiette** correspond à l'aliment (toute l'assiette, ¾, la moitié, un tiers, un quart). Les grammes alimentent ensuite les estimations moyenne et haute des calories (pour un plat maison, le modèle de plat est mis à l'échelle de ce poids).
+
+**Comment c'est calculé** : un petit estimateur (30 Ko, aucun téléchargement en plus) lit les mêmes vecteurs que la reconnaissance. Il a été entraîné sur **Nutrition5k** (Google, licence CC BY 4.0) : 2 755 assiettes photographiées du dessus **et pesées**. Les estimations normale, haute et basse correspondent aux erreurs réellement observées (50 %, 80 % et 20 %), pas à un pourcentage choisi au hasard.
+
+| Mesure sur des assiettes pesées jamais vues | Résultat |
+|---|---|
+| 507 assiettes de test (évaluation Python) | erreur moyenne **42 g**, erreur médiane **19 %** du poids |
+| Poids réel ≤ estimation haute | **79 %** des cas (objectif 80 %) |
+| Poids réel dans la fourchette basse–haute | 56 % des cas |
+| 38 assiettes passées par l'interface réelle du navigateur | erreur moyenne **34 g**, poids réel ≤ haute dans **84 %** des cas |
+| Comparaison : un poids fixe (médiane) | erreur moyenne 116 g |
+
+Par taille d'assiette : < 100 g → erreur médiane 24 % ; 100–250 g → 18 % ; 250–450 g → 14 % ; > 450 g → 21 % et **tendance à sous-estimer** les très grosses assiettes (l'estimation haute ne couvre alors que 59 % des cas).
+
+**Limites importantes** : les photos d'entraînement sont des assiettes de cantine prises **du dessus, à hauteur fixe**. Pour de bons résultats, photographie l'assiette **entière, du dessus, sans trop zoomer**. Pour un sandwich dans son emballage, un bol vu de côté, un plat familial dans sa marmite ou une boisson, le poids affiché est peu fiable : utilise plutôt les portions (pièces, petite/moyenne/grande), décoche « D'après la photo » ou indique le poids. Quand la photo ne ressemble pas clairement à un plat, le poids n'est pas affiché. Ces chiffres n'ont pas été mesurés sur tes propres photos ni sur un vrai téléphone.
+
+Réentraîner : `python tools/vision/train_mass.py <dossier_de_travail>` (télécharge Nutrition5k, ~1,3 Go de photos).
+
+## Résultats de la reconnaissance sur de vraies photos
 
 Photos réelles d'Open Images (Google, licence CC BY 2.0), annotées par des humains, jamais utilisées pour régler le modèle.
 
@@ -47,6 +67,7 @@ Rejouer l'évaluation : `python tools/vision/evaluate.py <dossier_modèle> tools
 | Conversion ONNX : projet Jina clip-as-service | Apache-2.0 | Fichier ONNX d'origine |
 | ONNX Runtime Web | MIT | Exécution dans le navigateur (WebAssembly) |
 | Photos de test Open Images | CC BY 2.0 | Évaluation uniquement (non distribuées) |
+| Nutrition5k (Google) | CC BY 4.0 | Entraînement et test de l'estimateur de poids (photos non distribuées, seuls les coefficients sont livrés) |
 
 Le modèle a été entraîné par ses auteurs sur LAION-2B, une collecte d'images du web. Pour un usage personnel et non commercial, la licence MIT n'impose que de conserver la notice, fournie avec le modèle (`public/models/food-clip-v1/LICENSE.txt`).
 
