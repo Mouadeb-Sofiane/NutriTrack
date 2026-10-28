@@ -4,7 +4,7 @@
  */
 import type { LineItem, Nutrients, Precision, Recipe, RecipeConsumption } from './types';
 import { cleanNutrients, isValidNumber, multiplyNutrients, PRECISION_MARGIN, rangeFor, sumItems, type Totals } from './nutrition';
-import { hasMeaningfulGap, itemScenario, withEstimate } from './estimates';
+import { hasMeaningfulGap, itemScenario, scaleEstimate, withEstimate } from './estimates';
 
 export interface RecipeNutrition {
   total: Totals;
@@ -302,3 +302,26 @@ export const PRECISION_FROM_UNIT = (unit: string | null): Precision =>
   unit === 'g' || unit === 'ml' ? 'exact' : unit && (unit in HOUSEHOLD_ML || unit === 'pièce' || unit === 'tranche') ? 'approx' : 'rough';
 
 export { PRECISION_MARGIN };
+
+/**
+ * Détaille, pour UN repas, la part de recette en ses ingrédients (mis à l'échelle de la
+ * part mangée) afin que l'utilisateur ajuste quantités et ingrédients sans modifier la
+ * recette d'origine. Impossible pour une recette sans ingrédients (total estimé seul).
+ */
+export function expandRecipeLine(line: LineItem, r: Recipe, newId: () => string): LineItem[] | null {
+  if (!line.consumption || !r.ingredients.length || (r.manualTotal && r.manualTotal.kcal != null)) return null;
+  const f = consumptionFactor(r, line.consumption);
+  if (f == null) return null;
+  return r.ingredients.map((i) => {
+    const scaled: LineItem = {
+      ...i,
+      id: newId(),
+      quantity: i.quantity != null ? Math.round(i.quantity * f * 100) / 100 : null,
+      baseAmount: i.baseAmount != null ? i.baseAmount * f : i.baseAmount,
+      nutrients: multiplyNutrients(i.nutrients, f),
+      kcalRange: i.kcalRange ? { min: i.kcalRange.min * f, max: i.kcalRange.max * f } : rangeFor(i.nutrients.kcal == null ? null : i.nutrients.kcal * f, i.precision),
+      note: `De la recette « ${r.name} »${i.note ? ` · ${i.note}` : ''}`,
+    };
+    return i.estimate ? withEstimate(scaled, scaleEstimate(i.estimate, f)) : scaled;
+  });
+}

@@ -1,5 +1,8 @@
 /** Correction d'une ligne avant enregistrement (quantité, précision ou valeurs). */
 import { useEffect, useState } from 'react';
+import { db } from '../../data/db';
+import { newId } from '../../data/ids';
+import { expandRecipeLine } from '../../domain/recipes';
 import type { LineItem, Nutrients, Precision } from '../../domain/types';
 import { cleanNutrients, fmtKcal, PRECISION_LABEL, rangeFor, rescaleLine, withPrecision } from '../../domain/nutrition';
 import { Sheet } from '../../ui/Sheet';
@@ -9,7 +12,13 @@ import { getEntry } from '../../domain/catalog';
 import { EstimatePanel } from '../../ui/EstimatePanel';
 import { EntryPicker } from './CatalogSheet';
 
-export function ItemEditSheet({ item, onClose, onSave, onDelete }: { item: LineItem | null; onClose: () => void; onSave: (it: LineItem, corrected: boolean) => void; onDelete: () => void }) {
+export function ItemEditSheet({ item, onClose, onSave, onDelete, onReplace }: { item: LineItem | null; onClose: () => void; onSave: (it: LineItem, corrected: boolean) => void; onDelete: () => void; onReplace?: (items: LineItem[]) => void }) {
+  const [expanded, setExpanded] = useState<LineItem[] | null>(null);
+  useEffect(() => {
+    setExpanded(null);
+    if (!item?.recipeId || !item.consumption || !onReplace) return;
+    db.recipes.get(item.recipeId).then((r) => r && setExpanded(expandRecipeLine(item, r, () => newId('li'))));
+  }, [item, !!onReplace]); // eslint-disable-line react-hooks/exhaustive-deps
   const [draft, setDraft] = useState<LineItem | null>(item);
   const [qty, setQty] = useState<number | null>(item?.quantity ?? null);
   const [manual, setManual] = useState(false);
@@ -56,6 +65,12 @@ export function ItemEditSheet({ item, onClose, onSave, onDelete }: { item: LineI
         <div className="mb-4">
           <div className="mb-1.5 text-sm font-semibold">Valeur retenue</div>
           <EstimatePanel estimate={draft.estimate} onChoose={(c, v) => setDraft(chooseEstimate(draft, c, v))} />
+        </div>
+      )}
+      {expanded && onReplace && (
+        <div className="mb-4">
+          <Button variant="secondary" block onClick={() => onReplace(expanded)}>Ajuster les ingrédients pour ce repas</Button>
+          <p className="mt-1 text-[12px] text-muted">Remplace cette part par ses {expanded.length} ingrédients (à l’échelle de ta part), modifiables un par un. La recette enregistrée n’est pas modifiée.</p>
         </div>
       )}
       {entry && (

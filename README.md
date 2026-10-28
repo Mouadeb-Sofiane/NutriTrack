@@ -19,7 +19,9 @@ Application personnelle de suivi nutritionnel : calories, macronutriments, recet
 | **Écrire ce que j'ai mangé** (« un kebab avec des frites et un coca », « quelques chips ») — analyse locale par règles, sans IA | ✅ |
 | **Snacks, fête foraine, street food, fast-food, sauces, boissons** (~45 aliments : chips, pop-corn, churros, barbe à papa, crêpes, gaufres, kebab, tacos, burger, pizza, pâtisseries orientales…) avec portions simples (poignée, sachet, bol, pièces, part mangée) | ✅ |
 | **Menu fast-food en une opération** (plat, frites, sauces, boisson, suppléments ; valeurs officielles de l'enseigne si tu les as) | ✅ |
-| Scénarios du jour (moyen / haut) sur le tableau de bord | ✅ |
+| Scénarios du jour (moyen / haut) et détail de chaque élément (portion, valeur retenue, moyenne / haute) dans le journal | ✅ |
+| Reprendre un **aliment** récent seul (pas seulement un repas entier) | ✅ |
+| Recette réutilisée : **ajuster ses ingrédients pour un repas** sans modifier la recette | ✅ |
 | Détection des doublons (même aliment ajouté deux fois, même repas enregistré deux fois) | ✅ |
 | Fourchettes caloriques et niveau de précision (pesé / approximatif / estimation visuelle) | ✅ |
 | Carnet de recettes : création, import depuis un texte, total estimé sans détail, plat familial, variantes, favoris, portions habituelles | ✅ |

@@ -324,7 +324,9 @@ export function MealComposer({ route }: { route: Route }) {
       <PhotoIdentifySheet photoId={identifyPhoto} onClose={() => setIdentifyPhoto(null)}
         onText={(t) => { setIdentifyPhoto(null); setQuickText(t); setSheet('text'); }}
         onHomeDish={() => { setIdentifyPhoto(null); setSheet('guided'); }} />
-      <RecentSheet open={sheet === 'recent'} onClose={() => setSheet(null)} onPick={(m) => {
+      <RecentSheet open={sheet === 'recent'} onClose={() => setSheet(null)}
+        onPickItem={(it) => add([{ ...it, id: newId('li') }], it.estimate ? 'guided' : it.recipeId ? 'recipe' : it.source.kind === 'manual' ? 'manual' : 'database')}
+        onPick={(m) => {
         add(m.items.map((i) => ({ ...i, id: newId('li') })), m.method, m.assumptions);
         if (!draft.name && m.name) set({ name: m.name });
       }} />
@@ -332,6 +334,7 @@ export function MealComposer({ route }: { route: Route }) {
         item={editing}
         onClose={() => setEditing(null)}
         onDelete={() => { draftStore.update((d) => ({ ...d, items: d.items.filter((i) => i.id !== editing?.id) })); setEditing(null); }}
+        onReplace={(items) => { draftStore.update((d) => ({ ...d, name: d.name || (d.items.length === 1 ? editing?.name ?? '' : d.name), items: d.items.flatMap((i) => (i.id === editing?.id ? items : [i])), userCorrected: true, methods: d.methods.includes('mixed') ? d.methods : [...d.methods, 'mixed'] })); setEditing(null); }}
         onSave={(it, corrected) => { draftStore.update((d) => ({ ...d, items: d.items.map((i) => (i.id === it.id ? it : i)), userCorrected: d.userCorrected || corrected })); setEditing(null); }}
       />
     </div>

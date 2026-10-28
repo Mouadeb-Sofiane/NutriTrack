@@ -3,6 +3,8 @@ import type { MealEntry, WeightEntry } from './types';
 import { emptyTotals, mergeTotals, sumItems, type Totals } from './nutrition';
 import { addDays, daysBetween, weekStart } from './dates';
 import { normalize } from './referenceFoods';
+import { itemSignature } from './estimates';
+import type { LineItem } from './types';
 
 export function mealTotals(m: Pick<MealEntry, 'items'>): Totals {
   return sumItems(m.items);
@@ -124,3 +126,20 @@ export function weightProgress(weights: WeightEntry[], targetKg: number | null):
 }
 
 export { emptyTotals };
+
+/** Aliments récemment consommés (un exemplaire par aliment et portion), du plus récent au plus ancien. */
+export function recentDistinctItems(meals: MealEntry[], limit = 30): { item: LineItem; date: string }[] {
+  const sorted = [...meals].sort((a, b) => b.date.localeCompare(a.date) || b.createdAt.localeCompare(a.createdAt));
+  const seen = new Set<string>();
+  const out: { item: LineItem; date: string }[] = [];
+  for (const m of sorted) {
+    for (const it of m.items) {
+      const sig = itemSignature(it);
+      if (seen.has(sig)) continue;
+      seen.add(sig);
+      out.push({ item: it, date: m.date });
+      if (out.length >= limit) return out;
+    }
+  }
+  return out;
+}

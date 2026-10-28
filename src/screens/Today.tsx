@@ -9,11 +9,13 @@ import { fmtKcal, hasMeaningfulRange, mergeTotals } from '../domain/nutrition';
 import { mealTotals, sortWeights } from '../domain/stats';
 import { dailyBudget } from '../domain/energy';
 import { recipeNutrition } from '../domain/recipes';
-import { scenarioTotals } from '../domain/estimates';
+import { hasMeaningfulGap, scenarioTotals } from '../domain/estimates';
+import { quantityText } from './MealComposer';
+import { EstimateBadge } from '../ui/EstimatePanel';
 import type { MealType } from '../domain/types';
 import { draftStore, emptyDraft } from '../state/draft';
 import { MEAL_EMOJI, MEAL_LABEL, MEAL_ORDER } from './labels';
-import { Button, Card, Field, IconButton, Notice, NumberInput, SectionTitle, TextInput } from '../ui/kit';
+import { Button, Card, Field, IconButton, Notice, NumberInput, PrecisionBadge, SectionTitle, TextInput } from '../ui/kit';
 import { MacroBar, Ring } from '../ui/charts';
 import { IconChevronLeft, IconChevronRight, IconFlame, IconPlus, IconScale, IconStar, IconTrash } from '../ui/icons';
 import { Sheet } from '../ui/Sheet';
@@ -32,6 +34,8 @@ export function Today({ route }: { route: Route }) {
   const favorites = useLiveQuery(() => db.recipes.filter((r) => r.favorite).toArray(), []) ?? [];
   const [exerciseOpen, setExerciseOpen] = useState(false);
   const [showScenarios, setShowScenarios] = useState(false);
+  const [openMeals, setOpenMeals] = useState<Set<string>>(new Set());
+  const toggleMeal = (id: string) => setOpenMeals((s) => { const n = new Set(s); if (n.has(id)) n.delete(id); else n.add(id); return n; });
 
   const totals = mergeTotals(meals.map(mealTotals));
   const scen = scenarioTotals(meals.flatMap((m) => m.items));
@@ -163,6 +167,25 @@ export function Today({ route }: { route: Route }) {
                         </span>
                         <span className="text-[14px] font-semibold tabular-nums">{fmtKcal(mealTotals(m).kcal)}</span>
                       </a>
+                      <button type="button" onClick={() => toggleMeal(m.id)} aria-expanded={openMeals.has(m.id)} className="ml-4 pb-1.5 text-[12.5px] font-semibold text-brand">
+                        {openMeals.has(m.id) ? 'Masquer le détail' : 'Voir le détail'}
+                      </button>
+                      {openMeals.has(m.id) && (
+                        <ul className="anim-fade mx-4 mb-2 divide-y divide-line rounded-xl bg-bg">
+                          {m.items.map((it) => (
+                            <li key={it.id} className="flex items-center gap-2 px-3 py-2 text-[13px]">
+                              <span className="min-w-0 flex-1">
+                                <span className="block truncate">{it.name}</span>
+                                <span className="flex flex-wrap items-center gap-1.5 text-[12px] text-muted">{quantityText(it)}{it.estimate ? <EstimateBadge estimate={it.estimate} /> : it.precision !== 'exact' && <PrecisionBadge precision={it.precision} />}</span>
+                                {it.estimate && hasMeaningfulGap(it.estimate) && (
+                                  <span className="block text-[11.5px] text-muted">moyenne {fmtKcal(it.estimate.mean.kcal)} · haute {fmtKcal(it.estimate.high.kcal)} kcal{it.estimate.chosen === 'custom' ? ' · valeur personnalisée retenue' : ''}</span>
+                                )}
+                              </span>
+                              <span className="font-semibold tabular-nums">{it.nutrients.kcal == null ? '?' : fmtKcal(it.nutrients.kcal)}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </li>
                   ))}
                 </ul>

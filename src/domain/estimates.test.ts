@@ -6,8 +6,8 @@ import { lineFromQuickMatch, parseQuickText, splitQuickText } from './quickText'
 import { fastFoodLines, fastFoodName } from './fastFood';
 import { analyzePhoto } from './photoAnalysis';
 import { buildTemplateItems, DISH_TEMPLATES } from './templates';
-import { lineFromRecipe } from './recipes';
-import { dayTotals } from './stats';
+import { expandRecipeLine, lineFromRecipe } from './recipes';
+import { dayTotals, recentDistinctItems } from './stats';
 import { refFood } from './referenceFoods';
 import type { LineItem, MealEntry, Recipe } from './types';
 
@@ -281,5 +281,42 @@ describe('conseils sans culpabilisation', () => {
     expect(ins.some((i) => i.swapId === 'mayo-yogurt')).toBe(true);
     const all = [...ins.map((i) => i.text), ...SWAPS.flatMap((s) => [s.why, ...s.tradeoffs])].join(' ').toLowerCase();
     for (const word of ['sauter', 'interdit', 'mauvais', 'culpab', 'compenser']) expect(all).not.toContain(word);
+  });
+});
+
+describe('recette réutilisée et ajustée pour un repas', () => {
+  const r: Recipe = { id: 'r', name: 'Couscous', categories: [], servings: 6, assumptions: [], favorite: false, version: 1, createdAt: '', updatedAt: '',
+    ingredients: [
+      lineFromFood(refFood('couscous-cooked'), { unit: 'g', count: 1200 }, 'a')!,
+      ...buildTemplateItems(DISH_TEMPLATES.find((x) => x.id === 'couscous')!, 'medium', 'medium', id).items.filter((i) => i.note),
+    ] };
+  const line = lineFromRecipe(r, { kind: 'servings', servings: 1.5, size: 'usual' }, 'l')!;
+  it('détaille les ingrédients à l’échelle de la part mangée, sans toucher la recette', () => {
+    const parts = expandRecipeLine(line, r, id)!;
+    expect(parts).toHaveLength(r.ingredients.length);
+    expect(parts[0].quantity).toBe(300); // 1200 g × 1,5 / 6
+    expect(sumItems(parts).kcal).toBeCloseTo(line.nutrients.kcal!);
+    // l'huile garde son estimation haute, mise à l'échelle
+    const oil = parts[1];
+    expect(oil.estimate!.high.kcal).toBeCloseTo(r.ingredients[1].estimate!.high.kcal! * 0.25);
+    expect(r.ingredients[0].quantity).toBe(1200);
+    expect(new Set(parts.map((p) => p.id)).size).toBe(parts.length);
+  });
+  it('impossible sans ingrédients détaillés', () => {
+    const manual: Recipe = { ...r, ingredients: [], manualTotal: { kcal: 3000, protein: null, carbs: null, fat: null } };
+    expect(expandRecipeLine(lineFromRecipe(manual, { kind: 'servings', servings: 1, size: 'usual' }, 'm')!, manual, id)).toBeNull();
+  });
+});
+
+describe('aliments récents', () => {
+  it('un exemplaire par aliment et portion, du plus récent au plus ancien', () => {
+    const churros = lineFromEntry(entry('churros'), { count: 3 }, 'c')!;
+    const meal = (mid: string, date: string, its: LineItem[]): MealEntry => ({ id: mid, date, mealType: 'snack', items: its, place: 'home', method: 'guided', assumptions: [], userCorrected: false, createdAt: `${date}T10:00:00Z`, updatedAt: '' });
+    const r = recentDistinctItems([
+      meal('1', '2026-10-20', [churros]),
+      meal('2', '2026-10-27', [{ ...churros, id: 'c2' }, lineFromEntry(entry('chips'), {}, 'p')!]),
+    ]);
+    expect(r.map((x) => x.item.name)).toEqual(['Churros', 'Chips']);
+    expect(r[0].date).toBe('2026-10-27');
   });
 });
