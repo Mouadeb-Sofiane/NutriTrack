@@ -20,7 +20,7 @@ export interface SwapOption {
 export interface Swap {
   id: string;
   title: string;
-  /** Aliments de référence qui déclenchent la suggestion quand ils pèsent lourd dans un repas. */
+  /** Aliments (« ref:… » table de référence, « cat:… » catalogue) qui déclenchent la suggestion quand ils pèsent lourd dans un repas. */
   triggers: string[];
   why: string;
   original: SwapOption;
@@ -33,7 +33,7 @@ export const SWAPS: Swap[] = [
   {
     id: 'mayo-yogurt',
     title: 'Sauce plus légère pour salades et sandwichs',
-    triggers: ['ref:mayonnaise'],
+    triggers: ['ref:mayonnaise', 'cat:mayo-sachet', 'cat:rich-sauce', 'cat:white-sauce'],
     why: 'La mayonnaise est très riche en lipides : 2 cuillères à soupe représentent souvent plus de calories que la salade elle-même.',
     original: { title: 'Mayonnaise (2 c. à soupe)', ingredients: [{ refId: 'mayonnaise', amount: 30 }] },
     homemade: {
@@ -90,7 +90,7 @@ export const SWAPS: Swap[] = [
   {
     id: 'fries-oven',
     title: 'Pommes de terre au four plutôt que frites',
-    triggers: ['ref:fries'],
+    triggers: ['ref:fries', 'cat:fries'],
     why: 'La friture fait absorber beaucoup d’huile. Au four, on garde le croustillant avec une petite quantité de matière grasse.',
     original: { title: 'Frites (portion moyenne)', ingredients: [{ refId: 'fries', amount: 150 }] },
     homemade: {
@@ -109,7 +109,7 @@ export const SWAPS: Swap[] = [
   {
     id: 'soda',
     title: 'Boisson sucrée',
-    triggers: ['ref:soda', 'ref:orange-juice'],
+    triggers: ['ref:soda', 'ref:orange-juice', 'cat:soda'],
     why: 'Les calories liquides rassasient peu : une canette de soda apporte environ 35 g de sucre.',
     original: { title: 'Soda sucré (1 canette)', ingredients: [{ refId: 'soda', amount: 330 }] },
     homemade: {
@@ -226,8 +226,9 @@ export function buildInsights(meals: MealEntry[], goals: Goals | null, from: str
   for (const m of meals.filter((x) => x.date >= from && x.date <= to)) {
     const mealKcal = sumItems(m.items).kcal;
     for (const it of m.items) {
-      if (!it.foodId || it.nutrients.kcal == null || mealKcal <= 0) continue;
-      const swap = SWAPS.find((s) => s.triggers.includes(it.foodId!));
+      const key = it.foodId ?? (it.estimate?.catalogId ? `cat:${it.estimate.catalogId}` : null);
+      if (!key || it.nutrients.kcal == null || mealKcal <= 0) continue;
+      const swap = SWAPS.find((s) => s.triggers.includes(key));
       if (swap && it.nutrients.kcal / mealKcal >= 0.2) counts.set(swap.id, (counts.get(swap.id) ?? 0) + 1);
     }
   }

@@ -13,8 +13,18 @@ const num = z.number().refine(Number.isFinite, 'nombre invalide');
 const nnum = num.nullable();
 const nutrients = z.object({ kcal: nnum, protein: nnum, carbs: nnum, fat: nnum });
 const precision = z.enum(['exact', 'approx', 'rough']);
-const source = z.looseObject({ kind: z.enum(['reference', 'openfoodfacts', 'manual', 'recipe', 'estimate', 'ai']), label: z.string().optional(), url: z.string().optional() });
+const source = z.looseObject({ kind: z.enum(['reference', 'openfoodfacts', 'manual', 'recipe', 'estimate', 'official', 'ai']), label: z.string().optional(), url: z.string().optional() });
 const date = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
+
+const estimate = z.looseObject({
+  mean: nutrients,
+  high: nutrients,
+  low: nutrients.nullable().optional(),
+  chosen: z.enum(['mean', 'high', 'custom']),
+  custom: nutrients.nullable().optional(),
+  highReasons: z.array(z.string()),
+  assumptions: z.array(z.string()),
+});
 
 const lineItem = z.looseObject({
   id: z.string().min(1),
@@ -25,6 +35,7 @@ const lineItem = z.looseObject({
   kcalRange: z.object({ min: num, max: num }).nullable().optional(),
   precision,
   source,
+  estimate: estimate.optional(),
 });
 
 const food = z.looseObject({

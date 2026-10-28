@@ -41,3 +41,5 @@ export const IconUpload = (p: P) => <Svg {...p}><path d="M12 20V9M7 14l5-5 5 5M5
 export const IconText = (p: P) => <Svg {...p}><path d="M5 6h14M5 10h14M5 14h9M5 18h6" /></Svg>;
 export const IconBolt = (p: P) => <Svg {...p}><path d="M13 3L5 13h6l-1 8 8-10h-6z" /></Svg>;
 export const IconFamily = (p: P) => <Svg {...p}><circle cx="8" cy="7" r="3" /><circle cx="17" cy="9" r="2.5" /><path d="M3 20c.5-4 2.5-6.5 5-6.5s4.5 2.5 5 6.5M13.5 20c.4-3 1.7-5 3.5-5s3.1 2 3.5 5" /></Svg>;
+export const IconCookie = (p: P) => <Svg {...p}><circle cx="12" cy="12" r="8.5" /><path d="M9 9h.01M14.5 8.5h.01M15 14h.01M9.5 14.5h.01M12 11.5h.01" strokeWidth={2.6} /></Svg>;
+export const IconBurger = (p: P) => <Svg {...p}><path d="M4 10a8 5 0 0 1 16 0zM3.5 13.5h17M5 17h14a1 1 0 0 1-1 3H6a1 1 0 0 1-1-3z" /></Svg>;

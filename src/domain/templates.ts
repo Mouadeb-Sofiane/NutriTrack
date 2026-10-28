@@ -8,7 +8,8 @@
  * la taille de la portion et la quantité de matière grasse / sauce.
  */
 import type { LineItem } from './types';
-import { lineFromFood } from './nutrition';
+import { lineFromFood, scalePer100 } from './nutrition';
+import { withEstimate } from './estimates';
 import { refFood } from './referenceFoods';
 
 export type FatLevel = 'low' | 'medium' | 'high';
@@ -81,28 +82,83 @@ export function getTemplate(id: string) {
 let seq = 0;
 const tmpId = () => `t${Date.now().toString(36)}${(seq++).toString(36)}`;
 
+const SIZES: PlateSize[] = ['small', 'medium', 'large'];
+const FATS: FatLevel[] = ['low', 'medium', 'high'];
+/** Taille d'assiette du scénario haut : un cran au-dessus (au-delà de « grande » : ×1,3). */
+function highPlateFactor(size: PlateSize): number {
+  const i = SIZES.indexOf(size);
+  return i < SIZES.length - 1 ? PLATE_FACTOR[SIZES[i + 1]] : PLATE_FACTOR.large * 1.3;
+}
+/** Taille du bas de fourchette : un cran en dessous (en deçà de « petite » : ×0,75). */
+function lowPlateFactor(size: PlateSize): number {
+  const i = SIZES.indexOf(size);
+  return i > 0 ? PLATE_FACTOR[SIZES[i - 1]] : PLATE_FACTOR.small * 0.75;
+}
+function highFatAmount(t: DishTemplate, fat: FatLevel): number {
+  const i = FATS.indexOf(fat);
+  return i < FATS.length - 1 ? t.fat.amounts[FATS[i + 1]] : t.fat.amounts.high * 1.5;
+}
+function lowFatAmount(t: DishTemplate, fat: FatLevel): number {
+  const i = FATS.indexOf(fat);
+  return i > 0 ? t.fat.amounts[FATS[i - 1]] : t.fat.amounts.low * 0.5;
+}
+
 /**
- * Génère les lignes (estimation visuelle, précision « rough ») pour un modèle de plat.
+ * Génère les lignes (estimation visuelle) pour un modèle de plat, avec pour chacune :
+ * - estimation moyenne : la taille et la matière grasse choisies ;
+ * - estimation haute : assiette un cran plus copieuse ET un cran plus grasse ;
+ * - bas de fourchette : un cran en dessous.
  * Le paramètre `newId` permet de fournir des identifiants stables (tests).
  */
 export function buildTemplateItems(t: DishTemplate, size: PlateSize, fat: FatLevel, newId: () => string = tmpId): { items: LineItem[]; assumptions: string[] } {
   const f = PLATE_FACTOR[size];
+  const fh = highPlateFactor(size);
+  const fl = lowPlateFactor(size);
   const items: LineItem[] = [];
+  const sizeReason = `Assiette plus copieuse (×${fmt(fh)} au lieu de ×${fmt(f)} une assiette moyenne).`;
   for (const [refId, amount] of t.base) {
     const food = refFood(refId);
-    const item = lineFromFood(food, { unit: food.basis, count: Math.round(amount * f) }, newId(), 'rough');
-    if (item) items.push(item);
+    const mean = Math.round(amount * f);
+    const item = lineFromFood(food, { unit: food.basis, count: mean }, newId(), 'rough');
+    if (!item) continue;
+    items.push(withEstimate(item, {
+      mean: item.nutrients,
+      high: scalePer100(food.per100, Math.round(amount * fh)),
+      low: scalePer100(food.per100, Math.round(amount * fl)),
+      chosen: 'mean',
+      highReasons: [sizeReason],
+      assumptions: [`${food.name} : environ ${mean} ${food.basis}.`],
+      method: 'template',
+    }));
   }
   const fatAmount = Math.round(t.fat.amounts[fat] * f);
-  if (fatAmount > 0) {
-    const food = refFood(t.fat.refId);
-    const item = lineFromFood(food, { unit: food.basis, count: fatAmount }, newId(), 'rough');
-    if (item) items.push({ ...item, note: t.fat.label });
+  const fatHigh = Math.round(highFatAmount(t, fat) * fh);
+  const fatLow = Math.round(lowFatAmount(t, fat) * fl);
+  const fatFood = refFood(t.fat.refId);
+  const fatItem = lineFromFood(fatFood, { unit: fatFood.basis, count: Math.max(fatAmount, 0.0001) }, newId(), 'rough');
+  if (fatItem) {
+    const zero = fatAmount === 0;
+    const base = zero ? { ...fatItem, quantity: null, baseAmount: 0, nutrients: { kcal: 0, protein: 0, carbs: 0, fat: 0 } } : fatItem;
+    items.push(withEstimate({ ...base, note: t.fat.label }, {
+      mean: base.nutrients,
+      high: scalePer100(fatFood.per100, fatHigh),
+      low: scalePer100(fatFood.per100, fatLow),
+      chosen: 'mean',
+      highReasons: [`${t.fat.label} plus généreuse : ${fatHigh} ${fatFood.basis} au lieu de ${fatAmount} ${fatFood.basis}.`],
+      assumptions: [`${t.fat.label} : ${FAT_LABEL[fat].toLowerCase()} (${fatAmount} ${fatFood.basis}).`],
+      highlightHigh: `${t.fat.label} : la quantité réelle est rarement connue. L’estimation haute en tient compte.`,
+      method: 'template',
+    }));
   }
   const assumptions = [
-    `Modèle « ${t.label} », portion ${PLATE_LABEL[size].toLowerCase()} (×${f.toString().replace('.', ',')} par rapport à une assiette moyenne).`,
-    `${t.fat.label} : ${FAT_LABEL[fat].toLowerCase()} (${fatAmount} ${refFood(t.fat.refId).basis}).`,
+    `Modèle « ${t.label} », portion ${PLATE_LABEL[size].toLowerCase()} (×${fmt(f)} par rapport à une assiette moyenne).`,
+    `${t.fat.label} : ${FAT_LABEL[fat].toLowerCase()} (${fatAmount} ${fatFood.basis}).`,
     'Quantités estimées visuellement, sans pesée : corrige les ingrédients si tu en sais plus.',
+    `Scénario haut : assiette un cran plus copieuse et ${t.fat.label.toLowerCase()} un cran plus généreuse.`,
   ];
   return { items, assumptions };
+}
+
+function fmt(n: number) {
+  return n.toLocaleString('fr-FR', { maximumFractionDigits: 2 });
 }

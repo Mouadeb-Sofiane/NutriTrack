@@ -9,18 +9,24 @@ import { formatDayLabel, isISODate, nowISO, today } from '../domain/dates';
 import { newId } from '../data/ids';
 import { MEAL_LABEL, MEAL_ORDER } from './labels';
 import { Button, Card, Chip, Field, IconButton, Notice, PrecisionBadge, Segmented, TextArea, TextInput, Toggle, cx } from '../ui/kit';
-import { IconBolt, IconBook, IconCamera, IconChevronLeft, IconClock, IconEdit, IconSearch, IconTrash, IconWand, IconX } from '../ui/icons';
+import { IconBolt, IconBook, IconBurger, IconCamera, IconChevronLeft, IconClock, IconCookie, IconEdit, IconSearch, IconText, IconTrash, IconWand, IconX } from '../ui/icons';
 import { useFeedback } from '../ui/feedback';
 import { compressImage } from '../ui/photo';
 import { PhotoView } from '../ui/PhotoView';
 import { FoodPickerSheet } from './add/FoodPicker';
+import { QuickTextSheet } from './add/QuickTextSheet';
+import { CatalogSheet } from './add/CatalogSheet';
+import { FastFoodSheet } from './add/FastFoodSheet';
+import { PhotoIdentifySheet } from './add/PhotoIdentifySheet';
+import { EstimateBadge } from '../ui/EstimatePanel';
+import { findDuplicateItem, findRecentDuplicateMeal, scenarioTotals } from '../domain/estimates';
 import { ManualSheet } from './add/ManualSheet';
 import { GuidedSheet } from './add/GuidedSheet';
 import { RecipePickerSheet } from './add/RecipePicker';
 import { RecentSheet } from './add/RecentSheet';
 import { ItemEditSheet } from './add/ItemEditSheet';
 
-type SheetKind = 'search' | 'recipe' | 'guided' | 'manual' | 'quick' | 'recent' | null;
+type SheetKind = 'search' | 'recipe' | 'guided' | 'manual' | 'quick' | 'recent' | 'text' | 'catalog' | 'fastfood' | null;
 
 export function MealComposer({ route }: { route: Route }) {
   const draft = useDraft();
@@ -30,6 +36,8 @@ export function MealComposer({ route }: { route: Route }) {
   const [asRecipe, setAsRecipe] = useState(false);
   const [saving, setSaving] = useState(false);
   const [photoNotice, setPhotoNotice] = useState(false);
+  const [identifyPhoto, setIdentifyPhoto] = useState<string | null>(null);
+  const [quickText, setQuickText] = useState('');
   const cameraInput = useRef<HTMLInputElement>(null);
   const galleryInput = useRef<HTMLInputElement>(null);
   const originalPhoto = useRef<string | undefined>(undefined);
@@ -55,7 +63,7 @@ export function MealComposer({ route }: { route: Route }) {
     const m = route.query.get('method');
     if (initialRecipe) setSheet('recipe');
     else if (m === 'photo') setTimeout(() => cameraInput.current?.click(), 50);
-    else if (m && ['search', 'guided', 'manual', 'quick', 'recent'].includes(m)) setSheet(m as SheetKind);
+    else if (m && ['search', 'guided', 'manual', 'quick', 'recent', 'text', 'catalog', 'fastfood'].includes(m)) setSheet(m as SheetKind);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -63,7 +71,18 @@ export function MealComposer({ route }: { route: Route }) {
   const totals = sumItems(draft.items);
   const isEdit = !!draft.editingId;
   const set = (patch: Partial<typeof draft>) => draftStore.update((d) => ({ ...d, ...patch }));
-  const add = (items: LineItem[], method: EstimationMethod, assumptions: string[] = []) => draftStore.addItems(items, method, assumptions);
+  /** Ajout avec contrôle des doublons : un même aliment n'est jamais compté deux fois sans accord. */
+  const add = async (items: LineItem[], method: EstimationMethod, assumptions: string[] = []) => {
+    const current = draftStore.get()?.items ?? [];
+    const kept: LineItem[] = [];
+    for (const it of items) {
+      const dup = findDuplicateItem([...current, ...kept], it);
+      if (dup && !(await confirm({ title: 'Déjà dans ce repas', text: `« ${dup.name} » (${quantityText(dup)}) est déjà ajouté. L’ajouter une seconde fois ?`, confirm: 'Ajouter quand même', cancel: 'Ne pas l’ajouter' }))) continue;
+      kept.push(dup ? { ...it, id: newId('li') } : it);
+    }
+    if (kept.length) draftStore.addItems(kept, method, assumptions);
+  };
+  const scen = scenarioTotals(draft.items);
 
   const onPhoto = async (f: File | undefined) => {
     if (!f) return;
@@ -73,7 +92,7 @@ export function MealComposer({ route }: { route: Route }) {
       if (draft.photoId && draft.photoId !== originalPhoto.current) await repo.deletePhoto(draft.photoId);
       set({ photoId: id });
       setPhotoNotice(true);
-      if (!draft.items.length) setSheet('guided');
+      setIdentifyPhoto(id);
     } catch {
       toast('Impossible de lire cette image.', 'error');
     }
@@ -109,6 +128,11 @@ export function MealComposer({ route }: { route: Route }) {
         notes: draft.notes.trim() || undefined,
         userCorrected: draft.userCorrected,
       };
+      if (!isEdit) {
+        const sameDay = await repo.mealsOn(draft.date);
+        const dup = findRecentDuplicateMeal(sameDay, { date: draft.date, mealType: draft.mealType, items: draft.items }, new Date());
+        if (dup && !(await confirm({ title: 'Repas déjà enregistré ?', text: `Un repas identique (${MEAL_LABEL[dup.mealType]}) a été enregistré il y a quelques minutes. L’enregistrer une seconde fois ?`, confirm: 'Enregistrer quand même', cancel: 'Annuler' }))) return;
+      }
       await repo.saveMeal(entry);
       if (isEdit && originalPhoto.current && originalPhoto.current !== draft.photoId) await repo.deletePhoto(originalPhoto.current);
       if (asRecipe && !isEdit) {
@@ -143,15 +167,22 @@ export function MealComposer({ route }: { route: Route }) {
   };
 
   const methods: { kind: SheetKind | 'photo'; label: string; desc: string; icon: React.ReactNode }[] = [
+    { kind: 'text', label: 'Écrire ce que j’ai mangé', desc: '« kebab avec frites et un coca »', icon: <IconText /> },
+    { kind: 'catalog', label: 'Snacks & street food', desc: 'Chips, churros, glace…', icon: <IconCookie /> },
+    { kind: 'fastfood', label: 'Menu fast-food', desc: 'Plat, frites, sauce, boisson', icon: <IconBurger /> },
     { kind: 'search', label: 'Rechercher', desc: 'Aliment ou produit', icon: <IconSearch /> },
     { kind: 'recipe', label: 'Mes recettes', desc: 'Plats enregistrés', icon: <IconBook /> },
     { kind: 'photo', label: 'Photo', desc: 'Photographier le plat', icon: <IconCamera /> },
-    { kind: 'guided', label: 'Sans balance', desc: 'Estimation guidée', icon: <IconWand /> },
+    { kind: 'guided', label: 'Plat maison', desc: 'Estimation sans balance', icon: <IconWand /> },
     { kind: 'recent', label: 'Récents', desc: 'Dupliquer un repas', icon: <IconClock /> },
     { kind: 'quick', label: 'Calories rapides', desc: 'Juste un chiffre', icon: <IconBolt /> },
     { kind: 'manual', label: 'Saisie manuelle', desc: 'Valeurs détaillées', icon: <IconEdit /> },
   ];
-  const openMethod = (k: SheetKind | 'photo') => (k === 'photo' ? cameraInput.current?.click() : setSheet(k));
+  const openMethod = (k: SheetKind | 'photo') => {
+    if (k === 'text') setQuickText('');
+    if (k === 'photo') cameraInput.current?.click();
+    else setSheet(k);
+  };
 
   return (
     <div className="mx-auto max-w-lg pb-32">
@@ -187,14 +218,14 @@ export function MealComposer({ route }: { route: Route }) {
         )}
         {photoNotice && (
           <Notice className="mb-3">
-            📷 Photo gardée sur ton téléphone. <b>L’analyse automatique par IA n’est pas encore disponible</b> dans cette version : utilise l’estimation guidée (type de plat, portion, matière grasse) puis corrige si besoin.
+            📷 Photo gardée sur ton téléphone. <b>L’analyse automatique par IA n’est pas encore disponible</b> : identifie le plat en un geste (<button type="button" className="font-semibold text-brand" onClick={() => setIdentifyPhoto(draft.photoId ?? null)}>choisir</button>), puis corrige si besoin.
           </Notice>
         )}
 
         {draft.items.length === 0 ? (
           <div className="grid grid-cols-2 gap-2">
             {methods.map((m) => (
-              <button key={m.label} type="button" onClick={() => openMethod(m.kind)} className={cx('flex min-h-24 flex-col items-start justify-between rounded-[var(--radius-card)] bg-surface p-3.5 text-left shadow-[0_1px_2px_rgba(16,40,30,0.06)] active:bg-bg', m.kind === 'search' && 'col-span-2 min-h-16 flex-row items-center gap-3 !justify-start')}>
+              <button key={m.label} type="button" onClick={() => openMethod(m.kind)} className={cx('flex min-h-24 flex-col items-start justify-between rounded-[var(--radius-card)] bg-surface p-3.5 text-left shadow-[0_1px_2px_rgba(16,40,30,0.06)] active:bg-bg', m.kind === 'text' && 'col-span-2 min-h-16 flex-row items-center gap-3 !justify-start border-2 border-brand/30')}>
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-soft text-brand">{m.icon}</span>
                 <span>
                   <span className="block font-semibold">{m.label}</span>
@@ -214,7 +245,7 @@ export function MealComposer({ route }: { route: Route }) {
                         <div className="truncate font-medium">{it.name}</div>
                         <div className="flex flex-wrap items-center gap-1.5 text-[12.5px] text-muted">
                           <span>{quantityText(it)}</span>
-                          <PrecisionBadge precision={it.precision} />
+                          {it.estimate ? <EstimateBadge estimate={it.estimate} /> : <PrecisionBadge precision={it.precision} />}
                           {it.note && <span className="truncate">· {it.note}</span>}
                         </div>
                       </div>
@@ -240,6 +271,13 @@ export function MealComposer({ route }: { route: Route }) {
                 <span><span className="text-carbs">●</span> G {fmtG(totals.carbs)} g</span>
                 <span><span className="text-fat">●</span> L {fmtG(totals.fat)} g</span>
               </div>
+              {scen.uncertainCount > 0 && (
+                <div className="mt-3 rounded-xl bg-bg px-3 py-2 text-[13px]">
+                  <div className="flex justify-between"><span className="text-muted">Estimation moyenne</span><span className="font-semibold tabular-nums">{fmtKcal(scen.mean)} kcal</span></div>
+                  <div className="flex justify-between"><span className="text-accent">Estimation haute</span><span className="font-semibold tabular-nums">{fmtKcal(scen.high)} kcal</span></div>
+                  <p className="mt-1 text-[12px] text-muted">Le total retenu utilise {scen.highChosenCount || scen.customCount ? 'tes choix élément par élément' : 'l’estimation moyenne'}. Touche un élément pour retenir son estimation haute ou une autre valeur.</p>
+                </div>
+              )}
               {totals.missing.kcal > 0 && <Notice tone="warn" className="mt-3">{totals.missing.kcal} aliment(s) sans calories : le total est incomplet. Touche-les pour compléter.</Notice>}
             </Card>
             {draft.assumptions.length > 0 && (
@@ -280,6 +318,12 @@ export function MealComposer({ route }: { route: Route }) {
       <GuidedSheet open={sheet === 'guided'} onClose={() => setSheet(null)} onAdd={(items, a) => add(items, 'guided', a)} />
       <ManualSheet open={sheet === 'manual'} onClose={() => setSheet(null)} onAdd={(it) => add([it], 'manual')} />
       <ManualSheet open={sheet === 'quick'} quick onClose={() => setSheet(null)} onAdd={(it) => add([it], 'quick')} />
+      <QuickTextSheet open={sheet === 'text'} initialText={quickText} onClose={() => setSheet(null)} onAdd={(items, name) => { add(items, 'guided'); if (!draftStore.get()?.name && name) set({ name }); }} />
+      <CatalogSheet open={sheet === 'catalog'} onClose={() => setSheet(null)} onAdd={(it) => add([it], 'guided')} />
+      <FastFoodSheet open={sheet === 'fastfood'} onClose={() => setSheet(null)} onAdd={(items, name) => { add(items, 'guided'); if (!draftStore.get()?.name && name) set({ name }); if (draft.place === 'home') set({ place: 'restaurant' }); }} />
+      <PhotoIdentifySheet photoId={identifyPhoto} onClose={() => setIdentifyPhoto(null)}
+        onText={(t) => { setIdentifyPhoto(null); setQuickText(t); setSheet('text'); }}
+        onHomeDish={() => { setIdentifyPhoto(null); setSheet('guided'); }} />
       <RecentSheet open={sheet === 'recent'} onClose={() => setSheet(null)} onPick={(m) => {
         add(m.items.map((i) => ({ ...i, id: newId('li') })), m.method, m.assumptions);
         if (!draft.name && m.name) set({ name: m.name });

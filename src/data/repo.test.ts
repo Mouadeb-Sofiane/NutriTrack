@@ -7,6 +7,9 @@ import { manualLine } from '../domain/nutrition';
 import { lineFromRecipe } from '../domain/recipes';
 import type { Recipe } from '../domain/types';
 import { mapOffProduct } from './openFoodFacts';
+import { getEntry, lineFromEntry } from '../domain/catalog';
+import { chooseEstimate } from '../domain/estimates';
+import { fastFoodLines } from '../domain/fastFood';
 
 let db: NutriDB;
 let repo: ReturnType<typeof createRepo>;
@@ -114,5 +117,38 @@ describe('Open Food Facts (format de réponse)', () => {
   });
   it('fiche sans nutriments → ignorée', () => {
     expect(mapOffProduct({ code: '1', product_name: 'X', nutriments: {} }, 'now')).toBeNull();
+  });
+});
+
+describe('estimations enregistrées localement', () => {
+  it('snack : moyenne, haute, choix et hypothèses conservés', async () => {
+    const churros = chooseEstimate(lineFromEntry(getEntry('churros')!, { count: 4 }, 'c1')!, 'high');
+    const m = await repo.saveMeal({ ...baseMeal(), mealType: 'snack', name: 'Grignotage à la fête foraine', items: [churros, lineFromEntry(getEntry('popcorn-sweet')!, {}, 'c2')!], method: 'mixed' });
+    const [stored] = await repo.mealsOn('2026-10-28');
+    expect(stored.id).toBe(m.id);
+    expect(stored.items[0].estimate).toMatchObject({ chosen: 'high', mean: churros.estimate!.mean, high: churros.estimate!.high });
+    expect(stored.items[0].estimate!.highReasons.length).toBeGreaterThan(0);
+    expect(stored.items[0].nutrients.kcal).toBe(churros.estimate!.high.kcal);
+  });
+  it('repas fast-food enregistré en une opération', async () => {
+    let i = 0;
+    const items = fastFoodLines([{ catalogId: 'kebab', count: 1 }, { catalogId: 'fries', portionId: 'medium' }, { catalogId: 'soda', portionId: 'can', count: 1 }], () => `ff${i++}`);
+    await repo.saveMeal({ ...baseMeal(), items, place: 'restaurant', method: 'mixed' });
+    expect((await repo.mealsOn('2026-10-28'))[0].items).toHaveLength(3);
+  });
+  it('une même ligne ne peut pas être enregistrée deux fois', async () => {
+    const l = lineFromEntry(getEntry('chips')!, {}, 'dup')!;
+    await expect(repo.saveMeal({ ...baseMeal(), items: [l, l] })).rejects.toBeInstanceOf(ValidationError);
+  });
+  it('export / import conserve les estimations', async () => {
+    const l = chooseEstimate(lineFromEntry(getEntry('kebab')!, { count: 1 }, 'k')!, 'custom', 900);
+    await repo.saveMeal({ ...baseMeal(), items: [l] });
+    const parsed = parseBackup(JSON.stringify(await exportAll(db, { includePhotos: false })));
+    expect(parsed.ok).toBe(true);
+    const other = new NutriDB(`test-est-${n++}`);
+    await importBackup(other, parsed.backup!, 'replace');
+    const [m] = await other.meals.toArray();
+    expect(m.items[0].estimate).toMatchObject({ chosen: 'custom', custom: { kcal: 900 }, mean: l.estimate!.mean, high: l.estimate!.high });
+    expect(m.items[0].nutrients.kcal).toBe(900);
   });
 });

@@ -4,6 +4,7 @@
  */
 import type { LineItem, Nutrients, Precision, Recipe, RecipeConsumption } from './types';
 import { cleanNutrients, isValidNumber, multiplyNutrients, PRECISION_MARGIN, rangeFor, sumItems, type Totals } from './nutrition';
+import { hasMeaningfulGap, itemScenario, withEstimate } from './estimates';
 
 export interface RecipeNutrition {
   total: Totals;
@@ -130,7 +131,7 @@ export function lineFromRecipe(r: Recipe, c: Consumption, id: string): LineItem 
     ? { min: t.kcalRange.min * f * (1 - extra), max: t.kcalRange.max * f * (1 + extra) }
     : null;
   const precision: Precision = c.kind === 'grams' ? nut.precision : weakestPrecision([nut.precision, 'approx']);
-  return {
+  const line: LineItem = {
     id,
     name: r.name,
     recipeId: r.id,
@@ -146,6 +147,41 @@ export function lineFromRecipe(r: Recipe, c: Consumption, id: string): LineItem 
     source: { kind: 'recipe', label: nut.basis === 'manual' ? 'Recette (total estimé)' : 'Recette (somme des ingrédients)' },
     consumption: c,
   };
+  return attachRecipeEstimate(line, r, nut, f, extra);
+}
+
+/**
+ * Estimation haute d'une part de recette, construite à partir de deux hypothèses explicites :
+ * 1. le scénario haut des ingrédients estimés (ou du total estimé sans détail) ;
+ * 2. une assiette plus garnie que la moyenne du plat (+15 %) quand on ne l'a pas pesée.
+ * Rien n'est ajouté si l'écart n'est pas significatif.
+ */
+function attachRecipeEstimate(line: LineItem, r: Recipe, nut: RecipeNutrition, f: number, extra: number): LineItem {
+  const meanKcal = line.nutrients.kcal;
+  if (meanKcal == null || meanKcal <= 0) return line;
+  const totalHigh = nut.basis === 'manual'
+    ? Math.max(nut.total.kcal, nut.total.kcalRange.max)
+    : r.ingredients.reduce((s, i) => s + (itemScenario(i).high ?? 0), 0);
+  const highKcal = totalHigh * f * (1 + extra);
+  const reasons: string[] = [];
+  if (totalHigh > nut.total.kcal + 1) {
+    reasons.push(nut.basis === 'manual'
+      ? `Total du plat estimé sans détail : jusqu’à ~${Math.round(totalHigh)} kcal au lieu de ~${Math.round(nut.total.kcal)}.`
+      : `Ingrédients estimés à l’œil : scénario haut de la recette ~${Math.round(totalHigh)} kcal au lieu de ~${Math.round(nut.total.kcal)}.`);
+  }
+  if (extra > 0) reasons.push(`Assiette plus garnie que la moyenne du plat (+${Math.round(extra * 100)} %) : les parts d’un plat familial ne sont pas identiques.`);
+  const info = {
+    mean: line.nutrients,
+    high: multiplyNutrients(line.nutrients, highKcal / meanKcal),
+    low: line.kcalRange ? multiplyNutrients(line.nutrients, line.kcalRange.min / meanKcal) : null,
+    chosen: 'mean' as const,
+    highReasons: reasons,
+    assumptions: [`Part de la recette « ${r.name} » : ${line.unitLabel ?? ''}.`, ...(reasons.length ? ['Macros du scénario haut ajustées proportionnellement aux calories.'] : [])],
+    highlightHigh: nut.basis === 'manual' && (r.manualPrecision ?? 'rough') === 'rough' ? 'Le total de cette recette est une estimation sans détail des ingrédients.' : null,
+    method: 'recipe' as const,
+  };
+  if (!hasMeaningfulGap(info)) return line;
+  return withEstimate(line, info);
 }
 
 /**

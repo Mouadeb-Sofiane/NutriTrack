@@ -9,6 +9,7 @@ import { fmtKcal, hasMeaningfulRange, mergeTotals } from '../domain/nutrition';
 import { mealTotals, sortWeights } from '../domain/stats';
 import { dailyBudget } from '../domain/energy';
 import { recipeNutrition } from '../domain/recipes';
+import { scenarioTotals } from '../domain/estimates';
 import type { MealType } from '../domain/types';
 import { draftStore, emptyDraft } from '../state/draft';
 import { MEAL_EMOJI, MEAL_LABEL, MEAL_ORDER } from './labels';
@@ -30,8 +31,10 @@ export function Today({ route }: { route: Route }) {
   const weights = useLiveQuery(() => db.weights.toArray(), []) ?? [];
   const favorites = useLiveQuery(() => db.recipes.filter((r) => r.favorite).toArray(), []) ?? [];
   const [exerciseOpen, setExerciseOpen] = useState(false);
+  const [showScenarios, setShowScenarios] = useState(false);
 
   const totals = mergeTotals(meals.map(mealTotals));
+  const scen = scenarioTotals(meals.flatMap((m) => m.items));
   const exerciseKcal = exercises.reduce((s, e) => s + e.kcal, 0);
   const method = profile?.energyMethod ?? 'included';
   const budget = goals ? dailyBudget(goals.kcal, exerciseKcal, method, profile?.exerciseCredit ?? 0) : 0;
@@ -89,6 +92,26 @@ export function Today({ route }: { route: Route }) {
             <MacroBar kind="fat" value={totals.fat} target={goals.fat} missing={totals.missing.fat} />
           </div>
         )}
+        {scen.uncertainCount > 0 && (
+          <div className="mt-3 border-t border-line pt-3">
+            <button type="button" onClick={() => setShowScenarios(!showScenarios)} aria-expanded={showScenarios} className="flex w-full items-center justify-between text-left text-[13.5px]">
+              <span className="font-semibold">Scénarios du jour</span>
+              <span className="tabular-nums text-muted">moyen {fmtKcal(scen.mean)} · <span className="text-accent">haut {fmtKcal(scen.high)}</span></span>
+            </button>
+            {showScenarios && (
+              <div className="anim-fade mt-2 space-y-1 text-[13px]">
+                <div className="flex justify-between"><span>Total retenu (tes choix)</span><b className="tabular-nums">{fmtKcal(scen.retained)} kcal</b></div>
+                <div className="flex justify-between"><span>Scénario moyen</span><span className="tabular-nums">{fmtKcal(scen.mean)} kcal</span></div>
+                <div className="flex justify-between"><span>Scénario haut</span><span className="tabular-nums">{fmtKcal(scen.high)} kcal</span></div>
+                <p className="pt-1 text-[12px] leading-snug text-muted">
+                  {scen.uncertainCount} élément(s) estimé(s) sans pesée. Le scénario haut additionne leurs estimations hautes : c’est un scénario de prudence, pas une mesure de ce que tu as mangé.
+                  {scen.highChosenCount > 0 && ` Tu as retenu l’estimation haute pour ${scen.highChosenCount} élément(s).`}
+                  {scen.customCount > 0 && ` ${scen.customCount} valeur(s) personnalisée(s) s’appliquent aux deux scénarios.`}
+                </p>
+              </div>
+            )}
+          </div>
+        )}
         {totals.missing.kcal > 0 && <p className="mt-3 text-[12.5px] text-warn">* {totals.missing.kcal} aliment(s) sans calories connues ne sont pas comptés.</p>}
         {goals && remaining < 0 && <p className="mt-3 text-[12.5px] text-muted">Un jour au-dessus de l’objectif n’a rien de grave : c’est la tendance sur plusieurs semaines qui compte.</p>}
       </Card>
@@ -135,6 +158,7 @@ export function Today({ route }: { route: Route }) {
                           <span className="block text-[12px] text-muted">
                             {m.place === 'restaurant' ? `Restaurant${m.restaurantName ? ` · ${m.restaurantName}` : ''} · ` : ''}
                             {m.items.length} élément{m.items.length > 1 ? 's' : ''}{['guided', 'quick', 'mixed'].includes(m.method) || m.items.some((i) => i.precision === 'rough') ? ' · estimation' : ''}
+                            {(() => { const s = scenarioTotals(m.items); return s.uncertainCount > 0 && s.high > s.retained + 10 ? ` · haute ${fmtKcal(s.high)}` : ''; })()}
                           </span>
                         </span>
                         <span className="text-[14px] font-semibold tabular-nums">{fmtKcal(mealTotals(m).kcal)}</span>

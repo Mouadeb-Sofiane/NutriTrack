@@ -203,8 +203,12 @@ export function rescaleLine(item: LineItem, newQuantity: number): LineItem {
   if (!isValidNumber(newQuantity) || newQuantity <= 0 || !item.quantity || item.quantity <= 0) return item;
   const f = newQuantity / item.quantity;
   const nutrients = multiplyNutrients(item.nutrients, f);
+  const e = item.estimate;
   return {
     ...item,
+    estimate: e
+      ? { ...e, mean: multiplyNutrients(e.mean, f), high: multiplyNutrients(e.high, f), low: e.low ? multiplyNutrients(e.low, f) : null, custom: e.custom ? multiplyNutrients(e.custom, f) : null }
+      : undefined,
     quantity: newQuantity,
     baseAmount: item.baseAmount != null ? item.baseAmount * f : item.baseAmount,
     nutrients,
@@ -213,6 +217,8 @@ export function rescaleLine(item: LineItem, newQuantity: number): LineItem {
 }
 
 export function withPrecision(item: LineItem, precision: Precision): LineItem {
+  // Une ligne avec estimation moyenne/haute garde la fourchette issue de ses hypothèses.
+  if (item.estimate) return { ...item, precision };
   return { ...item, precision, kcalRange: rangeFor(item.nutrients.kcal, precision) };
 }
 

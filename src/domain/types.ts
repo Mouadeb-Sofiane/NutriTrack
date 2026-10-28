@@ -35,6 +35,7 @@ export type SourceKind =
   | 'manual' // saisi par l'utilisateur
   | 'recipe' // calculé à partir d'une recette personnelle
   | 'estimate' // estimation guidée (modèle de plat, portion visuelle…)
+  | 'official' // valeurs officielles d'une enseigne, saisies par l'utilisateur
   | 'ai'; // estimation produite par une IA (non disponible pour l'instant)
 
 export interface SourceInfo {
@@ -94,6 +95,36 @@ export interface LineItem {
   note?: string;
   /** Pour une ligne issue d'une recette : part consommée (permet un recalcul explicite). */
   consumption?: RecipeConsumption;
+  /**
+   * Estimation incertaine : moyenne + haute (+ basse). `nutrients` contient alors
+   * la valeur RETENUE par l'utilisateur (moyenne par défaut).
+   */
+  estimate?: EstimateInfo;
+}
+
+export type EstimateChoice = 'mean' | 'high' | 'custom';
+
+export interface EstimateInfo {
+  /** Scénario central, jugé le plus plausible avec les informations disponibles. */
+  mean: Nutrients;
+  /** Scénario plus énergétique mais plausible, construit à partir d'hypothèses explicites. */
+  high: Nutrients;
+  /** Bas de la fourchette plausible, si les hypothèses permettent de le définir. */
+  low?: Nutrients | null;
+  chosen: EstimateChoice;
+  /** Valeur saisie par l'utilisateur quand chosen = 'custom'. */
+  custom?: Nutrients | null;
+  /** Hypothèses qui distinguent le scénario haut du scénario moyen. */
+  highReasons: string[];
+  /** Hypothèses du scénario moyen. */
+  assumptions: string[];
+  /** Facteur important inconnu justifiant de regarder l'estimation haute (affiché discrètement). */
+  highlightHigh?: string | null;
+  method: 'catalog' | 'template' | 'recipe' | 'visual' | 'text';
+  catalogId?: string;
+  portionId?: string;
+  count?: number;
+  fraction?: number;
 }
 
 export type RecipeConsumption =

@@ -18,6 +18,12 @@ export function createRepo(db: NutriDB) {
   }
 
   function sanitizeItems(items: LineItem[]): LineItem[] {
+    // Une même ligne ne peut pas être comptée deux fois dans un repas.
+    const ids = new Set<string>();
+    for (const it of items) {
+      if (ids.has(it.id)) throw new ValidationError(`« ${it.name} » apparaît deux fois dans ce repas.`);
+      ids.add(it.id);
+    }
     return items.map((it) => {
       if (it.quantity != null && (!isValidNumber(it.quantity) || it.quantity <= 0)) {
         throw new ValidationError(`Quantité invalide pour « ${it.name} » : elle doit être positive.`);

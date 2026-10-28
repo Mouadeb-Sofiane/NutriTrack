@@ -198,6 +198,7 @@ const SOURCE_LABEL: Record<SourceInfo['kind'], string> = {
   manual: 'Saisie',
   recipe: 'Recette',
   estimate: 'Estimation',
+  official: 'Officiel',
   ai: 'IA',
 };
 
