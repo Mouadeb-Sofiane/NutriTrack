@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import type { Food, LineItem, Precision } from '../../domain/types';
-import { REFERENCE_FOODS, searchFoods } from '../../domain/referenceFoods';
+import { getReferenceFood, REFERENCE_FOODS, searchFoods } from '../../domain/referenceFoods';
 import { checkPer100, fmtG, fmtKcal, lineFromFood, PRECISION_LABEL } from '../../domain/nutrition';
 import { fetchByBarcode, OffError, searchProducts } from '../../data/openFoodFacts';
 import { db } from '../../data/db';
@@ -14,7 +14,7 @@ import { Button, Chip, Field, Notice, NumberInput, PrecisionBadge, Segmented, So
 import { IconBarcode, IconSearch, IconStar } from '../../ui/icons';
 import { useFeedback } from '../../ui/feedback';
 
-export function FoodPickerSheet({ open, onClose, onAdd }: { open: boolean; onClose: () => void; onAdd: (item: LineItem) => void }) {
+export function FoodPickerSheet({ open, onClose, onAdd, initialFoodId }: { open: boolean; onClose: () => void; onAdd: (item: LineItem) => void; initialFoodId?: string }) {
   const [q, setQ] = useState('');
   const [selected, setSelected] = useState<Food | null>(null);
   const [online, setOnline] = useState<Food[] | null>(null);
@@ -28,8 +28,11 @@ export function FoodPickerSheet({ open, onClose, onAdd }: { open: boolean; onClo
     if (!open) {
       setQ(''); setSelected(null); setOnline(null); setError(null); setBarcodeMode(false);
       abort.current?.abort();
+    } else if (initialFoodId) {
+      const f = getReferenceFood(initialFoodId);
+      if (f) setSelected(f);
     }
-  }, [open]);
+  }, [open, initialFoodId]);
 
   const all = useMemo(() => {
     const ids = new Set(mine.map((f) => f.id));

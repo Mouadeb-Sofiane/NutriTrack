@@ -35,12 +35,23 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,webmanifest}'],
+        // Le modèle de reconnaissance (≈ 96 Mo) n'est téléchargé que sur demande (voir src/vision/modelStore.ts).
+        globIgnores: ['models/**'],
         navigateFallback: 'index.html',
+        runtimeCaching: [
+          {
+            // Moteur WebAssembly d'ONNX Runtime : mis en cache au premier usage, puis disponible hors ligne.
+            urlPattern: /\/assets\/ort-wasm[^/]*\.(wasm|mjs)$/,
+            handler: 'CacheFirst',
+            options: { cacheName: 'nutritrack-vision-runtime', expiration: { maxEntries: 6 } },
+          },
+        ],
       },
     }),
   ],
+  worker: { format: 'es' },
   test: {
     environment: 'node',
-    include: ['src/**/*.test.ts', 'proxy/**/*.test.js'],
+    include: ['src/**/*.test.ts'],
   },
 });

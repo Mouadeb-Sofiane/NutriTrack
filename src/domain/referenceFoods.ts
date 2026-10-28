@@ -105,6 +105,8 @@ const ROWS: Row[] = [
   ['orange', 'Orange', 'Fruits', 47, 0.9, 9.5, 0.1, { servings: [['1 orange moyenne (épluchée)', 150, 'approx']] }],
   ['strawberry', 'Fraises', 'Fruits', 32, 0.7, 5.7, 0.3 ],
   ['grapes', 'Raisin', 'Fruits', 69, 0.7, 17, 0.2 ],
+  ['watermelon', 'Pastèque', 'Fruits', 30, 0.6, 7.5, 0.2, { servings: [['1 tranche', 250, 'approx']], aliases: 'melon' }],
+  ['pineapple', 'Ananas', 'Fruits', 50, 0.5, 12, 0.1, { servings: [['1 tranche', 80, 'approx']] }],
   ['dates', 'Dattes sèches', 'Fruits', 280, 2.5, 66, 0.4, { servings: [['1 datte (sans noyau)', 8, 'approx']] }],
   // Fruits à coque
   ['almonds', 'Amandes', 'Fruits à coque', 580, 21, 9, 50, { servings: [['1 poignée', 25, 'rough']] }],

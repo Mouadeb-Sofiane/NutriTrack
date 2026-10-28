@@ -13,8 +13,7 @@ import { Button, Card, IconButton, Notice, SectionTitle, Stat, Toggle } from '..
 import { IconChevronLeft, IconDownload, IconUpload } from '../ui/icons';
 import { useFeedback } from '../ui/feedback';
 import { Sheet } from '../ui/Sheet';
-import { AiSettingsSheet } from './AiSettings';
-import { isAiReady, loadAiConfig } from '../data/aiClient';
+import { VisionSection } from './VisionSettings';
 import { ActivitySection, BodySection, GoalSection, PlanSummary, PrefsSection, profileErrors } from './profileSections';
 import { GoalsEditor } from './GoalsEditor';
 
@@ -47,7 +46,7 @@ export function ProfileScreen() {
         )}
       </Card>
 
-      <AiSection />
+      <VisionSection />
       <DataSection lastBackupAt={prefs.lastBackupAt} />
       <About />
 
@@ -126,24 +125,6 @@ function FullScreen({ title, onClose, children, footer }: { title: string; onClo
       </div>
       <div className="safe-bottom fixed inset-x-0 bottom-0 border-t border-line bg-surface/95 backdrop-blur"><div className="mx-auto max-w-lg px-4 py-3">{footer}</div></div>
     </div>
-  );
-}
-
-function AiSection() {
-  const [open, setOpen] = useState(false);
-  const config = useLiveQuery(() => loadAiConfig(db), []);
-  return (
-    <>
-      <SectionTitle action={<Button variant="ghost" size="sm" onClick={() => setOpen(true)}>Configurer</Button>}>Analyse photo par IA</SectionTitle>
-      <Card onClick={() => setOpen(true)}>
-        {config && isAiReady(config) ? (
-          <p className="text-[14px]">✓ Activée{config.lastCheck?.ok ? ` · ${config.lastCheck.provider} · ${config.lastCheck.model}` : ''}. Les photos ne sont envoyées que lorsque tu appuies sur « Analyser avec l’IA ».</p>
-        ) : (
-          <p className="text-[14px] text-muted">Non configurée. Sans elle, tu identifies le plat d’un geste ou en quelques mots. La configuration demande un relais gratuit sur Cloudflare et une clé Gemini (guide fourni).</p>
-        )}
-      </Card>
-      <AiSettingsSheet open={open} onClose={() => setOpen(false)} />
-    </>
   );
 }
 
@@ -258,8 +239,8 @@ function About() {
         <ul className="space-y-2 text-[13.5px] leading-snug text-muted">
           <li><b className="text-ink">Outil d’information, pas un dispositif médical.</b> Les besoins caloriques et les valeurs des repas sont des estimations. Pour une situation médicale particulière, consulte un professionnel de santé.</li>
           <li><b className="text-ink">Sources :</b> table de référence intégrée (valeurs moyennes indicatives, ordre de grandeur des tables CIQUAL/ANSES et USDA) ; produits : <a className="text-brand" href="https://world.openfoodfacts.org" target="_blank" rel="noreferrer">Open Food Facts</a> (licence ODbL, données collaboratives) ; formule de Mifflin-St Jeor.</li>
-          <li><b className="text-ink">Confidentialité :</b> aucune donnée personnelle n’est envoyée. La recherche de produits transmet le texte recherché ou le code-barres à Open Food Facts ; l’analyse photo (si tu l’actives) transmet la photo choisie à ton relais.</li>
-          <li><b className="text-ink">Analyse photo par IA :</b> facultative, via ton relais personnel et Google Gemini. Une photo n’est envoyée que lorsque tu appuies sur « Analyser avec l’IA » ; sinon elle reste sur l’appareil.</li>
+          <li><b className="text-ink">Confidentialité :</b> aucune donnée personnelle n’est envoyée. La recherche de produits transmet le texte recherché ou le code-barres à Open Food Facts . Les photos restent sur l’appareil.</li>
+          <li><b className="text-ink">Reconnaissance des photos :</b> modèle OpenCLIP (licence MIT) exécuté sur ton téléphone avec ONNX Runtime Web (MIT). Les photos ne quittent jamais l’appareil ; aucun coût par analyse.</li>
           <li>NutriTrack v{__APP_VERSION__} · gratuit, sans publicité.</li>
         </ul>
       </Card>

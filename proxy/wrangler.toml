@@ -1,4 +1,0 @@
-# Déploiement en ligne de commande (facultatif) : npx wrangler deploy --config proxy/wrangler.toml
-name = "nutritrack-ia"
-main = "worker.js"
-compatibility_date = "2026-10-01"

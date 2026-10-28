@@ -4,7 +4,7 @@
  * Sans service configuré (ou en cas d'échec), l'analyse renvoie « indisponible » / « erreur »
  * et l'application propose une identification rapide manuelle. On n'affiche jamais un
  * résultat présenté comme venant d'une IA si aucune analyse réelle n'a eu lieu.
- * L'implémentation réelle (relais vers un modèle de vision) est dans data/aiClient.ts.
+ * La reconnaissance réelle tourne sur l'appareil (src/vision/recognizer.ts).
  */
 export interface PhotoAnalysisResult {
   status: 'ok' | 'unavailable' | 'error';
@@ -14,10 +14,6 @@ export interface PhotoAnalysisResult {
   unknown?: string[];
   /** Description utilisable par la saisie libre (« kebab, frites »). */
   description?: string;
-  /** Résultat structuré d'une analyse réelle (voir domain/aiAnalysis.ts). */
-  analysis?: import('./aiAnalysis').AiAnalysis;
-  /** Service et modèle ayant réellement produit l'analyse. */
-  provider?: string;
   message: string;
 }
 

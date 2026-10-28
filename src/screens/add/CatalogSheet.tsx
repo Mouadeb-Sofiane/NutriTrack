@@ -1,7 +1,7 @@
 /** Grignotages, fête foraine, fast-food, sauces, boissons : portions simples, sans pesée. */
 import { useEffect, useMemo, useState } from 'react';
 import type { LineItem } from '../../domain/types';
-import { CATALOG, CATALOG_GROUPS, lineFromEntry, searchCatalog, type CatalogEntry, type CatalogGroup } from '../../domain/catalog';
+import { CATALOG, CATALOG_GROUPS, getEntry, lineFromEntry, searchCatalog, type CatalogEntry, type CatalogGroup } from '../../domain/catalog';
 import { chooseEstimate } from '../../domain/estimates';
 import { newId } from '../../data/ids';
 import { Sheet } from '../../ui/Sheet';
@@ -9,11 +9,11 @@ import { Button, Chip, Field, NumberInput, TextInput } from '../../ui/kit';
 import { IconSearch } from '../../ui/icons';
 import { EstimatePanel } from '../../ui/EstimatePanel';
 
-export function CatalogSheet({ open, onClose, onAdd, initialGroup = 'snack' }: { open: boolean; onClose: () => void; onAdd: (item: LineItem) => void; initialGroup?: CatalogGroup }) {
+export function CatalogSheet({ open, onClose, onAdd, initialGroup = 'snack', initialEntryId }: { open: boolean; onClose: () => void; onAdd: (item: LineItem) => void; initialGroup?: CatalogGroup; initialEntryId?: string }) {
   const [q, setQ] = useState('');
   const [group, setGroup] = useState<CatalogGroup>(initialGroup);
   const [entry, setEntry] = useState<CatalogEntry | null>(null);
-  useEffect(() => { if (!open) { setQ(''); setEntry(null); } else setGroup(initialGroup); }, [open, initialGroup]);
+  useEffect(() => { if (!open) { setQ(''); setEntry(null); } else { setGroup(initialGroup); if (initialEntryId) setEntry(getEntry(initialEntryId) ?? null); } }, [open, initialGroup, initialEntryId]);
   const list = useMemo(() => (q.trim() ? searchCatalog(q) : CATALOG.filter((e) => e.group === group)), [q, group]);
 
   return (

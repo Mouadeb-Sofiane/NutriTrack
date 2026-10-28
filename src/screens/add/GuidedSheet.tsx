@@ -11,7 +11,7 @@ import { newId } from '../../data/ids';
 import { Sheet } from '../../ui/Sheet';
 import { Button, Field, Notice, Segmented, cx } from '../../ui/kit';
 
-export function GuidedSheet({ open, onClose, onAdd, title = 'Estimation sans balance', multiplier = 1, multiplierLabel }: {
+export function GuidedSheet({ open, onClose, onAdd, title = 'Estimation sans balance', multiplier = 1, multiplierLabel, initialTemplate }: {
   open: boolean;
   onClose: () => void;
   onAdd: (items: LineItem[], assumptions: string[]) => void;
@@ -19,11 +19,13 @@ export function GuidedSheet({ open, onClose, onAdd, title = 'Estimation sans bal
   /** Pour un plat familial : nombre d'assiettes préparées. */
   multiplier?: number;
   multiplierLabel?: string;
+  /** Modèle présélectionné (ex. plat reconnu sur la photo). */
+  initialTemplate?: string;
 }) {
   const [tpl, setTpl] = useState<string | null>(null);
   const [size, setSize] = useState<PlateSize>('medium');
   const [fat, setFat] = useState<FatLevel>('medium');
-  useEffect(() => { if (open) { setTpl(null); setSize('medium'); setFat('medium'); } }, [open]);
+  useEffect(() => { if (open) { setTpl(initialTemplate ?? null); setSize('medium'); setFat('medium'); } }, [open, initialTemplate]);
 
   const t = DISH_TEMPLATES.find((x) => x.id === tpl);
   const built = t ? buildTemplateItems(t, size, fat, () => newId('li')) : null;

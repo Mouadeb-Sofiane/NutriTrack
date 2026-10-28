@@ -4,7 +4,7 @@ Application personnelle de suivi nutritionnel : calories, macronutriments, recet
 
 > Nom provisoire. Outil d'information et de suivi, **pas un dispositif médical** : les besoins caloriques et les valeurs des repas sont des estimations.
 
-## Ce qui fonctionne aujourd'hui (v0.3)
+## Ce qui fonctionne aujourd'hui (v0.4)
 
 | Fonction | État |
 |---|---|
@@ -32,7 +32,7 @@ Application personnelle de suivi nutritionnel : calories, macronutriments, recet
 | Recherche de produits Open Food Facts (nom, code-barres, scan caméra sur Chrome Android) | ✅ implémentée, **non testée en réel** (voir limites) |
 | Export / restauration JSON (fusion sans doublons ou remplacement) | ✅ |
 | Hors ligne + installation sur l'écran d'accueil (PWA) | ✅ |
-| **Analyse photo par IA** (Google Gemini via ton relais Cloudflare gratuit) : aliments, portions en fourchette, visible / supposé / inconnu, estimations moyenne et haute, questions, relance avec précisions, suggestion de tes recettes | ✅ implémentée et testée de bout en bout **avec un modèle simulé** ; à activer avec ta clé (voir [docs/analyse-photo-ia.md](docs/analyse-photo-ia.md)). Sans configuration : identification manuelle en un geste. |
+| **Reconnaissance des photos sur le téléphone** (modèle libre OpenCLIP, 96 Mo téléchargés une fois, hors ligne, sans frais) : propositions de plats, plusieurs aliments par photo, puis portion choisie avec estimations moyenne et haute | ✅ testée sur 431 vraies photos (≈ 78 % bon plat en tête, 91–94 % dans les 3 premières) — voir [docs/reconnaissance-photo.md](docs/reconnaissance-photo.md). Identification manuelle si le modèle n'est pas installé. |
 | Thème sombre | ❌ prévu (couleurs déjà centralisées) |
 
 ## Utiliser l'application sur ton téléphone
@@ -116,12 +116,11 @@ src/
 
 Le schéma de données est versionné (`SCHEMA_VERSION`, `db.version(n)`) pour les migrations futures.
 
-## Analyse photo par IA
+## Reconnaissance des photos
 
-Guide d'installation pas à pas : **[docs/analyse-photo-ia.md](docs/analyse-photo-ia.md)**.
+Tout est détaillé dans **[docs/reconnaissance-photo.md](docs/reconnaissance-photo.md)** (résultats mesurés, contraintes matérielles, licences).
 
-- **Architecture** : application → **ton relais** ([`proxy/worker.js`](proxy/worker.js), Cloudflare Workers, gratuit) → **Google Gemini**. La clé API reste dans le relais ; l'application n'envoie qu'un code d'accès personnel.
-- **Répartition des rôles** : l'IA identifie les aliments et estime des portions (fourchette basse / moyenne / haute en grammes) ; l'application calcule les calories avec ses tables. Les valeurs proposées par l'IA ne servent qu'en dernier recours et sont marquées « non vérifiées ». La correspondance avec les tables est stricte : mieux vaut « valeurs inconnues » qu'un aliment approchant à tort.
-- **Confidentialité** : rien n'est envoyé sans appui sur « Analyser avec l'IA » ; seule la photo (1024 px) et ta précision éventuelle partent ; le relais ne stocke rien ; la configuration n'est pas incluse dans les sauvegardes JSON.
-- **Coût** : relais gratuit ; Gemini gratuit dans la limite du quota, ou environ 0,1 à 1 centime par photo avec la facturation activée (recommandée dans l'UE, voir le guide). Aucun abonnement.
-- **Pourquoi Gemini** (recherche d'octobre 2026, à revérifier) : meilleure combinaison qualité / coût / sortie structurée. Groq et OpenRouter ont des quotas gratuits mais des modèles moins adaptés ou des politiques de données variables ; Mistral entraîne sur les données du plan gratuit par défaut ; Cloudflare Workers AI est gratuit mais son format d'image n'a pas pu être vérifié et des délais d'attente sont signalés ; un modèle local dans le navigateur est trop lourd et peu fiable pour estimer des portions sur téléphone.
+- **100 % gratuit et local** : modèle OpenCLIP ViT-B/32 (MIT) exécuté dans le navigateur par ONNX Runtime Web (MIT), servi par le site de l'application lui-même. Aucune API, aucun compte, aucun quota, aucune photo envoyée.
+- **Rôle du modèle** : proposer les plats probables ; **la portion est choisie par toi** (une photo ne donne ni le poids ni l'huile), puis l'application calcule les estimations moyenne et haute habituelles.
+- **Contraintes** : ~110 Mo à télécharger une fois (Wi-Fi conseillé), 3 Go de RAM conseillés, quelques secondes par photo sur téléphone (non mesuré sur un vrai appareil).
+- **Mode dégradé** : identification manuelle en un geste ou en quelques mots, toujours disponible.

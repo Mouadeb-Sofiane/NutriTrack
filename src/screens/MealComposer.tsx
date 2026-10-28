@@ -20,6 +20,7 @@ import { FastFoodSheet } from './add/FastFoodSheet';
 import { PhotoIdentifySheet } from './add/PhotoIdentifySheet';
 import { EstimateBadge } from '../ui/EstimatePanel';
 import { findDuplicateItem, findRecentDuplicateMeal, scenarioTotals } from '../domain/estimates';
+import { getLabel } from '../domain/recognition';
 import { ManualSheet } from './add/ManualSheet';
 import { GuidedSheet } from './add/GuidedSheet';
 import { RecipePickerSheet } from './add/RecipePicker';
@@ -37,6 +38,11 @@ export function MealComposer({ route }: { route: Route }) {
   const [saving, setSaving] = useState(false);
   const [photoNotice, setPhotoNotice] = useState(false);
   const [identifyPhoto, setIdentifyPhoto] = useState<string | null>(null);
+  const [photoSheetOpen, setPhotoSheetOpen] = useState(false);
+  /** Plat reconnu sur la photo en cours d'ajout, et ceux déjà ajoutés. */
+  const [pendingLabel, setPendingLabel] = useState<string | null>(null);
+  const [addedLabels, setAddedLabels] = useState<string[]>([]);
+  const [initialPick, setInitialPick] = useState<{ catalog?: string; template?: string; food?: string }>({});
   const [quickText, setQuickText] = useState('');
   const [pickRecipe, setPickRecipe] = useState<string | undefined>(undefined);
   const cameraInput = useRef<HTMLInputElement>(null);
@@ -85,6 +91,21 @@ export function MealComposer({ route }: { route: Route }) {
   };
   const scen = scenarioTotals(draft.items);
 
+  /** Ajout depuis un plat reconnu sur la photo : on garde la trace de la reconnaissance. */
+  const addRecognized = (items: LineItem[], method: EstimationMethod, assumptions: string[] = []) => {
+    if (!pendingLabel) return add(items, method, assumptions);
+    const label = pendingLabel.startsWith('recipe:') ? null : getLabel(pendingLabel);
+    const note = `${label ? `« ${label.fr} » reconnu` : 'Recette proposée'} sur la photo par le modèle local, confirmé par l’utilisateur ; portion choisie par l’utilisateur.`;
+    setAddedLabels((l) => [...l, pendingLabel]);
+    return add(items, 'ai', [...assumptions, note]);
+  };
+  /** Fermeture d'un écran de choix : retour aux propositions de la photo si l'on venait de là. */
+  const closePicker = () => {
+    setSheet(null);
+    setInitialPick({});
+    if (pendingLabel) { setPendingLabel(null); setPhotoSheetOpen(true); }
+  };
+
   const onPhoto = async (f: File | undefined) => {
     if (!f) return;
     try {
@@ -93,7 +114,9 @@ export function MealComposer({ route }: { route: Route }) {
       if (draft.photoId && draft.photoId !== originalPhoto.current) await repo.deletePhoto(draft.photoId);
       set({ photoId: id });
       setPhotoNotice(true);
+      setAddedLabels([]);
       setIdentifyPhoto(id);
+      setPhotoSheetOpen(true);
     } catch {
       toast('Impossible de lire cette image.', 'error');
     }
@@ -219,7 +242,7 @@ export function MealComposer({ route }: { route: Route }) {
         )}
         {photoNotice && (
           <Notice className="mb-3">
-            📷 Photo gardée sur ton téléphone. <button type="button" className="font-semibold text-brand" onClick={() => setIdentifyPhoto(draft.photoId ?? null)}>Identifier ou analyser le plat</button>, puis corrige si besoin.
+            📷 Photo gardée sur ton téléphone. <button type="button" className="font-semibold text-brand" onClick={() => { setIdentifyPhoto(draft.photoId ?? null); setPhotoSheetOpen(true); }}>Reconnaître le plat</button>, puis corrige si besoin.
           </Notice>
         )}
 
@@ -314,19 +337,26 @@ export function MealComposer({ route }: { route: Route }) {
         </p>
       )}
 
-      <FoodPickerSheet open={sheet === 'search'} onClose={() => setSheet(null)} onAdd={(it) => add([it], 'database')} />
-      <RecipePickerSheet open={sheet === 'recipe'} initialRecipeId={pickRecipe ?? initialRecipe} onClose={() => { setSheet(null); setPickRecipe(undefined); }} onAdd={(it) => add([it], 'recipe')} />
-      <GuidedSheet open={sheet === 'guided'} onClose={() => setSheet(null)} onAdd={(items, a) => add(items, 'guided', a)} />
+      <FoodPickerSheet open={sheet === 'search'} initialFoodId={initialPick.food} onClose={closePicker} onAdd={(it) => addRecognized([it], 'database')} />
+      <RecipePickerSheet open={sheet === 'recipe'} initialRecipeId={pickRecipe ?? initialRecipe} onClose={() => { setPickRecipe(undefined); closePicker(); }} onAdd={(it) => addRecognized([it], 'recipe')} />
+      <GuidedSheet open={sheet === 'guided'} initialTemplate={initialPick.template} onClose={closePicker} onAdd={(items, a) => addRecognized(items, 'guided', a)} />
       <ManualSheet open={sheet === 'manual'} onClose={() => setSheet(null)} onAdd={(it) => add([it], 'manual')} />
       <ManualSheet open={sheet === 'quick'} quick onClose={() => setSheet(null)} onAdd={(it) => add([it], 'quick')} />
       <QuickTextSheet open={sheet === 'text'} initialText={quickText} onClose={() => setSheet(null)} onAdd={(items, name) => { add(items, 'guided'); if (!draftStore.get()?.name && name) set({ name }); }} />
-      <CatalogSheet open={sheet === 'catalog'} onClose={() => setSheet(null)} onAdd={(it) => add([it], 'guided')} />
+      <CatalogSheet open={sheet === 'catalog'} initialEntryId={initialPick.catalog} onClose={closePicker} onAdd={(it) => addRecognized([it], 'guided')} />
       <FastFoodSheet open={sheet === 'fastfood'} onClose={() => setSheet(null)} onAdd={(items, name) => { add(items, 'guided'); if (!draftStore.get()?.name && name) set({ name }); if (draft.place === 'home') set({ place: 'restaurant' }); }} />
-      <PhotoIdentifySheet photoId={identifyPhoto} onClose={() => setIdentifyPhoto(null)}
-        onText={(t) => { setIdentifyPhoto(null); setQuickText(t); setSheet('text'); }}
-        onHomeDish={() => { setIdentifyPhoto(null); setSheet('guided'); }}
-        onAnalyzed={(items, assumptions, name) => { setIdentifyPhoto(null); setPhotoNotice(false); add(items, 'ai', assumptions); if (!draftStore.get()?.name && name) set({ name }); }}
-        onUseRecipe={(rid) => { setIdentifyPhoto(null); setPhotoNotice(false); setPickRecipe(rid); setSheet('recipe'); }} />
+      <PhotoIdentifySheet photoId={identifyPhoto} open={photoSheetOpen} added={addedLabels}
+        onClose={() => { setPhotoSheetOpen(false); if (addedLabels.length) setPhotoNotice(false); }}
+        onText={(t) => { setPhotoSheetOpen(false); setQuickText(t); setSheet('text'); }}
+        onHomeDish={() => { setPhotoSheetOpen(false); setInitialPick({}); setSheet('guided'); }}
+        onPick={(labelId, target) => {
+          setPhotoSheetOpen(false);
+          setPendingLabel(labelId);
+          if (target.kind === 'catalog') { setInitialPick({ catalog: target.id }); setSheet('catalog'); }
+          else if (target.kind === 'template') { setInitialPick({ template: target.id }); setSheet('guided'); }
+          else { setInitialPick({ food: target.id }); setSheet('search'); }
+        }}
+        onPickRecipe={(r) => { setPhotoSheetOpen(false); setPendingLabel(`recipe:${r.id}`); setPickRecipe(r.id); setSheet('recipe'); }} />
       <RecentSheet open={sheet === 'recent'} onClose={() => setSheet(null)}
         onPickItem={(it) => add([{ ...it, id: newId('li') }], it.estimate ? 'guided' : it.recipeId ? 'recipe' : it.source.kind === 'manual' ? 'manual' : 'database')}
         onPick={(m) => {
