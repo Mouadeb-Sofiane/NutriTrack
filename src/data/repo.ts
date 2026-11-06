@@ -4,6 +4,7 @@ import type { ExerciseEntry, Food, Goals, LineItem, MealEntry, PersonalPortion, 
 import { nowISO, isISODate, toISODate } from '../domain/dates';
 import { cleanNutrients, isValidNumber } from '../domain/nutrition';
 import { newId } from './ids';
+import { normalize } from '../domain/referenceFoods';
 
 export class ValidationError extends Error {}
 
@@ -152,6 +153,22 @@ export function createRepo(db: NutriDB) {
     },
     async getPhoto(id: string) { return db.photos.get(id); },
     async deletePhoto(id: string) { await db.photos.delete(id); },
+
+    /* Plats photographiés : signature de l'image (pas la photo) + nom validé. */
+    async recordPhotoSignatures(date: string, list: { name: string; dishId?: string; recipeId?: string; signature: number[] }[]) {
+      if (!list.length) return;
+      const now = nowISO();
+      await db.photoSigs.bulkPut(list.map((x) => ({ id: newId('sig'), date, name: x.name, normName: normalize(x.name), dishId: x.dishId, recipeId: x.recipeId, signature: x.signature, createdAt: now })));
+      // Une recette réutilisée depuis une photo apprend cette nouvelle image (max. 8 conservées).
+      for (const x of list) {
+        if (!x.recipeId) continue;
+        const r = await db.recipes.get(x.recipeId);
+        if (r) await db.recipes.put({ ...r, photoSignatures: [...(r.photoSignatures ?? []), x.signature].slice(-8) });
+      }
+      // On ne garde que les 300 dernières signatures.
+      const count = await db.photoSigs.count();
+      if (count > 300) await db.photoSigs.orderBy('createdAt').limit(count - 300).delete();
+    },
 
     /* Portions personnelles */
     async savePortion(p: Omit<PersonalPortion, 'id' | 'createdAt'> & Partial<Pick<PersonalPortion, 'id'>>) {

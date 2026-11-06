@@ -15,7 +15,11 @@ import { getReferenceFood } from '../../domain/referenceFoods';
 import type { SearchRef } from '../../data/searchIndex';
 import { newId } from '../../data/ids';
 import { nowISO } from '../../domain/dates';
-import { repo } from '../../state/app';
+import { repo, useApp } from '../../state/app';
+import { useLiveQuery } from 'dexie-react-hooks';
+import { db } from '../../data/db';
+import { normalize } from '../../domain/referenceFoods';
+import { REPEAT_BEFORE_SUGGEST } from '../../domain/photoMatch';
 import { Sheet } from '../../ui/Sheet';
 import { Button, Chip, Field, IconButton, Notice, NumberInput, TextInput, cx } from '../../ui/kit';
 import { IconEdit, IconPlus, IconTrash } from '../../ui/icons';
@@ -34,6 +38,12 @@ export interface CompositionStart {
   factor?: number;
   /** Texte d'origine (ex. « reconnu sur la photo : quiche aux poireaux »). */
   origin?: string;
+  /** Autres plats proposés en un geste (reconnaissance hésitante entre plats proches). */
+  alternatives?: Dish[];
+  /** Signature de la photo : mémorisée avec le plat s'il est enregistré. */
+  signature?: number[];
+  /** Nombre de fois où ce plat a déjà été photographié (suggestion d'enregistrement). */
+  repeat?: number;
 }
 
 export function startFromDish(d: Dish, origin?: string): CompositionStart {
@@ -59,17 +69,22 @@ export function CompositionSheet({ start, onClose, onAdd, dishes }: { start: Com
   const [editName, setEditName] = useState(false);
   const [list, setList] = useState<CompositionIngredient[]>([]);
   const [factor, setFactor] = useState(1);
+  /** Portion estimée (1 = portion type ; autre valeur si ajustée au poids estimé sur la photo). */
+  const [baseFactor, setBaseFactor] = useState(1);
   const [customGrams, setCustomGrams] = useState<number | null>(null);
   const [meta, setMeta] = useState<Omit<CompositionStart, 'name' | 'ingredients'>>({ estimated: true });
   const [picker, setPicker] = useState<Picker>(null);
   const [chosen, setChosen] = useState<'mean' | 'high' | 'custom'>('mean');
   const [customKcal, setCustomKcal] = useState<number | null>(null);
   const [saved, setSaved] = useState(false);
+  const [later, setLater] = useState(false);
+  const { prefs } = useApp();
+  const recipeNames = useLiveQuery(() => db.recipes.toArray().then((rs) => rs.map((r) => normalize(r.name))), []) ?? [];
   const { toast } = useFeedback();
 
   const load = (s: CompositionStart) => {
-    setName(s.name); setList(s.ingredients.map((i) => ({ ...i }))); setFactor(s.factor ?? 1); setCustomGrams(null);
-    setMeta({ notes: s.notes, estimated: s.estimated, dishId: s.dishId, origin: s.origin }); setChosen('mean'); setCustomKcal(null); setSaved(false); setEditName(false);
+    setName(s.name); setList(s.ingredients.map((i) => ({ ...i }))); setFactor(s.factor ?? 1); setBaseFactor(s.factor ?? 1); setCustomGrams(null);
+    setMeta({ notes: s.notes, estimated: s.estimated, dishId: s.dishId, origin: s.origin, alternatives: s.alternatives, signature: s.signature, repeat: s.repeat }); setChosen('mean'); setCustomKcal(null); setSaved(false); setEditName(false); setLater(false);
   };
   useEffect(() => { if (start) load(start); }, [start]);
 
@@ -84,6 +99,8 @@ export function CompositionSheet({ start, onClose, onAdd, dishes }: { start: Com
 
   if (!start) return null;
 
+  /** Autre plat : la composition précédente est entièrement abandonnée. */
+  const switchTo = (d: Dish) => load({ ...startFromDish(d), origin: meta.origin ? `${meta.origin.split(' → ')[0]} → corrigé en « ${d.name} »` : undefined, alternatives: meta.alternatives?.filter((a) => a.id !== d.id), signature: meta.signature, repeat: meta.repeat, factor: baseFactor });
   const update = (key: string, patch: Partial<CompositionIngredient>) => setList((l) => l.map((i) => (i.key === key ? { ...i, ...patch } : i)));
   const remove = (key: string) => setList((l) => l.filter((i) => i.key !== key));
   const addFood = (food: Food, grams: number) => setList((l) => [...l, ingredientFromFood(food, grams, newId('ing'))]);
@@ -92,7 +109,7 @@ export function CompositionSheet({ start, onClose, onAdd, dishes }: { start: Com
   const onPicked = (ref: SearchRef) => {
     if (!picker) return;
     if (picker.mode === 'dish') {
-      if (ref.type === 'dish') { load({ ...startFromDish(ref.dish), origin: meta.origin ? `${meta.origin} → corrigé en « ${ref.dish.name} »` : undefined }); setPicker(null); }
+      if (ref.type === 'dish') { switchTo(ref.dish); setPicker(null); }
       return;
     }
     const food = ref.type === 'food' ? ref.food : null;
@@ -116,6 +133,7 @@ export function CompositionSheet({ start, onClose, onAdd, dishes }: { start: Com
     await repo.saveRecipe({
       id: newId('rec'), name: name.trim() || 'Mon plat', categories: [], ingredients, servings: 1, totalWeightG: Math.round(base.grams),
       assumptions: meta.notes ?? [], favorite: false, version: 1, createdAt: now, updatedAt: now,
+      photoSignatures: meta.signature ? [meta.signature] : undefined,
       notes: meta.dishId ? `Créé à partir de la composition type « ${start.name} ».` : undefined,
     });
     setSaved(true);
@@ -148,15 +166,31 @@ export function CompositionSheet({ start, onClose, onAdd, dishes }: { start: Com
         </div>
       }>
       {meta.origin && <Notice className="mb-2">{meta.origin}</Notice>}
+      {meta.alternatives && meta.alternatives.length > 0 && (
+        <div className="mb-2">
+          <div className="mb-1 px-1 text-[12.5px] font-semibold text-muted">Ou plutôt :</div>
+          <div className="flex flex-wrap gap-2">{meta.alternatives.map((a) => <Chip key={a.id} onClick={() => switchTo(a)}>{a.name}</Chip>)}</div>
+        </div>
+      )}
+      {(meta.repeat ?? 0) >= REPEAT_BEFORE_SUGGEST && !saved && !later && !recipeNames.includes(normalize(name)) && !(prefs.noSaveSuggest ?? []).includes(normalize(name)) && (
+        <div className="mb-2 rounded-2xl bg-surface p-3 text-[13.5px]">
+          Tu as déjà photographié ce plat {meta.repeat} fois. L’enregistrer dans Mes plats pour le retrouver plus vite ?
+          <div className="mt-2 flex flex-wrap gap-2">
+            <Button size="sm" onClick={saveAsRecipe}>Enregistrer</Button>
+            <Button size="sm" variant="secondary" onClick={() => setLater(true)}>Plus tard</Button>
+            <Button size="sm" variant="ghost" onClick={() => repo.savePrefs({ noSaveSuggest: [...(prefs.noSaveSuggest ?? []), normalize(name)] })}>Ne plus proposer</Button>
+          </div>
+        </div>
+      )}
       <div className="mb-2 flex flex-wrap gap-2">
         <Chip onClick={() => setEditName(!editName)}><IconEdit size={15} /> Modifier le nom</Chip>
         {dishes.length > 0 && <Chip onClick={() => setPicker({ mode: 'dish' })}>Ce n’est pas ce plat</Chip>}
       </div>
       {editName && <Field label="Nom du plat"><TextInput value={name} onChange={(e) => setName(e.target.value)} autoFocus /></Field>}
 
-      <Field label="Quelle quantité as-tu mangée ?" hint={`Portion type : ${Math.round(base.grams)} g. Les quantités sont approximatives ; corrige seulement ce que tu connais.`}>
+      <Field label="Quelle quantité as-tu mangée ?" hint={`${baseFactor !== 1 ? `Portion estimée : ${Math.round(base.grams * baseFactor)} g (portion type ${Math.round(base.grams)} g).` : `Portion type : ${Math.round(base.grams)} g.`} Les quantités sont approximatives ; corrige seulement ce que tu connais.`}>
         <div className="flex flex-wrap gap-2">
-          {PORTION_PRESETS.map((p) => <Chip key={p.id} active={!customGrams && factor === p.factor} onClick={() => { setFactor(p.factor); setCustomGrams(null); }}>{p.label}</Chip>)}
+          {PORTION_PRESETS.map((p) => <Chip key={p.id} active={!customGrams && Math.abs(factor - baseFactor * p.factor) < 1e-6} onClick={() => { setFactor(baseFactor * p.factor); setCustomGrams(null); }}>{p.label}</Chip>)}
         </div>
         <div className="mt-2 max-w-[12rem]"><NumberInput value={customGrams ?? (base.grams ? Math.round(base.grams * factor) : null)} onChange={setCustomGrams} suffix="g" aria-label="Poids total de la portion" /></div>
       </Field>

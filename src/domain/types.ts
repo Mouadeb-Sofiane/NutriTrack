@@ -200,6 +200,8 @@ export interface Recipe {
   assumptions: string[];
   favorite: boolean;
   parentId?: string; // recette d'origine si variante
+  /** Signatures d'images de ce plat (reconnaissance d'un plat déjà enregistré sur une nouvelle photo). */
+  photoSignatures?: number[][];
   variantLabel?: string;
   version: number; // incrémenté à chaque modification
   createdAt: ISODateTime;
@@ -295,4 +297,24 @@ export interface Preferences {
   onboarded: boolean;
   customCuisines: string[];
   lastBackupAt?: ISODateTime;
+  /** Plats (nom normalisé) pour lesquels l'utilisateur a choisi « Ne plus proposer » l'enregistrement. */
+  noSaveSuggest?: string[];
+  /** Éléments retirés de la liste « Récemment utilisés » (signature d'élément). */
+  hiddenRecent?: string[];
+}
+
+/**
+ * Trace d'un plat photographié puis validé : sert à reconnaître un plat déjà photographié
+ * (proposition d'enregistrement, réutilisation). On ne garde PAS la photo, seulement une
+ * signature numérique de l'image (vecteur du modèle local) et le nom validé.
+ */
+export interface PhotoSignature {
+  id: string;
+  date: ISODate;
+  name: string;
+  normName: string;
+  dishId?: string;
+  recipeId?: string;
+  signature: number[];
+  createdAt: ISODateTime;
 }

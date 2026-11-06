@@ -11,6 +11,7 @@ import { CONFIDENCE_LABEL, recipesForProposals, type LabelTarget, type Proposal 
 import { db } from '../../data/db';
 import { repo } from '../../state/app';
 import { recognize, type LocalRecognition } from '../../vision/recognizer';
+import { matchRecipes } from '../../domain/photoMatch';
 import type { MassRange } from '../../domain/photoMass';
 import { installedManifest } from '../../vision/modelStore';
 import { ModelInstaller } from '../VisionSettings';
@@ -22,7 +23,7 @@ import { IconCheck } from '../../ui/icons';
 const cache = new Map<string, LocalRecognition>();
 const SLOW_MS = 12000;
 
-export function PhotoIdentifySheet({ photoId, open, added, onClose, onText, onHomeDish, onPick, onPickRecipe }: {
+export function PhotoIdentifySheet({ photoId, open, added, onClose, onText, onHomeDish, onPick, onPickRecipe, onResult }: {
   photoId: string | null;
   open: boolean;
   /** Libellés déjà ajoutés au repas depuis cette photo. */
@@ -32,6 +33,8 @@ export function PhotoIdentifySheet({ photoId, open, added, onClose, onText, onHo
   onHomeDish: () => void;
   onPick: (labelId: string, target: LabelTarget, mass: MassRange | null) => void;
   onPickRecipe: (recipe: Recipe) => void;
+  /** Résultat de l'analyse (signature de l'image, poids) transmis à l'écran du repas. */
+  onResult?: (r: LocalRecognition | null) => void;
 }) {
   const recipes = useLiveQuery(() => db.recipes.toArray(), []) ?? [];
   const [installed, setInstalled] = useState<boolean | null>(null);
@@ -39,6 +42,7 @@ export function PhotoIdentifySheet({ photoId, open, added, onClose, onText, onHo
   const [result, setResult] = useState<LocalRecognition | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [showInstaller, setShowInstaller] = useState(false);
+  const [ignoreSaved, setIgnoreSaved] = useState(false);
 
   const run = async (fast = false) => {
     if (!photoId) return;
@@ -50,6 +54,7 @@ export function PhotoIdentifySheet({ photoId, open, added, onClose, onText, onHo
       const r = await recognize(p.blob, { fast });
       cache.set(photoId, r);
       setResult(r);
+      onResult?.(r);
     } catch (e) {
       setError(`La reconnaissance n’a pas pu s’exécuter sur cet appareil (${(e as Error).message}). Identifie le plat ci-dessous.`);
     } finally {
@@ -60,7 +65,9 @@ export function PhotoIdentifySheet({ photoId, open, added, onClose, onText, onHo
   useEffect(() => {
     if (!photoId) return;
     setResult(cache.get(photoId) ?? null);
+    onResult?.(cache.get(photoId) ?? null);
     setError(null);
+    setIgnoreSaved(false);
     installedManifest().then((m) => {
       setInstalled(!!m);
       if (m && !cache.has(photoId)) run();
@@ -68,7 +75,9 @@ export function PhotoIdentifySheet({ photoId, open, added, onClose, onText, onHo
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [photoId]);
 
-  const suggestions = result ? recipesForProposals(result.proposals, recipes) : [];
+  // Plats enregistrés qui ressemblent à la photo (image proche + nom compatible).
+  const saved = result?.signature?.length && !result.notFood ? matchRecipes(result.signature, recipes, result.proposals.map((p) => p.label.fr)) : [];
+  const suggestions = result ? recipesForProposals(result.proposals, recipes).filter((r) => !saved.some((m) => m.recipe.id === r.id)) : [];
 
   return (
     <Sheet open={open && !!photoId} onClose={onClose} title="Qu’y a-t-il sur la photo ?" footer={added.length ? <Button block onClick={onClose}>Terminer ({added.length} ajouté{added.length > 1 ? 's' : ''})</Button> : undefined}>
@@ -83,7 +92,18 @@ export function PhotoIdentifySheet({ photoId, open, added, onClose, onText, onHo
       )}
       {error && <Notice tone="warn" className="mb-3">{error}</Notice>}
 
-      {result && !busy && (
+      {result && !busy && saved.length > 0 && !ignoreSaved && (
+        <div className="mb-3 rounded-2xl border-2 border-brand/30 bg-surface p-3.5">
+          <div className="text-[14px] font-semibold">{saved.length === 1 ? `Ce plat ressemble à ton plat enregistré : ${saved[0].recipe.name}` : 'Ce plat ressemble à plusieurs de tes plats enregistrés :'}</div>
+          <div className="mt-2 space-y-1.5">
+            {saved.map((m) => <Button key={m.recipe.id} block variant={saved.length === 1 ? 'primary' : 'soft'} onClick={() => onPickRecipe(m.recipe)}>{saved.length === 1 ? 'Réutiliser mon plat enregistré' : `Réutiliser : ${m.recipe.name}`}</Button>)}
+            <Button block variant="ghost" onClick={() => setIgnoreSaved(true)}>Analyser cette nouvelle photo</Button>
+          </div>
+          <p className="mt-1 text-[11.5px] text-muted">Si ta recette a changé, réutilise-la puis corrige les ingrédients : ta recette enregistrée ne sera pas modifiée.</p>
+        </div>
+      )}
+
+      {result && !busy && (saved.length === 0 || ignoreSaved) && (
         <div className="mb-4">
           {result.notFood && <Notice tone="warn" className="mb-2">La photo ne ressemble pas clairement à un plat. Les propositions ci-dessous sont peu fiables.</Notice>}
           {!result.notFood && result.uncertain && <Notice className="mb-2">Reconnaissance hésitante : vérifie, ou identifie le plat toi-même plus bas.</Notice>}
@@ -120,12 +140,12 @@ export function PhotoIdentifySheet({ photoId, open, added, onClose, onText, onHo
           </ul>
           {suggestions.length > 0 && (
             <div className="mt-3">
-              <div className="mb-1.5 text-[13px] font-semibold">Tes recettes qui correspondent</div>
+              <div className="mb-1.5 text-[13px] font-semibold">Tes plats enregistrés au nom proche</div>
               <div className="flex flex-wrap gap-2">{suggestions.map((r) => <Chip key={r.id} onClick={() => onPickRecipe(r)}>{r.name}</Chip>)}</div>
             </div>
           )}
           <p className="mt-2 text-[11.5px] leading-snug text-muted">
-            Reconnaissance locale (OpenCLIP) en {(result.ms / 1000).toLocaleString('fr-FR', { maximumFractionDigits: 1 })} s. Les pourcentages sont relatifs à la liste d’aliments connue de l’application, pas des certitudes. La portion n’est pas mesurée sur la photo.
+            Reconnaissance locale (OpenCLIP) en {(result.ms / 1000).toLocaleString('fr-FR', { maximumFractionDigits: 1 })} s. Les pourcentages sont relatifs à la liste d’aliments connue de l’application, pas des certitudes. Le poids est une estimation, corrigeable.
             {result.zones === 5 && result.ms > SLOW_MS && ' Téléphone lent : '}
             {result.zones === 5 && result.ms > SLOW_MS && <button type="button" className="font-semibold text-brand" onClick={() => run(true)}>passer en mode rapide</button>}
           </p>

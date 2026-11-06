@@ -126,8 +126,27 @@
    "pineapple",
    "dates",
    "fruit-salad",
+   "quiche",
+   "shepherds-pie",
+   "lasagna",
+   "paella",
+   "risotto",
+   "biryani",
+   "falafel",
+   "shakshuka",
+   "ratatouille",
+   "dumplings",
+   "lentils",
+   "white-beans",
+   "injera",
+   "fufu",
+   "plantain",
+   "empanadas",
+   "ceviche",
+   "tartine",
+   "stew-meat",
    "not-food"
   ],
-  "sha256": "2e524499e27cec0305d469419a9b182980afc36b9198423420b0963ebd267343"
+  "sha256": "1d69c718273f96137531191c18dd3163f9f4325b845782504d5f6ab6e957139a"
  }
 }
