@@ -186,13 +186,14 @@ export function QuantityPicker({ food, onAdd, onBack, photoMass }: { food: Food;
   const { toast } = useFeedback();
   const units = [
     { id: food.basis, label: food.basis },
+    { id: food.basis === 'g' ? 'kg' : 'L', label: food.basis === 'g' ? 'kg' : 'L' },
     ...(food.density ? [{ id: food.basis === 'g' ? 'ml' : 'g', label: food.basis === 'g' ? 'ml' : 'g' }] : []),
     ...food.servings.map((s) => ({ id: s.id, label: s.label })),
   ];
   const [unit, setUnit] = useState(food.servings[0]?.id ?? food.basis);
   const [count, setCount] = useState<number | null>(food.servings[0] ? 1 : 100);
   const [precision, setPrecision] = useState<Precision | null>(null);
-  const item = photoOn ? foodLineFromPhoto(food, photoMass!, pm.share, newId('li')) : count ? lineFromFood(food, { unit, count }, newId('li'), precision ?? undefined) : null;
+  const item = photoOn ? foodLineFromPhoto(food, photoMass!, pm.share, newId('li')) : count ? lineFromFood(food, unit === 'kg' || unit === 'L' ? { unit: unit === 'kg' ? 'g' : 'ml', count: count * 1000 } : { unit, count }, newId('li'), precision ?? undefined) : null;
   const saved = food.id.startsWith('ref:') || food.id.startsWith('us:') ? null : food;
   const check = checkPer100(food.per100, food.basis);
 
@@ -219,11 +220,11 @@ export function QuantityPicker({ food, onAdd, onBack, photoMass }: { food: Food;
       {!photoOn && <>
       <Field label="Unité">
         <div className="flex flex-wrap gap-2">
-          {units.map((u) => <Chip key={u.id} active={unit === u.id} onClick={() => { setUnit(u.id); setCount(u.id === 'g' || u.id === 'ml' ? 100 : 1); }}>{u.label}</Chip>)}
+          {units.map((u) => <Chip key={u.id} active={unit === u.id} onClick={() => { setUnit(u.id); setCount(u.id === 'g' || u.id === 'ml' ? 100 : u.id === 'kg' || u.id === 'L' ? 0.5 : 1); }}>{u.label}</Chip>)}
         </div>
       </Field>
-      <Field label={unit === 'g' || unit === 'ml' ? `Quantité (${unit})` : 'Nombre'} error={count != null && count <= 0 ? 'La quantité doit être positive.' : null}>
-        <NumberInput value={count} onChange={setCount} suffix={unit === 'g' || unit === 'ml' ? unit : '×'} autoFocus />
+      <Field label={['g', 'ml', 'kg', 'L'].includes(unit) ? `Quantité (${unit})` : 'Nombre'} error={count != null && count <= 0 ? 'La quantité doit être positive.' : null}>
+        <NumberInput value={count} onChange={setCount} suffix={['g', 'ml', 'kg', 'L'].includes(unit) ? unit : '×'} autoFocus />
       </Field>
       <Field label="Précision de la quantité">
         <Segmented<Precision>

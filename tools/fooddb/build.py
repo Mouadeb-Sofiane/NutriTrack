@@ -122,6 +122,24 @@ PORTIONS = [
 ]
 
 
+# Mesures ménagères françaises absentes de l'USDA (grammes usuels, approximatifs).
+EXTRA = [
+    (r'^Sucre blanc|^Sucre$|^Sucre roux', [('1 morceau', 5), ('1 c. à soupe', 12)]),
+    (r'^Beurre (doux|demi-sel)', [('1 noisette', 5), ('1 portion individuelle', 10)]),
+    (r'^Baguette', [('1 tranche de baguette', 30), ('1/4 de baguette', 62)]),
+    (r'^Lait (entier|demi-écrémé|écrémé)', [('1 verre', 200), ('1 bol', 300)]),
+    (r'^Café filtre|^Expresso|^Thé (noir|vert)', [('1 tasse', 120), ('1 grande tasse (mug)', 250)]),
+    (r'^Huile', [('1 filet', 5)]),
+]
+
+
+def extra_portions(name):
+    for pat, add in EXTRA:
+        if re.search(pat, name):
+            return [[l, g] for l, g in add]
+    return []
+
+
 def fr_portions(portions, liquid):
     out, seen = [], set()
     for p in portions:
@@ -194,7 +212,7 @@ def main(src, dst):
         out.append([
             r['fdcId'], name, cat, kind, basis, 'sr' if r['dataset'] == 'sr' else 'fn',
             r1(n.get('kcal')), r1(n.get('protein')), r1(carbs), r1(n.get('fat')), r1(fiber), r1(n.get('sugars')),
-            fr_portions(r['portions'], basis == 'ml'),
+            extra_portions(name) + fr_portions(r['portions'], basis == 'ml'),
             r['name'],
         ])
     meta = {
@@ -249,6 +267,7 @@ def build_dishes(foods_json, dishes_txt, dst):
                 'label': label or dbname, 'foodId': f'us:{row[0]}', 'food': row[1], 'basis': row[4],
                 'g': float(grams), 'per100': row[6:12],
                 'optional': 'opt' in flags,
+                'portions': row[12],
                 'group': next((f[1:] for f in flags if f.startswith('#')), None),
             })
     if errors:

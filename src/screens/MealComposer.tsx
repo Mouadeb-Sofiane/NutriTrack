@@ -187,6 +187,8 @@ export function MealComposer({ route }: { route: Route }) {
       }
       await repo.saveMeal(entry);
       if (!isEdit) await repo.recordPhotoSignatures(draft.date, photoSigs.current);
+      // Réglage « ne pas garder les photos » : supprimée dès que le repas est enregistré.
+      if ((await repo.getPrefs()).photoRetentionDays === 0 && entry.photoId) await repo.purgeMealPhotos(0, today());
       photoSigs.current = [];
       if (isEdit && originalPhoto.current && originalPhoto.current !== draft.photoId) await repo.deletePhoto(originalPhoto.current);
       if (asRecipe && !isEdit) {
@@ -401,7 +403,7 @@ export function MealComposer({ route }: { route: Route }) {
               const repeat = sig ? repeatCount(d.name, sig, photoHistory ?? []) : 0;
               setComposition({
                 ...startFromDish(d, `Reconnu sur la photo : « ${label?.fr ?? d.name} » (à vérifier).${mass ? ` Poids estimé sur la photo ≈ ${Math.round(mass.normal * share)} g (haut ${Math.round(mass.high * share)} g)${Math.abs(base * factor - mass.normal * share) > 5 ? ` ; portion retenue ${Math.round(base * factor)} g (limite ×3 de la portion type)` : ''} : corrige-la si besoin.` : ''}`),
-                factor: Math.round(factor * 100) / 100, alternatives, signature: sig, repeat,
+                factor: Math.round(factor * 100) / 100, alternatives, signature: sig, repeat, photoId: draftStore.get()?.photoId,
               });
               setPhotoMass(null);
               return;

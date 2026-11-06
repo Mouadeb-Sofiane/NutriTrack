@@ -9,7 +9,7 @@ Tout fonctionne **hors ligne et sans frais** : la base est intégrée à l'appli
 | Aliments et préparations (crus, cuits, bouillis, vapeur, rôtis, frits, panés, en conserve, égouttés, avec ou sans peau, avec ou sans matière grasse…) | **7 197** | USDA FoodData Central (SR Legacy 2018 et FNDDS 2021-2023), noms traduits en français | Table officielle (« vérifié ») |
 | dont plats et sandwichs « tels que consommés » | 1 633 | USDA FNDDS | Table officielle |
 | dont boissons (café, thé, laits, jus, sodas, boissons végétales, alcools…) | 566 | USDA | Table officielle |
-| **Plats composés du monde** (Maghreb, Afrique de l'Ouest et centrale, Europe, Moyen-Orient, Asie, Amériques, Caraïbes, plats familiaux français, petits-déjeuners et boissons préparées) | **188** | Composition type NutriTrack, calculée avec les ingrédients USDA | **Estimation** (moyenne + haute) |
+| **Plats composés du monde** (Maghreb, Afrique de l'Ouest et centrale, Europe, Moyen-Orient, Asie, Amériques, Caraïbes, plats familiaux français, petits-déjeuners et boissons préparées) | **194** | Composition type NutriTrack, calculée avec les ingrédients USDA | **Estimation** (moyenne + haute) |
 | Table de référence historique (aliments courants) | ~120 | Valeurs moyennes arrondies (ordre de grandeur Ciqual/USDA) | Indicatif |
 | Snacks, fête foraine, fast-food | ~49 | Catalogue NutriTrack | Estimation |
 | Produits de marque | à la demande | Open Food Facts (en ligne, nom ou code-barres) | Données collaboratives |

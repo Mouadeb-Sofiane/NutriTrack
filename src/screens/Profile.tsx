@@ -129,6 +129,7 @@ function FullScreen({ title, onClose, children, footer }: { title: string; onClo
 }
 
 function DataSection({ lastBackupAt }: { lastBackupAt?: string }) {
+  const { prefs } = useApp();
   const { confirm, toast } = useFeedback();
   const [withPhotos, setWithPhotos] = useState(false);
   const [persisted, setPersisted] = useState<boolean | null>(null);
@@ -204,6 +205,20 @@ function DataSection({ lastBackupAt }: { lastBackupAt?: string }) {
           <Button variant="secondary" onClick={() => fileInput.current?.click()}><IconUpload size={19} /> Restaurer</Button>
         </div>
         <input ref={fileInput} type="file" accept="application/json,.json" hidden onChange={(e) => { onFile(e.target.files?.[0]); e.target.value = ''; }} />
+        <div className="mt-4 border-t border-line pt-3">
+          <label className="mb-1 block text-sm font-semibold" htmlFor="photo-retention">Photos des repas</label>
+          <select id="photo-retention" value={String(prefs.photoRetentionDays ?? 'always')} onChange={async (e) => {
+            const v = e.target.value === 'always' ? null : Number(e.target.value);
+            await repo.savePrefs({ photoRetentionDays: v });
+            if (v != null) { const n = await repo.purgeMealPhotos(v, today()); if (n) toast(`${n} photo(s) de repas supprimée(s)`); }
+          }} className="h-11 w-full rounded-xl border border-line bg-surface px-3 text-[15px]">
+            <option value="always">Les garder</option>
+            <option value="90">Les garder 90 jours</option>
+            <option value="30">Les garder 30 jours</option>
+            <option value="0">Ne pas les garder après l’enregistrement du repas</option>
+          </select>
+          <p className="mt-1 text-[12.5px] text-muted">Les photos restent sur ton téléphone et ne sont jamais envoyées. Les repas, leurs valeurs et les plats reconnus sont conservés ; les photos jointes à Mes plats ne sont pas supprimées.</p>
+        </div>
         <Button variant="ghost" size="sm" block className="mt-3 !text-danger" onClick={wipe}>Effacer toutes les données</Button>
       </Card>
       <Sheet open={!!pending} onClose={() => setPending(null)} title="Restaurer une sauvegarde">

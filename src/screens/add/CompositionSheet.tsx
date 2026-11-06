@@ -44,6 +44,8 @@ export interface CompositionStart {
   signature?: number[];
   /** Nombre de fois où ce plat a déjà été photographié (suggestion d'enregistrement). */
   repeat?: number;
+  /** Photo du repas : une copie est jointe au plat s'il est enregistré dans Mes plats. */
+  photoId?: string;
 }
 
 export function startFromDish(d: Dish, origin?: string): CompositionStart {
@@ -84,7 +86,7 @@ export function CompositionSheet({ start, onClose, onAdd, dishes }: { start: Com
 
   const load = (s: CompositionStart) => {
     setName(s.name); setList(s.ingredients.map((i) => ({ ...i }))); setFactor(s.factor ?? 1); setBaseFactor(s.factor ?? 1); setCustomGrams(null);
-    setMeta({ notes: s.notes, estimated: s.estimated, dishId: s.dishId, origin: s.origin, alternatives: s.alternatives, signature: s.signature, repeat: s.repeat }); setChosen('mean'); setCustomKcal(null); setSaved(false); setEditName(false); setLater(false);
+    setMeta({ notes: s.notes, estimated: s.estimated, dishId: s.dishId, origin: s.origin, alternatives: s.alternatives, signature: s.signature, repeat: s.repeat, photoId: s.photoId }); setChosen('mean'); setCustomKcal(null); setSaved(false); setEditName(false); setLater(false);
   };
   useEffect(() => { if (start) load(start); }, [start]);
 
@@ -100,7 +102,7 @@ export function CompositionSheet({ start, onClose, onAdd, dishes }: { start: Com
   if (!start) return null;
 
   /** Autre plat : la composition précédente est entièrement abandonnée. */
-  const switchTo = (d: Dish) => load({ ...startFromDish(d), origin: meta.origin ? `${meta.origin.split(' → ')[0]} → corrigé en « ${d.name} »` : undefined, alternatives: meta.alternatives?.filter((a) => a.id !== d.id), signature: meta.signature, repeat: meta.repeat, factor: baseFactor });
+  const switchTo = (d: Dish) => load({ ...startFromDish(d), origin: meta.origin ? `${meta.origin.split(' → ')[0]} → corrigé en « ${d.name} »` : undefined, alternatives: meta.alternatives?.filter((a) => a.id !== d.id), signature: meta.signature, repeat: meta.repeat, photoId: meta.photoId, factor: baseFactor });
   const update = (key: string, patch: Partial<CompositionIngredient>) => setList((l) => l.map((i) => (i.key === key ? { ...i, ...patch } : i)));
   const remove = (key: string) => setList((l) => l.filter((i) => i.key !== key));
   const addFood = (food: Food, grams: number) => setList((l) => [...l, ingredientFromFood(food, grams, newId('ing'))]);
@@ -130,8 +132,11 @@ export function CompositionSheet({ start, onClose, onAdd, dishes }: { start: Com
         nutrients: t.nutrients, precision: 'approx', source: meta.estimated ? { kind: 'estimate', label: 'Composition type (ingrédients USDA)', status: 'estimated' } : { kind: 'manual', status: 'user' },
       };
     });
+    // Copie de la photo : le plat garde son image même si le repas (et sa photo) est supprimé.
+    const src = meta.photoId ? await repo.getPhoto(meta.photoId) : undefined;
+    const photoId = src ? await repo.savePhoto(src.blob) : undefined;
     await repo.saveRecipe({
-      id: newId('rec'), name: name.trim() || 'Mon plat', categories: [], ingredients, servings: 1, totalWeightG: Math.round(base.grams),
+      id: newId('rec'), name: name.trim() || 'Mon plat', photoId, categories: [], ingredients, servings: 1, totalWeightG: Math.round(base.grams),
       assumptions: meta.notes ?? [], favorite: false, version: 1, createdAt: now, updatedAt: now,
       photoSignatures: meta.signature ? [meta.signature] : undefined,
       notes: meta.dishId ? `Créé à partir de la composition type « ${start.name} ».` : undefined,
@@ -215,7 +220,7 @@ export function CompositionSheet({ start, onClose, onAdd, dishes }: { start: Com
                   <div className="truncate text-[14px] font-medium">{i.label}</div>
                   <div className="text-[12px] text-muted">{fmtKcal(i.per100[0] != null ? (i.per100[0] * i.grams * effFactor) / 100 : null)} kcal · toucher pour remplacer</div>
                 </button>
-                <div className="w-24 shrink-0"><NumberInput value={Math.round(i.grams * 10) / 10} onChange={(v) => update(i.key, { grams: v ?? 0 })} suffix={i.basis} aria-label={`Quantité de ${i.label}`} /></div>
+                <IngredientQty item={i} onChange={(patch) => update(i.key, patch)} />
                 <IconButton label={`Retirer ${i.label}`} className="text-muted" onClick={() => remove(i.key)}><IconTrash size={18} /></IconButton>
               </li>
             ))}
@@ -234,5 +239,39 @@ export function CompositionSheet({ start, onClose, onAdd, dishes }: { start: Com
       {meta.notes?.length ? <div className="mt-3 space-y-1">{meta.notes.map((n) => <p key={n} className="text-[12.5px] leading-snug text-muted">ℹ️ {n}</p>)}</div> : null}
       {meta.estimated && <p className="mt-2 text-[12px] text-muted">Composition type estimée à partir d’ingrédients de la base USDA : ta recette peut différer. Ce n’est pas une mesure.</p>}
     </Sheet>
+  );
+}
+
+/**
+ * Quantité d'un ingrédient : en grammes (ou ml), ou en mesure ménagère PROPRE à l'aliment
+ * (c. à soupe d'huile ≠ c. à soupe de farine). Les grammes restent la référence du calcul.
+ */
+function IngredientQty({ item, onChange }: { item: CompositionIngredient; onChange: (patch: Partial<CompositionIngredient>) => void }) {
+  const units = item.servings ?? [];
+  const cur = item.unit && units.find(([l]) => l === item.unit!.label);
+  return (
+    <div className="flex w-32 shrink-0 flex-col gap-1">
+      {cur ? (
+        <NumberInput value={item.unit!.count} onChange={(v) => onChange({ unit: { label: cur[0], count: v ?? 0 }, grams: (v ?? 0) * cur[1] })} suffix="×" aria-label={`Nombre (${cur[0]}) de ${item.label}`} />
+      ) : (
+        <NumberInput value={Math.round(item.grams * 10) / 10} onChange={(v) => onChange({ grams: v ?? 0 })} suffix={item.basis} aria-label={`Quantité de ${item.label}`} />
+      )}
+      {units.length > 0 && (
+        <select
+          aria-label={`Unité de ${item.label}`}
+          value={cur ? cur[0] : ''}
+          onChange={(e) => {
+            const u = units.find(([l]) => l === e.target.value);
+            if (!u) onChange({ unit: null });
+            else { const count = Math.max(0.25, Math.round((item.grams / u[1]) * 4) / 4); onChange({ unit: { label: u[0], count }, grams: count * u[1] }); }
+          }}
+          className="h-7 w-full truncate rounded-lg border border-line bg-surface px-1 text-[12px] text-muted"
+        >
+          <option value="">{item.basis === 'ml' ? 'ml' : 'grammes'}</option>
+          {units.map(([l, g]) => <option key={l} value={l}>{l} ({Math.round(g)} {item.basis})</option>)}
+        </select>
+      )}
+      {cur && <span className="text-center text-[11px] text-muted">= {Math.round(item.grams)} {item.basis}</span>}
+    </div>
   );
 }

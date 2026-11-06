@@ -1,5 +1,5 @@
 /** Onglet « Repas » : recettes, aliments personnels et portions habituelles. */
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../data/db';
 import { repo, useApp } from '../state/app';
@@ -9,6 +9,8 @@ import { filterRecipes, groupByFamily, recipeUsage } from '../domain/savedDishes
 import { checkPer100, fmtG, fmtKcal } from '../domain/nutrition';
 import type { Food, Nutrients, Recipe } from '../domain/types';
 import { newId } from '../data/ids';
+import { exportRecipes, importRecipes, parseRecipesFile } from '../data/backup';
+import { today } from '../domain/dates';
 import { CUISINES } from './labels';
 import { Button, Card, Chip, EmptyState, Field, IconButton, Notice, NumberInput, PrecisionBadge, Segmented, SourceBadge, TextInput } from '../ui/kit';
 import { IconBook, IconPlus, IconSearch, IconStar, IconText, IconTrash } from '../ui/icons';
@@ -114,6 +116,7 @@ function Recipes() {
           </div>
         </>
       )}
+      <RecipesTransfer count={recipes.length} />
       <p className="mt-6 text-center text-[12.5px] text-muted">Cuisines proposées : {CUISINES.map((c) => c.group).join(', ')}… et les tiennes.</p>
     </div>
   );
@@ -233,3 +236,30 @@ function Portions() {
   );
 }
 
+
+/** Exporter / importer ses plats (fichier JSON, sans photos) : partage ou autre appareil. */
+function RecipesTransfer({ count }: { count: number }) {
+  const input = useRef<HTMLInputElement>(null);
+  const { toast } = useFeedback();
+  const doExport = async () => {
+    const file = await exportRecipes(db);
+    const url = URL.createObjectURL(new Blob([JSON.stringify(file, null, 1)], { type: 'application/json' }));
+    const a = document.createElement('a');
+    a.href = url; a.download = `nutritrack-mes-plats-${today()}.json`; a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  };
+  const doImport = async (f: File | undefined) => {
+    if (!f) return;
+    const parsed = parseRecipesFile(await f.text());
+    if (!parsed.ok) { toast(parsed.error, 'error'); return; }
+    const r = await importRecipes(db, parsed.file);
+    toast(`${r.added} plat(s) importé(s)${r.skipped ? `, ${r.skipped} déjà présent(s)` : ''}`);
+  };
+  return (
+    <div className="mt-4 flex flex-wrap justify-center gap-2">
+      {count > 0 && <Button variant="ghost" size="sm" onClick={doExport}>Exporter mes plats</Button>}
+      <Button variant="ghost" size="sm" onClick={() => input.current?.click()}>Importer des plats</Button>
+      <input ref={input} type="file" accept="application/json,.json" className="hidden" onChange={(e) => { doImport(e.target.files?.[0]); e.target.value = ''; }} />
+    </div>
+  );
+}

@@ -301,6 +301,12 @@ export interface Preferences {
   noSaveSuggest?: string[];
   /** Éléments retirés de la liste « Récemment utilisés » (signature d'élément). */
   hiddenRecent?: string[];
+  /**
+   * Conservation des photos des repas, en jours (null/absent = toujours). 0 = la photo est
+   * supprimée dès l'enregistrement du repas (seuls le plat validé et la signature d'image restent).
+   * Les photos jointes à Mes plats ne sont jamais supprimées par ce réglage.
+   */
+  photoRetentionDays?: number | null;
 }
 
 /**

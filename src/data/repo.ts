@@ -154,6 +154,20 @@ export function createRepo(db: NutriDB) {
     async getPhoto(id: string) { return db.photos.get(id); },
     async deletePhoto(id: string) { await db.photos.delete(id); },
 
+    /** Supprime les photos de repas plus anciennes que `days` jours (le repas et ses valeurs restent). */
+    async purgeMealPhotos(days: number, todayISO: string): Promise<number> {
+      const limit = new Date(`${todayISO}T00:00:00`);
+      limit.setDate(limit.getDate() - days);
+      const cutoff = `${limit.getFullYear()}-${String(limit.getMonth() + 1).padStart(2, '0')}-${String(limit.getDate()).padStart(2, '0')}`;
+      const old = await db.meals.where('date').below(days === 0 ? '9999-12-31' : cutoff).filter((m) => !!m.photoId).toArray();
+      const keep = new Set((await db.recipes.toArray()).map((r) => r.photoId).filter(Boolean));
+      for (const m of old) {
+        if (!keep.has(m.photoId)) await db.photos.delete(m.photoId!);
+        await db.meals.put({ ...m, photoId: undefined });
+      }
+      return old.length;
+    },
+
     /* Plats photographiés : signature de l'image (pas la photo) + nom validé. */
     async recordPhotoSignatures(date: string, list: { name: string; dishId?: string; recipeId?: string; signature: number[] }[]) {
       if (!list.length) return;

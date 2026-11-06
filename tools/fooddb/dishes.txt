@@ -44,6 +44,20 @@
 - Thé vert = Thé vert chaud (sans sucre) : 150
 - Menthe fraîche = Menthe verte (nanah) fraîche : 3
 - Sucre = Sucre blanc en poudre ou en morceaux : 15
+## bissap | Jus de bissap sucré | Afrique de l'Ouest | bissap, jus d'hibiscus, karkadé, foléré, zobo
+> Verre de 250 ml ; le sucre varie beaucoup selon la recette.
+- Infusion d'hibiscus = Infusion d'hibiscus (bissap chaud) : 220
+- Sucre = Sucre blanc en poudre ou en morceaux : 30
+## jus-gingembre | Jus de gingembre sucré | Afrique de l'Ouest | gnamakoudji, jus de gingembre, djindja
+- Eau et gingembre = Eau : 220
+- Gingembre frais : 15
+- Citron = Jus de citron frais : 10
+- Sucre = Sucre blanc en poudre ou en morceaux : 30
+## lben-verre | Verre de lben (lait fermenté) | Maghreb | lben, leben, petit-lait, rayeb
+- Lait fermenté (babeurre, lben) : 250
+## cafe-turc-sucre | Café turc (ou café à la cardamome) | Moyen-Orient | café turc, kahwa, qahwa, café arabe
+- Café turc : 70
+- Sucre = Sucre blanc en poudre ou en morceaux : 5 opt
 ## the-sucre | Thé sucré | Monde | thé sucre, thé avec sucre
 - Thé = Thé noir chaud (sans sucre) : 200
 - Sucre = Sucre blanc en poudre ou en morceaux : 8
@@ -550,6 +564,14 @@
 > 3 beignets.
 - Pâte frite = Beignet nature : 90
 - Sucre = Sucre blanc en poudre ou en morceaux : 5
+## foutou-igname | Foutou d'igname et sauce arachide | Afrique de l'Ouest | foutou igname, igname pilée, pounded yam, ignames pilées
+- Igname pilée = Igname, cuite (à l'eau ou au four) : 250
+- Sauce arachide = Beurre de cacahuète lisse, sans sel : 25
+- Viande ou poisson fumé = Poisson fumé : 60
+- Huile = Huile de palme : 8 #fat
+## igname-frite | Igname frite | Afrique de l'Ouest | igname frite, yam frit
+- Igname = Igname, cuite (à l'eau ou au four) : 150
+- Huile absorbée = Huile de tournesol : 15 #fat
 ## mbongo-tchobi | Mbongo tchobi (poisson à la sauce noire) | Cameroun | mbongo, mbongo tchobi
 - Poisson = Poisson blanc vapeur : 150
 - Sauce noire (épices, huile) = Huile de palme : 15 #fat

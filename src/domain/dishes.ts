@@ -25,6 +25,10 @@ export interface CompositionIngredient {
   enabled: boolean;
   /** 'fat' = matière grasse de cuisson ; 'parts' = parties au choix ; 'side' = accompagnement. */
   group?: 'fat' | 'parts' | 'side' | null;
+  /** Mesures ménagères propres à l'aliment ([libellé, grammes]) : jamais une conversion universelle. */
+  servings?: [string, number][];
+  /** Unité choisie pour la saisie (libellé d'une mesure ménagère) et nombre ; les grammes restent la référence. */
+  unit?: { label: string; count: number } | null;
 }
 
 export interface Dish {
@@ -39,7 +43,7 @@ export interface Dish {
 
 interface RawDish {
   id: string; name: string; region: string; group: string; synonyms: string; notes: string[];
-  ingredients: { label: string; foodId: string; food: string; basis: 'g' | 'ml'; g: number; per100: (number | null)[]; optional: boolean; group: string | null }[];
+  ingredients: { label: string; foodId: string; food: string; basis: 'g' | 'ml'; g: number; per100: (number | null)[]; optional: boolean; group: string | null; portions?: [string, number][] }[];
 }
 
 export function dishFromRaw(r: RawDish): Dish {
@@ -59,6 +63,7 @@ export function dishFromRaw(r: RawDish): Dish {
       per100: i.per100,
       enabled: !i.optional,
       group: (i.group as CompositionIngredient['group']) ?? null,
+      servings: i.portions,
     })),
   };
 }
@@ -84,6 +89,7 @@ export function ingredientFromFood(food: Food, grams: number, key: string): Comp
     per100: [p.kcal, p.protein, p.carbs, p.fat, food.extra?.fiber ?? null, food.extra?.sugars ?? null],
     enabled: true,
     group: food.category === 'Matières grasses' ? 'fat' : null,
+    servings: food.servings.map((x) => [x.label, x.amount] as [string, number]),
   };
 }
 
