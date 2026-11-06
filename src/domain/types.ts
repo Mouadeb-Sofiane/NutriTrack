@@ -266,6 +266,11 @@ export interface Goals {
   /** true si l'utilisateur a fixé lui-même l'objectif calorique. */
   manual: boolean;
   basis?: { bmr: number | null; tdee: number | null; factor: number; adjustmentPct: number };
+  /**
+   * Historique des objectifs : chaque jour passé est comparé à l'objectif qui
+   * s'appliquait ce jour-là (voir domain/month.ts). Ajouté automatiquement.
+   */
+  history?: { from: ISODate; kcal: number; goal: GoalMode; manual: boolean }[];
   updatedAt: ISODateTime;
 }
 

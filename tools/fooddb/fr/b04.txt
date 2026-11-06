@@ -1,0 +1,400 @@
+168323|Estomac de porc (panse), mijoté
+167867|Estomac de porc (panse), cru
+167881|Queue de porc, mijotée
+168291|Queue de porc, crue
+168276|Langue de porc, braisée
+168275|Langue de porc, crue
+169191|Porc haché 28 % MG, émietté, cuit
+168373|Porc haché 28 % MG, poêlé
+169192|Porc haché 16 % MG, émietté, cuit
+168374|Porc haché 16 % MG, poêlé
+168372|Porc haché 16 % MG, cru
+169193|Porc haché 4 % MG, émietté, cuit
+168375|Porc haché 4 % MG, poêlé
+169190|Porc haché 4 % MG, cru
+173634|Bernache du Canada (filet sans peau), crue
+171475|Blanc de poulet avec peau, frit en beignet
+171476|Blanc de poulet avec peau, fariné et frit
+171075|Blanc de poulet avec peau, rôti
+171076|Blanc de poulet avec peau, mijoté
+171474|Blanc de poulet avec peau, cru
+171078|Blanc de poulet sans peau, frit
+171477|Blanc de poulet sans peau, rôti
+171478|Blanc de poulet sans peau, mijoté
+171509|Blanc de poulet sans peau saumuré, cru
+172374|Pilon de poulet avec peau, frit en beignet
+173611|Pilon de poulet avec peau, fariné et frit
+173612|Pilon de poulet avec peau, rôti
+173613|Pilon de poulet avec peau, mijoté
+172373|Pilon de poulet avec peau, cru
+172375|Pilon de poulet sans peau, frit
+172377|Pilon de poulet sans peau, mijoté
+171519|Pilon de poulet rôti à la broche (sans peau)
+173615|Cuisse de poulet entière avec peau, frite en beignet
+173616|Cuisse de poulet entière avec peau, farinée et frite
+173617|Cuisse de poulet entière avec peau, rôtie
+173618|Cuisse de poulet entière avec peau, mijotée
+172378|Cuisse de poulet entière avec peau, crue
+172379|Cuisse de poulet sans peau, frite
+172380|Cuisse de poulet sans peau, rôtie
+172381|Cuisse de poulet sans peau, mijotée
+173619|Cuisse de poulet sans peau, crue
+172386|Haut de cuisse de poulet avec peau, frit en beignet
+173624|Haut de cuisse de poulet avec peau, fariné et frit
+173625|Haut de cuisse de poulet avec peau, rôti
+173626|Haut de cuisse de poulet avec peau, mijoté
+172385|Haut de cuisse de poulet avec peau, cru
+172387|Haut de cuisse de poulet sans peau, frit
+172388|Haut de cuisse de poulet sans peau, rôti
+172389|Haut de cuisse de poulet sans peau, mijoté
+173628|Ailes de poulet, frites en beignet
+173629|Ailes de poulet, farinées et frites
+173630|Ailes de poulet, rôties
+173631|Ailes de poulet, mijotées
+172390|Ailes de poulet avec peau, crues
+172391|Ailes de poulet sans peau, frites
+172392|Ailes de poulet sans peau, rôties
+172393|Ailes de poulet sans peau, mijotées
+173632|Ailes de poulet sans peau, crues
+171117|Poulet haché, poêlé
+171116|Poulet haché, cru
+173639|Poulet rôti, viande brune (sans peau)
+173638|Poulet, viande brune (sans peau), crue
+172397|Abats de poulet (gésier, foie, cœur), mijotés
+172396|Abats de poulet (gésier, foie, cœur), crus
+173637|Poulet rôti, viande blanche (sans peau)
+172398|Poulet, viande blanche (sans peau), crue
+173633|Poulet rôti entier avec peau et abats
+172394|Poulet entier avec peau et abats, cru
+173635|Poulet rôti entier avec peau
+172395|Poulet rôti entier sans peau
+173636|Poulet entier sans peau, cru
+172405|Poule au pot, viande brune
+172404|Poule, viande brune, crue
+173642|Abats de poule, mijotés
+173641|Abats de poule, crus
+173644|Poule au pot, viande blanche
+173643|Poule, viande blanche, crue
+172399|Poule au pot entière avec peau et abats
+173640|Poule entière avec peau et abats, crue
+172401|Poule au pot avec peau
+172400|Poule avec peau, crue
+172403|Poule au pot sans peau
+172402|Poule sans peau, crue
+169905|Pigeon, cuit
+174467|Foie de canard, cru
+172409|Canard avec peau, rôti
+172408|Canard avec peau, cru
+172411|Canard sans peau, rôti
+172410|Canard sans peau, cru
+174469|Canard sauvage, filet sans peau, cru
+174468|Canard sauvage avec peau, cru
+171510|Magret de canard avec peau, rôti
+171511|Magret de canard sans peau, grillé
+171112|Cuisse de canard avec peau, rôtie
+171113|Cuisse de canard sans peau, braisée
+174477|Émeu (filet éventail), grillé
+174476|Émeu (filet éventail), cru
+174478|Émeu (filet plat), cru
+172834|Émeu (croupe), grillé
+174479|Émeu (croupe), cru
+172833|Émeu haché, poêlé
+172832|Émeu haché, cru
+172835|Émeu (pilon intérieur), cru
+172836|Émeu (pilon intérieur), grillé
+172837|Émeu (pilon extérieur), cru
+172838|Émeu (sot-l'y-laisse), cru
+174480|Émeu (faux-filet), grillé
+172412|Oie avec peau, rôtie
+174470|Oie avec peau, crue
+172414|Oie sans peau, rôtie
+172413|Oie sans peau, crue
+172415|Foie d'oie, cru
+174483|Autruche (éventail), crue
+174482|Autruche hachée, poêlée
+174481|Autruche hachée, crue
+172840|Autruche (cuisse intérieure), cuite
+172839|Autruche (cuisse intérieure), crue
+172842|Autruche (filet intérieur), cuit
+172841|Autruche (filet intérieur), cru
+174484|Autruche (cuisse extérieure), crue
+174486|Autruche (filet extérieur), cuit
+174485|Autruche (filet extérieur), cru
+172843|Autruche (sot-l'y-laisse), cuite
+174487|Autruche (sot-l'y-laisse), crue
+172844|Autruche (rond), cru
+172845|Autruche (filet), cru
+174488|Autruche (pointe), cuite
+172846|Autruche (pointe), crue
+174490|Autruche (faux-filet), cuit
+174489|Autruche (faux-filet), cru
+171100|Pâté de foie gras (oie), en conserve
+174474|Faisan, filet sans peau, cru
+169903|Faisan, cuit
+172417|Faisan, cuisse sans peau, crue
+174472|Faisan avec peau, cru
+174473|Faisan sans peau, cru
+172829|Caille, filet sans peau, cru
+169902|Caille, cuite
+172418|Caille avec peau, crue
+172419|Caille sans peau, crue
+171080|Pigeonneau, viande blanche sans peau, crue
+174475|Pigeonneau avec peau, cru
+171079|Pigeonneau sans peau, cru
+171506|Dinde hachée, cuite
+171505|Dinde hachée, crue
+174494|Dinde hachée 15 % MG, émiettée, poêlée
+174495|Steak de dinde haché 15 % MG, grillé
+174493|Dinde hachée 15 % MG, crue
+172851|Dinde hachée 7 % MG, émiettée, poêlée
+174492|Steak de dinde haché 7 % MG, grillé
+172850|Dinde hachée 7 % MG, crue
+172848|Dinde hachée 0 % MG, émiettée, poêlée
+172849|Steak de dinde haché 0 % MG, grillé
+172847|Dinde hachée 0 % MG, crue
+171097|Dinde, dos sans peau, rôti
+171096|Dinde, dos sans peau, cru
+171496|Blanc de dinde sans peau, rôti
+171098|Blanc de dinde (escalope), cru
+171091|Dinde, viande brune, rôtie
+171489|Dinde, viande brune avec peau, rôtie
+171090|Dinde, viande brune sans peau, crue
+171084|Abats de dinde, mijotés
+171083|Abats de dinde, crus
+171089|Dinde, viande blanche avec peau, rôtie
+171088|Dinde, viande blanche avec peau, crue
+171490|Dinde, viande blanche, crue
+171479|Dinde entière avec peau, rôtie
+171081|Dinde entière avec peau, crue
+172870|Dinde entière avec peau, saumurée, crue
+172871|Dinde entière avec peau, saumurée, rôtie
+171481|Dinde entière sans peau, rôtie
+171480|Dinde entière sans peau, crue
+172868|Dinde sans peau, saumurée, crue
+172869|Dinde sans peau, saumurée, rôtie
+171087|Cou de dinde, mijoté
+171086|Cou de dinde, cru
+171482|Peau de dinde, crue
+171082|Peau de dinde, rôtie
+171498|Aile de dinde sans peau, rôtie
+171497|Aile de dinde sans peau, crue
+172232|Basilic frais
+172238|Câpres en conserve
+172233|Aneth frais
+173472|Raifort préparé
+172234|Moutarde douce américaine (jaune)
+173474|Menthe poivrée fraîche
+173473|Romarin frais
+173468|Sel de table
+173476|Mélange d'épices pour chili
+172242|Mélange d'assaisonnement sazón (coriandre et roucou)
+172243|Mélange d'épices pour tacos
+172239|Menthe verte séchée
+173475|Menthe verte (nanah) fraîche
+171315|Piment de la Jamaïque (quatre-épices) moulu
+171316|Graines d'anis vert
+171317|Basilic séché
+170917|Laurier (feuille)
+170918|Graines de carvi
+170919|Cardamome
+170920|Graines de céleri
+171318|Cerfeuil séché
+171319|Piment en poudre (chili)
+171320|Cannelle moulue
+171321|Clou de girofle moulu
+170921|Coriandre séchée (feuilles)
+170922|Graines de coriandre
+170923|Cumin (graines)
+170924|Curry en poudre
+170925|Graines d'aneth
+171322|Aneth séché
+171323|Graines de fenouil
+171324|Fenugrec (graines)
+171325|Ail en poudre
+170926|Gingembre moulu
+170927|Macis moulu
+170928|Marjolaine séchée
+170929|Moutarde en poudre
+171326|Noix de muscade moulue
+171327|Oignon en poudre
+171328|Origan séché
+171329|Paprika
+170930|Persil séché
+170931|Poivre noir
+170932|Piment de Cayenne
+170933|Poivre blanc
+171330|Graines de pavot
+171331|Mélange d'herbes pour volaille
+171332|Mélange d'épices pour tarte au potiron
+171333|Romarin séché
+170934|Safran
+170935|Sauge moulue
+170936|Sarriette moulue
+170937|Estragon séché
+170938|Thym séché
+172231|Curcuma moulu
+173470|Thym frais
+173471|Extrait de vanille
+172241|Vinaigre balsamique
+173469|Vinaigre de cidre
+172237|Vinaigre blanc (d'alcool)
+172240|Vinaigre de vin rouge
+168384|Graines d'alfalfa germées, crues
+169202|Feuilles d'amarante, cuites
+168385|Feuilles d'amarante, crues
+169204|Sagittaire (tubercule), cuite
+169203|Sagittaire (tubercule), crue
+168490|Arrow-root (racine), cru
+168386|Artichaut, cuit à l'eau
+168388|Artichaut surgelé, cuit à l'eau
+169205|Artichaut, cru
+169387|Roquette, crue
+169207|Asperges en conserve, égouttées
+169206|Asperges en conserve (avec le jus)
+168390|Asperges, cuites à l'eau
+169209|Asperges surgelées, cuites
+168389|Asperges, crues
+168392|Pousses de margose (melon amer), cuites
+168391|Pousses de margose (melon amer), crues
+168394|Margose (melon amer), cuite
+168393|Margose (melon amer), crue
+169212|Pousses de bambou en conserve, égouttées
+169211|Pousses de bambou, cuites
+169210|Pousses de bambou, crues
+168574|Fèves fraîches en cosse, crues
+169213|Germes de haricots rouges, crus
+170079|Germes de soja (haricot mungo) en conserve, égouttés
+169139|Germes de haricots blancs, crus
+169959|Haricots pinto frais surgelés, cuits
+170086|Germes de haricots pinto, crus
+169960|Haricots à écosser en conserve
+169144|Haricots verts assaisonnés en conserve
+169143|Haricots verts en conserve, égouttés
+169142|Haricots verts en conserve (avec le jus)
+169141|Haricots verts, cuits à l'eau
+169964|Haricots verts surgelés, cuits au micro-ondes
+169963|Haricots verts surgelés, cuits à l'eau
+169965|Haricots verts, cuits au micro-ondes
+169961|Haricots verts, crus
+169374|Haricots beurre en conserve, égouttés
+168503|Haricots beurre en conserve (avec le jus)
+169322|Haricots beurre, cuits à l'eau
+169324|Haricots beurre surgelés
+169326|Haricots beurre surgelés, cuits
+169320|Haricots beurre, crus
+170376|Fanes de betterave, cuites
+170375|Fanes de betterave, crues
+169966|Betteraves en conserve, égouttées
+169147|Betteraves en conserve (avec le jus)
+169146|Betterave rouge, cuite
+170479|Betteraves à l'aigre-douce en conserve
+170480|Betteraves au vinaigre
+169145|Betterave rouge, crue
+170482|Bourrache, cuite
+170481|Bourrache, crue
+170378|Fèves fraîches, cuites
+170377|Fèves fraîches, crues
+170382|Brocoli-rave (cime de navet), cuit
+170381|Brocoli-rave (cime de navet), cru
+169392|Brocoli chinois (gai lan), cuit
+169404|Brocoli chinois (gai lan), cru
+169967|Brocoli, cuit à l'eau
+169330|Fleurettes de brocoli, crues
+169969|Brocoli haché surgelé, cuit
+169968|Brocoli haché surgelé
+170380|Brocoli en tiges surgelé, cuit
+169329|Feuilles de brocoli, crues
+170379|Brocoli, cru
+169331|Tiges de brocoli, crues
+169971|Choux de Bruxelles, cuits
+169973|Choux de Bruxelles surgelés, cuits
+170383|Choux de Bruxelles, crus
+170384|Racine de bardane, cuite
+169974|Racine de bardane, crue
+170385|Pétasite du Japon (fuki), cru
+170387|Pétasite du Japon (fuki) en conserve
+170386|Pétasite du Japon (fuki), cuit
+170391|Pak-choï (chou chinois), cuit
+170390|Pak-choï (chou chinois), cru
+169980|Chou chinois (pé-tsaï), cuit
+169979|Chou chinois (pé-tsaï), cru
+169335|Chou blanc nouveau, cru
+169336|Chou blanc de conservation, cru
+169976|Chou blanc, cuit à l'eau
+169890|Chou mariné à la japonaise
+170392|Kimchi (chou fermenté)
+169891|Chou moutarde salé
+168572|Chou napa, cuit
+169975|Chou blanc, cru
+169978|Chou rouge, cuit
+169977|Chou rouge, cru
+170389|Chou de Milan, cuit
+170388|Chou de Milan, cru
+169982|Cardon, cuit
+169981|Cardon, cru
+170491|Jus de carotte
+170500|Carotte déshydratée
+168568|Mini-carottes, crues
+170396|Carottes en conserve, égouttées
+170395|Carottes en conserve (avec le jus)
+170394|Carottes, cuites à l'eau
+169984|Carottes surgelées, cuites
+170393|Carotte, crue
+169985|Manioc, cru
+168556|Ketchup
+170397|Chou-fleur, cuit à l'eau
+170399|Chou-fleur surgelé, cuit
+169389|Chou-fleur vert (romanesco), cru
+169986|Chou-fleur, cru
+169987|Céleri-rave, cuit
+170400|Céleri-rave, cru
+169989|Céleri branche, cuit
+169988|Céleri branche, cru
+169990|Laitue-asperge (celtuce), crue
+170401|Blettes, cuites
+169991|Blettes, crues
+170403|Christophine (chayote), cuite
+170402|Christophine (chayote), crue
+169992|Feuilles de chicorée, crues
+169993|Racine de chicorée, crue
+170404|Endive, crue
+170075|Ciboulette lyophilisée
+169994|Ciboulette fraîche
+168491|Feuilles de chrysanthème, crues
+170405|Chrysanthème comestible (shungiku), cuit
+169995|Chrysanthème comestible (shungiku), cru
+170407|Chou cavalier (collard), cuit
+169996|Chou cavalier haché surgelé, cuit
+170408|Chou cavalier haché surgelé
+170406|Chou cavalier (collard), cru
+169997|Coriandre fraîche (feuilles)
+170492|Pudding de maïs maison
+169218|Maïs aux poivrons en conserve
+169362|Maïs blanc à la crème en conserve
+168542|Maïs blanc en conserve sous vide
+169361|Maïs blanc en grains en conserve, égoutté
+168541|Maïs blanc en grains en conserve (avec le jus)
+168539|Maïs doux blanc, cuit
+168545|Maïs blanc en grains surgelé, cuit
+168544|Maïs blanc en grains surgelé
+169366|Épi de maïs blanc surgelé, cuit
+169365|Épi de maïs blanc surgelé
+168538|Maïs doux blanc, cru
+170409|Maïs doux en conserve (avec le jus)
+169215|Maïs à la crème en conserve
+168397|Maïs doux en conserve, égoutté et rincé
+169216|Maïs doux en conserve sous vide
+169214|Maïs doux en grains en conserve, égoutté
+169999|Maïs doux, cuit
+168399|Maïs doux en grains surgelé, cuit
+168401|Épi de maïs surgelé, cuit
+168400|Épi de maïs surgelé
+169998|Maïs doux (épi), cru
+169217|Maïs en grains surgelé, cuit au micro-ondes
+169219|Mâche, crue
+168402|Niébé frais (haricot à œil noir), cuit
+168404|Niébé frais surgelé, cuit
+169220|Niébé frais (haricot à œil noir), cru
+168406|Feuilles de niébé, cuites
+169224|Feuilles de niébé, crues
+169221|Jeunes gousses de niébé, cuites

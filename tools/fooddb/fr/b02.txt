@@ -1,0 +1,400 @@
+173702|Surimi
+173704|Espadon, cuit
+173703|Espadon, cru
+175177|Tilapia, cuit
+175176|Tilapia, cru
+175152|Tile (poisson), cuit
+173705|Tile (poisson), cru
+175181|Omble de fontaine, cru
+172004|Truite, cuite
+175153|Truite, crue
+173718|Truite arc-en-ciel d'élevage, cuite
+173717|Truite arc-en-ciel d'élevage, crue
+175155|Truite arc-en-ciel sauvage, cuite
+175154|Truite arc-en-ciel sauvage, crue
+175160|Salade de thon (thon mayonnaise)
+173707|Thon rouge frais, cuit
+173706|Thon rouge frais, cru
+175156|Bonite (listao) fraîche, crue
+175159|Thon albacore frais, cru
+173708|Thon à l'huile, égoutté
+174227|Thon à l'huile sans sel, égoutté
+171986|Thon au naturel sans sel, égoutté
+172005|Bonite (listao) fraîche, cuite
+175157|Thon blanc (germon) à l'huile, égoutté
+171987|Thon blanc (germon) à l'huile sans sel, égoutté
+175158|Thon blanc (germon) au naturel, égoutté
+171988|Thon blanc (germon) au naturel sans sel, égoutté
+172006|Thon albacore frais, cuit
+174245|Turbot, cuit
+173710|Turbot, cru
+174246|Corégone (poisson blanc), cuit
+173711|Corégone (poisson blanc), cru
+173712|Corégone fumé
+175161|Merlan, cuit
+173713|Merlan, cru
+174247|Loup atlantique, cuit
+175162|Loup atlantique, cru
+174248|Sériole, cuite
+175163|Sériole, crue
+168148|Cuisses de grenouille, crues
+168129|Méduse séchée salée
+174213|Ormeau, frit
+174212|Ormeau, cru
+171976|Palourdes en conserve, égouttées
+171977|Jus de palourdes en conserve
+171974|Palourdes panées frites
+171975|Palourdes, cuites
+174214|Palourdes, crues
+173720|Lambi (conque), grillé
+172010|Seiche, cuite
+174215|Seiche, crue
+174217|Moules, cuites
+174216|Moules, crues
+174249|Poulpe, cuit
+174218|Poulpe, cru
+174250|Huîtres creuses, cuites
+174219|Huîtres creuses, crues
+171981|Huîtres en conserve
+171979|Huîtres panées frites
+175173|Huîtres d'élevage, cuites
+175172|Huîtres d'élevage, crues
+175171|Huîtres sauvages, grillées
+171980|Huîtres sauvages, pochées
+171978|Huîtres sauvages, crues
+167742|Noix de Saint-Jacques, cuites à la vapeur
+174221|Noix de Saint-Jacques panées frites
+174220|Noix de Saint-Jacques, crues
+167744|Escargots, crus
+171982|Calamars frits
+174223|Calamars (encornets), crus
+171984|Bulots, cuits
+171983|Bulots, crus
+173721|Bouchées de saumon panées, réchauffées
+173722|Bouchées de saumon panées, non réchauffées
+173723|Saumon rouge en conserve, égoutté, sans peau ni arêtes
+175174|Saumon rouge en conserve (avec le jus)
+167745|Tortue verte, crue
+167782|Abiyuch, cru
+171687|Jus d'acérola
+171686|Acérola (cerise des Antilles), crue
+167771|Jus de pomme
+167800|Jus de pomme enrichi en calcium
+173933|Jus de pomme
+173935|Jus de pomme à base de concentré, dilué
+167775|Jus de pomme à base de concentré, dilué
+168188|Jus de pomme concentré, non dilué
+173934|Jus de pomme concentré, non dilué
+173930|Pommes au sirop en tranches, égouttées, chauffées
+171690|Pommes déshydratées, cuites
+173931|Pommes déshydratées
+171693|Pommes séchées, compotées avec sucre
+171692|Pommes séchées, compotées sans sucre
+171691|Pommes séchées
+168202|Pomme golden, crue, avec peau
+171689|Pomme crue sans peau
+173928|Pomme sans peau, cuite à l'eau
+173929|Pomme sans peau, cuite au micro-ondes
+171696|Compote de pommes sucrée
+167772|Compote de pommes sans sucre ajouté
+171704|Nectar d'abricot
+171701|Abricots au sirop très épais
+171699|Abricots au sirop épais, avec peau
+171700|Abricots au sirop épais, sans peau
+167768|Abricots au sirop, égouttés
+173937|Abricots au jus
+173939|Abricots au sirop léger
+171698|Abricots au naturel, avec peau
+173936|Abricots au naturel, sans peau
+173940|Abricots déshydratés, cuits
+171702|Abricots déshydratés
+173943|Abricots secs compotés avec sucre
+173942|Abricots secs compotés sans sucre
+173941|Abricots secs
+171703|Abricots surgelés sucrés
+171697|Abricot, cru
+171706|Avocat (variété Hass), cru
+171707|Avocat (variété Floride), cru
+171705|Avocat, cru
+173945|Banane déshydratée ou poudre de banane
+173944|Banane, crue
+167806|Poudre de baobab (pain de singe)
+171709|Mûres au sirop épais
+171710|Mûres surgelées non sucrées
+173946|Mûres, crues
+173947|Jus de mûre
+173948|Myrtilles au sirop épais
+168179|Myrtilles au sirop léger, égouttées
+168158|Myrtilles séchées sucrées
+173951|Myrtilles surgelées sucrées
+171711|Myrtilles, crues
+168180|Myrtilles sauvages au sirop épais, égouttées
+171712|Mûres de Boysen au sirop épais
+171713|Mûres de Boysen surgelées
+171714|Fruit à pain (uru), cru
+167781|Fruits confits
+171715|Carambole, crue
+173952|Prune du Natal (carissa), crue
+173953|Chérimole (anone), crue
+167769|Griottes au naturel, égouttées
+171717|Griottes au sirop très épais
+171716|Griottes au sirop épais
+173956|Griottes au sirop léger
+173955|Griottes au naturel
+173954|Griottes, crues
+171720|Cerises au sirop très épais
+173958|Cerises au jus
+173959|Cerises au sirop léger
+173960|Cerises dénoyautées au sirop épais
+167770|Cerises dénoyautées au sirop, égouttées
+173957|Cerises au naturel
+171719|Cerises, crues
+167807|Jus de griotte
+168195|Clémentine, crue
+171721|Pomme sauvage, crue
+171722|Canneberges (cranberries), crues
+168212|Jus de canneberge 100 % (mélange)
+168117|Jus de canneberge non sucré
+173961|Sauce aux canneberges sucrée
+173962|Condiment canneberge-orange
+173963|Cassis, cru
+173964|Groseilles, crues
+171724|Raisins de Corinthe secs
+171725|Cœur de bœuf (anone réticulée), cru
+171726|Dattes deglet nour
+168191|Dattes medjool
+168192|Durian, cru ou surgelé
+171727|Baies de sureau, crues
+168176|Feijoa, cru
+173025|Figues au sirop très épais
+173024|Figues au sirop épais
+173023|Figues au sirop léger
+173022|Figues au naturel
+174666|Figues sèches compotées
+174665|Figues sèches
+173021|Figue, crue
+173029|Cocktail de fruits au sirop très épais
+173026|Cocktail de fruits au sirop très léger
+173028|Cocktail de fruits au sirop épais
+174668|Cocktail de fruits au jus
+173027|Cocktail de fruits au sirop léger
+174667|Cocktail de fruits au naturel
+168178|Cocktail de fruits au sirop, égoutté
+174672|Salade de fruits au sirop très épais
+174670|Salade de fruits au jus
+174671|Salade de fruits au sirop léger
+174669|Salade de fruits au naturel
+167764|Salade de fruits tropicaux au sirop épais
+173032|Baies de goji séchées
+173031|Groseilles à maquereau au sirop léger
+173030|Groseilles à maquereau, crues
+173041|Jus de raisin
+168207|Jus de raisin enrichi en calcium
+173042|Jus de raisin
+173038|Jus de pamplemousse rose enrichi en calcium
+167774|Jus de pamplemousse rose frais
+174678|Jus de pamplemousse non sucré
+174679|Jus de pamplemousse sucré
+174681|Jus de pamplemousse à base de concentré, dilué
+174680|Jus de pamplemousse concentré, non dilué
+173039|Jus de pamplemousse blanc frais
+173033|Pamplemousse, cru
+174674|Pamplemousse rose (Californie), cru
+174675|Pamplemousse rose (Floride), cru
+174673|Pamplemousse rose, cru
+174677|Pamplemousse blanc (Californie), cru
+173034|Pamplemousse blanc (Floride), cru
+174676|Pamplemousse blanc, cru
+173036|Quartiers de pamplemousse au jus
+173037|Quartiers de pamplemousse au sirop léger
+173035|Quartiers de pamplemousse au naturel
+174682|Raisin type américain, cru
+174685|Raisin sans pépins au sirop épais
+174684|Raisin sans pépins au naturel
+173040|Raisin muscadine, cru
+174683|Raisin blanc ou noir, cru
+173043|Physalis (amour en cage), cru
+168196|Nectar de corossol
+167784|Nectar de goyave
+168210|Nectar de goyave édulcoré
+174686|Sauce de goyave cuite
+173044|Goyave, crue
+173045|Goyave fraise, crue
+167791|Kiwano (melon à cornes)
+168190|Jacquier au sirop
+174687|Jacquier (jaque), cru
+168150|Jamelongue (prune de Java), crue
+168197|Jus de pomme et raisin
+168198|Jus de pomme, raisin et poire
+168152|Jujubes séchés
+168151|Jujube, cru
+168153|Kiwi, cru
+168154|Kumquat, cru
+167748|Jus de citron à base de concentré
+167747|Jus de citron frais
+167749|Zeste de citron
+167746|Citron sans peau, cru
+168157|Jus de citron vert en bouteille
+168156|Jus de citron vert frais
+168155|Citron vert, cru
+169087|Litchis séchés
+169086|Litchi, cru
+169088|Mûres de Logan surgelées
+169907|Longanes séchés
+169089|Longane, cru
+169908|Nèfle du Japon (bibasse), crue
+169909|Abricot des Antilles (mamey), cru
+167785|Nectar de mangue
+169091|Mangue séchée sucrée
+169910|Mangue, crue
+169090|Mangoustan au sirop
+167766|Cerises au marasquin, égouttées
+169912|Billes de melon surgelées
+169092|Melon cantaloup (charentais), cru
+169093|Melon casaba, cru
+169911|Melon miel (honeydew), cru
+169913|Mûres blanches (mûrier), crues
+167788|Nance au sirop, égoutté
+167789|Nance surgelé
+167790|Pulpe de lulo (naranjilla) surgelée
+169914|Nectarine, crue
+169915|Baies d'ohelo, crues
+169096|Olives vertes en saumure
+169095|Olives noires en conserve (grosses)
+169094|Olives noires en conserve
+167792|Jus orange-ananas
+169099|Jus d'orange en conserve
+169100|Jus d'orange réfrigéré
+169920|Jus d'orange enrichi en calcium
+169101|Jus d'orange enrichi en calcium et vitamine D
+167794|Jus d'orange enrichi en calcium et vitamines
+169102|Jus d'orange à base de concentré, dilué
+169921|Jus d'orange à base de concentré enrichi en calcium, dilué
+169923|Jus d'orange concentré, non dilué
+169922|Jus d'orange concentré enrichi en calcium, non dilué
+169103|Zeste d'orange
+169104|Jus d'orange et pamplemousse
+169916|Orange valencia, crue
+169918|Orange (Floride), crue
+169097|Orange, crue
+169919|Orange avec peau, crue
+169107|Nectar de papaye
+169927|Papaye au sirop, égouttée
+169926|Papaye, crue
+169109|Jus de fruit de la passion (violet)
+169110|Jus de fruit de la passion (jaune)
+169108|Fruit de la passion (maracuja), cru
+168185|Nectar de pêche
+169117|Nectar de pêche édulcoré
+169113|Pêches au sirop très épais
+169112|Pêches au sirop épais
+168181|Pêches au sirop, égouttées
+169930|Pêches au jus
+169111|Pêches au sirop léger
+169929|Pêches au naturel
+169933|Pêches déshydratées, cuites
+169932|Pêches déshydratées
+169115|Pêches séchées compotées avec sucre
+169935|Pêches séchées compotées sans sucre
+169934|Pêches séchées
+169116|Pêches surgelées sucrées
+169114|Pêches épicées au sirop
+169928|Pêche jaune, crue
+168186|Nectar de poire
+169940|Nectar de poire
+168177|Nashi (poire asiatique), cru
+169120|Poires au sirop très épais
+169939|Poires au sirop épais
+168182|Poires au sirop, égouttées
+169936|Poires au jus
+169938|Poires au sirop léger
+169119|Poires au naturel
+169123|Poires séchées compotées avec sucre
+169122|Poires séchées compotées sans sucre
+169121|Poires séchées
+169118|Poire, crue
+167777|Poire rouge (anjou), crue
+169942|Kaki séché
+169941|Kaki, cru
+169943|Kaki de Virginie, cru
+168187|Jus d'ananas
+169947|Jus d'ananas
+168205|Jus d'ananas pur jus enrichi en vitamines
+169128|Jus d'ananas à base de concentré, dilué
+169948|Jus d'ananas concentré, non dilué
+169945|Ananas au sirop très épais
+169944|Ananas au sirop épais
+167767|Ananas au jus, égoutté
+169126|Ananas au jus
+169127|Ananas au sirop léger
+169125|Ananas au naturel
+169946|Ananas en morceaux surgelé sucré
+169124|Ananas, cru
+168194|Ananas extra-doux, cru
+168193|Ananas, cru
+169129|Pitanga (cerise de Cayenne), crue
+168216|Banane plantain verte, bouillie
+168199|Banane plantain verte, frite (tostones)
+168215|Banane plantain verte, crue
+169131|Banane plantain mûre, au four
+168200|Banane plantain mûre, frite (alloco)
+169130|Banane plantain mûre, crue
+168183|Prunes au sirop, égouttées
+169133|Prunes au sirop très épais
+169132|Prunes au sirop épais
+169951|Prunes au jus
+169952|Prunes au sirop léger
+169950|Prunes au naturel
+167752|Pruneaux compotés avec sucre
+167751|Pruneaux compotés sans sucre
+168162|Pruneaux
+169949|Prune, crue
+167787|Jus de grenade
+169134|Grenade, crue
+167750|Figue de Barbarie, crue
+167753|Jus de pruneau
+167780|Purée de pruneaux
+168159|Pruneaux au sirop épais
+168161|Pruneaux déshydratés, cuits
+168160|Pruneaux déshydratés
+167754|Pomelo, cru
+168163|Coing, cru
+168164|Raisins secs blonds
+168166|Raisins secs avec pépins
+168167|Ramboutan au sirop
+167756|Framboises au sirop épais
+167757|Framboises surgelées sucrées
+168209|Framboises surgelées non sucrées
+167808|Purée de framboises sans pépins
+167809|Purée de framboises avec pépins
+167755|Framboises, crues
+168217|Jus de framboise concentré
+168169|Rhubarbe cuite avec sucre
+168168|Rhubarbe surgelée
+167758|Rhubarbe, crue
+168171|Pomme rose (jambose), crue
+168170|Bissap (oseille de Guinée, roselle), cru
+167783|Rowal, cru
+167759|Sapotille, crue
+167760|Sapote (mamey), crue
+167761|Corossol, cru
+168172|Fraises au sirop épais
+168174|Fraises surgelées sucrées
+167762|Fraises, crues
+168175|Pomme cannelle, crue
+167786|Nectar de tamarin
+167763|Tamarin, cru
+169925|Jus de mandarine frais
+169106|Mandarines au jus
+168184|Mandarines au jus, égouttées
+169924|Mandarines au sirop léger
+169105|Mandarine, crue
+167765|Pastèque, crue
+173847|Bison haché, cuit
+175293|Bison haché, cru
+174421|Bison haché, cru
+173848|Beefalo (moyenne des morceaux), rôti
+175296|Beefalo (moyenne des morceaux), cru
+174422|Bison haché, poêlé
+175300|Buffle d'eau, rôti
+175299|Buffle d'eau, cru

@@ -8,12 +8,14 @@ import { href, navigate, type Route } from '../state/router';
 import { addDays, formatDayLabel, formatShortDate, isISODate, today } from '../domain/dates';
 import { frequentFoods, movingAverage, periodSummary, sortWeights, weeklyAverages, weightProgress } from '../domain/stats';
 import { fmtG, fmtKcal } from '../domain/nutrition';
-import { Button, Card, Chip, EmptyState, Field, IconButton, Notice, NumberInput, SectionTitle, Segmented, Stat, TextInput } from '../ui/kit';
+import { Button, Card, Chip, cx, EmptyState, Field, IconButton, Notice, NumberInput, SectionTitle, Segmented, Stat, TextInput } from '../ui/kit';
 import { ProgressBar } from '../ui/charts';
-import { IconChart, IconScale, IconTrash } from '../ui/icons';
+import { IconChart, IconChevronLeft, IconChevronRight, IconScale, IconTrash } from '../ui/icons';
+import { buildMonthView, deviationText, monthOf, shiftMonth, TONE_LABEL, type DayTone } from '../domain/month';
+import { GOAL_LABEL } from './labels';
 import { useFeedback } from '../ui/feedback';
 
-type Tab = 'weight' | 'history';
+type Tab = 'weight' | 'month' | 'history';
 
 export function Progress({ route }: { route: Route }) {
   const tab = (route.query.get('tab') as Tab) || 'weight';
@@ -21,9 +23,9 @@ export function Progress({ route }: { route: Route }) {
     <div className="mx-auto max-w-lg px-4 pb-28">
       <header className="safe-top pt-4">
         <h1 className="mb-3 text-2xl font-extrabold">Progression</h1>
-        <Segmented<Tab> value={tab} onChange={(t) => navigate('progress', { tab: t }, { replace: true })} options={[{ value: 'weight', label: 'Poids' }, { value: 'history', label: 'Historique' }]} />
+        <Segmented<Tab> value={tab} onChange={(t) => navigate('progress', { tab: t }, { replace: true })} options={[{ value: 'weight', label: 'Poids' }, { value: 'month', label: 'Mois' }, { value: 'history', label: 'Historique' }]} />
       </header>
-      {tab === 'weight' ? <Weight /> : <History />}
+      {tab === 'weight' ? <Weight /> : tab === 'month' ? <MonthTab route={route} /> : <History />}
     </div>
   );
 }
@@ -206,6 +208,135 @@ function History() {
               </li>
             ))}
           </ul>
+        </>
+      )}
+    </div>
+  );
+}
+
+/** Couleurs informatives (jamais un jugement) : même palette que les badges existants. */
+const TONE_STYLE: Record<DayTone, string> = {
+  near: 'bg-brand-soft text-brand-strong',
+  moderate: 'bg-[#fff6dc] text-[#8a6100]',
+  marked: 'bg-warn-soft text-warn',
+  large: 'bg-[#fde8e4] text-[#a8321b]',
+};
+
+const WEEKDAYS = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
+
+function MonthTab({ route }: { route: Route }) {
+  const { goals, profile } = useApp();
+  const qm = route.query.get('m');
+  const month = qm && /^\d{4}-\d{2}$/.test(qm) ? qm : monthOf(today());
+  const setMonth = (m: string) => navigate('progress', { tab: 'month', m: m === monthOf(today()) ? undefined : m }, { replace: true });
+  const [selected, setSelected] = useState<string | null>(null);
+  const first = `${month}-01`;
+  const last = `${month}-31`;
+  const meals = useLiveQuery(() => db.meals.where('date').between(first, last, true, true).toArray(), [first, last]);
+  const exercises = useLiveQuery(() => db.exercises.where('date').between(first, last, true, true).toArray(), [first, last]);
+  const view = useMemo(() => meals && exercises ? buildMonthView(month, meals, {
+    history: goals?.history ?? [],
+    current: goals ? { kcal: goals.kcal, goal: profile?.goal ?? 'maintain' } : null,
+    exercises, energyMethod: profile?.energyMethod, exerciseCredit: profile?.exerciseCredit,
+  }) : null, [month, meals, exercises, goals, profile]);
+  if (!view) return null;
+  const s = view.stats;
+  const isCurrent = month === monthOf(today());
+  const sel = selected ? view.grid.find((d) => d.date === selected) : null;
+  const goalMode = profile?.goal ?? 'maintain';
+
+  return (
+    <div className="mt-4">
+      <div className="mb-2 flex items-center justify-between">
+        <IconButton label="Mois précédent" onClick={() => { setSelected(null); setMonth(shiftMonth(month, -1)); }}><IconChevronLeft /></IconButton>
+        <div className="text-center">
+          <div className="text-lg font-extrabold first-letter:uppercase">{view.label}</div>
+          {!isCurrent && <button type="button" className="text-[12px] font-medium text-brand" onClick={() => setMonth(monthOf(today()))}>Revenir au mois en cours</button>}
+        </div>
+        <IconButton label="Mois suivant" disabled={isCurrent} onClick={() => { setSelected(null); setMonth(shiftMonth(month, 1)); }}><IconChevronRight /></IconButton>
+      </div>
+
+      <Card className="!p-2.5">
+        <div className="grid grid-cols-7 gap-1 text-center text-[11px] font-semibold text-muted">
+          {WEEKDAYS.map((w, i) => <div key={i} className="py-1">{w}</div>)}
+        </div>
+        <div className="grid grid-cols-7 gap-1">
+          {view.grid.map((d) => {
+            const day = Number(d.date.slice(8));
+            if (!d.inMonth) return <div key={d.date} />;
+            const future = d.date > today();
+            return (
+              <button
+                key={d.date}
+                type="button"
+                disabled={future}
+                onClick={() => setSelected(selected === d.date ? null : d.date)}
+                aria-label={`${formatDayLabel(d.date)}${d.totals ? ` : ${fmtKcal(d.totals.kcal)} kcal` : ' : aucun repas'}${d.tone ? `, ${TONE_LABEL[d.tone]}` : ''}`}
+                aria-pressed={selected === d.date}
+                className={cx('flex min-h-[54px] flex-col items-center justify-center rounded-xl px-0.5 tabular-nums transition-colors',
+                  d.tone ? TONE_STYLE[d.tone] : d.totals ? 'bg-line/50' : 'bg-bg text-muted',
+                  selected === d.date && 'ring-2 ring-ink/70', d.date === today() && 'font-extrabold', future && 'opacity-40')}
+              >
+                <span className="text-[12px] leading-none">{day}</span>
+                {d.totals && <span className="mt-1 text-[11px] font-semibold leading-none">{fmtKcal(d.totals.kcal)}</span>}
+              </button>
+            );
+          })}
+        </div>
+        <div className="mt-2.5 flex flex-wrap gap-x-3 gap-y-1 px-1 text-[11.5px] text-muted">
+          {(Object.keys(TONE_LABEL) as DayTone[]).map((t) => <span key={t} className="inline-flex items-center gap-1"><span className={cx('inline-block h-3 w-3 rounded', TONE_STYLE[t])} />{TONE_LABEL[t]}</span>)}
+        </div>
+      </Card>
+
+      {sel && (
+        <Card className="anim-fade mt-3">
+          <div className="flex items-start justify-between gap-2">
+            <div>
+              <div className="font-bold first-letter:uppercase">{formatDayLabel(sel.date)}</div>
+              {sel.totals ? (
+                <div className="mt-1 text-[14px] tabular-nums">
+                  <b>{fmtKcal(sel.totals.kcal)} kcal</b>{sel.target ? <span className="text-muted"> / objectif {fmtKcal(sel.target)} kcal</span> : null}
+                  {sel.target != null && sel.goal && <div className="text-[13px] text-muted">{deviationText(sel.totals.kcal, sel.target, sel.goal)}{sel.tone ? ` · ${TONE_LABEL[sel.tone].toLowerCase()}` : ''}</div>}
+                  <div className="mt-1 text-[12.5px] text-muted">P {fmtG(sel.totals.protein)} g · G {fmtG(sel.totals.carbs)} g · L {fmtG(sel.totals.fat)} g</div>
+                </div>
+              ) : <div className="mt-1 text-[14px] text-muted">Aucun repas noté ce jour-là.</div>}
+            </div>
+          </div>
+          <Button variant="secondary" block className="mt-3" onClick={() => navigate('today', { date: sel.date === today() ? undefined : sel.date })}>{sel.totals ? 'Voir le journal du jour' : 'Ajouter des repas ce jour-là'}</Button>
+        </Card>
+      )}
+
+      {s.loggedDays === 0 ? (
+        <EmptyState icon={<IconChart />} title="Aucun repas ce mois-ci" text="Les jours notés apparaissent ici avec leurs calories et l’écart à ton objectif." />
+      ) : (
+        <>
+          <Card className="mt-3">
+            <div className="grid grid-cols-2 gap-3">
+              <Stat label="Moyenne / jour noté" value={`${fmtKcal(s.avgKcal)} kcal`} sub={s.avgDiff != null ? `${s.avgDiff > 0 ? '+' : ''}${fmtKcal(s.avgDiff)} kcal vs objectif` : undefined} />
+              <Stat label="Jours suivis" value={`${s.loggedDays} / ${s.daysInMonth}`} sub={`${s.nearDays} proche(s) de l’objectif`} />
+              <Stat label="Total du mois" value={`${fmtKcal(s.totalKcal)} kcal`} sub="jours notés uniquement" />
+              <Stat label="Objectif" value={goals ? `${fmtKcal(goals.kcal)} kcal` : '—'} sub={GOAL_LABEL[goalMode]} />
+            </div>
+            <div className="mt-3 grid grid-cols-3 gap-2 border-t border-line pt-3 text-[13px] tabular-nums">
+              <div><span className="text-protein">●</span> P <b>{fmtG(s.avgProtein)} g</b></div>
+              <div><span className="text-carbs">●</span> G <b>{fmtG(s.avgCarbs)} g</b></div>
+              <div><span className="text-fat">●</span> L <b>{fmtG(s.avgFat)} g</b></div>
+            </div>
+            <p className="mt-1 text-[12px] text-muted">Moyennes par jour noté.</p>
+          </Card>
+          {s.weeks.filter((w) => w.days).length > 1 && (
+            <>
+              <SectionTitle>Évolution au fil du mois</SectionTitle>
+              <ul className="divide-y divide-line overflow-hidden rounded-2xl bg-surface text-[14px]">
+                {s.weeks.map((w) => (
+                  <li key={w.label} className="flex justify-between px-4 py-2.5"><span>Du {w.label}</span><span className="tabular-nums">{w.avgKcal != null ? <><b>{fmtKcal(w.avgKcal)}</b> kcal/j <span className="text-muted">({w.days} j)</span></> : <span className="text-muted">aucun jour noté</span>}</span></li>
+                ))}
+              </ul>
+            </>
+          )}
+          <Notice className="mt-3">
+            Les couleurs indiquent l’écart à l’objectif {goalMode === 'gain' ? 'de prise de masse : un léger dépassement est attendu' : goalMode === 'lose' ? 'de perte : un apport très bas est aussi signalé' : 'du jour'}. Ce sont des repères, pas un jugement : seule la tendance sur plusieurs semaines compte. Chaque jour est comparé à l’objectif qui s’appliquait à cette date.
+          </Notice>
         </>
       )}
     </div>

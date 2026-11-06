@@ -1,0 +1,400 @@
+175085|Cerf (chevreuil), rôti
+172603|Cerf haché, poêlé
+172602|Cerf haché, cru
+173855|Cerf (chevreuil), cru
+174426|Wapiti haché, poêlé
+174425|Wapiti haché, cru
+175304|Chèvre (cabri), rôtie
+175303|Chèvre (cabri), crue
+175087|Cheval, rôti
+175086|Cheval, cru
+172522|Lapin d'élevage, rôti
+174346|Lapin d'élevage, mijoté
+172521|Lapin d'élevage, cru
+174348|Lapin de garenne, mijoté
+174347|Lapin de garenne, cru
+172608|Agneau haché 15 % MG, cru
+174337|Agneau (moyenne des morceaux, maigre et gras), cuit
+174336|Agneau (moyenne des morceaux, maigre et gras), cru
+174339|Agneau maigre (moyenne des morceaux), cuit
+174338|Agneau maigre (moyenne des morceaux), cru
+172616|Agneau haché, braisé
+172617|Agneau haché, cru
+172639|Filet d'agneau, poêlé
+174878|Filet d'agneau, cru
+172544|Agneau haché, grillé
+174370|Agneau haché, cru
+172526|Cervelle d'agneau, braisée
+174350|Cervelle d'agneau, poêlée
+172525|Cervelle d'agneau, crue
+172528|Cœur d'agneau, braisé
+172527|Cœur d'agneau, cru
+174355|Rognons d'agneau, braisés
+174354|Rognons d'agneau, crus
+172532|Foie d'agneau, braisé
+172533|Foie d'agneau, poêlé
+172531|Foie d'agneau, cru
+174360|Poumon d'agneau, braisé
+174359|Poumon d'agneau, cru
+172537|Viande d'agneau séparée mécaniquement, crue
+172539|Pancréas d'agneau, braisé
+172538|Pancréas d'agneau, cru
+174365|Rate d'agneau, braisée
+174364|Rate d'agneau, crue
+174367|Langue d'agneau (ou de mouton), braisée
+174366|Langue d'agneau (ou de mouton), crue
+173816|Veau (moyenne des morceaux, maigre et gras), cuit
+173815|Veau (moyenne des morceaux, maigre et gras), cru
+175265|Veau maigre (moyenne des morceaux), cuit
+173817|Veau maigre (moyenne des morceaux), cru
+175291|Veau haché, grillé
+174879|Veau haché, poêlé
+175290|Veau haché, cru
+174352|Cervelle de veau, braisée
+174353|Cervelle de veau, poêlée
+174351|Cervelle de veau, crue
+172530|Cœur de veau, braisé
+172529|Cœur de veau, cru
+174357|Rognons de veau, braisés
+174356|Rognons de veau, crus
+172535|Foie de veau, braisé
+174358|Foie de veau, poêlé
+172534|Foie de veau, cru
+172536|Mou de veau (poumon), braisé
+174361|Mou de veau (poumon), cru
+174363|Pancréas de veau, braisé
+174362|Pancréas de veau, cru
+172541|Rate de veau, braisée
+172540|Rate de veau, crue
+172543|Ris de veau, braisé
+172542|Ris de veau, cru
+174369|Langue de veau, braisée
+174368|Langue de veau, crue
+169893|Éclats de « bacon » végétal
+172439|« Bacon » végétal
+173729|Haricots azuki sucrés en conserve
+173728|Haricots azuki, cuits
+173727|Haricots azuki, secs
+175182|Haricots blancs à la sauce tomate (baked beans)
+175183|Haricots à la sauce tomate au bœuf
+175184|Haricots à la sauce tomate aux saucisses
+175185|Haricots à la sauce tomate au porc
+173732|Haricots au porc sauce sucrée
+173733|Haricots au porc sauce tomate
+173731|Haricots à la sauce tomate maison (baked beans)
+175188|Haricots noirs en conserve
+175187|Haricots noirs, cuits
+175186|Haricots noirs, secs
+173735|Haricots noirs, cuits
+173734|Haricots noirs, secs
+169065|Haricots au chili façon barbecue, cuits
+173737|Haricots borlotti (cocos) en conserve
+173736|Haricots borlotti (cocos), cuits
+175189|Haricots borlotti (cocos), secs
+173739|Haricots secs « French beans », cuits
+173738|Haricots secs « French beans », secs
+175192|Haricots blancs (great northern) en conserve
+175191|Haricots blancs (great northern), cuits
+173741|Haricots rouges en conserve
+173740|Haricots rouges, cuits
+175193|Haricots rouges, secs
+173743|Haricots rouges de Californie, cuits
+173742|Haricots rouges de Californie, secs
+174285|Haricots rouges en conserve, égouttés
+175243|Haricots rouges en conserve, égouttés et rincés
+175195|Haricots rouges en conserve (avec le jus)
+175194|Haricots rouges, cuits à l'eau
+173744|Haricots rouges, secs
+175197|Haricots rouges « royal red », cuits
+175196|Haricots rouges « royal red », secs
+169885|Jus de cuisson de haricots rouges
+173747|Haricots blancs (cocos) en conserve
+173746|Haricots blancs (cocos), cuits
+173745|Haricots blancs (cocos), secs
+175198|Haricots roses, cuits
+173748|Haricots roses, secs
+174286|Haricots pinto en conserve, égouttés
+173797|Haricots pinto en conserve, égouttés et rincés
+175201|Haricots pinto en conserve (avec le jus)
+175200|Haricots pinto, cuits
+173750|Petits haricots blancs (lingots), cuits
+173749|Petits haricots blancs (lingots), secs
+175204|Haricots blancs en conserve
+175203|Haricots blancs, cuits
+175202|Haricots blancs, secs
+173752|Haricots jaunes secs, cuits
+173751|Haricots jaunes secs
+173754|Fèves sèches en conserve
+173753|Fèves sèches, cuites
+175205|Fèves sèches, crues
+173755|Farine de caroube
+169886|« Poulet » végétal
+167719|« Poulet » végétal pané frit
+174288|Farine de pois chiches (besan)
+173800|Pois chiches en conserve, égouttés
+173801|Pois chiches en conserve, égouttés et rincés
+175206|Pois chiches en conserve (avec le jus)
+173757|Pois chiches, cuits
+173756|Pois chiches, secs
+175207|Chili con carne aux haricots en conserve
+175209|Dolique (catjang), cuit
+175208|Dolique (catjang), sec
+173761|Niébé (haricot à œil noir) en conserve au porc
+173760|Niébé (haricot à œil noir) en conserve
+173759|Niébé (haricot à œil noir, cornille), cuit
+173758|Niébé (haricot à œil noir, cornille), sec
+172455|Falafels maison
+169887|Saucisse de Francfort végétale
+172466|Frijoles refritos (purée de haricots rouges)
+174289|Houmous du commerce
+172454|Houmous maison
+175211|Dolique lablab, cuit
+175210|Dolique lablab, sec
+172421|Lentilles, cuites
+174284|Lentilles corail, sèches
+172420|Lentilles, sèches
+174254|Haricots de Lima en conserve
+174253|Haricots de Lima, cuits
+174252|Haricots de Lima, secs
+172422|Petits haricots de Lima, cuits
+174255|Petits haricots de Lima, secs
+169066|Tranches végétales type charcuterie
+172424|Lupins, cuits
+172423|Lupins, secs
+174268|Protéines texturées (extendeur de viande)
+169067|Boulettes végétales
+172442|Miso
+172426|Haricot papillon (moth bean), cuit
+172425|Haricot papillon (moth bean), sec
+174257|Haricots mungo, cuits
+174256|Haricots mungo, secs
+172427|Urad dal (haricot noir mungo), cuit
+174259|Urad dal (haricot noir mungo), sec
+172443|Natto (soja fermenté)
+174258|Vermicelles de soja (haricot mungo), secs
+172452|Okara (pulpe de soja)
+168106|Papad (galette de lentilles)
+172471|Beurre de cacahuète oméga-3
+172469|Beurre de cacahuète avec morceaux, sans sel
+172460|Beurre de cacahuète avec morceaux enrichi
+172470|Beurre de cacahuète lisse, sans sel
+172458|Beurre de cacahuète lisse allégé
+172459|Beurre de cacahuète lisse enrichi
+174267|Farine d'arachide dégraissée
+172435|Farine d'arachide allégée
+172457|Pâte à tartiner à l'arachide allégée en sucres
+173806|Cacahuètes grillées à sec, sans sel
+175258|Cacahuètes grillées à l'huile, sans sel
+172430|Cacahuètes (arachides), crues
+173807|Cacahuètes espagnoles grillées à l'huile
+174263|Cacahuètes espagnoles, crues
+173808|Cacahuètes valencia grillées à l'huile
+172432|Cacahuètes valencia, crues
+173809|Cacahuètes virginia grillées à l'huile
+172434|Cacahuètes virginia, crues
+172428|Pois cassés, secs
+172429|Pois cassés, cuits
+172437|Pois d'Angole, cuits
+172436|Pois d'Angole, secs
+172465|Frijoles refritos 0 %
+172438|Frijoles refritos traditionnels
+174296|Frijoles refritos végétariens
+169069|Pâte à tartiner végétale pour sandwich
+174269|Saucisse végétale
+174275|Farine de soja dégraissée
+174273|Farine de soja entière
+174274|Farine de soja grillée
+172444|Farine de soja allégée
+172445|Tourteau de soja dégraissé
+174301|Concentré de protéines de soja
+172447|Concentré de protéines de soja
+174276|Isolat de protéines de soja
+174302|Isolat de protéines de soja
+174279|Sauce soja (protéines hydrolysées)
+174278|Sauce soja tamari
+174277|Sauce soja (shoyu)
+169083|Fromage de soja
+174271|Graines de soja, cuites
+172441|Graines de soja grillées à sec
+174270|Graines de soja, sèches
+172440|Graines de soja grillées salées
+173765|Boisson au soja enrichie
+173769|Boisson au soja allégée enrichie en calcium
+175216|Boisson au soja 0 % enrichie en calcium
+175215|Boisson au soja non sucrée enrichie en calcium
+173767|Boisson au soja chocolat allégée
+175217|Boisson au soja chocolat 0 %
+174293|Boisson au soja chocolat
+174295|Boisson au soja chocolat enrichie en calcium
+173768|Boisson au soja nature allégée non sucrée
+173766|Boisson au soja nature allégée
+172446|Boisson au soja nature ou vanille
+172456|Boisson au soja nature ou vanille enrichie en calcium
+174272|Tempeh
+172467|Tempeh, cuit
+167722|Yaourt au tofu
+172450|Tofu séché-congelé (koyadofu)
+174303|Tofu séché-congelé (koyadofu)
+174290|Tofu extra-ferme (nigari)
+172448|Tofu ferme (nigari)
+172451|Tofu frit
+174304|Tofu frit
+174291|Tofu dur (nigari)
+172475|Tofu ferme
+172476|Tofu nature
+174280|Tofu fermenté salé (fuyu)
+174305|Tofu fermenté salé (fuyu)
+172449|Tofu soyeux (nigari)
+169068|Filets végétariens
+169888|Galettes ou pain de viande végétariens
+174287|Steak végétal (veggie burger), non cuit
+169884|Vermicelles de soja
+172453|Pois carré (haricot ailé), cuit
+174283|Pois carré (haricot ailé), sec
+174282|Haricot kilomètre sec, cuit
+174281|Haricot kilomètre sec
+173730|Yokan (pâte de haricots azuki sucrée)
+170566|Farine de glands
+170565|Glands séchés
+170157|Glands, crus
+170160|Pâte d'amande
+170567|Amandes
+170568|Amandes émondées
+168592|Amandes grillées au miel
+168602|Amandes grillées légèrement salées
+170161|Faines séchées
+170569|Noix du Brésil
+170570|Noix cendrée séchée
+170162|Noix de cajou, crues
+170166|Châtaignes de Chine, cuites à l'eau
+170165|Châtaignes de Chine, séchées
+170164|Châtaignes de Chine, crues
+170573|Châtaignes de Chine, grillées
+170168|Châtaignes (marrons), cuites à l'eau
+170167|Châtaignes séchées épluchées
+170576|Châtaignes séchées non épluchées
+170575|Châtaignes crues épluchées
+170574|Châtaignes crues non épluchées
+170190|Châtaignes grillées
+168589|Châtaignes du Japon, cuites à l'eau
+169408|Châtaignes du Japon, séchées
+169413|Châtaignes du Japon, crues
+168590|Châtaignes du Japon, grillées
+170171|Crème de coco sucrée en conserve
+170580|Crème de coco
+168585|Crème de noix de coco déshydratée
+170170|Noix de coco râpée non sucrée
+170578|Noix de coco râpée sucrée
+170577|Noix de coco en flocons sucrée
+168586|Noix de coco râpée sucrée
+170579|Noix de coco râpée grillée
+170169|Noix de coco (pulpe fraîche)
+170173|Lait de coco en conserve
+169409|Lait de coco surgelé
+170172|Lait de coco frais
+170174|Eau de coco
+169411|Mélange de « noix » à base de blé
+170176|Noix de ginkgo en conserve
+170175|Noix de ginkgo séchées
+170584|Noix de ginkgo, crues
+170581|Noisettes
+170582|Noisettes émondées
+170177|Noix de hickory séchées
+170178|Noix de macadamia
+169427|Mélange de noix grillées avec cacahuètes, légèrement salé
+169428|Mélange de noix grillées sans cacahuètes, légèrement salé
+170182|Noix de pécan
+170590|Noix de pili séchées
+170591|Pignons de pin
+170592|Pignons de pin pinyon
+170184|Pistaches, crues
+170186|Noix noires séchées
+170187|Noix
+170593|Noix caramélisées
+170145|Graines de fruit à pain, bouillies
+170144|Graines de fruit à pain, crues
+170595|Graines de fruit à pain, grillées
+170553|Graines de noyer maya, séchées
+170552|Graines de noyer maya, crues
+170554|Graines de chia
+170146|Farine de graines de coton allégée
+170555|Farine de graines de coton
+170596|Amandes de coton grillées
+170147|Tourteau de graines de coton
+169414|Graines de lin
+170148|Graines de chanvre décortiquées
+170149|Graines de lotus séchées
+168591|Graines de lotus, crues
+170556|Graines de courge décortiquées
+170557|Graines de courge décortiquées grillées, sans sel
+170188|Graines de courge entières grillées, sans sel
+170558|Graines de carthame
+170559|Tourteau de carthame
+170191|Purée de sésame
+169410|Tahin (purée de sésame) cru
+170189|Tahin (purée de sésame grillé)
+169406|Tahin (purée de sésame non grillé)
+168604|Tahin (purée de sésame)
+170192|Farine de sésame
+170560|Farine de sésame allégée
+170153|Farine de sésame dégraissée
+170561|Tourteau de sésame
+169412|Graines de sésame décortiquées
+170150|Graines de sésame complètes
+170151|Graines de sésame grillées
+168587|Graines de sisymbre
+170155|Purée de graines de tournesol, sans sel
+170156|Farine de tournesol dégraissée
+170562|Graines de tournesol décortiquées
+170563|Graines de tournesol grillées à sec, sans sel
+170564|Graines de tournesol grillées à l'huile, sans sel
+170154|Graines de tournesol toastées, sans sel
+169407|Graines de pastèque décortiquées (egusi)
+167914|Bacon cuit au four
+168321|Bacon cuit au micro-ondes
+168322|Bacon en tranches poêlé
+168277|Bacon cru
+167875|Jambon cuit entier (maigre et gras)
+167812|Poitrine de porc fraîche, crue
+167810|Porc frais (moyenne des morceaux, maigre et gras), cru
+167855|Porc maigre (moyenne jambon, longe, épaule), cuit
+168220|Porc maigre (moyenne jambon, longe, épaule), cru
+168297|Porc (moyenne des morceaux, maigre et gras), cuit
+167888|Porc (moyenne des morceaux, maigre et gras), cru
+167906|Porc (longe et échine, maigre et gras), cuit
+168316|Porc (longe et échine, maigre et gras), cru
+167908|Porc maigre (longe et échine), cuit
+167907|Porc maigre (longe et échine), cru
+167903|Porc haché, cuit
+167902|Porc haché, cru
+167904|Filet mignon de porc, grillé
+167905|Filet mignon de porc, rôti
+168312|Filet mignon de porc, cru
+169185|Filet mignon de porc saumuré, rôti
+169184|Filet mignon de porc saumuré, cru
+167854|Travers de porc, braisés
+169178|Travers de porc, rôtis
+167853|Travers de porc, crus
+168265|Cervelle de porc, braisée
+168264|Cervelle de porc, crue
+167856|Andouille (chaudins de porc), mijotée
+168266|Chaudins de porc (intestins), crus
+167858|Oreilles de porc, mijotées
+167857|Oreilles de porc, crues
+168290|Pieds de porc, mijotés
+167859|Pieds de porc, crus
+168268|Cœur de porc, braisé
+168267|Cœur de porc, cru
+168269|Joue de porc (bajoue), crue
+167860|Rognons de porc, braisés
+168270|Rognons de porc, crus
+167861|Panne de porc (graisse), crue
+167863|Foie de porc, braisé
+167862|Foie de porc, cru
+168271|Poumon de porc, braisé
+167864|Poumon de porc, cru
+168272|Viande de porc séparée mécaniquement, crue
+168274|Pancréas de porc, braisé
+168273|Pancréas de porc, cru
+167866|Rate de porc, braisée
+167865|Rate de porc, crue

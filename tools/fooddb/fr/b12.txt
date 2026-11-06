@@ -1,0 +1,400 @@
+2706600|Bœuf, pommes de terre et légumes sauce tomate
+2706601|Bœuf, pommes de terre et légumes verts sauce fromage
+2706597|Bœuf, pommes de terre et légumes verts sauce crème
+2706595|Bœuf, pommes de terre et légumes verts en sauce brune (pot-au-feu en sauce)
+2706587|Bœuf, pommes de terre et légumes verts sans sauce
+2706599|Bœuf, pommes de terre et légumes verts sauce tomate
+2706588|Bœuf, pommes de terre et légumes sans sauce (pot-au-feu)
+2706625|Bœuf, riz et légumes sauce fromage
+2706627|Bœuf, riz et légumes en sauce brune
+2706623|Bœuf, riz et légumes sauce champignons
+2706617|Bœuf, riz et légumes sans sauce
+2706619|Bœuf, riz et légumes sauce tomate
+2706624|Bœuf, riz et légumes verts sauce fromage
+2706626|Bœuf, riz et légumes verts en sauce brune
+2706622|Bœuf, riz et légumes verts sauce champignons
+2706616|Bœuf, riz et légumes verts sans sauce
+2706618|Bœuf, riz et légumes verts sauce tomate
+2706476|Hachis de rôti de bœuf (hash)
+2707102|Plat surgelé tranches de bœuf, sauce, pommes de terre, légumes
+2706755|Chou au jarret de porc (potée)
+2706409|Saucisse au chili, sans pain
+2706483|Chili aux macaronis
+2706377|Chili con carne (sans haricots)
+2706375|Chili con carne aux haricots
+2706376|Chili con carne en conserve
+2706373|Chili
+2706477|Hachis de corned-beef
+2706502|Galette de corned-beef
+2706590|Corned-beef, pommes de terre et légumes
+2706589|Corned-beef, pommes de terre et légumes verts
+2706383|Bœuf séché à la crème
+2710144|Gratin d'aubergines à la viande (type moussaka)
+2706757|Saucisses de Francfort et choucroute
+2706410|Saucisses de Francfort sauce tomate
+2707095|Plat cuisiné surgelé
+2706372|Guisado de bœuf (ragoût latino)
+2706407|Guisado de porc (ragoût latino)
+2706505|Jambon et nouilles sauce crème
+2706514|Jambon et nouilles sans sauce
+2706506|Jambon et riz sauce champignons
+2706768|Jambon aux légumes sans sauce
+2706767|Jambon aux légumes verts sans sauce
+2706508|Croquette de jambon
+2706517|Jambon ou porc et pommes de terre sauce fromage
+2706516|Jambon ou porc et pommes de terre en sauce
+2706515|Jambon ou porc et riz sans sauce
+2706756|Salade de jambon ou de porc
+2706398|Jambon ou porc en sauce brune
+2706403|Jambon ou porc sauce champignons
+2706507|Jambon ou porc avec farce
+2706404|Jambon ou porc sauce tomate
+2706636|Porc, nouilles et légumes sauce fromage
+2706634|Porc, nouilles et légumes sans sauce
+2706635|Porc, nouilles et légumes verts sans sauce
+2706638|Porc, nouilles et légumes verts sauce tomate
+2706402|Stroganoff de jambon
+2706653|Jambon, pommes de terre et légumes sans sauce
+2706654|Jambon, pommes de terre et légumes verts sans sauce
+2706584|Hachis de viande (hash)
+2708718|Hallacas (papillotes de maïs farcies, Venezuela)
+2708716|Kibbeh à la portoricaine (boulettes de boulgour et viande)
+2706524|Agneau ou mouton et nouilles en sauce
+2706522|Agneau ou mouton et pommes de terre en sauce (navarin)
+2706523|Agneau ou mouton et pommes de terre sauce tomate
+2706521|Pain de viande d'agneau
+2706413|Agneau ou mouton en sauce
+2706658|Agneau ou mouton, riz et légumes verts en sauce
+2706656|Agneau ou mouton, riz et légumes en sauce
+2706657|Agneau ou mouton, riz et légumes sauce tomate
+2706780|Brochettes d'agneau aux légumes
+2706876|Foie de veau ou de bœuf aux oignons
+2707121|Plat surgelé pain de viande
+2706499|Pain de viande au bœuf
+2706581|Pain de viande bœuf et porc
+2706583|Pain de viande bœuf et porc sauce tomate
+2706582|Pain de viande bœuf, veau et porc
+2706500|Pain de viande au bœuf sauce tomate
+2706504|Pain de viande au jambon
+2706525|Pain de viande de cerf
+2707122|Plat surgelé pain de viande, pommes de terre et légumes
+2706579|Pain de viande
+2706468|Pain de viande à la portoricaine (albondigón)
+2706473|Viande en sauce brune
+2706469|Viande sauce tomate
+2706467|Boulettes de viande en sauce
+2706395|Boulettes de viande à la portoricaine
+2707103|Plat surgelé allégé boulettes suédoises et nouilles
+2706580|Boulettes de viande panées en sauce
+2709143|Plat surgelé pancakes et saucisses
+2706747|Bœuf sauté aux poivrons
+2706496|Boulettes bœuf-riz sauce champignons
+2706492|Boulettes bœuf-riz sauce tomate
+2706509|Porc et riz sauce tomate
+2706773|Porc aux légumes sauce tomate
+2706769|Porc aux légumes sans sauce
+2706758|Porc aux légumes verts sans sauce
+2706772|Porc aux légumes verts sauce tomate
+2706766|Hachis de porc
+2706779|Brochettes de porc aux légumes
+2706411|Porc au chili et tomates
+2705872|Côte de porc farcie
+2706646|Porc, pommes de terre et légumes en sauce
+2706647|Porc, pommes de terre et légumes sans sauce
+2706642|Porc, pommes de terre et légumes sauce tomate
+2706645|Porc, pommes de terre et légumes verts en sauce
+2706637|Porc, pommes de terre et légumes verts sans sauce
+2706641|Porc, pommes de terre et légumes verts sauce tomate
+2706652|Porc, riz et légumes sauce tomate
+2706651|Porc, riz et légumes verts sauce tomate
+2706630|Tourte au bœuf (pot pie)
+2710141|Pasteles portoricains (papillotes de banane plantain farcies)
+2710140|Pastelón (tourte de banane plantain mûre à la viande)
+2707098|Plat surgelé steak Salisbury
+2706380|Steak Salisbury (steak haché en sauce)
+2707101|Plat surgelé steak Salisbury et macaroni au fromage
+2707099|Plat surgelé steak Salisbury, pommes de terre et légumes
+2707100|Plat surgelé steak Salisbury, purée, légumes et dessert
+2706513|Saucisse et nouilles sauce crème
+2706776|Saucisses aux poivrons sans sauce
+2706512|Saucisse et riz sauce fromage
+2706511|Saucisse et riz sauce champignons
+2706510|Saucisse et riz sauce tomate
+2706774|Saucisses aux légumes verts sauce tomate
+2706775|Saucisses aux légumes sauce tomate
+2706406|Sauce blanche à la saucisse
+2706405|Saucisses sauce tomate (rougail saucisse)
+2706639|Saucisse, nouilles et légumes sauce tomate
+2706640|Saucisse, nouilles et légumes verts sauce tomate
+2706644|Saucisse, pommes de terre et légumes en sauce
+2706643|Saucisse, pommes de terre et légumes verts en sauce
+2706594|Hachis parmentier (shepherd's pie, cottage pie)
+2706378|Sloppy joe sans pain
+2706394|Steak tartare
+2706721|Ragoût
+2706592|Ragoût de bœuf
+2706591|Ragoût de bœuf en conserve
+2706593|Ragoût de bœuf aux pâtes
+2706660|Ragoût d'agneau (navarin)
+2706519|Ragoût de porc
+2706520|Ragoût de porc aux pâtes
+2706877|Ragoût d'andouille à la portoricaine (cuchifritos)
+2706397|Ragoût de bœuf séché à la portoricaine
+2706414|Cabri en ragoût à la portoricaine (colombo, cabrito)
+2706518|Pieds de porc en ragoût à la portoricaine
+2706412|Porc en ragoût à la portoricaine
+2706661|Lapin en ragoût à la portoricaine
+2706393|Bœuf haché assaisonné mijoté à la mexicaine (picadillo)
+2706396|Picadillo portoricain (bœuf haché mijoté)
+2706725|Tripes en ragoût aux pommes de terre à la portoricaine (mondongo)
+2706586|Picadillo bœuf-porc aux pommes de terre (mexicain)
+2706472|Picadillo bœuf-porc (mexicain)
+2706479|Picadillo de bœuf aux pommes de terre (mexicain)
+2706620|Chou farci au bœuf et riz (sarma, golabki)
+2710143|Chou farci viande et riz à la syrienne (malfouf)
+2710142|Chou farci à la viande
+2706621|Feuilles de vigne farcies bœuf et riz (dolmas)
+2706659|Feuilles de vigne farcies agneau et riz (dolmas)
+2706633|Poivron farci à la portoricaine
+2706384|Boulettes suédoises sauce crème
+2706732|Steak braisé sauce tomate (swiss steak)
+2706416|Veau au marsala
+2706418|Cordon bleu de veau
+2706417|Escalope de veau à la parmigiana
+2706415|Escalopes de veau (scaloppine)
+2706526|Cerf et nouilles sauce crème
+2706420|Cerf en sauce
+2706419|Cerf sauce tomate
+2706665|Cerf, nouilles et légumes sauce tomate
+2706664|Cerf, nouilles et légumes verts sauce tomate
+2706663|Cerf, pommes de terre et légumes en sauce
+2706662|Cerf, pommes de terre et légumes verts en sauce
+2706585|Saucisses de Vienne mijotées aux pommes de terre
+2709226|Melon cantaloup
+2709241|Melon miel (honeydew)
+2709227|Melon surgelé
+2709270|Pastèque
+2705517|Boisson lactée chocolatée
+2705502|Lait de poule (eggnog)
+2705657|Soda glacé au chocolat (ice cream soda)
+2705656|Soda glacé (ice cream soda)
+2705507|Milk-shake malté
+2705510|Milk-shake au chocolat en bouteille
+2705511|Milk-shake en bouteille (autres parfums)
+2705508|Milk-shake au chocolat (fast-food)
+2705509|Milk-shake fast-food (vanille, fraise…)
+2705503|Milk-shake maison au chocolat
+2705505|Milk-shake maison au chocolat allégé
+2705504|Milk-shake maison (vanille, fraise…)
+2705506|Milk-shake maison allégé
+2705394|Kéfir de lait
+2705389|Lait sans lactose 1 % MG
+2705387|Lait 1 % MG
+2705396|Lait écrémé en poudre reconstitué
+2705401|Lait concentré écrémé
+2705388|Lait écrémé
+2705390|Lait sans lactose écrémé
+2705384|Lait
+2705400|Lait concentré demi-écrémé
+2705391|Lait sans lactose demi-écrémé
+2705386|Lait demi-écrémé (2 %)
+2705393|Lait fermenté (babeurre, lben)
+2705395|Lait de chèvre
+2705397|Lait entier en poudre reconstitué
+2705398|Lait concentré non sucré
+2705399|Lait concentré non sucré entier
+2705392|Lait sans lactose entier
+2705385|Lait entier
+2709751|Sauce buffalo (piquante)
+2709309|Chutney
+2710298|Sauce aigre-douce aux prunes (sauce canard)
+2710176|Sauce ketchup-mayonnaise (sauce cocktail)
+2709932|Ail cuit
+2709786|Ail cru
+2710086|Dip miel-moutarde
+2710083|Raifort
+2710174|Sauce au raifort
+2709744|Sauce piquante thaïe (sriracha, sauce pimentée douce)
+2710093|Sauce au piment (tabasco, harissa liquide)
+2709180|Jus de citron 100 %
+2709182|Jus de citron en bouteille
+2709181|Jus de citron pressé
+2709183|Jus de citron vert 100 %
+2709185|Jus de citron vert en bouteille
+2709184|Jus de citron vert pressé
+2710085|Moutarde
+2709978|Piments forts cuits
+2709798|Piments forts crus
+2709979|Piment doux (pimiento)
+2709754|Sofrito portoricain au jambon
+2709755|Sofrito portoricain (recaito)
+2710296|Sauce aigre-douce
+2709351|Vinaigre
+2710103|Wasabi (pâte)
+2707447|Sauce Worcestershire
+2710006|Pâte à tartiner à la levure (type Marmite)
+2708576|Nachos
+2708578|Nachos au bœuf ou porc
+2708579|Nachos viande et haricots
+2708577|Nachos au fromage
+2708580|Nachos au poulet
+2708581|Nachos poulet et haricots
+2708582|Nachos aux haricots
+2708088|Barre de céréales (Kashi Chewy)
+2708089|Barre de céréales croquante (Kashi)
+2708117|Barre nutritionnelle (Balance)
+2708118|Barre énergétique (Clif Bar)
+2708119|Barre énergétique enfant (Clif Kids Zbar)
+2708120|Barre énergétique (PowerBar)
+2708121|Barre substitut de repas (Slim Fast)
+2708122|Barre protéinée (Snickers Marathon)
+2708124|Barre protéinée (South Beach)
+2708123|Barre substitut de repas (South Beach)
+2708125|Barre nutritionnelle (Tiger's Milk)
+2708126|Barre nutritionnelle (Zone Perfect)
+2708127|Barre nutritionnelle ou substitut de repas
+2707533|Purée d'amande
+2707534|Purée d'amande pauvre en sel
+2707535|Pâte d'amande
+2707485|Amandes
+2707490|Amandes aromatisées
+2707491|Amandes grillées au miel
+2707488|Amandes légèrement salées
+2707487|Amandes salées
+2707486|Amandes non grillées
+2707489|Amandes non salées
+2707492|Noix du Brésil
+2707536|Purée de noix de cajou
+2707493|Noix de cajou
+2707498|Noix de cajou grillées au miel
+2707496|Noix de cajou légèrement salées
+2707495|Noix de cajou salées
+2707494|Noix de cajou non grillées
+2707497|Noix de cajou non salées
+2707499|Châtaignes
+2707590|Graines de chia
+2707500|Noix de coco fraîche
+2707501|Noix de coco râpée
+2707588|Graines de lin
+2707502|Noisettes
+2707503|Noix de macadamia
+2707504|Mélange de fruits à coque
+2707511|Mélange de fruits à coque au miel
+2707505|Mélange de fruits à coque non grillés
+2707507|Mélange de noix et cacahuètes légèrement salé
+2707506|Mélange de noix et cacahuètes salé (apéritif)
+2707508|Mélange de noix et cacahuètes non salé
+2707509|Mélange de noix sans cacahuètes, salé
+2707510|Mélange de noix sans cacahuètes, non salé
+2707589|Mélange de graines
+2707484|Fruits à coque
+2707537|Beurre de cacahuète
+2707544|Pâte à tartiner cacahuète et chocolat
+2707543|Beurre de cacahuète et confiture
+2707538|Beurre de cacahuète pauvre en sel
+2707539|Beurre de cacahuète pauvre en sel et en sucres
+2707540|Beurre de cacahuète allégé en sucres
+2707541|Beurre de cacahuète allégé en matières grasses
+2707542|Beurre de cacahuète enrichi
+2707512|Cacahuètes
+2707513|Cacahuètes bouillies
+2707518|Cacahuètes grillées légèrement salées
+2707517|Cacahuètes grillées salées
+2707519|Cacahuètes grillées non salées
+2707520|Cacahuètes grillées au miel
+2707515|Cacahuètes grillées à l'huile salées
+2707516|Cacahuètes grillées à l'huile non salées
+2707514|Cacahuètes crues
+2707521|Noix de pécan
+2707525|Noix de pécan au miel
+2707523|Noix de pécan salées
+2707522|Noix de pécan non grillées
+2707524|Noix de pécan non salées
+2707526|Pignons de pin
+2707527|Pistaches
+2707529|Pistaches légèrement salées
+2707528|Pistaches salées
+2707530|Pistaches non salées
+2707579|Graines de courge
+2707580|Graines de courge salées
+2707581|Graines de courge non salées
+2707586|Graines de sésame
+2707585|Graines de tournesol
+2707584|Graines de tournesol aromatisées
+2707583|Graines de tournesol salées
+2707582|Graines de tournesol non salées
+2707587|Tahin (crème de sésame)
+2707577|Mélange de fruits secs et chocolat (trail mix)
+2707575|Mélange de fruits à coque (trail mix)
+2707576|Mélange de fruits à coque et fruits secs (mendiant)
+2707578|Mélange apéritif bretzels, céréales ou granola
+2707574|Mélange de fruits secs (trail mix)
+2707531|Noix
+2707532|Noix au miel
+2708380|Porridge (flocons d'avoine cuits)
+2708379|Porridge aromatisé (fast-food)
+2708378|Porridge nature (fast-food)
+2708396|Porridge instantané aux fruits, avec matière grasse
+2708395|Porridge instantané aux fruits
+2708394|Porridge instantané à l'érable, avec matière grasse
+2708393|Porridge instantané à l'érable
+2708390|Porridge instantané au lait, avec matière grasse
+2708389|Porridge instantané au lait
+2708392|Porridge instantané au lait végétal, avec matière grasse
+2708391|Porridge instantané au lait végétal
+2708388|Porridge instantané à l'eau, avec matière grasse
+2708387|Porridge instantané à l'eau
+2708398|Porridge multicéréale
+2708397|Porridge allégé en sucres
+2708384|Porridge au lait, avec matière grasse
+2708383|Porridge au lait
+2708386|Porridge au lait végétal, avec matière grasse
+2708385|Porridge au lait végétal
+2708382|Porridge à l'eau, avec matière grasse
+2708381|Porridge à l'eau
+2710071|Betteraves au vinaigre
+2710075|Chou vert au vinaigre
+2710076|Chou rouge au vinaigre
+2710074|Chou-fleur au vinaigre
+2710072|Céleri au vinaigre
+2710081|Aubergines marinées
+2710082|Gingembre mariné (gari)
+2710070|Haricots verts au vinaigre
+2710077|Kimchi
+2710084|Champignons marinés
+2710087|Gombos au vinaigre
+2710092|Tapenade d'olives
+2710088|Olives
+2710090|Olives noires
+2710089|Olives vertes
+2710091|Olives farcies
+2710095|Piments forts au vinaigre
+2710094|Poivrons marinés
+2710097|Pickles (légumes au vinaigre)
+2710078|Cornichons à l'aneth
+2710080|Cornichons sucrés
+2710099|Radis au vinaigre
+2710073|Relish de maïs
+2710079|Relish de cornichons
+2709982|Choucroute
+2710100|Algues marinées
+2709726|Tomates vertes au vinaigre
+2710102|Navets au vinaigre (lift)
+2710101|Légumes au vinaigre (achards, torshi)
+2710104|Courgettes au vinaigre
+2709935|Poireaux
+2709951|Oignons cuits avec matière grasse
+2709950|Oignons cuits sans matière grasse
+2709953|Oignons verts cuits
+2709794|Oignons verts crus
+2709952|Petits oignons grelots cuits
+2709795|Oignon cru
+2708555|Bol burrito
+2708556|Bol burrito bœuf ou porc
+2708558|Bol burrito viande et haricots
+2708559|Bol burrito viande, haricots et riz
+2708557|Bol burrito viande et riz
+2708560|Bol burrito poulet
+2708562|Bol burrito poulet et haricots
+2708563|Bol burrito poulet, haricots et riz
+2708561|Bol burrito poulet et riz

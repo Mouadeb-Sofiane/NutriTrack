@@ -152,3 +152,19 @@ describe('estimations enregistrées localement', () => {
     expect(m.items[0].nutrients.kcal).toBe(900);
   });
 });
+
+describe('historique des objectifs', () => {
+  it('garde l’objectif précédent pour les jours passés', async () => {
+    await repo.saveProfile({ goal: 'maintain' } as never);
+    await repo.saveGoals({ kcal: 2000, protein: null, carbs: null, fat: null, trackMacros: false, manual: false, updatedAt: '' });
+    await repo.saveProfile({ goal: 'gain' } as never);
+    await repo.saveGoals({ ...(await repo.getGoals())!, kcal: 3200, manual: true });
+    const g = (await repo.getGoals())!;
+    expect(g.kcal).toBe(3200);
+    const h = g.history!;
+    expect(h.at(-1)).toMatchObject({ kcal: 3200, goal: 'gain', manual: true });
+    // Les deux enregistrements ont eu lieu le même jour : seul le dernier vaut pour aujourd'hui,
+    // l'objectif initial reste valable pour les jours antérieurs.
+    expect(h[0]).toMatchObject({ from: '0000-01-01', kcal: 2000 });
+  });
+});

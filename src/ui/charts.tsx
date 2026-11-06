@@ -14,11 +14,21 @@ export function Ring({ value, max, size = 168, stroke = 14, children }: { value:
         <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="var(--color-brand-soft)" strokeWidth={stroke} />
         <circle
           cx={size / 2} cy={size / 2} r={r} fill="none"
-          stroke={over ? 'var(--color-accent)' : 'var(--color-brand)'}
+          stroke="var(--color-brand)"
           strokeWidth={stroke} strokeLinecap="round"
           strokeDasharray={`${c * shown} ${c}`}
           style={{ transition: 'stroke-dasharray 0.4s ease' }}
         />
+        {/* Dépassement : un second tour plus fin, plafonné à un tour complet (+100 %). */}
+        {over && (
+          <circle
+            cx={size / 2} cy={size / 2} r={r} fill="none"
+            stroke="var(--color-accent)"
+            strokeWidth={stroke * 0.55} strokeLinecap="round"
+            strokeDasharray={`${c * Math.min(1, ratio - 1)} ${c}`}
+            style={{ transition: 'stroke-dasharray 0.4s ease' }}
+          />
+        )}
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center">{children}</div>
     </div>

@@ -1,0 +1,400 @@
+2708564|Bol burrito aux haricots
+2708505|Chilaquiles (tortillas frites en sauce)
+2710043|Chiles rellenos au fromage (piments farcis)
+2710044|Chiles rellenos viande et fromage
+2708589|Chimichanga au poulet
+2708587|Chimichanga à la viande
+2708588|Chimichanga aux haricots
+2708565|Enchilada
+2708566|Enchilada au bœuf
+2708568|Enchilada au poulet
+2708569|Enchilada sans viande
+2708567|Enchilada au porc
+2708603|Fajitas
+2708605|Fajitas bœuf ou porc
+2708604|Fajitas au poulet
+2708606|Fajitas aux crevettes
+2708607|Fajitas aux légumes
+2708506|Frito pie (chili sur chips de maïs)
+2708583|Gordita au fromage
+2708585|Gordita à la viande
+2708586|Gordita viande et haricots
+2708584|Gordita aux haricots
+2708507|Pizza mexicaine
+2708608|Pupusa au fromage
+2708610|Pupusa à la viande
+2708611|Pupusa viande et haricots
+2708609|Pupusa aux haricots
+2708590|Quesadilla
+2708592|Quesadilla bœuf ou porc
+2708595|Quesadilla viande et légumes
+2708591|Quesadilla au fromage
+2708593|Quesadilla au poulet
+2708596|Quesadilla poulet et légumes
+2708594|Quesadilla aux légumes
+2708575|Gratin de tamales à la viande
+2708570|Tamal (tamale)
+2708571|Tamal au bœuf
+2708573|Tamal au poulet
+2708574|Tamal sans viande
+2708572|Tamal au porc
+2708600|Taquito bœuf ou porc
+2708599|Taquito au fromage
+2708601|Taquito au poulet
+2709571|Fanes de betterave cuites
+2709570|Fanes de betterave crues
+2709641|Feuilles cuites (melon amer, jute, radis)
+2709575|Blettes cuites
+2709574|Blettes crues
+2709579|Chou cavalier cuit
+2709583|Chou cavalier cuit au beurre
+2709582|Chou cavalier cuit à l'huile
+2709580|Chou cavalier cuit avec matière grasse
+2709577|Chou cavalier cuit sans matière grasse
+2709585|Chou cavalier surgelé au beurre
+2709584|Chou cavalier surgelé à l'huile
+2709581|Chou cavalier surgelé avec matière grasse
+2709578|Chou cavalier surgelé sans matière grasse
+2709576|Chou cavalier cru
+2709587|Cresson cuit
+2709586|Cresson cru
+2709589|Pissenlit cuit
+2709588|Pissenlit cru
+2709592|Scarole cuite
+2706759|Légumes verts au jambon ou au porc
+2709595|Légumes-feuilles cuits (brèdes)
+2709598|Légumes-feuilles en conserve
+2709596|Légumes-feuilles frais cuits avec matière grasse
+2709593|Légumes-feuilles frais cuits sans matière grasse
+2709597|Légumes-feuilles surgelés avec matière grasse
+2709594|Légumes-feuilles surgelés sans matière grasse
+2709602|Chou kale cuit
+2709603|Chou kale cuit avec matière grasse
+2709600|Chou kale cuit sans matière grasse
+2709604|Chou kale surgelé avec matière grasse
+2709601|Chou kale surgelé sans matière grasse
+2709599|Chou kale cru
+2709605|Chénopode cuit
+2709609|Feuilles de moutarde cuites
+2709610|Feuilles de moutarde cuites avec matière grasse
+2709607|Feuilles de moutarde cuites sans matière grasse
+2709611|Feuilles de moutarde surgelées avec matière grasse
+2709608|Feuilles de moutarde surgelées sans matière grasse
+2709606|Feuilles de moutarde crues
+2709612|Pousses de phytolaque cuites
+2709642|Feuilles cuites (patate douce, courge, haricot : saka-saka, brèdes)
+2709633|Feuilles de taro cuites
+2709637|Fanes de navet cuites avec matière grasse
+2709634|Fanes de navet cuites sans matière grasse
+2709638|Fanes de navet surgelées avec matière grasse
+2709635|Fanes de navet surgelées sans matière grasse
+2709636|Fanes de navet cuites
+2709640|Cresson de fontaine cuit
+2709639|Cresson de fontaine cru
+2710597|Boisson aux fruits sans sucres
+2710599|Boisson aux fruits en poudre sans sucres
+2710596|Boisson aux fruits vitaminée sans sucres
+2710598|Boisson aux fruits en poudre vitaminée sans sucres
+2710577|Granité sans sucres ajoutés
+2710594|Boisson légumes-fruits vitaminée sans sucres
+2709833|Boisson à l'aloe vera
+2709322|Jus de mûre 100 %
+2709323|Jus de myrtille
+2709317|Jus de canneberge 100 % (mélange)
+2709318|Jus de canneberge 100 % enrichi en calcium
+2709324|Jus de canneberge pur
+2709316|Jus multifruits 100 %
+2709194|Jus d'agrumes 100 %
+2709315|Jus de fruits
+2709325|Jus de raisin 100 %
+2709326|Jus de raisin enrichi en calcium
+2709327|Jus de papaye 100 %
+2709328|Jus de fruit de la passion 100 %
+2709329|Jus d'ananas 100 %
+2709330|Jus de grenade 100 %
+2709331|Jus de pruneau 100 %
+2709332|Jus de fraise 100 %
+2710145|Jus de légumes et fruits 100 %
+2709333|Jus de pastèque 100 %
+2709286|Salade ambroisie (fruits, coco, guimauve, crème)
+2709293|Salade de pommes avec sauce
+2709222|Abricots en conserve
+2709221|Abricot
+2709232|Cerises en conserve
+2709233|Cerises surgelées
+2709229|Cerises au marasquin
+2709231|Cerises
+2709234|Fruit du dragon (pitaya)
+2709236|Figues en conserve
+2709235|Figue fraîche
+2709289|Cocktail de fruits en conserve
+2709290|Cocktail de fruits au sirop
+2709291|Cocktail de fruits au jus
+2709292|Mélange de fruits surgelés
+2709299|Salade de fruits à la guimauve
+2709298|Salade de fruits au nappage fouetté
+2709301|Salade de fruits au pudding
+2709296|Salade de fruits à la mayonnaise
+2709297|Salade de fruits à la chantilly
+2709287|Salade de fruits frais (sans agrumes)
+2709288|Salade de fruits frais (avec agrumes)
+2709303|Salade de fruits et agrumes à la chantilly
+2709305|Salade de fruits et agrumes à la guimauve
+2709304|Salade de fruits et agrumes au nappage fouetté
+2709300|Salade de fruits et agrumes au pudding
+2709302|Salade de fruits et agrumes à la mayonnaise
+2709213|Fruit (sans précision)
+2709295|Fruits enrobés de chocolat
+2709214|Fruits au vinaigre
+2709238|Goyave
+2709239|Kiwi
+2709240|Litchi
+2709248|Fruit de la passion
+2709259|Kaki
+2709310|Salade d'ananas avec sauce
+2709266|Prunes en conserve
+2709265|Prune
+2709267|Grenade
+2709268|Rhubarbe
+2709228|Carambole
+2709269|Tamarin
+2709977|Poivron rouge cuit
+2709801|Poivron rouge cru
+2709691|Potiron en conserve, cuit
+2709692|Potiron cuit
+2710001|Courge spaghetti cuite
+2709697|Patate douce
+2709698|Patate douce au four
+2709700|Patate douce au four avec matière grasse
+2709699|Patate douce au four sans matière grasse
+2709701|Patate douce bouillie
+2709703|Patate douce bouillie avec matière grasse
+2709702|Patate douce bouillie sans matière grasse
+2709704|Patate douce confite
+2709705|Patate douce en conserve
+2709707|Patate douce en conserve avec matière grasse
+2709706|Patate douce en conserve sans matière grasse
+2709708|Purée ou gratin de patate douce
+2709695|Courge d'hiver cuite avec matière grasse
+2709694|Courge d'hiver cuite sans matière grasse
+2709693|Courge d'hiver crue
+2709957|Niébé (haricots à œil noir) en conserve
+2709956|Niébé (haricots à œil noir) surgelés
+2709879|Fruit à pain cuit
+2709564|Manioc cuit
+2709568|Foufou (fufu)
+2709962|Petits pois cuits
+2709971|Petits pois en conserve au beurre
+2709970|Petits pois en conserve à l'huile
+2709965|Petits pois en conserve avec matière grasse
+2709961|Petits pois en conserve sans matière grasse
+2709975|Petits pois en conserve allégés en sel, au beurre
+2709974|Petits pois en conserve allégés en sel, à l'huile
+2709973|Petits pois en conserve allégés en sel, avec matière grasse
+2709972|Petits pois en conserve allégés en sel, sans matière grasse
+2709967|Petits pois frais au beurre
+2709966|Petits pois frais à l'huile
+2709963|Petits pois frais avec matière grasse
+2709959|Petits pois frais sans matière grasse
+2709969|Petits pois surgelés au beurre
+2709968|Petits pois surgelés à l'huile
+2709964|Petits pois surgelés avec matière grasse
+2709960|Petits pois surgelés sans matière grasse
+2709797|Petits pois crus
+2710139|Banane plantain verte aux grattons (mofongo)
+2710008|Haricots de Lima et maïs cuits avec matière grasse
+2710007|Haricots de Lima et maïs cuits sans matière grasse
+2709850|Haricots de Lima en conserve
+2709849|Haricots de Lima surgelés avec matière grasse
+2709848|Haricots de Lima surgelés sans matière grasse
+2710027|Petits pois et maïs cuits avec matière grasse
+2710026|Petits pois et maïs cuits sans matière grasse
+2709562|Banane plantain cuite au beurre
+2709559|Banane plantain cuite à l'huile
+2709561|Banane plantain cuite avec matière grasse
+2709558|Banane plantain cuite sans matière grasse
+2709560|Banane plantain crue
+2709567|Taro cuit
+2710003|Châtaigne d'eau
+2709765|Graines d'alfalfa germées
+2709766|Artichaut
+2710036|Légumes sautés au wok avec matière grasse
+2710035|Légumes sautés au wok sans matière grasse
+2709837|Asperges cuites
+2709846|Asperges en conserve au beurre
+2709845|Asperges en conserve à l'huile
+2709840|Asperges en conserve avec matière grasse
+2709836|Asperges en conserve sans matière grasse
+2709842|Asperges fraîches au beurre
+2709841|Asperges fraîches à l'huile
+2709838|Asperges fraîches avec matière grasse
+2709834|Asperges fraîches sans matière grasse
+2709844|Asperges surgelées au beurre
+2709843|Asperges surgelées à l'huile
+2709839|Asperges surgelées avec matière grasse
+2709835|Asperges surgelées sans matière grasse
+2709767|Asperges crues
+2709223|Avocat
+2709847|Pousses de bambou cuites
+2709871|Germes de soja cuits
+2709768|Germes de soja crus
+2709874|Betteraves cuites
+2709876|Betteraves en conserve avec matière grasse
+2709873|Betteraves en conserve sans matière grasse
+2709877|Betteraves en conserve allégées en sel
+2709875|Betteraves fraîches cuites avec matière grasse
+2709872|Betteraves fraîches cuites sans matière grasse
+2709770|Betterave crue
+2709878|Margose (melon amer) cuite
+2709880|Chou-fleur vert cuit
+2709771|Chou-fleur vert cru
+2710032|Brocoli et chou-fleur cuits avec matière grasse
+2710031|Brocoli et chou-fleur cuits sans matière grasse
+2710034|Brocoli, chou-fleur et carottes avec matière grasse
+2710033|Brocoli, chou-fleur et carottes sans matière grasse
+2709883|Choux de Bruxelles cuits
+2709884|Choux de Bruxelles frais avec matière grasse
+2709881|Choux de Bruxelles frais sans matière grasse
+2709885|Choux de Bruxelles surgelés avec matière grasse
+2709882|Choux de Bruxelles surgelés sans matière grasse
+2709772|Choux de Bruxelles crus
+2709886|Bardane cuite
+2709896|Nopal cuit avec matière grasse
+2709895|Nopal cuit sans matière grasse
+2709776|Nopal cru
+2709899|Chou-fleur cuit
+2709903|Chou-fleur frais au beurre
+2709902|Chou-fleur frais à l'huile
+2709900|Chou-fleur frais avec matière grasse
+2709897|Chou-fleur frais sans matière grasse
+2709905|Chou-fleur surgelé au beurre
+2709904|Chou-fleur surgelé à l'huile
+2709901|Chou-fleur surgelé avec matière grasse
+2709898|Chou-fleur surgelé sans matière grasse
+2709777|Chou-fleur cru
+2709906|Céleri cuit
+2709778|Céleri cru
+2709908|Christophine (chayote) cuite
+2710015|Jardinière de légumes cuite
+2710021|Jardinière en conserve au beurre
+2710020|Jardinière en conserve à l'huile
+2710017|Jardinière en conserve avec matière grasse
+2710014|Jardinière en conserve sans matière grasse
+2710025|Jardinière en conserve allégée en sel, au beurre
+2710024|Jardinière en conserve allégée en sel, à l'huile
+2710023|Jardinière en conserve allégée en sel, avec matière grasse
+2710022|Jardinière en conserve allégée en sel, sans matière grasse
+2710019|Jardinière surgelée au beurre
+2710018|Jardinière surgelée à l'huile
+2710016|Jardinière surgelée avec matière grasse
+2710013|Jardinière surgelée sans matière grasse
+2709928|Concombre cuit
+2709784|Concombre
+2709930|Aubergine cuite avec matière grasse
+2709929|Aubergine cuite sans matière grasse
+2709785|Aubergine crue
+2709907|Fenouil cuit
+2709779|Fenouil cru
+2709931|Fleurs comestibles cuites (courge, lys, sesbania)
+2710037|Jai (plat végétarien bouddhiste)
+2709787|Jicama cru
+2709934|Chou-rave cuit
+2709788|Chou-rave cru
+2709936|Racine de lotus cuite
+2709943|Champignons asiatiques séchés, cuits
+2709938|Champignons cuits
+2709940|Champignons en conserve, cuits
+2709942|Champignons frais au beurre
+2709941|Champignons frais à l'huile
+2709939|Champignons frais poêlés avec matière grasse
+2709937|Champignons frais cuits sans matière grasse
+2709793|Champignons crus
+2709946|Gombos cuits
+2709947|Gombos frais avec matière grasse
+2709944|Gombos frais sans matière grasse
+2709948|Gombos surgelés avec matière grasse
+2709945|Gombos surgelés sans matière grasse
+2709954|Cœurs de palmier cuits
+2709955|Panais cuit
+2709690|Petits pois-carottes en conserve avec matière grasse
+2709686|Petits pois-carottes en conserve sans matière grasse
+2709687|Petits pois-carottes cuits
+2709688|Petits pois-carottes frais avec matière grasse
+2709684|Petits pois-carottes frais sans matière grasse
+2709689|Petits pois-carottes surgelés avec matière grasse
+2709685|Petits pois-carottes surgelés sans matière grasse
+2710011|Poivrons et oignons cuits avec matière grasse (piperade)
+2710010|Poivrons et oignons cuits sans matière grasse
+2709802|Piment banane cru
+2709976|Poivron vert cuit
+2710096|Piments jalapeños
+2709799|Poivron cru
+2709800|Poivron vert cru
+2709803|Radis
+2709763|Crudités (légume cru)
+2709980|Rutabaga cuit
+2709804|Rutabaga cru
+2709981|Salsifis cuit
+2709990|Algues cuites avec matière grasse
+2709989|Algues cuites sans matière grasse
+2709805|Algues crues
+2709985|Pois gourmands cuits
+2709986|Pois gourmands frais avec matière grasse
+2709983|Pois gourmands frais sans matière grasse
+2709987|Pois gourmands surgelés avec matière grasse
+2709984|Pois gourmands surgelés sans matière grasse
+2709806|Pois gourmands crus
+2709764|Graines germées
+2709808|Courgette crue
+2709993|Courgette cuite
+2709996|Courgette en conserve avec matière grasse
+2709998|Courgette fraîche au beurre
+2709997|Courgette fraîche à l'huile
+2709994|Courgette fraîche poêlée avec matière grasse
+2709991|Courgette fraîche cuite sans matière grasse
+2710000|Courgette surgelée au beurre
+2709999|Courgette surgelée à l'huile
+2709995|Courgette surgelée avec matière grasse
+2709992|Courgette surgelée sans matière grasse
+2709807|Courge jaune crue
+2710002|Navet cuit
+2709809|Navet cru
+2710029|Légumes pour pot-au-feu cuits avec matière grasse
+2710030|Légumes pour pot-au-feu cuits sans matière grasse
+2710004|Courge cireuse cuite
+2708343|Crêpe chinoise (cong you bing)
+2708341|Crêpe
+2708036|Crêpe au chocolat
+2708037|Crêpe aux fruits
+2708342|Crêpe nature
+2708347|Dosa nature
+2709129|Dosa fourré (masala dosa)
+2708338|Bâtonnets de pain perdu
+2708339|Bâtonnets de pain perdu (restauration)
+2708340|Bâtonnets de pain perdu (cantine)
+2708331|Pain perdu
+2708333|Pain perdu (restauration)
+2708332|Pain perdu surgelé
+2708337|Pain perdu sans gluten
+2708335|Pain perdu nature
+2708334|Pain perdu (cantine)
+2708336|Pain perdu complet
+2708294|Pancakes
+2708308|Pancakes au chocolat
+2708301|Pancakes au chocolat (restauration)
+2708297|Pancakes au chocolat surgelés
+2708306|Pancakes aux fruits
+2708300|Pancakes aux fruits (restauration)
+2708296|Pancakes aux fruits surgelés
+2708311|Pancakes sans gluten
+2708304|Pancakes nature
+2708299|Pancakes nature (restauration)
+2708295|Pancakes nature surgelés
+2708305|Pancakes nature allégés
+2708307|Pancakes au potiron
+2708303|Pancakes (cantine)
+2708309|Pancakes complets
+2708302|Pancakes complets (restauration)
+2708298|Pancakes complets surgelés
+2708310|Pancakes complets allégés
+2708312|Gaufre

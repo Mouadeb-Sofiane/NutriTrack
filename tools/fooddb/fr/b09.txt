@@ -1,0 +1,400 @@
+2706988|Sandwich au poulet (sub, restauration)
+2706989|Sandwich poulet et fromage (sub, restauration)
+2706995|Club sandwich, pain complet
+2706996|Club sandwich au fromage, pain complet
+2706993|Club sandwich
+2706994|Club sandwich au fromage
+2706997|Club sandwich (restauration)
+2706950|Sandwich au corned-beef, pain complet
+2706951|Sandwich corned-beef et fromage, pain complet
+2706948|Sandwich au corned-beef
+2706949|Sandwich corned-beef et fromage
+2706957|Sandwich au rôti de bœuf et jus (French dip)
+2706972|Sandwich à la salade de jambon, pain complet
+2706971|Sandwich à la salade de jambon
+2706966|Sandwich au jambon, pain complet
+2706967|Sandwich jambon-fromage, pain complet
+2706964|Sandwich au jambon (pain de mie)
+2706965|Sandwich jambon-fromage (pain de mie)
+2706968|Sandwich au jambon (sub, restauration)
+2706969|Sandwich jambon-fromage (sub, restauration)
+2706970|Wrap au jambon
+2707051|Sandwich italien (charcuteries), pain complet
+2707050|Sandwich italien (charcuteries)
+2707052|Sandwich italien (sub, restauration)
+2707054|Sandwich à la saucisse italienne, pain complet
+2707084|Sandwich mixte de charcuteries, pain complet
+2707085|Sandwich mixte de charcuteries et fromage, pain complet
+2707082|Sandwich mixte de charcuteries
+2707083|Sandwich mixte de charcuteries et fromage
+2707086|Sandwich mixte de charcuteries (sub, restauration)
+2707087|Sandwich mixte charcuteries-fromage (sub, restauration)
+2707088|Wrap mixte de charcuteries
+2706952|Sandwich Reuben (corned-beef, choucroute, fromage)
+2706955|Sandwich au rôti de bœuf, pain complet
+2706956|Sandwich rôti de bœuf et fromage, pain complet
+2706953|Sandwich au rôti de bœuf
+2706954|Sandwich rôti de bœuf et fromage
+2707048|Sandwich au salami, pain complet
+2707049|Sandwich salami et fromage, pain complet
+2707046|Sandwich au salami
+2707047|Sandwich salami et fromage
+2706881|Wrap (sans précision)
+2706880|Sandwich (sans précision)
+2707055|Sandwich au Spam
+2707091|Sandwich dinde et jambon, pain complet
+2707092|Sandwich dinde, jambon et fromage, pain complet
+2707089|Sandwich dinde et jambon
+2707090|Sandwich dinde, jambon et fromage
+2707093|Sandwich dinde et jambon (sub, restauration)
+2707094|Sandwich dinde, jambon et fromage (sub, restauration)
+2706983|Sandwich à la dinde, pain complet
+2706984|Sandwich dinde et fromage, pain complet
+2706981|Sandwich à la dinde
+2706982|Sandwich dinde et fromage
+2706985|Sandwich à la dinde (sub, restauration)
+2706986|Sandwich dinde et fromage (sub, restauration)
+2706987|Wrap à la dinde
+2710537|Soda light (sans sucres)
+2710560|Soda au chocolat light
+2710564|Cola au chocolat light
+2710544|Cola light sans caféine
+2710542|Cola light (zéro)
+2710563|Cola aromatisé light (vanille, cerise)
+2710550|Soda crème light (cream soda)
+2710554|Soda aux fruits light avec caféine
+2710552|Soda aux fruits light sans caféine
+2710556|Ginger ale light
+2710548|Soda type Dr Pepper light sans caféine
+2710546|Soda type Dr Pepper light
+2710558|Root beer light
+2710757|Boisson énergisante allégée (Monster)
+2710768|Boisson énergisante sans sucres
+2710758|Boisson énergisante sans sucres (Monster)
+2710759|Boisson énergisante sans sucres (Mountain Dew AMP)
+2710760|Boisson énergisante sans sucres (No Fear)
+2710764|Boisson énergisante sans sucres (Rockstar)
+2710765|Boisson énergisante sans sucres (Vault)
+2710761|Boisson énergisante sans sucres (NOS)
+2710763|Boisson énergisante sans sucres (Red Bull)
+2710774|Boisson pour le sport allégée
+2710772|Boisson pour le sport allégée (Gatorade G2)
+2710773|Boisson pour le sport sans sucres (Powerade Zero)
+2705809|Sauce Alfredo (crème, beurre, parmesan)
+2705810|Sauce Alfredo aux légumes
+2705811|Sauce Alfredo à la viande
+2705812|Sauce Alfredo à la viande et aux légumes
+2705813|Sauce Alfredo au poulet
+2705814|Sauce Alfredo au poulet et aux légumes
+2705815|Sauce Alfredo aux fruits de mer
+2705816|Sauce Alfredo aux fruits de mer et légumes
+2705782|Dip à l'artichaut
+2707400|Dip de haricots refrits
+2707404|Sauce aux haricots noirs (chinoise)
+2705786|Dip au fromage
+2705785|Dip au fromage et piment
+2705791|Fondue au fromage
+2705808|Sauce au fromage
+2705620|Dip chipotle léger
+2705619|Dip chipotle
+2705444|Dip chipotle au yaourt
+2710178|Sauce curry
+2705618|Dip (sauce apéritive)
+2710049|Caviar d'aubergine (baba ganoush, mtabal)
+2709742|Sauce verte pour enchiladas
+2710169|Sauce à l'ail (toum)
+2707149|Sauce brune (gravy)
+2707145|Sauce au jus de bœuf (gravy)
+2707146|Sauce au jus de bœuf 0 %
+2707148|Sauce brune à la sauce soja
+2707144|Sauce au jus de volaille
+2707147|Sauce au jus de volaille 0 %
+2707548|Sauce brune végétarienne
+2709308|Guacamole aux tomates
+2709307|Guacamole
+2710171|Sauce hollandaise
+2707403|Houmous aromatisé
+2707402|Houmous nature
+2707401|Dip mexicain en couches
+2710170|Sauce beurre citron
+2707151|Sauce mole
+2705622|Dip à l'oignon léger
+2705621|Dip à l'oignon
+2705445|Dip à l'oignon au yaourt
+2707546|Sauce aux cacahuètes (satay)
+2710175|Pesto
+2705624|Dip ranch léger
+2705623|Dip ranch
+2705446|Dip ranch au yaourt
+2709743|Salsa verde (sauce verte)
+2710177|Sauce (sans précision)
+2705784|Dip aux fruits de mer
+2705783|Dip épinards-artichaut
+2705626|Dip aux épinards léger
+2705625|Dip aux épinards
+2705447|Dip aux épinards au yaourt
+2705448|Tzatziki
+2705628|Dip aux légumes léger
+2705627|Dip aux légumes
+2705449|Dip aux légumes au yaourt
+2705793|Welsh rarebit (pain au fromage fondu)
+2705703|Sauce blanche (béchamel)
+2708071|Beignet (de La Nouvelle-Orléans, sucre glace)
+2707683|Pain sucré espagnol
+2708058|Viennoiserie (sans précision)
+2708077|Tartelette fourrée pour petit-déjeuner (type Pop-Tarts)
+2708078|Tartelette fourrée pour petit-déjeuner allégée
+2707682|Brioche
+2708055|Feuilletés au fromage (gougères)
+2708070|Churros
+2708079|Gâteau streusel (coffee cake)
+2708081|Gâteau streusel au fromage frais
+2708080|Gâteau streusel aux fruits
+2707677|Brioche tressée (coffee cake levé)
+2708029|Chou à la crème ou éclair
+2708031|Éclair glacé (chocolat, café)
+2708032|Éclair glacé allégé
+2708030|Chou à la crème (sans glaçage)
+2708033|Chou vide (pâte à choux)
+2707678|Croissant
+2707679|Croissant au fromage
+2707680|Pain au chocolat (croissant au chocolat)
+2707681|Croissant aux fruits
+2708059|Danish (viennoiserie danoise) nature
+2708061|Danish au fromage frais
+2708060|Danish aux fruits
+2708069|Mini-beignets (trous de donut)
+2708062|Donut (beignet)
+2708067|Donut moelleux glaçage chocolat
+2708063|Donut moelleux nature
+2708065|Donut moelleux au sucre glace
+2708066|Donut moelleux glacé
+2708064|Donut au chocolat
+2708068|Donut au chocolat glaçage chocolat
+2708075|Beignet fourré à la crème pâtissière
+2708076|Beignet fourré à la crème, glacé
+2708074|Beignet à la confiture (boule de Berlin)
+2708072|Donut levé (glazed)
+2708073|Donut levé glaçage chocolat
+2708025|Beignet aux fruits
+2708024|Beignet nature
+2708349|Funnel cake (gâteau frit) au sucre glace
+2708350|Funnel cake au sucre et aux fruits
+2707674|Pan dulce nature (brioche mexicaine)
+2707670|Pan dulce aux fruits
+2707676|Pan dulce aux raisins et glaçage
+2707675|Pan dulce au sucre (concha)
+2707669|Pan dulce
+2707704|Panettone
+2708050|Pâtisserie chinoise à la farine de riz
+2708052|Pâtisserie italienne au fromage (cannolo, sfogliatella)
+2708726|Pâtisserie fourrée au fromage
+2708051|Petits gâteaux frits (type chebakia, oreillettes)
+2708047|Pâtisserie fourrée aux fruits
+2708048|Gâteau de lune (pâte de haricot ou de lotus)
+2708049|Gâteau de lune au jaune d'œuf salé
+2708056|Pâte frite (farine et eau)
+2708053|Pâte feuilletée cuite
+2708054|Feuilleté à la crème (mille-feuille)
+2707668|Roulé à la cannelle glacé (cinnamon roll)
+2707667|Roulé à la cannelle
+2707673|Brioche sucrée glacée
+2707666|Brioche sucrée
+2707671|Brioche aux fruits glacée
+2707672|Brioche aux fruits glacée allégée
+2708035|Sopaipilla au miel ou sirop
+2708034|Sopaipilla (beignet soufflé)
+2708038|Tamal sucré
+2709196|Pommes séchées
+2709197|Abricots secs
+2709200|Chips de banane
+2709198|Myrtilles séchées
+2709199|Cerises séchées
+2709202|Canneberges séchées (cranberries)
+2709201|Raisins de Corinthe
+2709203|Datte
+2709195|Fruits secs (sans précision)
+2709204|Figue sèche
+2709205|Mangue séchée
+2709206|Papaye séchée
+2709207|Pêches séchées
+2709208|Poires séchées
+2709209|Kaki séché
+2709210|Ananas séché
+2709211|Pruneau
+2709212|Raisins secs
+2708724|Bao (brioche vapeur farcie à la viande)
+2708725|Bao sans viande
+2708700|Rouleau de printemps frit (nem) sans viande
+2708702|Nem au bœuf ou au porc
+2708703|Nem au poulet
+2708701|Nem aux crevettes
+2708707|Beignets frits crabe et fromage frais (crab rangoon)
+2708704|Rouleau de printemps (galette de riz, non frit)
+2708965|Maki au thon
+2708961|California roll
+2708960|Maki à l'avocat
+2708962|Maki à l'anguille
+2708963|Maki au saumon
+2708964|Maki aux crevettes
+2708966|Maki aux légumes
+2708959|Sushi
+2708967|Sushi au crabe
+2708968|Sushi à l'anguille
+2708972|Sushi à l'omelette (tamago)
+2708969|Sushi au saumon (nigiri)
+2708970|Sushi aux crevettes (nigiri)
+2708971|Sushi au thon (nigiri)
+2708705|Raviolis chinois frits (wonton, gyoza)
+2708706|Raviolis chinois frits sans viande
+2708708|Raviolis chinois vapeur (dim sum)
+2707337|Sandwich biscuit au bacon
+2708744|Biscuit en sauce blanche à la saucisse
+2708699|Pizza petit-déjeuner à l'œuf
+2707343|Burrito à l'œuf
+2707345|Burrito œuf et bacon
+2707346|Burrito œuf et jambon
+2707344|Burrito œuf et saucisse
+2707281|Sandwich salade d'œufs, pain complet
+2707280|Sandwich salade d'œufs
+2707315|Muffin anglais à l'œuf
+2707317|Muffin anglais œuf et bacon
+2707318|Muffin anglais œuf et jambon
+2707316|Muffin anglais œuf et saucisse
+2707328|Bagel à l'œuf
+2707330|Bagel œuf et bacon
+2707331|Bagel œuf et jambon
+2707329|Bagel œuf et saucisse
+2707323|Biscuit à l'œuf
+2707326|Biscuit œuf et bacon
+2707327|Biscuit œuf, bacon et fromage
+2707324|Biscuit œuf et saucisse
+2707325|Biscuit œuf, saucisse et fromage
+2707319|Croissant à l'œuf
+2707321|Croissant œuf et bacon
+2707322|Croissant œuf et jambon
+2707320|Croissant œuf et saucisse
+2707332|Sandwich pancake à l'œuf
+2707333|Sandwich pancake œuf et viande
+2707311|Sandwich à l'œuf, pain complet
+2707312|Sandwich œuf et fromage, pain complet
+2707313|Sandwich œuf et viande, pain complet
+2707314|Sandwich œuf, viande et fromage, pain complet
+2707307|Sandwich à l'œuf
+2707308|Sandwich œuf et fromage
+2707309|Sandwich œuf et viande
+2707310|Sandwich œuf, viande et fromage
+2707334|Sandwich au blanc d'œuf
+2707335|Sandwich blanc d'œuf et fromage
+2707336|Sandwich blanc d'œuf et viande
+2707338|Biscuit au jambon
+2708597|Quesadilla à l'œuf
+2708598|Quesadilla œuf et viande
+2707341|Muffin anglais à la saucisse
+2707339|Biscuit à la saucisse
+2707340|Biscuit saucisse et fromage
+2707342|Sandwich pancake à la saucisse
+2708602|Taquito à l'œuf
+2705792|Soufflé au fromage
+2707176|Œuf de cane, cuit
+2707190|Salade d'œufs sauce 0 %
+2707192|Gratin d'œufs, pain, fromage, lait et viande
+2707198|Omelette ou œufs brouillés
+2707204|Omelette ou œufs brouillés avec matière grasse
+2707202|Omelette ou œufs brouillés à la graisse animale
+2707201|Omelette ou œufs brouillés au beurre
+2707203|Omelette ou œufs brouillés (spray de cuisson)
+2707199|Omelette ou œufs brouillés à la margarine
+2707200|Omelette ou œufs brouillés à l'huile
+2707205|Omelette ou œufs brouillés sans matière grasse
+2707246|Omelette fromage et légumes verts
+2707244|Omelette fromage et légumes verts, avec matière grasse
+2707245|Omelette fromage et légumes verts, sans matière grasse
+2707221|Omelette fromage et viande
+2707227|Omelette fromage et viande, avec matière grasse
+2707225|Omelette fromage et viande, à la graisse animale
+2707224|Omelette fromage et viande, au beurre
+2707226|Omelette fromage et viande (spray de cuisson)
+2707222|Omelette fromage et viande, à la margarine
+2707223|Omelette fromage et viande, à l'huile
+2707228|Omelette fromage et viande, sans matière grasse
+2707243|Omelette fromage et tomates
+2707241|Omelette fromage et tomates, avec matière grasse
+2707242|Omelette fromage et tomates, sans matière grasse
+2707252|Omelette fromage et légumes (poivron, oignon, champignons)
+2707250|Omelette fromage et légumes, avec matière grasse
+2707251|Omelette fromage et légumes, sans matière grasse
+2707210|Omelette au fromage, à la graisse animale
+2707209|Omelette au fromage, au beurre
+2707211|Omelette au fromage (spray de cuisson)
+2707207|Omelette au fromage, à la margarine
+2707208|Omelette au fromage, à l'huile
+2707270|Omelette fromage, viande et légumes verts
+2707268|Omelette fromage, viande et légumes verts, avec matière grasse
+2707269|Omelette fromage, viande et légumes verts, sans matière grasse
+2707267|Omelette fromage, viande et tomates
+2707265|Omelette fromage, viande et tomates, avec matière grasse
+2707266|Omelette fromage, viande et tomates, sans matière grasse
+2707276|Omelette fromage, viande et légumes
+2707274|Omelette fromage, viande et légumes, avec matière grasse
+2707275|Omelette fromage, viande et légumes, sans matière grasse
+2707273|Omelette complète (fromage, viande, tomates, légumes verts)
+2707271|Omelette complète, avec matière grasse
+2707272|Omelette complète, sans matière grasse
+2707212|Omelette au fromage, sans matière grasse
+2707249|Omelette fromage, tomates et légumes verts
+2707247|Omelette fromage, tomates et légumes verts, avec matière grasse
+2707248|Omelette fromage, tomates et légumes verts, sans matière grasse
+2707234|Omelette aux légumes verts (épinards…)
+2707232|Omelette aux légumes verts, avec matière grasse
+2707233|Omelette aux légumes verts, sans matière grasse
+2707258|Omelette viande et légumes verts
+2707256|Omelette viande et légumes verts, avec matière grasse
+2707257|Omelette viande et légumes verts, sans matière grasse
+2707255|Omelette viande et tomates
+2707253|Omelette viande et tomates, avec matière grasse
+2707254|Omelette viande et tomates, sans matière grasse
+2707264|Omelette viande et légumes
+2707262|Omelette viande et légumes, avec matière grasse
+2707263|Omelette viande et légumes, sans matière grasse
+2707213|Omelette à la viande (jambon, lardons…)
+2707219|Omelette à la viande, avec matière grasse
+2707217|Omelette à la viande, à la graisse animale
+2707216|Omelette à la viande, au beurre
+2707218|Omelette à la viande (spray de cuisson)
+2707214|Omelette à la viande, à la margarine
+2707215|Omelette à la viande, à l'huile
+2707220|Omelette à la viande, sans matière grasse
+2707261|Omelette viande, tomates et légumes verts
+2707259|Omelette viande, tomates et légumes verts, avec matière grasse
+2707260|Omelette viande, tomates et légumes verts, sans matière grasse
+2707279|Omelette aux pommes de terre et oignons (tortilla)
+2707277|Omelette aux pommes de terre et oignons, avec matière grasse
+2707278|Omelette aux pommes de terre et oignons, sans matière grasse
+2707237|Omelette tomates et légumes verts
+2707235|Omelette tomates et légumes verts, avec matière grasse
+2707236|Omelette tomates et légumes verts, sans matière grasse
+2707231|Omelette aux tomates (chakchouka sans sauce)
+2707229|Omelette aux tomates, avec matière grasse
+2707230|Omelette aux tomates, sans matière grasse
+2707240|Omelette aux légumes
+2707238|Omelette aux légumes, avec matière grasse
+2707239|Omelette aux légumes, sans matière grasse
+2707188|Salade d'œufs vinaigrette italienne
+2707186|Salade d'œufs sauce crémeuse
+2707189|Salade d'œufs vinaigrette légère
+2707187|Salade d'œufs sauce crémeuse légère
+2707183|Salade d'œufs mayonnaise légère
+2707185|Salade d'œufs sauce type mayonnaise légère
+2707182|Salade d'œufs mayonnaise (œufs mimosa)
+2707184|Salade d'œufs sauce type mayonnaise
+2707298|Omelette au substitut d'œuf, avec matière grasse
+2707299|Omelette au substitut d'œuf, sans matière grasse
+2707300|Omelette au substitut d'œuf et fromage
+2707303|Omelette au substitut d'œuf, fromage et viande
+2707304|Omelette au substitut d'œuf, fromage et légumes
+2707306|Omelette au substitut d'œuf, fromage, viande et légumes
+2707301|Omelette au substitut d'œuf et viande
+2707305|Omelette au substitut d'œuf, viande et légumes
+2707302|Omelette au substitut d'œuf et légumes
+2707283|Omelette aux blancs d'œufs

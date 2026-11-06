@@ -1,7 +1,7 @@
 /** Accès aux données : toutes les écritures passent par ici (validation + horodatage). */
 import type { NutriDB } from './db';
 import type { ExerciseEntry, Food, Goals, LineItem, MealEntry, PersonalPortion, Preferences, Profile, Recipe, WeightEntry } from '../domain/types';
-import { nowISO, isISODate } from '../domain/dates';
+import { nowISO, isISODate, toISODate } from '../domain/dates';
 import { cleanNutrients, isValidNumber } from '../domain/nutrition';
 import { newId } from './ids';
 
@@ -42,7 +42,17 @@ export function createRepo(db: NutriDB) {
     async getGoals() { return getKV<Goals>('goals'); },
     async saveGoals(g: Goals) {
       if (!isValidNumber(g.kcal) || g.kcal <= 0) throw new ValidationError("L'objectif calorique doit être un nombre positif.");
-      await setKV('goals', { ...g, updatedAt: nowISO() });
+      const prev = await getKV<Goals>('goals');
+      const mode = (await getKV<Profile>('profile'))?.goal ?? 'maintain';
+      const from = toISODate(new Date());
+      // Historique : on conserve l'objectif en vigueur avant aujourd'hui pour les jours passés.
+      let history = [...(g.history ?? prev?.history ?? [])];
+      // Première mise à jour : l'objectif précédent couvre tout le passé (son mode exact n'était pas mémorisé).
+      if (!history.length && prev) history.push({ from: '0000-01-01', kcal: Math.round(prev.kcal), goal: mode, manual: prev.manual });
+      history = history.filter((h) => h.from !== from);
+      const last = history.sort((a, b) => a.from.localeCompare(b.from)).at(-1);
+      if (!last || last.kcal !== g.kcal || last.goal !== mode || last.manual !== g.manual) history.push({ from: history.length ? from : '0000-01-01', kcal: Math.round(g.kcal), goal: mode, manual: g.manual });
+      await setKV('goals', { ...g, history: history.slice(-200), updatedAt: nowISO() });
     },
     async getPrefs() { return { ...DEFAULT_PREFS, ...(await getKV<Preferences>('prefs')) }; },
     async savePrefs(p: Partial<Preferences>) {
