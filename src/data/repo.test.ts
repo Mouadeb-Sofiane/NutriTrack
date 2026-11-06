@@ -168,3 +168,19 @@ describe('historique des objectifs', () => {
     expect(h[0]).toMatchObject({ from: '0000-01-01', kcal: 2000 });
   });
 });
+
+describe('migration de la base locale', () => {
+  it('v1 → v2 : les données existantes sont conservées', async () => {
+    const Dexie = (await import('dexie')).default;
+    const name = `migr-${n++}`;
+    const old = new Dexie(name);
+    old.version(1).stores({ foods: 'id, name, barcode, favorite, updatedAt', meals: 'id, date, mealType, createdAt, *recipeIds', recipes: 'id, name, cuisine, favorite, parentId, updatedAt', weights: 'id, date', exercises: 'id, date', photos: 'id', portions: 'id, recipeId, foodId', kv: 'key' });
+    await old.table('meals').put({ ...baseMeal(), id: 'm-old', createdAt: 'x', updatedAt: 'x' });
+    await old.table('kv').put({ key: 'goals', value: { kcal: 2100 } });
+    old.close();
+    const upgraded = new NutriDB(name);
+    expect((await upgraded.meals.get('m-old'))?.items[0].name).toBe('Riz');
+    expect(((await upgraded.kv.get('goals'))?.value as { kcal: number }).kcal).toBe(2100);
+    expect(await upgraded.photoSigs.count()).toBe(0);
+  });
+});

@@ -218,7 +218,7 @@ function History() {
 const TONE_STYLE: Record<DayTone, string> = {
   near: 'bg-brand-soft text-brand-strong',
   moderate: 'bg-[#fff6dc] text-[#8a6100]',
-  marked: 'bg-warn-soft text-warn',
+  marked: 'bg-[#ffe2c4] text-[#9a4a05]',
   large: 'bg-[#fde8e4] text-[#a8321b]',
 };
 

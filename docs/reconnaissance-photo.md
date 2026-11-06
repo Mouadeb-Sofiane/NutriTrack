@@ -6,11 +6,15 @@
 
 | Elle fait | Elle ne fait pas |
 |---|---|
-| Proposer les plats ou aliments probables parmi ~80 libellés (fast-food, snacks, fête foraine, plats maison et du monde, fruits, boissons…), avec un score relatif | Peser exactement, voir la quantité d'huile, une sauce cachée ou la recette |
+| Proposer les plats ou aliments probables parmi 100 libellés (fast-food, snacks, fête foraine, plats maison et du monde — quiche, hachis parmentier, lasagnes, tajine, couscous, biryani, foufou, injera… —, fruits, boissons), avec un score relatif | Peser exactement, voir la quantité d'huile, une sauce cachée ou la recette |
 | Repérer plusieurs aliments sur une même photo (analyse de l'image entière + 4 zones) | Reconnaître un plat absent de sa liste : elle proposera alors le libellé le plus proche (d'où la correction manuelle toujours disponible) |
 | Fonctionner hors ligne, sans frais par photo | Calculer seule les calories : elle **propose un poids** (voir ci-dessous), tu le valides ou le corriges, puis l'application calcule les estimations **moyenne et haute** |
 
-Parcours : **Photo → propositions → tu touches le bon plat → écran habituel de portion (petite / moyenne / grande, pièces, part mangée) → estimations moyenne et haute → tu peux ajouter un 2ᵉ aliment → Terminer → tu vérifies le repas → Enregistrer.** Rien n'est enregistré sans ta validation. Si une de tes recettes correspond (« Couscous familial » quand un couscous est reconnu), elle est proposée.
+Pour un **plat composé** (quiche, hachis parmentier, couscous, tajine, lasagnes, curry…), toucher la proposition ouvre directement sa **composition modifiable** : ingrédients et grammes estimés (mis à l'échelle du poids estimé sur la photo), estimation moyenne et haute. Tu peux valider tel quel (« Valider mon repas »), corriger seulement ce que tu connais, choisir une autre possibilité en un geste (« Ou plutôt : quiche au thon, quiche aux poireaux… ») ou indiquer « Ce n'est pas ce plat » : la composition est alors **entièrement remplacée** (les ingrédients du plat mal reconnu ne sont pas gardés).
+
+**Plats déjà enregistrés ou déjà photographiés** : l'application garde la signature numérique de l'image (pas la photo) de chaque plat validé. Si une nouvelle photo ressemble beaucoup à un plat enregistré **et** que le nom est compatible avec ce que le modèle reconnaît, elle propose « Réutiliser mon plat enregistré » ou « Analyser cette nouvelle photo » (plusieurs quiches enregistrées → tu choisis). Après deux photos proches d'un même plat, elle propose discrètement de l'enregistrer (« Enregistrer / Plus tard / Ne plus proposer »). Rien n'est réutilisé ni enregistré automatiquement.
+
+Parcours pour un aliment simple ou un snack : **Photo → propositions → tu touches le bon plat → écran habituel de portion (petite / moyenne / grande, pièces, part mangée) → estimations moyenne et haute → tu peux ajouter un 2ᵉ aliment → Terminer → tu vérifies le repas → Enregistrer.** Rien n'est enregistré sans ta validation. Si une de tes recettes correspond (« Couscous familial » quand un couscous est reconnu), elle est proposée.
 
 **Mode dégradé** : si le modèle n'est pas installé, si le téléphone n'y arrive pas ou si les propositions sont fausses, l'identification manuelle en un geste (kebab, pizza, churros…) ou en quelques mots reste juste en dessous. Sur un téléphone lent, un bouton « mode rapide » analyse seulement l'image entière.
 
@@ -40,12 +44,12 @@ Photos réelles d'Open Images (Google, licence CC BY 2.0), annotées par des hum
 
 | Jeu de test | Photos | Bon plat en 1ʳᵉ proposition | Dans les 3 premières | Dans la liste proposée |
 |---|---|---|---|---|
-| Repas courants (43 types : pizza, burger, frites, sushis, pâtes, salades, desserts, fruits, boissons…) | 258 | 78 % | 94 % | 98 % |
-| Cuisines du monde et street food (27 types : couscous, doner kebab, shawarma, curry, biryani, ramen, churros, crêpes, nuggets…) | 173 | 78 % | 91 % | 94 % |
+| Repas courants (43 types : pizza, burger, frites, sushis, pâtes, salades, desserts, fruits, boissons…) | 258 | 77 % | 92 % | 95 % |
+| Cuisines du monde et street food (27 types : couscous, doner kebab, shawarma, curry, biryani, ramen, churros, crêpes, nuggets…) | 173 | 80 % | 91 % | 96 % |
 | Photos à plusieurs aliments : part des aliments retrouvés dans les propositions | 128 | — | — | 87 % |
 | Vérification dans le navigateur, par l'interface réelle (même modèle, même code) | 84 + 53 | 77 % | 91 % | 94–95 % |
 
-Par plat (2ᵉ jeu) : couscous 4/4, curry 17/18, pad thaï 8/8, ramen 7/7, pho 8/8, biryani 9/10 en tête ; doner kebab dans les 3 premières 6/6 mais souvent après « sandwich » ou « burrito » ; churros 5/6 ; points faibles : paella (pas de libellé dédié), wraps, baklava, soupes et omelettes parfois confondues.
+Mesures de novembre 2026 avec le vocabulaire de 100 libellés (80 auparavant : 78 % / 79 % en tête). Trois libellés candidats (jollof, fish and chips, bibimbap) ont été retirés car ils prenaient la place de bonnes réponses ; ces plats restent accessibles par la recherche et comme alternatives. Les nouveaux plats (quiche, hachis parmentier, injera, foufou…) n'ont pas pu être mesurés faute de photos de test annotées. Vérification précédente (80 libellés) — par plat (2ᵉ jeu) : couscous 4/4, curry 17/18, pad thaï 8/8, ramen 7/7, pho 8/8, biryani 9/10 en tête ; doner kebab dans les 3 premières 6/6 mais souvent après « sandwich » ou « burrito » ; churros 5/6 ; points faibles : paella (pas de libellé dédié), wraps, baklava, soupes et omelettes parfois confondues.
 
 Limites de ces mesures : quelques photos par plat (4 à 18), pas de photo de tajine, chorba ou harira disponible pour le test, et des photos de restaurant ou de blog plus nettes que certaines photos prises au quotidien. Les chiffres réels peuvent être inférieurs.
 
