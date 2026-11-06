@@ -6,7 +6,7 @@
  */
 import { z } from 'zod';
 import type { NutriDB } from './db';
-import { SCHEMA_VERSION } from '../domain/types';
+import { SCHEMA_VERSION, type Recipe } from '../domain/types';
 import { nowISO } from '../domain/dates';
 
 const num = z.number().refine(Number.isFinite, 'nombre invalide');
@@ -226,4 +226,55 @@ export async function wipeAll(db: NutriDB) {
   await db.transaction('rw', [db.foods, db.meals, db.recipes, db.weights, db.exercises, db.portions, db.photos, db.kv], async () => {
     for (const t of [db.foods, db.meals, db.recipes, db.weights, db.exercises, db.portions, db.photos, db.kv]) await t.clear();
   });
+}
+
+/* ——— Export / import de recettes seules (partage, autre appareil) ——— */
+
+export const recipesFileSchema = z.object({
+  app: z.literal('nutritrack-recettes'),
+  version: z.literal(1),
+  exportedAt: z.string(),
+  recipes: z.array(recipe),
+});
+export type RecipesFile = z.infer<typeof recipesFileSchema>;
+
+/** Recettes au format JSON (sans photos, sans signatures d'images). */
+export async function exportRecipes(db: NutriDB, ids?: string[]): Promise<RecipesFile> {
+  const all = await db.recipes.toArray();
+  const list = ids ? all.filter((r) => ids.includes(r.id)) : all;
+  return {
+    app: 'nutritrack-recettes', version: 1, exportedAt: nowISO(),
+    recipes: list.map(({ photoId: _p, photoSignatures: _s, ...r }) => r) as RecipesFile['recipes'],
+  };
+}
+
+export function parseRecipesFile(text: string): { ok: true; file: RecipesFile } | { ok: false; error: string } {
+  let json: unknown;
+  try { json = JSON.parse(text); } catch { return { ok: false, error: "Ce fichier n'est pas un JSON valide." }; }
+  const res = recipesFileSchema.safeParse(json);
+  if (!res.success) return { ok: false, error: 'Ce fichier ne contient pas de recettes NutriTrack.' };
+  return { ok: true, file: res.data };
+}
+
+/** JSON à clés triées : deux objets identiques donnent la même chaîne quel que soit l'ordre des clés. */
+function canonical(v: unknown): string {
+  return JSON.stringify(v, (_k, x) => (x && typeof x === 'object' && !Array.isArray(x) ? Object.fromEntries(Object.entries(x).sort(([a], [b]) => a.localeCompare(b))) : x));
+}
+
+/**
+ * Importe sans jamais écraser : une recette au même identifiant mais différente est
+ * ajoutée comme copie (« (importée) ») ; une recette identique est ignorée.
+ */
+export async function importRecipes(db: NutriDB, file: RecipesFile): Promise<{ added: number; skipped: number }> {
+  let added = 0; let skipped = 0;
+  await db.transaction('rw', db.recipes, async () => {
+    for (const r of file.recipes as unknown as Recipe[]) {
+      const cur = await db.recipes.get(r.id);
+      if (cur && canonical({ ...cur, photoId: undefined, photoSignatures: undefined, updatedAt: '' }) === canonical({ ...r, photoId: undefined, photoSignatures: undefined, updatedAt: '' })) { skipped++; continue; }
+      const id = cur ? `${r.id}-imp-${Date.now().toString(36)}${added}` : r.id;
+      await db.recipes.put({ ...r, id, name: cur ? `${r.name} (importée)` : r.name, photoId: undefined, version: r.version ?? 1 });
+      added++;
+    }
+  });
+  return { added, skipped };
 }

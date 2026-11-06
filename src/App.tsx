@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { useRegisterSW } from 'virtual:pwa-register/react';
-import { useApp } from './state/app';
+import { repo, useApp } from './state/app';
+import { today } from './domain/dates';
 import { href, navigate, useRoute } from './state/router';
 import { Onboarding } from './screens/Onboarding';
 import { Today } from './screens/Today';
@@ -28,6 +29,11 @@ export function App() {
   const { loaded, prefs, profile } = useApp();
   const route = useRoute();
   const [section] = route.path;
+
+  // Conservation des photos de repas (réglage du profil) : nettoyage discret au démarrage.
+  useEffect(() => {
+    if (loaded && prefs.photoRetentionDays != null && prefs.photoRetentionDays > 0) repo.purgeMealPhotos(prefs.photoRetentionDays, today()).catch(() => undefined);
+  }, [loaded, prefs.photoRetentionDays]);
 
   useEffect(() => {
     if (!loaded) return;

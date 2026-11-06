@@ -1,0 +1,400 @@
+2708019|Crumble cobbler aux pommes
+2708020|Cobbler aux fruits rouges
+2708021|Cobbler aux cerises
+2708022|Cobbler aux pêches
+2708023|Crumble aux pommes
+2708026|Crumble aux fruits rouges
+2708027|Crumble aux cerises
+2708028|Crumble aux pêches
+2708008|Pizza dessert (sucrée)
+2708057|Chausson aux fruits (empanada sucrée)
+2707877|Gâteau glacé (glace)
+2708017|Fond de tarte (pâte cuite)
+2708018|Fond de tarte aux biscuits graham
+2707993|Tarte (sans précision)
+2707995|Tarte aux pommes (double croûte, apple pie)
+2707996|Chausson aux pommes de fast-food
+2708004|Tarte à la crème et banane
+2707997|Tarte aux fruits rouges
+2707998|Tarte aux myrtilles
+2707999|Tarte aux cerises
+2708005|Tarte à la crème au chocolat
+2708006|Tarte à la crème de coco
+2708007|Flan pâtissier (tarte au flan)
+2708001|Tarte au citron vert
+2708000|Tarte au citron
+2708014|Tarte au citron meringuée
+2708016|Tarte aux flocons d'avoine
+2708002|Tarte aux pêches
+2708009|Tarte crème au beurre de cacahuète
+2708015|Tarte aux noix de pécan
+2708010|Tarte à la crème et ananas
+2708011|Tarte au potiron
+2708003|Tarte aux fraises
+2708012|Tarte à la patate douce
+2708013|Tarte à la crème vanille
+2707873|Petit gâteau au chocolat (snack)
+2707874|Petit gâteau à la vanille (snack)
+2708039|Strudel aux pommes
+2708040|Strudel aux fruits rouges
+2708042|Strudel au fromage blanc
+2708041|Strudel aux cerises
+2708043|Strudel aux pêches
+2707994|Tartelette (tous types)
+2705702|Tiramisu
+2708046|Chausson aux fruits
+2710326|Amandes enrobées de chocolat
+2710328|Bonbon au chocolat
+2710331|Chocolat aux céréales croustillantes
+2710348|Chocolat aux fruits secs
+2710330|Chocolat aux noisettes ou amandes
+2710329|Chocolat aux fruits à coque
+2710365|Bonbons chocolatés dragéifiés (type M&M's)
+2710366|Bonbons chocolatés dragéifiés aux cacahuètes
+2710341|Barre chocolatée au caramel
+2710342|Barre chocolatée caramel et cacahuètes
+2710343|Barre chocolatée à la noix de coco
+2710332|Barre chocolatée biscuitée
+2710344|Chocolat fourré à la crème
+2710340|Fudge au chocolat
+2710345|Barre chocolatée au nougat
+2710346|Barre chocolatée nougat et cacahuètes
+2710327|Confiserie chocolatée
+2710347|Chocolat fourré au beurre de cacahuète
+2710349|Chocolat sans sucres ajoutés
+2710333|Pépites de chocolat
+2710336|Chocolat noir
+2710338|Chocolat noir aux noisettes ou amandes
+2710337|Chocolat noir aux fruits à coque
+2710335|Chocolat noir (confiserie)
+2710356|Cacahuètes enrobées de chocolat
+2710325|Bonbons (sans précision)
+2710354|Caramels
+2710363|Barbe à papa
+2710364|Bonbons aux fruits
+2710368|Pâte de fruits en lanière (fruit leather)
+2710367|Bonbons gélifiés aux fruits (fruit snacks)
+2710359|Bonbons gélifiés (gummies)
+2710360|Bonbons durs (sucres d'orge)
+2710352|Réglisse
+2710361|Sucette
+2710353|Guimauve (chamallow)
+2710358|Bonbons à la menthe
+2710350|Confiserie sans chocolat
+2710370|Bonbons sans sucres
+2710355|Nougat aux fruits secs
+2710357|Croquant aux cacahuètes (nougatine)
+2710334|Vermicelles de sucre (décors)
+2710369|Bonbons à mâcher (taffy)
+2710371|Chewing-gum
+2710372|Chewing-gum sans sucres
+2710362|Pastilles pour la gorge
+2710351|Ladoo (boule sucrée indienne)
+2710339|Chocolat blanc
+2709669|Carottes, cuites
+2709676|Carottes en conserve, cuites au beurre
+2709675|Carottes en conserve, cuites à l'huile
+2709672|Carottes en conserve, cuites avec matière grasse
+2709666|Carottes en conserve, cuites sans matière grasse
+2709681|Carottes en conserve allégées en sel, au beurre
+2709680|Carottes en conserve allégées en sel, à l'huile
+2709679|Carottes en conserve allégées en sel, avec matière grasse
+2709678|Carottes en conserve allégées en sel, sans matière grasse
+2709668|Carottes fraîches cuites au beurre
+2709667|Carottes fraîches cuites à l'huile
+2709670|Carottes fraîches cuites avec matière grasse
+2709664|Carottes fraîches cuites sans matière grasse
+2709674|Carottes surgelées cuites au beurre
+2709673|Carottes surgelées cuites à l'huile
+2709671|Carottes surgelées cuites avec matière grasse
+2709665|Carottes surgelées cuites sans matière grasse
+2709677|Carottes glacées (Vichy)
+2709660|Carottes crues
+2708114|Barre petit-déjeuner
+2708116|Barre petit-déjeuner fourrée aux fruits allégée
+2708115|Barre aux dattes enrobée de yaourt
+2708101|Barre de céréales
+2708082|Barre de céréales (Fiber One Chewy)
+2708091|Barre de céréales (Nature Valley Chewy Trail Mix)
+2708094|Barre de céréales croquante (Nature Valley)
+2708093|Barre de céréales sucrée-salée (Nature Valley)
+2708090|Barre aux fruits et noix (KIND)
+2708083|Barre de céréales (Nutri-Grain)
+2708085|Barre aux fruits et noix (Nutri-Grain)
+2708084|Barre au yaourt (Nutri-Grain)
+2708087|Barre de céréales (Special K)
+2708097|Barre de céréales moins sucrée (Quaker Chewy)
+2708096|Barre de céréales 90 kcal (Quaker Chewy)
+2708098|Barre de céréales enrobée (Quaker Chewy Dipps)
+2708095|Barre de céréales moelleuse (Quaker Chewy)
+2708099|Bouchées de granola (Quaker)
+2708109|Barre de céréales aux noix enrobée de chocolat
+2708107|Barre de céréales enrobée de chocolat
+2708111|Barre de céréales enrobée (sans chocolat)
+2708105|Barre de céréales aux fruits et noix
+2708112|Barre de céréales riche en fibres enrobée de yaourt
+2708102|Barre de céréales allégée
+2708103|Barre de céréales 0 %
+2708110|Barre d'avoine et noix enrobée
+2708106|Barre de céréales aux cacahuètes et avoine
+2708104|Barre de céréales allégée en sucres
+2708108|Barre de céréales à la noix de coco enrobée de chocolat
+2708113|Barre de céréales au riz soufflé
+2708092|Barre de céréales enrobée de yaourt (Nature Valley)
+2708086|Barre de céréales au lait
+2708100|Barre aux flocons d'avoine
+2705781|Boule de fromage apéritive
+2705773|Fromage fondu à tartiner type cheddar
+2705768|Fromage fondu à tartiner type cheddar allégé
+2705774|Fromage fondu à tartiner type emmental
+2705776|Fromage à tartiner en bombe
+2705772|Fromage au vin
+2705764|Fromage américain (cheddar fondu en tranches)
+2705763|Mélange fromage américain et emmental
+2705766|Fromage américain 0 %
+2705765|Fromage américain allégé
+2705767|Fromage américain allégé en sel
+2705705|Bleu ou roquefort
+2705706|Fromage brick
+2705708|Brie
+2705707|Camembert
+2705709|Cheddar
+2705711|Cheddar 0 %
+2705710|Cheddar allégé
+2705739|Cheddar allégé en sel
+2705712|Colby
+2705713|Colby Jack
+2705714|Feta
+2705715|Fontina
+2705717|Gouda ou édam
+2705718|Gruyère
+2705719|Limbourg
+2705741|Mélange de fromages râpés mexicains
+2705742|Mélange de fromages râpés mexicains allégé
+2705720|Monterey Jack
+2705721|Monterey Jack allégé
+2705722|Mozzarella
+2705725|Mozzarella 0 %
+2705723|Mozzarella demi-écrémée
+2705724|Mozzarella allégée en sel
+2705726|Munster
+2705727|Munster allégé
+2705704|Fromage (sans précision)
+2705728|Parmesan râpé (sec)
+2705731|Parmesan râpé 0 %
+2705729|Parmesan râpé allégé
+2705730|Parmesan
+2705732|Port-Salut
+2705733|Provolone
+2705735|Emmental
+2705738|Emmental 0 %
+2705737|Emmental allégé
+2705736|Emmental allégé en sel
+2705716|Fromage de chèvre
+2705740|Paneer (fromage frais indien)
+2705770|Préparation fromagère fondue
+2705771|Fromage fondu aux légumes
+2705734|Provolone allégé
+2705777|Fromage d'imitation (analogue)
+2705817|Bâtonnets de mozzarella panés
+2705743|Queso añejo
+2705744|Queso asadero
+2705745|Queso fresco
+2705746|Queso cotija
+2705796|Sandwich au fromage américain, pain complet
+2705795|Sandwich au fromage américain, pain de mie
+2705794|Sandwich au fromage
+2705798|Sandwich au cheddar, pain complet
+2705797|Sandwich au cheddar, pain de mie
+2705800|Sandwich au fromage allégé, pain complet
+2705799|Sandwich au fromage allégé, pain de mie
+2705803|Croque au fromage américain, pain complet (grilled cheese)
+2705802|Croque au fromage américain, pain de mie (grilled cheese)
+2705801|Sandwich grillé au fromage (grilled cheese)
+2705805|Croque au cheddar, pain complet
+2705804|Croque au cheddar, pain de mie
+2705807|Croque au fromage allégé, pain complet
+2705806|Croque au fromage allégé, pain de mie
+2707000|Burger au filet de poulet
+2707010|Burger au poulet pané frit, pain complet
+2707011|Burger au poulet pané frit et fromage, pain complet
+2707008|Burger au poulet pané frit
+2707009|Burger au poulet pané frit et fromage
+2707014|Burger au poulet grillé, pain complet
+2707015|Burger au poulet grillé et fromage, pain complet
+2707012|Burger au poulet grillé
+2707013|Burger au poulet grillé et fromage
+2706991|Sandwich salade de poulet, pain complet
+2706990|Sandwich salade de poulet, pain de mie
+2706992|Wrap salade de poulet
+2706089|Filet de poulet pané
+2706090|Filet de poulet grillé
+2706092|Nuggets de poulet
+2706096|Nuggets de poulet surgelés, cuits
+2706097|Nuggets de poulet (restauration)
+2706088|Galette de poulet panée
+2706098|Aiguillettes (tenders) de poulet
+2706102|Aiguillettes de poulet panées surgelées, cuites
+2706103|Aiguillettes de poulet panées (restauration)
+2706076|Ailes de poulet sauce piquante (buffalo wings)
+2706073|Ailes de poulet sauce piquante, précuites
+2706077|Ailes de poulet en sauce ou assaisonnées
+2706074|Ailes de poulet en sauce, précuites
+2706080|« Ailes » de poulet désossées sauce piquante
+2706078|Ailes de poulet nature
+2706075|Ailes de poulet nature, précuites
+2705953|Blanc de poulet cuit, peau consommée
+2705954|Blanc de poulet cuit, sans la peau
+2705957|Blanc de poulet précuit réchauffé, avec peau
+2705958|Blanc de poulet précuit réchauffé, sans peau
+2705961|Blanc de poulet mariné rôti, avec peau
+2705962|Blanc de poulet mariné rôti, sans peau
+2705955|Blanc de poulet rôti ou grillé au four, avec peau
+2705956|Blanc de poulet rôti ou grillé au four, sans peau
+2705980|Blanc de poulet pané au four, panure consommée
+2705981|Blanc de poulet pané au four, sans panure
+2705975|Blanc de poulet sans peau pané frit
+2705976|Blanc de poulet pané frit précuit, panure consommée
+2705973|Blanc de poulet pané frit, panure consommée
+2705977|Blanc de poulet pané frit précuit, sans panure
+2705974|Blanc de poulet pané frit, sans panure
+2705969|Blanc de poulet grillé en sauce, avec peau
+2705970|Blanc de poulet grillé en sauce, sans peau
+2705967|Blanc de poulet grillé, avec peau
+2705968|Blanc de poulet grillé, sans peau
+2705963|Blanc de poulet rôti à la broche, avec peau
+2705964|Blanc de poulet rôti à la broche, sans peau
+2705971|Blanc de poulet sauté à la poêle, avec peau
+2705972|Blanc de poulet sauté à la poêle, sans peau
+2705965|Blanc de poulet mijoté, avec peau
+2705966|Blanc de poulet mijoté, sans peau
+2706000|Pilon de poulet cuit, peau consommée
+2706001|Pilon de poulet cuit, sans la peau
+2706004|Pilon de poulet précuit réchauffé, avec peau
+2706005|Pilon de poulet précuit réchauffé, sans peau
+2706002|Pilon de poulet rôti au four, avec peau
+2706003|Pilon de poulet rôti au four, sans peau
+2706025|Pilon de poulet pané au four, panure consommée
+2706026|Pilon de poulet pané au four, sans panure
+2706020|Pilon de poulet sans peau pané frit
+2706021|Pilon de poulet pané frit précuit, panure consommée
+2706018|Pilon de poulet pané frit, panure consommée
+2706022|Pilon de poulet pané frit précuit, sans panure
+2706019|Pilon de poulet pané frit, sans panure
+2706012|Pilon de poulet grillé en sauce, avec peau
+2706013|Pilon de poulet grillé en sauce, sans peau
+2706010|Pilon de poulet grillé, avec peau
+2706011|Pilon de poulet grillé, sans peau
+2706008|Pilon de poulet rôti à la broche, avec peau
+2706009|Pilon de poulet rôti à la broche, sans peau
+2706016|Pilon de poulet sauté, avec peau
+2706017|Pilon de poulet sauté, sans peau
+2706014|Pilon de poulet mijoté, avec peau
+2706015|Pilon de poulet mijoté, sans peau
+2706085|Pattes de poulet
+2705982|Cuisse de poulet entière cuite, peau consommée
+2705983|Cuisse de poulet entière cuite, sans la peau
+2705984|Cuisse de poulet entière au four, avec peau
+2705985|Cuisse de poulet entière au four, sans peau
+2705998|Cuisse de poulet panée au four, panure consommée
+2705999|Cuisse de poulet panée au four, sans panure
+2705996|Cuisse de poulet panée frite, panure consommée
+2705997|Cuisse de poulet panée frite, sans panure
+2705992|Cuisse de poulet grillée en sauce, avec peau
+2705993|Cuisse de poulet grillée en sauce, sans peau
+2705990|Cuisse de poulet grillée, avec peau
+2705991|Cuisse de poulet grillée, sans peau
+2705986|Cuisse de poulet rôtie à la broche, avec peau
+2705987|Cuisse de poulet rôtie à la broche, sans peau
+2705994|Cuisse de poulet sautée, avec peau
+2705995|Cuisse de poulet sautée, sans peau
+2705988|Cuisse de poulet mijotée, avec peau
+2705989|Cuisse de poulet mijotée, sans peau
+2706084|Peau de poulet
+2706027|Haut de cuisse de poulet cuit, peau consommée
+2706028|Haut de cuisse de poulet cuit, sans la peau
+2706031|Haut de cuisse de poulet précuit réchauffé, avec peau
+2706032|Haut de cuisse de poulet précuit réchauffé, sans peau
+2706029|Haut de cuisse de poulet rôti au four, avec peau
+2706030|Haut de cuisse de poulet rôti au four, sans peau
+2706054|Haut de cuisse de poulet pané au four, panure consommée
+2706055|Haut de cuisse de poulet pané au four, sans panure
+2706047|Haut de cuisse de poulet sans peau pané frit
+2706048|Haut de cuisse de poulet pané frit précuit, panure consommée
+2706045|Haut de cuisse de poulet pané frit, panure consommée
+2706049|Haut de cuisse de poulet pané frit précuit, sans panure
+2706046|Haut de cuisse de poulet pané frit, sans panure
+2706041|Haut de cuisse de poulet grillé en sauce, avec peau
+2706042|Haut de cuisse de poulet grillé en sauce, sans peau
+2706039|Haut de cuisse de poulet grillé, avec peau
+2706040|Haut de cuisse de poulet grillé, sans peau
+2706035|Haut de cuisse de poulet rôti à la broche, avec peau
+2706036|Haut de cuisse de poulet rôti à la broche, sans peau
+2706043|Haut de cuisse de poulet sauté, avec peau
+2706044|Haut de cuisse de poulet sauté, sans peau
+2706037|Haut de cuisse de poulet mijoté, avec peau
+2706038|Haut de cuisse de poulet mijoté, sans peau
+2706056|Aile de poulet, cuite
+2706058|Aile de poulet précuite réchauffée
+2706057|Aile de poulet rôtie au four
+2706069|Aile de poulet panée au four
+2706066|Aile de poulet panée frite, précuite
+2706065|Aile de poulet panée frite
+2706063|Aile de poulet grillée en sauce
+2706062|Aile de poulet grillée
+2706060|Aile de poulet rôtie à la broche
+2706064|Aile de poulet sautée
+2706061|Aile de poulet mijotée
+2705929|Poulet cuit (morceau non précisé)
+2705930|Poulet cuit, peau consommée
+2705931|Poulet cuit, sans la peau
+2705932|Poulet rôti au four
+2705933|Poulet rôti au four, avec peau
+2705934|Poulet rôti au four, sans peau
+2705951|Poulet pané au four, panure consommée
+2705952|Poulet pané au four, sans panure
+2705949|Poulet pané frit, panure consommée
+2705950|Poulet pané frit, sans panure
+2705944|Poulet grillé en sauce
+2705945|Poulet grillé en sauce, avec peau
+2705946|Poulet grillé en sauce, sans peau
+2705941|Poulet grillé
+2705942|Poulet grillé, avec peau
+2705943|Poulet grillé, sans peau
+2705935|Poulet rôti à la broche
+2705936|Poulet rôti à la broche, avec peau
+2705937|Poulet rôti à la broche, sans peau
+2705947|Poulet sauté, avec peau
+2705948|Poulet sauté, sans peau
+2705938|Poulet mijoté (en sauce)
+2705939|Poulet mijoté, avec peau
+2705940|Poulet mijoté, sans peau
+2706081|Dos de poulet, cuit
+2706086|Poulet en conserve (viande seule)
+2706087|Rôti de poulet roulé
+2706091|Poulet haché, cuit
+2706082|Cou ou côtes de poulet, cuits
+2706083|Croupion de poulet, cuit
+2709164|Clémentine
+2709166|Pamplemousse en conserve
+2709165|Pamplemousse
+2709167|Kumquat
+2709168|Citron
+2709170|Citron vert
+2709172|Oranges en conserve
+2709174|Oranges au sirop
+2709173|Oranges au jus
+2709171|Orange
+2709175|Mandarine
+2709177|Jus de pamplemousse 100 %
+2709178|Jus de pamplemousse 100 % en brique
+2709176|Jus de pamplemousse pressé
+2709179|Jus de pamplemousse 100 % enrichi en calcium
+2709187|Jus d'orange pressé
+2709186|Jus d'orange 100 %
+2709188|Jus d'orange 100 % en brique
+2709191|Jus d'orange concentré surgelé, non reconstitué
+2709190|Jus d'orange à base de concentré
+2709189|Jus d'orange 100 % enrichi en calcium
+2709192|Jus d'orange à base de concentré enrichi en calcium
+2709193|Jus de mandarine 100 %

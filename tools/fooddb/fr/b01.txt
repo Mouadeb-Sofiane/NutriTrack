@@ -1,0 +1,400 @@
+170878|Lait concentré non sucré écrémé
+172194|Lait concentré non sucré entier
+171276|Lait concentré non sucré entier
+171277|Chocolat chaud maison au lait
+171303|Lait chocolaté écrémé
+173450|Lait chocolaté demi-écrémé enrichi en calcium
+170880|Lait chocolaté demi-écrémé
+170879|Lait chocolaté entier
+170910|Lait chocolaté écrémé allégé en sucres
+170881|Lait chocolaté écrémé
+171273|Lait écrémé en poudre appauvri en calcium
+171272|Lait écrémé en poudre instantané
+172196|Lait écrémé en poudre instantané
+172195|Lait écrémé en poudre
+170877|Lait écrémé en poudre
+170876|Lait entier en poudre
+173454|Lait entier en poudre
+171302|Lait concentré non sucré demi-écrémé
+170861|Lait reconstitué aux huiles végétales
+170862|Lait reconstitué à l'huile de coprah
+173441|Lait 1 % MG
+169868|Lait écrémé enrichi en calcium
+171278|Lait de chèvre
+171279|Lait maternel (référence)
+171280|Lait de bufflonne
+171268|Lait 1 % MG enrichi en protéines
+170873|Lait 1 % MG enrichi en extrait sec
+170872|Lait 1 % MG
+171271|Lait écrémé enrichi en protéines
+171270|Lait écrémé enrichi en extrait sec
+171269|Lait écrémé
+173432|Lait écrémé
+171266|Lait cru de ferme 3,7 % MG
+170871|Lait demi-écrémé 2 % MG enrichi en protéines
+170870|Lait demi-écrémé 2 % MG enrichi en extrait sec
+172193|Lait demi-écrémé 2 % MG enrichi en extrait sec
+171267|Lait 2 % MG
+172205|Lait 2 % MG
+170882|Lait de brebis
+171265|Lait entier
+172217|Lait entier
+170892|Boisson nutritionnelle pour diabétiques
+172206|Préparation type parmesan 0 %
+173460|Complément protéiné lacté allégé en poudre
+173459|Complément protéiné lacté en poudre
+172213|Nappage fouetté 0 % en bombe
+173444|Crème aigre 0 %
+173443|Crème aigre légère
+173442|Crème aigre allégée
+171259|Sauce type crème aigre végétale
+171281|Lactosérum acide en poudre
+170885|Lactosérum acide (petit-lait)
+171283|Lactosérum doux en poudre
+171282|Lactosérum doux (petit-lait)
+169899|Substitut de chantilly allégé (préparation en poudre)
+167687|Nappage fouetté surgelé allégé
+170905|Yaourt à la grecque aux fruits, lait entier
+170903|Yaourt à la grecque nature allégé
+171304|Yaourt à la grecque nature, lait entier
+171300|Yaourt à la grecque à la fraise allégé
+170901|Yaourt à la grecque à la fraise 0 %
+170907|Yaourt à la grecque à la vanille allégé
+170902|Yaourt à la grecque à la vanille 0 %
+172208|Yaourt au chocolat 0 %
+172221|Yaourt au chocolat 0 %
+173464|Yaourt glacé 0 % édulcoré
+170908|Yaourt glacé allégé
+169898|Yaourt aux fruits 0 %
+173458|Yaourt aux fruits 0 %
+171285|Yaourt aux fruits allégé
+173457|Yaourt aux fruits allégé
+171286|Yaourt aux fruits allégé riche en protéines
+173456|Yaourt aux fruits allégé
+170889|Yaourt aux fruits allégé
+173451|Yaourt aux fruits allégé édulcoré
+172218|Yaourt aux fruits allégé édulcoré
+170886|Yaourt nature demi-écrémé
+170887|Yaourt nature 0 %
+171284|Yaourt nature au lait entier
+173463|Yaourt à la vanille allégé édulcoré
+173445|Yaourt vanille ou citron 0 % édulcoré
+172220|Yaourt vanille ou citron 0 % édulcoré
+172219|Yaourt à la vanille allégé
+170888|Yaourt à la vanille allégé
+170906|Yaourt à la vanille 0 %
+172345|Graisse de lard (bacon) fondue
+169894|Substitut de beurre sans matière grasse, en poudre
+172344|Beurre allégé doux
+167684|Sauce crémeuse pour salade allégée
+168100|Sauce crémeuse pour salade allégée
+168099|Sauce crémeuse pour salade 0 %
+171046|Vinaigrette miel-moutarde 0 %
+171400|Graisse de bœuf (suif)
+173564|Graisse de poulet
+173572|Graisse d'oie
+173571|Graisse de dinde
+173577|Huile de foie de morue
+172340|Huile de hareng
+172341|Huile de poisson (menhaden)
+172342|Huile de poisson hydrogénée
+172343|Huile de saumon
+173578|Huile de sardine
+171401|Saindoux
+173589|Margarine à tartiner 40-49 % MG
+173587|Margarine 80 % MG (bâtonnet)
+171431|Margarine à tartiner 67-70 % MG
+173588|Margarine 70 % MG (bâtonnet)
+173585|Margarine 80 % MG doux
+171040|Margarine 80 % MG doux
+172349|Margarine 80 % MG en barquette
+171018|Margarine dure (soja hydrogéné)
+171415|Margarine à tartiner 35-39 % MG
+171039|Matière grasse à tartiner 60 % MG
+169052|Mélange beurre-margarine 80 % MG
+172339|Mélange margarine-beurre
+172355|Matière grasse à tartiner 20 % MG
+172350|Matière grasse à tartiner 60 % MG
+171041|Matière grasse à tartiner 60 % MG
+172353|Matière grasse à tartiner 0 %
+169860|Matière grasse à tartiner sucrée
+167736|Sauce type mayonnaise sans cholestérol
+167695|Mayonnaise au tofu
+171443|Mayonnaise allégée à l'huile d'olive
+168094|Mayonnaise allégée
+171031|Huile d'amande
+171032|Huile de noyau d'abricot
+173573|Huile d'avocat
+171428|Huile de babassu
+172336|Huile de colza
+171421|Beurre de cacao
+171412|Huile de coco
+169867|Huile de maïs et colza
+167737|Huile mélange maïs, arachide et olive
+171024|Huile de coton
+173563|Huile de cupuaçu
+167702|Huile de lin pressée à froid
+171442|Huile de lin avec graines
+171028|Huile de pépins de raisin
+171427|Huile de noisette
+172337|Huile de moutarde
+172335|Beurre de muscade
+173576|Huile d'avoine
+171413|Huile d'olive
+171015|Huile de palme
+171410|Huile d'arachide
+171423|Huile d'œillette (pavot)
+171013|Huile de son de riz
+171027|Huile de carthame oléique
+171026|Huile de carthame
+171016|Huile de sésame
+171429|Beurre de karité
+171426|Lécithine de soja
+171411|Huile de soja
+171012|Huile de soja partiellement hydrogénée
+173565|Huile de soja et coton partiellement hydrogénée
+172338|Huile de tournesol oléique
+171017|Huile de tournesol
+171025|Huile de tournesol
+172328|Huile de tournesol partiellement hydrogénée
+171425|Huile de graines de thé (camélia)
+171424|Huile de pépins de tomate
+173570|Beurre d'ucuuba
+171033|Huile de colza haute stabilité
+172370|Huile de soja raffinée
+171030|Huile de noix
+171014|Huile de germe de blé
+168109|Sauce pour coleslaw allégée
+167700|Sauce type mayonnaise 0 %
+167704|Sauce salade bacon et tomate
+173562|Sauce au roquefort (bleu)
+167699|Sauce au roquefort 0 %
+167692|Sauce au roquefort légère
+169876|Sauce au roquefort allégée
+169895|Sauce salade au babeurre légère
+169055|Sauce César
+171045|Sauce César 0 %
+169877|Sauce César allégée
+169056|Sauce pour coleslaw
+171414|Sauce salade « French dressing »
+171020|Sauce salade « French dressing » sans sel
+171420|Sauce salade « French dressing » 0 %
+167693|Sauce salade « French dressing » allégée
+171404|Sauce salade « French dressing » allégée
+171021|Sauce salade « French dressing » allégée sans sel
+171419|Vinaigrette maison à l'huile de coton
+171416|Vinaigrette maison (recette française)
+169057|Sauce green goddess
+171417|Vinaigrette maison (huile et vinaigre)
+171034|Vinaigrette miel-moutarde allégée
+171043|Vinaigrette miel-moutarde
+171405|Vinaigrette italienne allégée
+171019|Vinaigrette italienne
+171022|Vinaigrette italienne sans sel
+173590|Vinaigrette italienne 0 %
+168096|Vinaigrette italienne allégée
+171023|Vinaigrette italienne allégée sans sel
+168112|Mayonnaise allégée (type sauce)
+173594|Mayonnaise légère
+171009|Mayonnaise
+171418|Mayonnaise à l'huile de soja sans sel
+171444|Sauce type mayonnaise légère
+168093|Sauce au poivre pour salade
+171044|Sauce crémeuse aux graines de pavot
+173591|Sauce ranch 0 %
+173593|Sauce ranch allégée
+173592|Sauce ranch
+171005|Sauce russe
+171007|Sauce russe allégée
+171006|Sauce au sésame
+171036|Vinaigrette en spray
+169875|Sauce aigre-douce pour salade
+172356|Sauce mille-îles 0 %
+171008|Sauce mille-îles allégée
+171402|Sauce mille-îles
+171409|Sauce à tartiner pour sandwich aux cornichons
+171422|Huile de palmiste
+167691|Matière grasse végétale et beurre allégée
+174202|Crabe royal, cuit
+175164|Crabe royal, cru
+171966|Crabe bleu en conserve
+174205|Crabe bleu, cuit
+171967|Galettes de crabe maison (crab cakes)
+174204|Crabe bleu, cru
+172007|Crabe dormeur (dungeness), cuit
+171968|Crabe dormeur (dungeness), cru
+172008|Crabe des neiges, cuit
+171969|Crabe des neiges, cru
+175170|Écrevisses d'élevage, cuites
+175169|Écrevisses d'élevage, crues
+174207|Écrevisses sauvages, cuites
+174206|Écrevisses sauvages, crues
+174209|Homard, cuit
+174208|Homard, cru
+175180|Crevettes, cuites
+171972|Crevettes en conserve
+171970|Crevettes panées frites
+171971|Crevettes cuites à l'eau
+174210|Crevettes, crues
+175179|Crevettes crues (décortiquées)
+172009|Langouste, cuite
+174211|Langouste, crue
+173724|Saumon rose en conserve, égoutté, sans peau ni arêtes
+174183|Anchois à l'huile, égouttés
+174182|Anchois, cru
+174184|Perche d'eau douce (bar), crue
+171989|Perche d'eau douce (bar), cuite
+174228|Bar rayé, cuit
+171948|Bar rayé, cru
+174229|Tassergal, cuit
+171949|Tassergal, cru
+174230|Lotte de rivière, cuite
+171950|Lotte de rivière, crue
+174231|Stromatée (poisson beurre), cuit
+171951|Stromatée (poisson beurre), cru
+174185|Carpe, cuite
+171952|Carpe, crue
+174187|Poisson-chat (silure) pané frit
+175166|Poisson-chat (silure) d'élevage, cuit
+175165|Poisson-chat (silure) d'élevage, cru
+173714|Poisson-chat (silure) sauvage, cuit
+174186|Poisson-chat (silure) sauvage, cru
+174188|Caviar (œufs d'esturgeon ou de saumon)
+171953|Corégone, cru
+171954|Corégone fumé
+174189|Morue (cabillaud) en conserve
+171956|Cabillaud, cuit au four
+174190|Morue séchée salée
+171955|Cabillaud, cru
+175178|Morue du Pacifique, cuite
+171990|Morue du Pacifique, cuite au four
+174191|Morue du Pacifique, crue
+171957|Tambour (courbine) pané frit
+174192|Tambour (courbine), cru
+171991|Brosme, cuit
+171958|Brosme, cru
+171993|Malachigan, cuit
+171960|Malachigan, cru
+174194|Anguille, cuite
+174193|Anguille, crue
+174195|Bâtonnets de poisson panés, cuits
+174197|Sole ou limande (poisson plat), cuite
+174196|Sole ou limande (poisson plat), crue
+171961|Carpe farcie (gefilte fish)
+171963|Mérou, cuit
+171962|Mérou, cru
+174198|Églefin (haddock), cuit
+171964|Églefin (haddock), cru
+174199|Haddock fumé
+174201|Flétan, cuit
+174200|Flétan, cru
+171965|Flétan du Groenland, cru
+174232|Flétan du Groenland, cuit
+175117|Hareng, cuit
+173668|Hareng fumé (kipper)
+175118|Hareng mariné
+175116|Hareng, cru
+174233|Hareng du Pacifique, cuit
+173669|Hareng du Pacifique, cru
+174234|Lingue, cuite
+173670|Lingue, crue
+174235|Morue-lingue, cuite
+173671|Morue-lingue, crue
+175120|Maquereau, cuit
+175119|Maquereau, cru
+171994|Chinchard, cuit
+173672|Chinchard, cru
+175121|Chinchard en conserve, égoutté
+174236|Thazard (maquereau roi), cuit
+175122|Thazard (maquereau roi), cru
+168149|Maquereau salé
+173674|Maquereau espagnol, cuit
+173673|Maquereau espagnol, cru
+171992|Mahi-mahi (coryphène), cuit
+171959|Mahi-mahi (coryphène), cru
+171995|Poisson-lait (bangus), cuit
+173675|Poisson-lait (bangus), cru
+171996|Lotte (baudroie), cuite
+173676|Lotte (baudroie), crue
+175124|Mulet (muge), cuit
+175123|Mulet (muge), cru
+175126|Sébaste, cuit
+175125|Sébaste, cru
+173679|Perche, cuite
+173678|Perche, crue
+175127|Brochet, cuit
+173680|Brochet, cru
+171997|Sandre, cuit
+175128|Sandre, cru
+173726|Colin d'Alaska (lieu), cuit
+173681|Colin d'Alaska (lieu), cuit au four
+173725|Colin d'Alaska (lieu), cru
+175130|Colin d'Alaska (lieu), cru
+174237|Lieu noir, cuit
+175129|Lieu noir, cru
+173683|Pompaneau, cuit
+173682|Pompaneau, cru
+174238|Loquette, cuite
+173677|Loquette, crue
+175131|Sébaste du Pacifique, cuit
+173684|Sébaste du Pacifique, cru
+174239|Œufs de poisson, cuits
+175132|Œufs de poisson, crus
+174251|Hoplostète orange (empereur), cuit
+175133|Hoplostète orange (empereur), cru
+174240|Morue charbonnière, cuite
+175134|Morue charbonnière, crue
+173685|Morue charbonnière fumée
+175168|Saumon d'élevage, cuit
+175167|Saumon d'élevage, cru
+171998|Saumon sauvage de l'Atlantique, cuit
+173686|Saumon sauvage de l'Atlantique, cru
+171999|Saumon royal (chinook), cuit
+173688|Saumon royal (chinook), cru
+173687|Saumon fumé (chinook)
+171985|Saumon fumé (lox)
+175135|Saumon kéta en conserve, égoutté, avec arêtes
+174224|Saumon kéta en conserve sans sel, égoutté
+172000|Saumon kéta, cuit
+173689|Saumon kéta, cru
+173716|Saumon coho d'élevage, cuit
+173715|Saumon coho d'élevage, cru
+173719|Saumon coho sauvage, cuit au four
+175137|Saumon coho sauvage, poché
+175136|Saumon coho sauvage, cru
+175175|Saumon rose en conserve, égoutté
+173690|Saumon rose en conserve (avec le jus)
+174225|Saumon rose en conserve sans sel
+172001|Saumon rose, cuit
+175138|Saumon rose, cru
+173693|Saumon rouge (sockeye) en conserve, égoutté
+174226|Saumon rouge (sockeye) en conserve sans sel
+173692|Saumon rouge (sockeye), cuit
+173691|Saumon rouge (sockeye), cru
+175139|Sardines à l'huile, égouttées
+175140|Sardines à la sauce tomate, égouttées
+174241|Spare (dorade américaine), cuit
+175141|Spare (dorade américaine), cru
+173694|Bar (loup de mer), cuit
+175142|Bar (loup de mer), cru
+174242|Acoupa (truite de mer), cuit
+173695|Acoupa (truite de mer), cru
+174243|Alose, cuite
+173696|Alose, crue
+175143|Requin en beignet, frit
+173697|Requin, cru
+175145|Sargue (sheepshead), cuit
+175144|Sargue (sheepshead), cru
+175147|Éperlan, cuit
+175146|Éperlan, cru
+173699|Vivaneau, cuit
+173698|Vivaneau, cru
+174244|Tambour tacheté, cuit
+173700|Tambour tacheté, cru
+175148|Esturgeon, cuit
+173701|Esturgeon, cru
+175149|Esturgeon fumé
+172002|Meunier noir, cuit
+175150|Meunier noir, cru
+172003|Crapet-soleil, cuit
+175151|Crapet-soleil, cru

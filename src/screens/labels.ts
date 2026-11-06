@@ -21,3 +21,10 @@ export const CUISINES: { group: string; items: string[] }[] = [
 ];
 
 export const CATEGORIES = ['Familiale', 'Rapide', 'Végétarienne', 'Végétalienne', 'Street food', 'Dessert', 'Festive', 'Restaurant', 'Petit-déjeuner', 'Soupe', 'Salade', 'Plat au four'];
+
+export const GOAL_LABEL: Record<import('../domain/types').GoalMode, string> = {
+  lose: 'Perte de poids',
+  maintain: 'Maintien',
+  gain: 'Prise de masse',
+  custom: 'Objectif personnalisé',
+};

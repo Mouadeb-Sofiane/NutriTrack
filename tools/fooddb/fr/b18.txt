@@ -1,0 +1,228 @@
+2709683|Jus de carotte 100 %
+2709811|Jus de céleri
+2709810|Jus de légumes
+2709731|Jus de tomate et légumes 100 %
+2709732|Jus de tomate et légumes pauvre en sel
+2709730|Cocktail de jus de tomate
+2709728|Jus de tomate 100 %
+2709729|Jus de tomate pauvre en sel
+2707652|Bruschetta
+2707483|Sandwich falafel (pita)
+2709762|Sandwich à la tomate, pain complet
+2709761|Sandwich à la tomate
+2709134|Sandwich végétarien, pain complet
+2709135|Sandwich végétarien au fromage, pain complet
+2709132|Sandwich végétarien (crudités)
+2709133|Sandwich végétarien au fromage
+2709136|Wrap végétarien
+2707481|Veggie burger (burger végétarien)
+2707482|Veggie burger au fromage
+2710248|Avocat (garniture de sandwich)
+2710249|Concombre (garniture de sandwich)
+2710250|Salade (garniture de sandwich)
+2710251|Champignons (garniture de sandwich)
+2710252|Oignons (garniture de sandwich)
+2710253|Poivron (garniture de sandwich)
+2710254|Épinards (garniture de sandwich)
+2710255|Tomates (garniture de sandwich)
+2709382|Pomme de terre cuite
+2709383|Pomme de terre au four
+2709524|Pomme de terre au four avec la peau
+2709525|Pomme de terre au four au beurre
+2709527|Pomme de terre au four au fromage
+2709529|Pomme de terre au four au chili
+2709528|Pomme de terre au four à la viande
+2709526|Pomme de terre au four à la crème (baked potato)
+2709530|Pomme de terre au four aux légumes
+2709384|Pomme de terre au four sans la peau
+2709518|Pomme de terre au four sans peau, au beurre
+2709520|Pomme de terre au four sans peau, au fromage
+2709522|Pomme de terre au four sans peau, au chili
+2709521|Pomme de terre au four sans peau, à la viande
+2709519|Pomme de terre au four sans peau, à la crème
+2709523|Pomme de terre au four sans peau, aux légumes
+2709385|Pomme de terre bouillie
+2709395|Pomme de terre en robe des champs, sans matière grasse
+2709393|Pomme de terre en robe des champs
+2709394|Pomme de terre en robe des champs avec matière grasse
+2709397|Pomme de terre en robe des champs au beurre
+2709398|Pomme de terre en robe des champs à la margarine
+2709396|Pomme de terre en robe des champs à l'huile
+2709387|Pomme de terre épluchée bouillie
+2709389|Pomme de terre épluchée bouillie avec matière grasse
+2709391|Pomme de terre épluchée bouillie au beurre (pommes vapeur au beurre)
+2709392|Pomme de terre épluchée bouillie à la margarine
+2709390|Pomme de terre épluchée bouillie à l'huile
+2709388|Pomme de terre épluchée bouillie, sans matière grasse (pommes vapeur)
+2709386|Pommes de terre cuites prêtes à réchauffer
+2709399|Pommes de terre en conserve
+2709400|Pommes de terre en conserve avec matière grasse
+2709401|Pommes de terre en conserve sans matière grasse
+2709402|Pommes de terre rôties
+2709403|Pommes de terre rôties avec la peau
+2709405|Pommes de terre rôties avec peau, avec matière grasse
+2709407|Pommes de terre rôties avec peau, au beurre
+2709408|Pommes de terre rôties avec peau, à la margarine
+2709406|Pommes de terre rôties avec peau, à l'huile (potatoes)
+2709404|Pommes de terre rôties avec peau, sans matière grasse
+2709409|Pommes de terre rôties sans peau
+2709410|Pommes de terre rôties sans peau, avec matière grasse
+2709413|Pommes de terre rôties sans peau, au beurre
+2709414|Pommes de terre rôties sans peau, à la margarine
+2709412|Pommes de terre rôties sans peau, à l'huile
+2709411|Pommes de terre rôties sans peau, sans matière grasse
+2709415|Pommes de terre rôties prêtes à réchauffer
+2710675|Punch au champagne
+2710642|Mimosa (champagne et jus d'orange)
+2710695|Sangria rouge
+2710696|Sangria blanche
+2710694|Cocktail au vin (wine cooler)
+2710697|Vin coupé d'eau gazeuse (spritzer)
+2710692|Vin doux de dessert (porto, muscat)
+2710693|Vin léger
+2710688|Vin rouge
+2710691|Vin de riz (saké)
+2710690|Vin rosé
+2710687|Vin mousseux (champagne)
+2710689|Vin blanc
+2707604|Pain cubain
+2707605|Pain cubain grillé
+2707610|Baguette (pain français)
+2707611|Baguette grillée
+2707728|Baguette complète
+2707729|Baguette complète grillée
+2707614|Pain italien, grec ou arménien
+2707615|Pain italien grillé
+2707591|Pain
+2707592|Pain grillé
+2707788|Pain d'orge
+2707789|Pain d'orge grillé
+2707764|Pain noir
+2707765|Pain noir grillé
+2707713|Chapati ou roti (pain indien)
+2707618|Pain au fromage
+2707619|Pain au fromage grillé
+2707620|Pain à la cannelle
+2707621|Pain à la cannelle grillé
+2707622|Pain au maïs et à la mélasse
+2707623|Pain au maïs et à la mélasse grillé
+2707653|Pâte à pain frite (beignet salé, msemen frit)
+2707624|Pain brioché aux œufs (challah)
+2707625|Challah grillée
+2707797|Pain sans gluten
+2707798|Pain sans gluten grillé
+2707641|Pain hyperprotéiné grillé
+2707608|Pain au saindoux portoricain
+2707609|Pain au saindoux grillé
+2707593|Pain de boulangerie ou maison
+2707594|Pain de boulangerie grillé
+2707757|Pain de seigle marbré
+2707758|Pain de seigle marbré grillé
+2707777|Pain multicéréale
+2707780|Pain multicéréale riche en fibres
+2707781|Pain multicéréale riche en fibres grillé
+2707776|Pain multicéréale grillé
+2707778|Pain multicéréale aux raisins
+2707779|Pain multicéréale aux raisins grillé
+2707613|Pain naan
+2707606|Pain à l'eau portoricain
+2707607|Pain à l'eau portoricain grillé
+2707770|Pain au son d'avoine
+2707771|Pain au son d'avoine grillé
+2707768|Pain aux flocons d'avoine
+2707769|Pain aux flocons d'avoine grillé
+2707633|Pain à l'oignon
+2707634|Pain à l'oignon grillé
+2707715|Paratha (galette feuilletée indienne)
+2707616|Pain pita
+2707617|Pain pita aux fruits
+2707731|Pain pita au blé
+2707730|Pain pita complet
+2707642|Pain de pomme de terre
+2707643|Pain de pomme de terre grillé
+2707760|Pain de seigle noir (pumpernickel)
+2707761|Pain de seigle noir grillé
+2707714|Puri (pain indien frit)
+2707644|Pain aux raisins secs
+2707645|Pain aux raisins secs grillé
+2707635|Pain blanc allégé ou riche en fibres
+2707636|Pain blanc allégé grillé
+2707637|Pain allégé aux fruits ou noix
+2707638|Pain allégé aux fruits ou noix grillé
+2707794|Pain de riz
+2707795|Pain de riz grillé
+2707755|Pain de seigle
+2707756|Pain de seigle grillé
+2707646|Pain au levain
+2707647|Pain au levain grillé
+2707790|Pain au soja
+2707791|Pain au soja grillé
+2707718|Pain de blé germé
+2707719|Pain de blé germé grillé
+2707792|Pain aux graines de tournesol
+2707793|Pain aux graines de tournesol grillé
+2707648|Pain de patate douce
+2707649|Pain de patate douce grillé
+2707650|Pain aux légumes
+2707651|Pain aux légumes grillé
+2707720|Pain au blé (pain bis)
+2707722|Pain bis de boulangerie
+2707723|Pain bis de boulangerie grillé
+2707726|Pain bis allégé riche en fibres
+2707727|Pain bis allégé grillé
+2707721|Pain bis grillé
+2707724|Pain bis aux raisins
+2707725|Pain bis aux raisins grillé
+2707598|Pain blanc (pain de mie)
+2707602|Pain blanc marbré complet
+2707603|Pain blanc marbré complet grillé
+2707600|Pain blanc de boulangerie ou maison
+2707601|Pain blanc de boulangerie grillé
+2707639|Pain blanc enrichi en fibres
+2707640|Pain blanc enrichi en fibres grillé
+2707599|Pain blanc grillé (toast)
+2707706|Pain au blé blanc complet
+2707707|Pain au blé blanc complet grillé
+2707709|Pain complet
+2707711|Pain complet de boulangerie ou maison
+2707712|Pain complet de boulangerie grillé
+2707710|Pain complet grillé
+2707716|Pain complet aux raisins
+2707717|Pain complet aux raisins grillé
+2707612|Focaccia
+2707626|Pain à l'ail
+2707628|Pain à l'ail surgelé
+2707632|Pain à l'ail gratiné au fromage
+2707630|Pain à l'ail au parmesan
+2707796|Injera (galette éthiopienne de teff)
+2705415|Yaourt à la grecque
+2705437|Yaourt à la grecque aromatisé
+2705429|Yaourt à la grecque aux fruits
+2705421|Yaourt à la grecque nature
+2705439|Yaourt à la grecque allégé aromatisé
+2705431|Yaourt à la grecque allégé aux fruits
+2705423|Yaourt à la grecque allégé nature
+2705440|Yaourt à la grecque 0 % aromatisé
+2705432|Yaourt à la grecque 0 % aux fruits
+2705424|Yaourt à la grecque 0 % nature
+2705438|Yaourt à la grecque au lait entier aromatisé
+2705430|Yaourt à la grecque au lait entier aux fruits
+2705422|Yaourt à la grecque au lait entier nature
+2705441|Yaourt à la grecque aux flocons d'avoine
+2705450|Parfait au yaourt et aux fruits
+2705443|Yaourt à boire en tube
+2705414|Yaourt
+2705416|Yaourt (sans précision)
+2705433|Yaourt aromatisé (vanille, citron…)
+2705425|Yaourt aux fruits
+2705417|Yaourt nature
+2705442|Yaourt à boire (lben, ayran)
+2705435|Yaourt aromatisé allégé
+2705427|Yaourt aux fruits allégé
+2705419|Yaourt nature allégé
+2705436|Yaourt aromatisé 0 %
+2705428|Yaourt aux fruits 0 %
+2705420|Yaourt nature 0 %
+2705434|Yaourt aromatisé au lait entier
+2705426|Yaourt aux fruits au lait entier
+2705418|Yaourt nature au lait entier

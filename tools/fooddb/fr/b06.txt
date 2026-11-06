@@ -1,0 +1,400 @@
+2705857|Bacon de bœuf allégé en sel, cuit
+2705887|Bacon de porc, cuit
+2705888|Bacon de porc allégé en sel, cuit
+2705889|Bacon de porc fumé, cuit
+2705891|Bacon de porc fumé allégé en sel, cuit
+2706135|Bacon de dinde, cuit
+2706136|Bacon de dinde allégé en sel, cuit
+2707684|Bagel nature
+2707785|Bagel multicéréale
+2707786|Bagel multicéréale aux raisins secs
+2707772|Bagel au son d'avoine
+2707762|Bagel au seigle noir (pumpernickel)
+2707732|Bagel au blé
+2707737|Bagel au son de blé
+2707736|Bagel au blé, fruits et noix
+2707734|Bagel au blé et raisins secs
+2707708|Bagel au blé blanc complet
+2707733|Bagel complet
+2707735|Bagel complet aux raisins secs
+2707686|Bagel aux fruits
+2707685|Bagel aux raisins secs
+2707698|Muffin anglais
+2707700|Muffin anglais au fromage
+2707787|Muffin anglais multicéréale
+2707774|Muffin anglais au son d'avoine
+2707775|Muffin anglais au son d'avoine et raisins
+2707763|Muffin anglais au seigle noir
+2707759|Muffin anglais au seigle
+2707738|Muffin anglais au son de blé
+2707739|Muffin anglais au son de blé et raisins
+2707740|Muffin anglais au blé
+2707742|Muffin anglais au blé et raisins
+2707744|Muffin anglais au blé blanc complet
+2707741|Muffin anglais complet
+2707743|Muffin anglais complet aux raisins
+2707701|Muffin anglais aux fruits
+2707699|Muffin anglais aux raisins secs
+2709225|Banane cuite au four
+2709224|Banane
+2707409|Galette de haricots
+2709033|Haricots et riz complet
+2708992|Haricots et riz à la viande
+2708991|Haricots et riz aux tomates
+2708990|Haricots et riz blanc
+2707395|Salade de haricots noirs
+2709035|Haricots noirs et riz complet
+2708994|Haricots noirs et riz blanc (moros y cristianos)
+2707411|Chili végétarien
+2707408|Falafels
+2709034|Haricots rouges et riz complet
+2708993|Haricots rouges et riz blanc
+2707431|Curry de lentilles
+2707432|Curry de lentilles avec riz
+2709036|Haricots pinto et riz complet
+2708995|Haricots pinto et riz blanc
+2707475|Tourte aux légumes (sans viande)
+2707474|Steak végétal en sauce
+2707480|Stroganoff végétarien
+2707390|Haricots à la sauce tomate (baked beans)
+2707410|Haricots à la sauce tomate allégés en sel
+2707391|Haricots à la sauce tomate végétariens
+2707405|Haricots aux saucisses
+2707394|Haricots aux tomates, avec matière grasse
+2707393|Haricots aux tomates, sans matière grasse
+2707407|Haricots à la viande
+2707347|Haricots secs cuits (sans précision)
+2707350|Haricots en conserve, avec matière grasse
+2707351|Haricots en conserve, sans matière grasse
+2707348|Haricots secs cuisinés, avec matière grasse
+2707349|Haricots secs cuits, sans matière grasse
+2707366|Haricots noirs à la viande
+2707359|Haricots noirs, cuits
+2707362|Haricots noirs en conserve, avec matière grasse
+2707363|Haricots noirs en conserve, sans matière grasse
+2707364|Haricots noirs en conserve allégés en sel
+2707360|Haricots noirs cuisinés, avec matière grasse
+2707361|Haricots noirs cuits, sans matière grasse
+2707412|Niébé (haricots à œil noir), cuits
+2707413|Niébé (haricots à œil noir) secs, cuits
+2707414|Pois chiches, cuits
+2707417|Pois chiches en conserve, avec matière grasse
+2707418|Pois chiches en conserve, sans matière grasse
+2707419|Pois chiches en conserve allégés en sel
+2707415|Pois chiches cuisinés, avec matière grasse
+2707416|Pois chiches cuits, sans matière grasse
+2707427|Dal (lentilles cuisinées à l'indienne)
+2707436|Edamame, cuits
+2707367|Fèves, cuites
+2707386|Haricots rouges à la viande
+2707379|Haricots rouges, cuits
+2707382|Haricots rouges en conserve, avec matière grasse
+2707383|Haricots rouges en conserve, sans matière grasse
+2707384|Haricots rouges en conserve allégés en sel
+2707380|Haricots rouges cuisinés, avec matière grasse
+2707381|Haricots rouges cuits, sans matière grasse
+2707423|Lentilles, cuites
+2707426|Lentilles en conserve
+2707424|Lentilles cuisinées, avec matière grasse
+2707425|Lentilles cuites, sans matière grasse
+2707368|Haricots de Lima, cuits
+2707369|Haricots de Lima secs, cuits
+2707389|Haricots mungo, cuits
+2707429|Papad grillé
+2707387|Haricots péruviens (canario), cuits
+2707370|Haricots roses, cuits
+2707378|Haricots pinto à la viande
+2707371|Haricots pinto, cuits
+2707374|Haricots pinto en conserve, avec matière grasse
+2707375|Haricots pinto en conserve, sans matière grasse
+2707376|Haricots pinto en conserve allégés en sel
+2707372|Haricots pinto cuisinés, avec matière grasse
+2707373|Haricots pinto cuits, sans matière grasse
+2707406|Haricots au porc
+2707396|Frijoles refritos (purée de haricots)
+2707398|Frijoles refritos à la viande
+2707399|Frijoles refritos allégés en sel
+2707433|Graines de soja grillées (soy nuts)
+2707388|Graines de soja, cuites
+2707421|Pois cassés cuisinés, avec matière grasse
+2707420|Pois cassés cuits, sans matière grasse
+2707422|Pois au wasabi
+2707353|Haricots blancs, cuits
+2707356|Haricots blancs en conserve, avec matière grasse
+2707357|Haricots blancs en conserve, sans matière grasse
+2707358|Haricots blancs en conserve allégés en sel
+2707354|Haricots blancs cuisinés, avec matière grasse
+2707355|Haricots blancs cuits, sans matière grasse
+2706391|Bœuf barbecue effiloché, sans sauce
+2705822|Bœuf, cuit (sans précision)
+2705851|Poitrine de bœuf (brisket), cuite
+2705846|Tête de bœuf, cuite
+2705844|Os de cou de bœuf (viande), cuits
+2705843|Queue de bœuf, cuite
+2705848|Bœuf braisé (pot-au-feu, pot roast)
+2705847|Rôti de bœuf
+2705852|Fines tranches de bœuf (steak à sandwich)
+2705845|Plat de côtes de bœuf, cuit
+2705824|Steak de bœuf, cuit
+2705839|Steak T-bone, gras consommé
+2705838|Steak T-bone
+2705840|Steak T-bone, maigre seulement
+2705825|Steak de paleron
+2705842|Steak pané frit (country fried steak)
+2705826|Steak attendri (cube steak)
+2705827|Bavette de flanchet, cuite
+2705828|Entrecôte (ribeye)
+2705829|Entrecôte (ribeye), gras consommé
+2705830|Entrecôte (ribeye), maigre seulement
+2705831|Steak de rond de gîte
+2705832|Faux-filet (sirloin)
+2705833|Faux-filet (sirloin), gras consommé
+2705834|Faux-filet (sirloin), maigre seulement
+2705835|Contre-filet (strip steak)
+2705836|Contre-filet, gras consommé
+2705837|Contre-filet, maigre seulement
+2705841|Filet de bœuf (tournedos), cuit
+2705849|Bœuf à braiser (bourguignon), cuit
+2705819|Viande, cuite (sans précision)
+2705911|Brochettes de viande panées (mock chicken legs)
+2705823|Steak, cuit (sans précision)
+2705909|Côte de veau, cuite
+2710620|Boisson alcoolisée à base de malt
+2710619|Boisson alcoolisée à base de malt, sucrée
+2710616|Bière
+2710618|Bière forte
+2710617|Bière légère
+2710621|Cidre (alcoolisé)
+2710622|Eau gazeuse alcoolisée (hard seltzer)
+2710641|Michelada (bière, citron vert, épices)
+2707828|Arepa dominicaine (gâteau de maïs)
+2707807|Biscuit américain aux fruits
+2707801|Biscuit américain (scone salé)
+2707806|Biscuit américain au fromage
+2707802|Biscuit américain (pâte réfrigérée)
+2707804|Biscuit américain maison
+2707805|Biscuit américain au blé complet
+2707847|Pain brun de Boston
+2707852|Pain irlandais au bicarbonate (soda bread)
+2707850|Pain aux fruits
+2707848|Pain aux noix (cake)
+2707849|Pain au potiron (cake)
+2707851|Pain à la courgette (cake)
+2709566|Cassave (pain de manioc)
+2707815|Galette de maïs frite
+2707816|Pain de maïs au four (corn pone)
+2707817|Pain de maïs frit (corn pone)
+2707813|Muffin de pain de maïs
+2707814|Muffin de pain de maïs maison
+2707811|Pain de maïs maison (cornbread)
+2707810|Pain de maïs (préparation)
+2708715|Bâtonnet de maïs frit (style portoricain)
+2708344|Boulette de pâte (dumpling) sans viande
+2710047|Beignet de maïs
+2707819|Beignets de maïs frits (hush puppies)
+2707820|Galette de maïs (johnnycake)
+2707829|Muffin
+2707838|Muffin au son et aux fruits allégé
+2707845|Muffin à la carotte
+2707842|Muffin au fromage
+2707833|Muffin au chocolat
+2707832|Muffin aux pépites de chocolat
+2707830|Muffin aux fruits (myrtilles…)
+2707831|Muffin aux fruits allégé
+2707840|Muffin au son d'avoine
+2707839|Muffin aux flocons d'avoine
+2707841|Muffin nature
+2707843|Muffin au potiron
+2707835|Muffin au blé
+2707837|Muffin au son de blé
+2707836|Muffin aux céréales complètes
+2707834|Muffin complet
+2707844|Muffin à la courgette
+2707846|Popover (chou soufflé)
+2707808|Scone
+2707809|Scone aux fruits
+2707821|Spoonbread (soufflé de maïs)
+2709271|Fruits rouges (baies)
+2709272|Fruits rouges surgelés
+2709274|Mûres surgelées
+2709273|Mûres
+2709276|Myrtilles en conserve
+2709277|Myrtilles surgelées
+2709275|Myrtilles
+2709279|Canneberges
+2709280|Sauce aux canneberges
+2709282|Framboises surgelées
+2709281|Framboises
+2710708|Eau en bouteille
+2709573|Brocoli-rave, cuit
+2709572|Brocoli-rave, cru
+2709658|Brocoli chinois, cuit
+2709647|Brocoli, cuit
+2709657|Brocoli chinois, cru
+2709651|Brocoli cuit au beurre
+2709650|Brocoli cuit à l'huile
+2709648|Brocoli cuit avec matière grasse
+2709645|Brocoli cuit sans matière grasse
+2709653|Brocoli surgelé cuit au beurre
+2709652|Brocoli surgelé cuit à l'huile
+2709649|Brocoli surgelé cuit avec matière grasse
+2709646|Brocoli surgelé cuit sans matière grasse
+2709643|Brocoli cru
+2706916|Big Mac (McDonald's)
+2706890|Cheeseburger (Burger King)
+2706892|Cheeseburger (McDonald's)
+2706894|Mini cheeseburger (slider)
+2706888|Cheeseburger
+2706904|Cheeseburger pain complet, gros steak
+2706902|Cheeseburger pain complet, steak moyen
+2706896|Cheeseburger pain complet, petit steak
+2706903|Cheeseburger, gros steak
+2706901|Cheeseburger, steak moyen
+2706895|Cheeseburger, petit steak
+2706947|Chiliburger
+2706913|Double cheeseburger (Burger King)
+2706914|Double cheeseburger (McDonald's)
+2706911|Double cheeseburger pain complet, 2 gros steaks
+2706908|Double cheeseburger pain complet, 2 steaks moyens
+2706906|Double cheeseburger pain complet, 2 petits steaks
+2706910|Double cheeseburger, 2 gros steaks
+2706907|Double cheeseburger, 2 steaks moyens
+2706905|Double cheeseburger, 2 petits steaks
+2706941|Double hamburger pain complet, 2 gros steaks
+2706939|Double hamburger pain complet, 2 steaks moyens
+2706937|Double hamburger pain complet, 2 petits steaks
+2706940|Double hamburger, 2 gros steaks
+2706938|Double hamburger, 2 steaks moyens
+2706936|Double hamburger, 2 petits steaks
+2706922|Hamburger (Burger King)
+2706924|Hamburger (McDonald's)
+2706926|Mini hamburger (slider)
+2706920|Hamburger
+2706935|Hamburger pain complet, gros steak
+2706933|Hamburger pain complet, steak moyen
+2706928|Hamburger pain complet, petit steak
+2706934|Hamburger, gros steak
+2706932|Hamburger, steak moyen
+2706927|Hamburger, petit steak
+2706915|McDouble (McDonald's)
+2706898|Quarter Pounder (McDonald's)
+2706900|Quarter Pounder avec fromage (McDonald's)
+2707019|Burger de dinde ou poulet, pain complet
+2707018|Burger de dinde ou poulet
+2706931|Whopper (Burger King)
+2706923|Whopper Jr (Burger King)
+2706891|Whopper Jr avec fromage (Burger King)
+2706899|Whopper avec fromage (Burger King)
+2706750|Garniture de taco au bœuf (bœuf, fromage, tomate, sauce)
+2708534|Burrito
+2708535|Burrito bœuf et fromage
+2708538|Burrito bœuf, haricots, riz et fromage
+2708537|Burrito bœuf, haricots et fromage
+2708536|Burrito bœuf, riz et fromage
+2708554|Burrito au fromage
+2708543|Burrito poulet et fromage
+2708546|Burrito poulet, haricots, riz et fromage
+2708545|Burrito poulet, haricots et fromage
+2708544|Burrito poulet, riz et fromage
+2708550|Burrito à la viande, sans fromage
+2708553|Burrito viande, haricots et riz, sans fromage
+2708552|Burrito viande et haricots, sans fromage
+2708551|Burrito viande et riz, sans fromage
+2708539|Burrito porc et fromage
+2708542|Burrito porc, haricots, riz et fromage
+2708541|Burrito porc, haricots et fromage
+2708540|Burrito porc, riz et fromage
+2708549|Burrito haricots, riz et fromage
+2708548|Burrito haricots et fromage
+2708547|Burrito aux haricots, sans fromage
+2708509|Salade taco au poulet
+2708512|Salade taco au poulet et crème aigre
+2708508|Salade taco à la viande
+2708511|Salade taco à la viande et crème aigre
+2708510|Salade taco sans viande
+2708513|Salade taco sans viande, crème aigre
+2708514|Taco
+2708533|Taco au fromage
+2708515|Taco tortilla de maïs, bœuf et fromage
+2708516|Taco tortilla de maïs, bœuf, haricots et fromage
+2708519|Taco tortilla de maïs, poulet et fromage
+2708520|Taco tortilla de maïs, poulet, haricots et fromage
+2708517|Taco tortilla de maïs, porc et fromage
+2708518|Taco tortilla de maïs, porc, haricots et fromage
+2708521|Taco tortilla de maïs, haricots et fromage
+2708529|Taco au poisson
+2708522|Taco tortilla de blé, bœuf et fromage
+2708523|Taco tortilla de blé, bœuf, haricots et fromage
+2708526|Taco tortilla de blé, poulet et fromage
+2708527|Taco tortilla de blé, poulet, haricots et fromage
+2708524|Taco tortilla de blé, porc et fromage
+2708525|Taco tortilla de blé, porc, haricots et fromage
+2708528|Taco tortilla de blé, haricots et fromage
+2708530|Taco à la viande, sans fromage
+2708531|Taco viande et haricots, sans fromage
+2708532|Taco aux haricots, sans fromage
+2710165|Graisse animale (jus de cuisson)
+2710154|Beurre
+2710157|Beurre allégé
+2710155|Beurre (plaquette)
+2710156|Beurre tendre (barquette)
+2705892|Lard gras (bardière), cuit
+2710168|Ghee (beurre clarifié, smen)
+2710179|Beurre au miel
+2710166|Saindoux
+2710153|Matière grasse à tartiner (sans précision)
+2709888|Chou chinois cuit avec matière grasse
+2709887|Chou chinois cuit sans matière grasse
+2709774|Chou chinois cru
+2709892|Chou vert cuit au beurre
+2709891|Chou vert cuit à l'huile
+2709890|Chou vert cuit avec matière grasse
+2709889|Chou vert cuit sans matière grasse
+2709773|Chou vert cru
+2709893|Chou rouge cuit
+2709775|Chou rouge cru
+2709894|Chou de Milan cuit
+2708044|Baklava
+2708045|Basboussa (gâteau de semoule au sirop, kalb el louz)
+2707857|Forêt-noire
+2707869|Gâteau au chocolat allemand (coco-noix de pécan)
+2707853|Gâteau ou cupcake
+2707855|Gâteau aux pommes
+2707856|Gâteau à la banane (banana bread)
+2707859|Gâteau aux carottes (carrot cake)
+2707866|Gâteau au chocolat glaçage chocolat (pâtisserie)
+2707867|Gâteau au chocolat glaçage chocolat (préparation)
+2707864|Gâteau au chocolat glaçage blanc (pâtisserie)
+2707865|Gâteau au chocolat glaçage blanc (préparation)
+2707868|Gâteau au chocolat sans glaçage
+2707860|Gâteau à la noix de coco
+2707876|Pain d'épices (gâteau)
+2707870|Gâteau sans gluten
+2707879|Gâteau au citron
+2707880|Gâteau marbré
+2707881|Gâteau au beurre de cacahuète
+2707883|Gâteau au potiron
+2707884|Red velvet
+2707885|Gâteau aux épices
+2707887|Gâteau à la fraise
+2707893|Gâteau blanc glaçage chocolat (pâtisserie)
+2707894|Gâteau blanc glaçage chocolat (préparation)
+2707891|Gâteau blanc glaçage blanc (pâtisserie)
+2707892|Gâteau blanc glaçage blanc (préparation)
+2707895|Gâteau blanc sans glaçage (génoise)
+2707897|Gâteau à la courgette
+2707858|Boston cream pie
+2707854|Gâteau des anges (angel cake)
+2707871|Fondant au chocolat sans farine
+2707872|Gâteau à la crème
+2707875|Cake aux fruits confits
+2707878|Gâteau roulé à la confiture
+2707890|Gâteau renversé à l'ananas
+2707882|Quatre-quarts
+2707886|Biscuit de Savoie (génoise)
+2707896|Fraisier américain (strawberry shortcake)
+2707888|Tourte (torte)
+2707889|Gâteau tres leches
+2707863|Cheesecake au chocolat
+2707862|Cheesecake aux fruits
+2707861|Cheesecake nature

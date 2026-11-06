@@ -1,0 +1,394 @@
+2708437|Crème de blé instantanée à l'eau, avec matière grasse
+2708436|Crème de blé instantanée à l'eau
+2708435|Bouillie de semoule de blé à l'eau, avec matière grasse
+2708434|Bouillie de semoule de blé à l'eau
+2708363|Gruau de maïs (grits)
+2708372|Grits instantanés à l'eau
+2708371|Grits instantanés à l'eau, avec matière grasse
+2708370|Grits instantanés à l'eau, sans matière grasse
+2708364|Grits à l'eau
+2708366|Grits à l'eau, avec matière grasse
+2708365|Grits à l'eau, sans matière grasse
+2708367|Grits au fromage
+2708369|Grits au fromage, avec matière grasse
+2708368|Grits au fromage, sans matière grasse
+2709933|Maïs lessivé (hominy), cuit
+2708376|Pâte de masa cuite (bouillie de maïs)
+2708444|Bouillie de son d'avoine
+2709128|Upma (semoule cuisinée à l'indienne)
+2708443|Bouillie de blé chocolatée
+2708442|Bouillie de blé complet
+2705854|Bœuf haché, cuit
+2705855|Steak haché, cuit
+2705853|Bœuf haché, cru
+2705820|Viande hachée, cuite
+2705910|Veau haché, cuit
+2705660|Banana split
+2705673|Bâtonnet glacé orange-vanille
+2705458|Bâtonnet de yaourt glacé au chocolat
+2705457|Bâtonnet de yaourt glacé à la vanille
+2705459|Cornet de yaourt glacé au chocolat
+2705462|Cornet gaufré de yaourt glacé au chocolat
+2705460|Cornet de yaourt glacé à la vanille
+2705461|Cornet gaufré de yaourt glacé à la vanille
+2705456|Sandwich de yaourt glacé
+2705451|Yaourt glacé
+2705453|Yaourt glacé au chocolat
+2705455|Yaourt glacé à l'italienne, chocolat
+2705454|Yaourt glacé à l'italienne, vanille
+2705452|Yaourt glacé à la vanille
+2705674|Bâtonnet glacé au chocolat (fudgesicle)
+2705678|Bâtonnet glacé au chocolat allégé
+2705637|Gelato au chocolat
+2705636|Gelato à la vanille
+2705641|Bâtonnet de glace au chocolat
+2705638|Bâtonnet de glace à la vanille
+2705639|Esquimau vanille enrobé de chocolat
+2705640|Barre glacée chocolatée (type Mars glacé)
+2705647|Cornet de glace
+2705655|Cornet glacé au chocolat (préemballé)
+2705648|Cornet de glace au chocolat (boules)
+2705649|Cornet gaufré de glace au chocolat
+2705645|Cornet de glace à la vanille (boules)
+2705646|Cornet gaufré de glace à la vanille
+2705651|Cornet de glace italienne au chocolat
+2705653|Cornet gaufré de glace italienne au chocolat
+2705650|Cornet de glace italienne à la vanille
+2705652|Cornet gaufré de glace italienne à la vanille
+2705654|Cornet glacé à la vanille (préemballé)
+2705644|Glace en sandwich de cookies
+2705643|Sandwich glacé au chocolat
+2705642|Sandwich glacé à la vanille
+2705658|Coupe glacée (sundae)
+2705662|Coupe glacée sauce caramel
+2705659|Coupe glacée aux fruits
+2705661|Coupe glacée sauce chocolat chaud
+2705629|Crème glacée
+2705632|Crème glacée au chocolat
+2705633|Crème glacée au chocolat avec morceaux
+2705663|Glace frite
+2705635|Glace italienne au chocolat
+2705634|Glace italienne à la vanille
+2705630|Crème glacée à la vanille
+2705631|Crème glacée à la vanille avec morceaux (cookies, noix…)
+2705672|Bâtonnet de glace allégée au chocolat
+2705670|Bâtonnet de glace allégée à la vanille
+2705671|Esquimau allégé enrobé de chocolat
+2705676|Cornet glacé allégé au chocolat
+2705675|Cornet glacé allégé à la vanille
+2705669|Sandwich glacé allégé au chocolat
+2705668|Sandwich glacé allégé à la vanille
+2705664|Glace allégée
+2705666|Glace allégée au chocolat
+2705665|Glace allégée à la vanille
+2705677|Sorbet lacté (sherbet)
+2710309|Pâte de haricots rouges sucrée (anko)
+2709278|Garniture aux myrtilles pour tarte
+2710275|Sirop de myrtille
+2710293|Sauce caramel allégée
+2710292|Sauce caramel (dip)
+2709230|Garniture aux cerises pour tarte
+2710294|Sauce chocolat (dip)
+2710289|Pâte à tartiner chocolat-noisette
+2710276|Sirop de chocolat
+2710277|Sirop de chocolat allégé
+2710274|Sirop de glucose (sirop de maïs)
+2710295|Dip sucré pour dessert
+2710297|Sauce dessert
+2710302|Crème de fruits à tartiner (apple butter)
+2710307|Pâte de goyave
+2710290|Glaçage au chocolat
+2710291|Glaçage blanc
+2710301|Confiture
+2710299|Confiture ou gelée
+2710306|Confiture sucrée au jus de fruits
+2710305|Confiture allégée en sucres
+2710304|Confiture sans sucres
+2710300|Gelée de fruits
+2709169|Crème au citron pour tarte (lemon curd)
+2710303|Marmelade d'orange
+2710273|Sirop pour crêpes (type érable)
+2710280|Sirop pour crêpes allégé
+2710278|Sirop de sucre (sirop simple)
+2710279|Sirop de fraise pour boisson
+2710308|Pâte de patate douce sucrée
+2710272|Sirop
+2710284|Nappage caramel au beurre
+2710285|Nappage au chocolat
+2710286|Nappage aux fruits
+2710287|Nappage à la guimauve
+2710288|Nappage aux noix et sirop
+2705918|Ours
+2705920|Bison
+2705919|Caribou (renne)
+2705908|Chèvre (viande), cuite
+2705905|Agneau, cuit
+2705906|Côtelette d'agneau
+2705907|Agneau haché, cuit
+2705917|Élan (orignal)
+2705912|Lapin, cuit
+2705913|Gibier (cerf), cuit
+2705914|Steak de cerf
+2705927|Sanglier
+2709591|Salade César (romaine), sans sauce
+2709790|Laitue beurre (Boston), crue
+2709791|Roquette
+2709949|Laitue cuite
+2709789|Laitue (salade verte)
+2709823|Salade verte aux crudités, sans sauce
+2709822|Salade composée tomates et carottes, sans sauce
+2709824|Salade verte avocat, tomate et carottes, sans sauce
+2709825|Salade verte au fromage, tomate et carottes, sans sauce
+2709827|Salade verte œuf, fromage, tomate, sans sauce
+2709826|Salade verte œuf, tomate et carottes, sans sauce
+2709792|Mesclun (jeunes pousses)
+2709613|Trévise
+2709590|Laitue romaine
+2710681|Café alcoolisé (irish coffee)
+2710672|Black Russian
+2710628|Bloody Mary
+2710699|Brandy (cognac, armagnac)
+2710627|Brandy Alexander
+2710663|Brandy-cola
+2710629|Cape Cod (vodka-canneberge)
+2710626|Cocktail
+2710630|Daïquiri
+2710684|Lait de poule alcoolisé
+2710682|Daïquiri glacé
+2710683|Margarita glacée
+2710674|Punch alcoolisé
+2710680|Fuzzy Navel
+2710631|Shooter de gelée alcoolisée
+2710632|Gimlet
+2710702|Gin
+2710633|Gin tonic
+2710685|Gin fizz
+2710698|Vin chaud épicé (glögg)
+2710634|Greyhound (vodka-pamplemousse)
+2710635|Jägerbomb
+2710636|Kamikaze
+2710623|Liqueur
+2710625|Liqueur de café
+2710624|Liqueur à la crème (type Baileys)
+2710679|Long Island iced tea
+2710677|Mai Tai
+2710637|Manhattan
+2710638|Margarita
+2710639|Martini (cocktail)
+2710640|Martini aromatisé
+2710643|Mint julep
+2710644|Mojito
+2710645|Moscow mule
+2710646|Old fashioned
+2710647|Orange Blossom
+2710662|Piña colada
+2710648|Rob Roy
+2710703|Rhum
+2710660|Rhum-cola (cuba libre)
+2710661|Rhum-cola light
+2710686|Rhum chaud au beurre
+2710649|Rusty Nail
+2710701|Whisky écossais (scotch)
+2710650|Screwdriver (vodka-orange)
+2710651|Seabreeze
+2710652|Seven and Seven
+2710676|Singapore Sling
+2710671|Sloe gin fizz
+2710705|Tequila
+2710678|Tequila Sunrise
+2710653|Tom Collins
+2710704|Vodka
+2710666|Vodka-cola
+2710667|Vodka-cola light
+2710668|Vodka-boisson énergisante
+2710665|Vodka-limonade
+2710664|Vodka-soda
+2710670|Vodka tonic
+2710669|Vodka à l'eau
+2710700|Whisky
+2710657|Whisky-cola
+2710658|Whisky-cola light
+2710659|Whisky-ginger ale
+2710655|Whisky-soda
+2710656|Whisky à l'eau
+2710654|Whisky sour
+2710673|White Russian
+2706159|Cervelle, cuite
+2706163|Andouille (intestins de porc), cuite
+2706165|Gésiers, cuits
+2706156|Cœur, cuit
+2706164|Panse de porc, cuite
+2706157|Rognons, cuits
+2706153|Foie de bœuf, cuit
+2706154|Foies de volaille, cuits
+2706155|Pâté de foie
+2706158|Ris de veau, cuit
+2706160|Langue, cuite
+2706161|Langue braisée à la portoricaine
+2706162|Tripes, cuites
+2708811|Macaroni au fromage (mac and cheese)
+2708823|Macaroni au fromage et poulet
+2708822|Macaroni au fromage et œuf
+2708821|Macaroni au fromage et saucisses
+2708818|Macaroni au fromage et viande
+2708819|Macaroni au fromage et viande (préparation en sachet)
+2708820|Macaroni au fromage et tomate
+2708817|Macaroni au fromage et thon
+2708815|Macaroni au fromage instantané (micro-ondes)
+2708814|Macaroni au fromage en conserve
+2708813|Macaroni au fromage (préparation en sachet)
+2708816|Macaroni au fromage allégé (préparation en sachet)
+2708824|Macaroni complets au fromage
+2708928|Gratin de pâtes à la crème et fromage
+2708929|Gratin de pâtes à la crème, fromage et thon
+2709243|Mangue en conserve
+2709244|Mangue surgelée
+2709242|Mangue
+2709247|Papaye en conserve
+2709246|Papaye
+2710161|Substitut de beurre liquide
+2710163|Substitut de beurre en poudre
+2710158|Margarine
+2710162|Margarine allégée
+2710159|Margarine (plaquette)
+2710160|Margarine (barquette)
+2710164|Huile ou matière grasse (sans précision)
+2710167|Graisse végétale (shortening)
+2710138|Pommes de terre farcies frites (rellenos de papa)
+2709553|Lefse (galette norvégienne de pomme de terre)
+2709419|Pommes de terre du ragoût de bœuf portoricain, en sauce
+2709420|Pommes de terre de fricassée de poulet portoricaine
+2709418|Pommes de terre du rôti farci portoricain, en sauce
+2709552|Galette de pommes de terre (latke)
+2709538|Salade de pommes de terre aux œufs, vinaigrette italienne
+2709540|Salade de pommes de terre aux œufs, sauce 0 %
+2709536|Salade de pommes de terre aux œufs, sauce crémeuse
+2709539|Salade de pommes de terre aux œufs, vinaigrette légère
+2709537|Salade de pommes de terre aux œufs, sauce crémeuse légère
+2709533|Salade de pommes de terre aux œufs, mayonnaise légère
+2709535|Salade de pommes de terre aux œufs, sauce type mayonnaise légère
+2709532|Salade de pommes de terre aux œufs, mayonnaise
+2709534|Salade de pommes de terre aux œufs, sauce type mayonnaise
+2709541|Salade de pommes de terre à l'allemande (lardons, vinaigre)
+2709549|Salade de pommes de terre vinaigrette italienne
+2709551|Salade de pommes de terre sauce 0 %
+2709547|Salade de pommes de terre sauce crémeuse
+2709550|Salade de pommes de terre vinaigrette légère
+2709548|Salade de pommes de terre sauce crémeuse légère
+2709544|Salade de pommes de terre mayonnaise légère
+2709546|Salade de pommes de terre sauce type mayonnaise légère
+2709543|Salade de pommes de terre mayonnaise
+2709545|Salade de pommes de terre sauce type mayonnaise
+2709492|Purée de pommes de terre
+2709503|Purée en flocons
+2709504|Purée en flocons au lait
+2709505|Purée en flocons au lait et fromage
+2709506|Purée en flocons au lait et sauce brune
+2709499|Purée de pommes de terre maison
+2709496|Purée de pommes de terre maison au lait
+2709497|Purée maison au lait et fromage (aligot léger)
+2709498|Purée maison au lait et sauce brune
+2709495|Purée prête à réchauffer
+2709507|Purée prête à réchauffer (sans précision)
+2709508|Purée prête à réchauffer au fromage
+2709509|Purée prête à réchauffer avec sauce brune
+2709448|Gratin de pommes de terre à la crème (scalloped)
+2709452|Gratin de pommes de terre (préparation en sachet)
+2709453|Gratin de pommes de terre en sachet, à la viande
+2709450|Gratin de pommes de terre maison
+2709451|Gratin de pommes de terre maison à la viande
+2709454|Gratin de pommes de terre prêt à réchauffer
+2709455|Gratin de pommes de terre prêt à réchauffer, à la viande
+2709554|Pommes de terre en ragoût
+2709555|Pommes de terre en ragoût aux tomates
+2709416|Ragoût de pommes de terre à la portoricaine
+2710235|Mayonnaise 0 %
+2710220|Mayonnaise légère
+2710221|Mayonnaise allégée à l'huile d'olive
+2710204|Mayonnaise
+2710207|Sauce type mayonnaise (salad cream)
+2710222|Sauce type mayonnaise légère
+2710196|Sauce pour sandwich
+2710172|Sauce à tartiner pour sandwich
+2710173|Sauce tartare
+2710205|Mayonnaise végane
+2706886|Sandwich au bœuf barbecue, pain complet
+2706885|Sandwich au bœuf barbecue
+2706999|Sandwich au poulet barbecue, pain complet
+2706998|Sandwich au poulet barbecue
+2706976|Sandwich au porc barbecue (pulled pork), pain complet
+2706975|Sandwich au porc effiloché barbecue (pulled pork)
+2706974|Sandwich aux travers barbecue
+2706882|Sandwich barbecue
+2706961|Cheesesteak (bœuf et fromage fondu), pain complet
+2706960|Cheesesteak (bœuf et fromage fondu)
+2706973|Sandwich cubain (porc, jambon, fromage, cornichon)
+2706962|Sandwich gyros (pita, viande à la broche)
+2706945|Sandwich aux boulettes de viande
+2706946|Sandwich au pain de viande
+2706977|Sandwich au porc
+2706978|Sandwich porc et fromage
+2706884|Sloppy joe (bœuf haché en sauce), pain complet
+2706883|Sloppy joe (bœuf haché en sauce)
+2706959|Sandwich au steak, pain complet
+2706958|Sandwich au steak
+2706874|Antipasti (jambon, poisson, fromage, légumes)
+2706390|Bœuf barbecue en sauce
+2706369|Viande barbecue
+2706399|Porc barbecue en sauce
+2706481|Bœuf et macaronis sauce fromage
+2706485|Bœuf et nouilles sauce crème
+2706484|Bœuf et nouilles sauce brune
+2706487|Bœuf et nouilles sauce aux champignons
+2706482|Bœuf et nouilles sauce tomate
+2706480|Bœuf et nouilles sans sauce
+2706478|Bœuf et pommes de terre sauce fromage
+2706475|Bœuf et pommes de terre sauce crème ou champignons
+2706474|Bœuf et pommes de terre sans sauce
+2706498|Bœuf et riz sauce fromage
+2706494|Bœuf et riz sauce crème
+2706493|Bœuf et riz sauce brune
+2706495|Bœuf et riz sauce aux champignons
+2706491|Bœuf et riz sauce tomate
+2706489|Bœuf et riz sans sauce
+2706753|Bœuf aux légumes (sans légumes verts) en sauce
+2706729|Bœuf aux légumes (sans légumes verts) sans sauce
+2706752|Bœuf aux légumes verts et carottes en sauce
+2706728|Bœuf aux légumes verts et carottes sans sauce
+2706746|Bœuf aux légumes à l'hawaïenne
+2706371|Bœuf bourguignon
+2706388|Curry de bœuf
+2706389|Curry de bœuf avec riz
+2707096|Plat cuisiné surgelé au bœuf
+2706733|Paupiettes de bœuf farcies sauce tomate
+2706749|Salade de bœuf
+2706730|Brochettes de bœuf aux légumes
+2706754|Steak aux oignons à la portoricaine (bistec encebollado)
+2706503|Ragoût de bœuf aux pommes de terre à la portoricaine
+2706382|Bœuf Stroganoff
+2706486|Bœuf Stroganoff avec nouilles
+2706501|Bœuf Wellington
+2706381|Bœuf sauce crème (blanquette de bœuf)
+2706379|Bœuf en sauce brune
+2706385|Bœuf sauce aux champignons
+2707104|Plat surgelé bœuf, spaetzle ou riz et légumes
+2706370|Bœuf sauce tomate
+2707097|Plat surgelé allégé bœuf et légumes
+2706736|Bœuf aux légumes sauce champignons
+2706734|Bœuf aux légumes sauce tomate
+2706735|Bœuf aux légumes verts sauce champignons
+2706731|Bœuf aux légumes verts sauce tomate
+2706632|Bœuf, boulettes de pâte et légumes en sauce
+2706631|Bœuf, boulettes de pâte et légumes verts en sauce
+2706748|Bœuf haché à l'œuf et à l'oignon
+2706615|Bœuf, nouilles et légumes en sauce brune
+2706613|Bœuf, nouilles et légumes sauce champignons
+2706606|Bœuf, nouilles et légumes sans sauce
+2706611|Bœuf, nouilles et légumes sauce tomate
+2706614|Bœuf, nouilles et légumes verts en sauce brune
+2706612|Bœuf, nouilles et légumes verts sauce champignons
+2706605|Bœuf, nouilles et légumes verts sans sauce
+2706610|Bœuf, nouilles et légumes verts sauce tomate
+2706602|Bœuf, pommes de terre et légumes sauce fromage
+2706598|Bœuf, pommes de terre et légumes sauce crème
+2706596|Bœuf, pommes de terre et légumes en sauce brune

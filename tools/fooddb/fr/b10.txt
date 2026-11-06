@@ -1,0 +1,400 @@
+2707288|Omelette aux blancs d'œufs avec matière grasse
+2707286|Omelette aux blancs d'œufs au beurre
+2707287|Omelette aux blancs d'œufs (spray de cuisson)
+2707284|Omelette aux blancs d'œufs à la margarine
+2707285|Omelette aux blancs d'œufs à l'huile
+2707289|Omelette aux blancs d'œufs sans matière grasse
+2707290|Omelette aux blancs d'œufs et fromage
+2707293|Omelette aux blancs d'œufs, fromage et viande
+2707294|Omelette aux blancs d'œufs, fromage et légumes
+2707296|Omelette aux blancs d'œufs, fromage, viande et légumes
+2707291|Omelette aux blancs d'œufs et viande
+2707295|Omelette aux blancs d'œufs, viande et légumes
+2707292|Omelette aux blancs d'œufs et légumes
+2707180|Œufs Bénédicte
+2707179|Œufs à la crème
+2707181|Œufs mimosa (œufs farcis)
+2707168|Blanc d'œuf cru
+2707169|Blanc d'œuf cuit
+2707171|Blanc d'œuf cuit avec matière grasse
+2707170|Blanc d'œuf cuit sans matière grasse
+2707164|Œuf cocotte
+2707166|Œuf cocotte avec matière grasse
+2707165|Œuf cocotte sans matière grasse
+2707154|Œuf dur ou poché
+2707153|Œuf cuit
+2707156|Œuf au plat sans matière grasse
+2707160|Œuf au plat à la graisse animale
+2707159|Œuf au plat au beurre
+2707161|Œuf au plat (spray de cuisson)
+2707157|Œuf au plat à la margarine
+2707158|Œuf au plat à l'huile
+2707155|Œuf au plat
+2707162|Œuf au plat avec matière grasse
+2707167|Œuf mariné au vinaigre
+2707152|Œuf cru
+2707173|Jaune d'œuf cuit
+2707175|Jaune d'œuf cuit avec matière grasse
+2707174|Jaune d'œuf cuit sans matière grasse
+2707172|Jaune d'œuf cru
+2707177|Œuf d'oie, cuit
+2707191|Huevos rancheros (œufs sur tortilla, sauce tomate)
+2707178|Œufs de caille en conserve
+2710712|Eau aromatisée vitaminée sans sucres
+2710711|Eau aromatisée vitaminée sucrée
+2706332|Caviar
+2706224|Poisson, cuit (sans précision)
+2706225|Poisson cuit au four ou grillé
+2706226|Poisson pané cuit au four
+2706227|Poisson frit
+2706228|Poisson vapeur
+2706232|Anchois
+2706294|Bar (loup)
+2706295|Bar cuit au four
+2706297|Bar pané au four
+2706298|Bar frit
+2706296|Bar grillé
+2706299|Bar vapeur
+2706229|Poisson en conserve
+2706233|Carpe
+2706234|Poisson-chat (silure)
+2706235|Poisson-chat au four
+2706237|Poisson-chat pané au four
+2706238|Poisson-chat frit
+2706236|Poisson-chat grillé
+2706239|Poisson-chat vapeur
+2706240|Cabillaud
+2706241|Cabillaud cuit au four
+2706243|Cabillaud pané au four
+2706244|Cabillaud frit
+2706242|Cabillaud grillé
+2706245|Cabillaud vapeur
+2706246|Courbine (tambour)
+2706247|Anguille
+2706248|Sole ou limande
+2706249|Sole ou limande au four
+2706251|Sole ou limande panée au four
+2706252|Sole ou limande frite (meunière)
+2706250|Sole ou limande grillée
+2706253|Sole ou limande vapeur
+2706254|Églefin (haddock)
+2706255|Églefin au four
+2706257|Églefin pané au four
+2706258|Églefin frit
+2706256|Églefin grillé
+2706259|Églefin vapeur
+2706260|Flétan
+2706261|Hareng
+2706263|Maquereau
+2706264|Maquereau au four
+2706266|Maquereau pané au four
+2706268|Maquereau en conserve
+2706267|Maquereau frit
+2706265|Maquereau grillé
+2706269|Mulet
+2706270|Perche
+2706271|Perche au four
+2706273|Perche panée au four
+2706274|Perche frite
+2706272|Perche grillée
+2706275|Perche vapeur
+2706262|Poisson mariné
+2706276|Brochet
+2706277|Pompaneau
+2706278|Pompaneau au four
+2706280|Pompaneau pané au four
+2706281|Pompaneau frit
+2706279|Pompaneau grillé
+2706282|Pompaneau vapeur
+2706223|Poisson cru
+2706285|Saumon
+2706286|Saumon au four
+2706288|Saumon pané au four
+2706291|Saumon en conserve
+2706289|Saumon frit
+2706287|Saumon grillé
+2706284|Saumon cru
+2706292|Saumon fumé
+2706290|Saumon vapeur
+2706293|Sardines en conserve
+2706300|Requin
+2706230|Poisson fumé
+2706283|Vivaneau (poisson rouge, thiof)
+2706231|Bâtonnet de poisson pané
+2706301|Espadon
+2706318|Tilapia
+2706319|Tilapia au four
+2706321|Tilapia pané au four
+2706322|Tilapia frit
+2706320|Tilapia grillé (braisé)
+2706323|Tilapia vapeur
+2706302|Truite
+2706303|Truite au four
+2706305|Truite panée au four
+2706306|Truite frite (meunière)
+2706304|Truite grillée
+2706307|Truite vapeur
+2706309|Thon
+2706311|Thon en conserve
+2706310|Thon cuit
+2706308|Thon cru
+2706324|Poisson blanc
+2706325|Poisson blanc au four
+2706326|Poisson blanc pané au four
+2706327|Poisson blanc frit
+2706329|Poisson blanc grillé
+2706328|Poisson blanc vapeur
+2706312|Merlan
+2706313|Merlan au four
+2706315|Merlan pané au four
+2706316|Merlan frit
+2706314|Merlan grillé
+2706317|Merlan vapeur
+2706568|Surimi (bâtonnets de crabe)
+2705466|Lait chocolaté
+2705470|Lait chocolaté 1 % MG
+2705471|Lait chocolaté allégé en sucres
+2705481|Lait chocolaté 1 % allégé en sucres
+2705472|Chocolat chaud
+2705498|Lait à la fraise 1 % MG
+2705500|Lait à la fraise allégé en sucres
+2705469|Lait chocolaté écrémé
+2705482|Lait chocolaté écrémé allégé en sucres
+2705485|Chocolat chaud (poudre) au lait écrémé
+2705483|Chocolat chaud (poudre) à l'eau
+2705492|Chocolat chaud allégé en sucres au lait écrémé
+2705488|Chocolat chaud allégé en sucres à l'eau
+2705474|Chocolat chaud au lait écrémé
+2705493|Chocolat chaud allégé en sucres au lait écrémé
+2705499|Lait à la fraise écrémé
+2705477|Lait chocolaté (type Nesquik)
+2705468|Lait chocolaté demi-écrémé
+2705480|Lait chocolaté demi-écrémé allégé en sucres
+2705487|Chocolat chaud à l'eau avec chantilly
+2705484|Chocolat chaud (poudre) au lait demi-écrémé ou entier
+2705489|Chocolat chaud allégé en sucres au lait demi-écrémé
+2705473|Chocolat chaud au lait demi-écrémé ou entier
+2705491|Chocolat chaud allégé en sucres au lait entier
+2705476|Chocolat chaud avec chantilly (viennois)
+2705501|Lait malté
+2705495|Lait à la fraise
+2705497|Lait à la fraise demi-écrémé
+2705479|Lait chocolaté entier allégé en sucres
+2705467|Lait chocolaté entier
+2705402|Lait concentré sucré
+2705496|Lait à la fraise entier
+2710710|Boisson à l'eau aromatisée aux fruits
+2710540|Eau gazeuse aromatisée
+2710539|Eau gazeuse nature
+2710709|Eau plate aromatisée
+2710538|Tonic (eau tonique)
+2707081|Chili dog, pain complet
+2707079|Chili dog, petit pain complet
+2707080|Chili dog, pain de mie
+2707078|Chili dog
+2707044|Corn dog (saucisse en pâte frite)
+2707059|Hot-dog, pain complet
+2707057|Hot-dog, petit pain complet
+2707058|Hot-dog, pain de mie
+2707056|Hot-dog
+2707063|Hot-dog au bœuf, pain complet
+2707061|Hot-dog au bœuf, petit pain complet
+2707062|Hot-dog au bœuf, pain de mie
+2707060|Hot-dog au bœuf
+2707067|Hot-dog porc-volaille, pain complet
+2707065|Hot-dog porc-volaille, petit pain complet
+2707066|Hot-dog porc-volaille, pain de mie
+2707064|Hot-dog porc-volaille
+2707075|Hot-dog allégé, pain complet
+2707073|Hot-dog allégé, petit pain complet
+2707074|Hot-dog allégé, pain de mie
+2707072|Hot-dog allégé
+2707071|Hot-dog à la dinde, pain complet
+2707069|Hot-dog à la dinde, petit pain complet
+2707070|Hot-dog à la dinde, pain de mie
+2707068|Hot-dog à la dinde
+2707077|Hot-dog végétarien, pain de mie
+2707076|Hot-dog végétarien
+2707053|Sandwich à la saucisse italienne
+2707045|Saucisse en feuilleté (pig in a blanket)
+2706166|Saucisse de Francfort (knack)
+2706167|Saucisse de Francfort pur bœuf
+2706168|Saucisse de Francfort porc et volaille
+2706169|Saucisse de Francfort allégée
+2706170|Saucisse de Francfort à la dinde
+2709510|Galette de pommes de terre
+2709488|Peaux de pommes de terre frites, nature
+2709491|Peaux de pommes de terre garnies
+2709489|Peaux de pommes de terre au fromage
+2709490|Peaux de pommes de terre fromage et bacon
+2709511|Croquettes de pommes de terre (tater tots)
+2709512|Croquettes de pommes de terre (restauration rapide)
+2709514|Croquettes de pommes de terre maison
+2709517|Croquettes de pommes de terre surgelées
+2709515|Croquettes de pommes de terre surgelées au four
+2709516|Croquettes de pommes de terre surgelées frites
+2709513|Croquettes de pommes de terre (cantine)
+2709456|Frites
+2709457|Frites (fraîches ou surgelées)
+2709461|Frites de fast-food
+2709459|Frites maison au four
+2709458|Frites maison (bain d'huile)
+2709460|Frites surgelées au four
+2709463|Frites surgelées frites
+2709462|Frites de restaurant
+2709464|Frites de cantine
+2709469|Frites au fromage
+2709465|Frites au fromage (restauration)
+2709466|Frites au fromage (cantine)
+2709471|Frites au chili
+2709470|Frites chili et fromage
+2709468|Frites chili et fromage (restauration)
+2709467|Frites au chili (restauration)
+2709477|Pommes de terre râpées rissolées (hash brown)
+2709485|Hash brown (préparation déshydratée)
+2709483|Hash brown maison
+2709484|Hash brown maison au fromage
+2709486|Hash brown prêt à réchauffer
+2709487|Hash brown prêt à réchauffer au fromage
+2709472|Pommes de terre sautées
+2709474|Pommes de terre sautées maison
+2709475|Pommes de terre sautées prêtes à réchauffer
+2709476|Pommes de terre sautées aux légumes
+2706607|Chow mein au bœuf avec nouilles
+2706742|Chop suey au bœuf sans nouilles
+2706687|Chow mein au poulet avec nouilles
+2706798|Chop suey au poulet sans nouilles
+2708796|Nouilles chow fun (riz sautées) viande et légumes
+2708797|Nouilles chow fun sautées aux légumes
+2706872|Chop suey à la viande sans nouilles
+2706722|Chow mein à la viande avec nouilles
+2710069|Chow mein végétarien avec nouilles
+2706724|Chow mein mixte avec nouilles
+2708798|Lo mein (nouilles sautées)
+2708799|Lo mein végétarien
+2708802|Lo mein au bœuf
+2708803|Lo mein au poulet
+2708801|Lo mein au porc
+2708800|Lo mein aux crevettes
+2708806|Pad thaï au poulet
+2708808|Pad thaï à la viande
+2708807|Pad thaï aux fruits de mer
+2708804|Pad thaï
+2708805|Pad thaï végétarien
+2706648|Chow mein au porc avec nouilles
+2706771|Chop suey au porc sans nouilles
+2709107|Riz complet à la sauce soja
+2709109|Riz complet à la sauce soja, avec matière grasse
+2709108|Riz complet à la sauce soja, sans matière grasse
+2709125|Riz complet aux légumes et sauce soja
+2709127|Riz complet aux légumes et sauce soja, avec matière grasse
+2709126|Riz complet aux légumes et sauce soja, sans matière grasse
+2708952|Riz cantonais (riz frit)
+2708951|Riz frit végétarien
+2708955|Riz frit au bœuf
+2708953|Riz frit au poulet
+2708954|Riz frit au porc
+2708956|Riz frit aux crevettes
+2709098|Riz blanc à la sauce soja
+2709100|Riz blanc à la sauce soja, avec matière grasse
+2709099|Riz blanc à la sauce soja, sans matière grasse
+2709116|Riz blanc aux légumes et sauce soja
+2709118|Riz blanc aux légumes et sauce soja, avec matière grasse
+2709117|Riz blanc aux légumes et sauce soja, sans matière grasse
+2706712|Chow mein aux crevettes avec nouilles
+2706827|Chop suey aux crevettes sans nouilles
+2708931|Soupe yat ga mein (nouilles, viande ou poisson)
+2709656|Brocoli frit en beignet
+2710042|Chou-fleur frit en beignet
+2710048|Aubergine frite
+2709869|Haricots verts frits
+2709725|Tomates vertes frites
+2710053|Champignons frits en beignet
+2710054|Gombo frit
+2710055|Rondelles d'oignon frites
+2710058|Courgettes frites
+2710066|Pakoras (beignets de légumes indiens)
+2710098|Cornichons frits
+2709709|Frites de patate douce
+2709713|Frites de patate douce (restauration)
+2709712|Frites de patate douce maison
+2709711|Frites de patate douce surgelées
+2709714|Frites de patate douce (cantine)
+2709715|Croquettes de patate douce
+2709716|Croquettes de patate douce (restauration)
+2709717|Croquettes de patate douce (cantine)
+2710065|Tempura de légumes
+2709565|Frites de manioc (yuca frita)
+2710591|Boisson à la pomme 40-50 % de jus, allégée
+2709341|Nectar d'abricot
+2709342|Nectar de banane
+2710610|Bière sans alcool
+2709343|Nectar de melon
+2707573|Eau de coco sucrée
+2707572|Eau de coco sans sucre ajouté
+2710579|Boisson à la canneberge enrichie en vitamine C
+2710588|Boisson à la canneberge allégée
+2710573|Boisson aromatisée aux fruits
+2710583|Boisson aux fruits en poudre, reconstituée (type Tang)
+2710578|Boisson aux fruits enrichie en vitamine C
+2710584|Boisson aux fruits en poudre enrichie en vitamine C
+2710567|Boisson au jus de fruits
+2710600|Boisson au jus de fruits (Capri-Sun)
+2710582|Boisson au jus de fruits (Sunny D)
+2710601|Boisson au jus de fruits enrichie en calcium (Sunny D)
+2710565|Boisson gazeuse aux agrumes avec jus
+2710587|Boisson au jus de fruits sans sucres
+2710586|Boisson au jus de fruits allégée
+2710566|Boisson gazeuse aux fruits avec jus
+2710580|Boisson au jus de fruits vitaminée
+2710585|Boisson au jus de fruits vitaminée allégée
+2710777|Jus de fruits à l'açaï
+2709340|Nectar de fruits
+2710569|Punch aux fruits (jus et soda)
+2710589|Boisson au raisin allégée
+2709344|Nectar de goyave
+2710572|Limonade concentrée surgelée
+2710571|Citronnade aromatisée
+2710570|Citronnade au jus de citron
+2710592|Citronnade allégée
+2709345|Nectar de mangue
+2710575|Préparation pour margarita sans alcool
+2710590|Boisson à l'orange 40-50 % de jus, allégée
+2709347|Nectar de papaye
+2709348|Nectar de fruit de la passion
+2709346|Nectar de pêche
+2709349|Nectar de poire
+2710574|Piña colada sans alcool
+2710593|Boisson à la grenade allégée
+2710611|Shirley Temple (soda et sirop de grenadine)
+2710576|Granité (slush)
+2709350|Nectar de corossol
+2710606|Jus de canne à sucre (garapa)
+2710568|Boisson au tamarin
+2710581|Boisson aux légumes et fruits vitaminée
+2710595|Boisson aux légumes et fruits allégée
+2710609|Vin sans alcool
+2710322|Glace à l'eau en tube
+2709312|Bâtonnet glacé au jus de fruits
+2709313|Bâtonnet glacé au jus de fruits sans sucres ajoutés
+2710310|Gelée aromatisée (dessert à la gélatine)
+2710311|Gelée aux fruits
+2710313|Gelée sans sucres
+2710314|Gelée sans sucres aux fruits
+2710312|Salade en gelée aux légumes
+2710317|Glace italienne à l'eau (granita)
+2710318|Granita sans sucres ajoutés
+2710320|Bâtonnet glacé à l'eau (esquimau)
+2710319|Glace à l'eau
+2710321|Glace à l'eau sans sucres ajoutés
+2710323|Glace pilée au sirop
+2710324|Glace pilée sans sucres ajoutés
+2709314|Sorbet
+2710315|Yokan (gelée de haricots rouges)
+2709237|Raisin
+2708360|Céréales cuites (bouillie)
+2708373|Bouillie de semoule de maïs (polenta)
+2708375|Bouillie de maïs avec matière grasse
+2708374|Bouillie de maïs sans matière grasse
+2708415|Crème de riz (bouillie)
+2708433|Crème de blé (bouillie de semoule)

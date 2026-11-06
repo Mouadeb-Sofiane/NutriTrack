@@ -125,6 +125,31 @@ export async function loadModelFiles(): Promise<ModelFiles | null> {
   return { manifest: await m.json(), model: await model.arrayBuffer(), labels: new Float32Array(await labels.arrayBuffer()) };
 }
 
+/**
+ * Mise à jour légère : si une nouvelle version de l'application ajoute des plats au
+ * vocabulaire, seuls les libellés (≈ 200 ko) sont retéléchargés — le modèle (96 Mo) est
+ * inchangé tant que son empreinte est la même. Silencieux hors ligne.
+ */
+export async function refreshLabels(): Promise<boolean> {
+  if (!cacheSupported() || !navigator.onLine) return false;
+  try {
+    const c = await caches.open(CACHE);
+    const cur = await c.match(url(MANIFEST_KEY));
+    if (!cur) return false;
+    const installed: VisionManifest = await cur.json();
+    const remote = await fetchManifest();
+    if (remote.sha256 !== installed.sha256 || remote.labels.sha256 === installed.labels.sha256) return false;
+    const res = await fetch(url(`${MODEL_DIR}${remote.labels.path}`), { cache: 'no-cache' });
+    const buf = await res.arrayBuffer();
+    if ((await sha256(buf)) !== remote.labels.sha256) return false;
+    await c.put(url(LABELS_KEY), new Response(buf));
+    await c.put(url(MANIFEST_KEY), new Response(JSON.stringify(remote), { headers: { 'Content-Type': 'application/json' } }));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 export async function deleteModel(): Promise<void> {
   if (typeof caches !== 'undefined') await caches.delete(CACHE);
 }

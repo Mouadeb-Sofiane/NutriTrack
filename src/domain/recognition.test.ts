@@ -6,10 +6,17 @@ import { getReferenceFood } from './referenceFoods';
 import manifest from '../../public/models/food-clip-v1/manifest.json';
 import labelsJson from './foodLabels.json';
 
+import dishesJson from '../data/fooddb/dishes.json';
+const DISH_IDS = new Set((dishesJson as unknown as { dishes: { id: string }[] }).dishes.map((d) => d.id));
+
 describe('vocabulaire de reconnaissance', () => {
   it('chaque libellé mène à un aliment, un plat ou un modèle existant', () => {
     for (const l of FOOD_LABELS) {
       const t = l.target;
+      if (t.kind === 'dish') {
+        for (const id of [t.id, ...t.alternatives]) expect(DISH_IDS.has(id), `${l.id} → plat ${id}`).toBe(true);
+        continue;
+      }
       const ok = t.kind === 'catalog' ? getEntry(t.id) : t.kind === 'template' ? getTemplate(t.id) : getReferenceFood(t.id);
       expect(ok, `${l.id} → ${t.kind}:${t.id}`).toBeTruthy();
     }

@@ -1,0 +1,400 @@
+2709422|Chips nature
+2709443|Chips soufflées
+2709442|Chips soufflées aromatisées
+2709441|Chips soufflées nature
+2709436|Chips allégées
+2709433|Chips reconstituées aromatisées (type Pringles)
+2709440|Chips reconstituées légèrement salées
+2708214|Chips reconstituées multicéréales
+2709432|Chips reconstituées nature (type Pringles)
+2709437|Chips reconstituées allégées
+2709428|Chips ondulées barbecue
+2709430|Chips ondulées au fromage
+2709431|Chips ondulées aromatisées
+2709427|Chips ondulées nature
+2709429|Chips ondulées crème et oignon
+2709424|Chips crème et oignon
+2709438|Chips non salées
+2709445|Allumettes de pommes de terre aromatisées
+2709446|Allumettes de pommes de terre façon frites
+2709444|Allumettes de pommes de terre (pommes paille)
+2708809|Adobo philippin avec nouilles
+2708958|Adobo philippin avec riz
+2706817|Salade asiatique au poulet et nouilles croustillantes, sans sauce
+2706816|Salade asiatique au poulet, fruits et noix, sans sauce
+2706434|Poulet barbecue
+2707116|Plat surgelé poulet, légumes et nouilles à la crème
+2707114|Plat surgelé allégé poulet, légumes et nouilles
+2707112|Plat surgelé allégé poulet, légumes et riz
+2707111|Plat surgelé allégé gratin de poulet et légumes avec riz
+2708745|Pain de maïs au poulet
+2706437|Curry de poulet
+2706438|Curry de poulet avec riz
+2707105|Plat cuisiné surgelé au poulet
+2706710|Fricassée de poulet à la portoricaine
+2706445|Poulet à la Kiev
+2706788|Poulet à la king (sauce crème, légumes)
+2706787|Poulet à la king aux légumes verts
+2706533|Poulet et nouilles sauce fromage
+2706532|Poulet et nouilles sauce crème
+2706530|Poulet et nouilles sauce brune
+2706531|Poulet et nouilles sauce champignons
+2706535|Poulet et nouilles sauce tomate
+2706529|Poulet et nouilles sans sauce
+2706528|Poulet et pommes de terre en sauce
+2706539|Poulet et riz sauce crème (poulet basquaise crème)
+2706540|Poulet et riz sauce champignons
+2706541|Poulet et riz sauce tomate (poulet basquaise)
+2706537|Poulet et riz sans sauce
+2706821|Poulet aux légumes sauce fromage
+2706786|Poulet aux légumes en sauce brune
+2706782|Poulet aux légumes sans sauce (sauté)
+2706793|Poulet aux légumes sauce tomate
+2706820|Poulet aux légumes verts sauce fromage
+2706785|Poulet aux légumes verts en sauce brune
+2706781|Poulet aux légumes verts sans sauce
+2706792|Poulet aux légumes verts sauce tomate
+2706421|Poulet chasseur (cacciatore)
+2706818|Salade César au poulet, sans sauce
+2706545|Croquettes ou galettes de poulet
+2706441|Cordon bleu de volaille
+2706784|Poulet créole (sans riz)
+2706789|Poulet divan (brocoli, sauce crème, fromage)
+2706429|Fricassée de poulet
+2706823|Fricassée de poulet portoricaine sans sauce
+2706822|Fricassée de poulet portoricaine en sauce
+2706812|Salade de poulet, bacon et fromage, sans sauce
+2706814|Salade de poulet et fromage, sans sauce
+2706811|Salade verte au poulet, sans sauce
+2706810|Salade composée au poulet, sans sauce
+2706527|Hachis de poulet
+2706442|Escalope de poulet à la parmigiana
+2706801|Salade de poulet aux œufs
+2706800|Salade de poulet aux noix ou fruits
+2706807|Salade de poulet vinaigrette italienne
+2706809|Salade de poulet sauce 0 %
+2706805|Salade de poulet sauce crémeuse
+2706808|Salade de poulet vinaigrette légère
+2706806|Salade de poulet sauce crémeuse légère
+2706802|Salade de poulet mayonnaise légère
+2706804|Salade de poulet sauce type mayonnaise légère
+2706799|Salade de poulet à la mayonnaise
+2706803|Salade de poulet sauce type mayonnaise
+2706783|Brochettes de poulet aux légumes
+2706546|Soufflé au poulet
+2706534|Poulet tetrazzini (pâtes, crème, champignons)
+2706440|Poulet sauce fromage
+2706431|Poulet à la crème
+2706543|Poulet aux boulettes de pâte (dumplings)
+2706432|Poulet sauce aux champignons
+2706544|Poulet farci
+2706819|Salade César au poulet pané, sans sauce
+2706813|Salade au poulet pané, bacon et fromage, sans sauce
+2706815|Salade au poulet pané et fromage, sans sauce
+2706709|Poulet, boulettes de pâte et légumes en sauce
+2706708|Poulet, boulettes de pâte et légumes verts en sauce
+2706689|Poulet, nouilles et légumes sauce fromage
+2706682|Poulet, nouilles et légumes en sauce brune
+2706680|Poulet, nouilles et légumes sans sauce
+2706686|Poulet, nouilles et légumes sauce tomate
+2706684|Poulet, nouilles et légumes sauce crème
+2706688|Poulet, nouilles et légumes verts sauce fromage
+2706683|Poulet, nouilles et légumes verts sauce crème
+2706681|Poulet, nouilles et légumes verts en sauce brune
+2706679|Poulet, nouilles et légumes verts sans sauce
+2706685|Poulet, nouilles et légumes verts sauce tomate
+2706674|Poulet, pommes de terre et légumes sauce fromage
+2706672|Poulet, pommes de terre et légumes sauce crème
+2706670|Poulet, pommes de terre et légumes en sauce brune
+2706668|Poulet, pommes de terre et légumes sans sauce
+2706676|Poulet, pommes de terre et légumes sauce tomate
+2706673|Poulet, pommes de terre et légumes verts sauce fromage
+2706671|Poulet, pommes de terre et légumes verts sauce crème
+2706669|Poulet, pommes de terre et légumes verts en sauce brune
+2706667|Poulet, pommes de terre et légumes verts sans sauce
+2706675|Poulet, pommes de terre et légumes verts sauce tomate
+2706666|Poulet, pommes de terre, maïs et fromage en sauce
+2706700|Poulet, riz et légumes sauce fromage
+2706698|Poulet, riz et légumes sauce crème
+2706693|Poulet, riz et légumes en sauce brune
+2706691|Poulet, riz et légumes sans sauce
+2706702|Poulet, riz et légumes sauce tomate
+2706699|Poulet, riz et légumes verts sauce fromage
+2706697|Poulet, riz et légumes verts sauce crème
+2706692|Poulet, riz et légumes verts en sauce brune
+2706690|Poulet, riz et légumes verts sans sauce
+2706701|Poulet, riz et légumes verts sauce tomate
+2706694|Poulet, riz, maïs et fromage en sauce
+2706707|Poulet, farce et légumes en sauce
+2706706|Poulet, farce et légumes verts en sauce
+2706704|Poulet, farce et légumes verts sans sauce
+2706705|Poulet, farce et légumes sans sauce
+2707107|Plat surgelé nuggets, pommes de terre et légumes
+2706428|Poulet en sauce brune
+2706439|Poulet sauce mole
+2707113|Plat surgelé allégé poulet, nouilles sauce fromage
+2707110|Plat surgelé allégé poulet, riz et légumes
+2707108|Plat surgelé poulet frit, pommes de terre, légumes et dessert
+2707106|Plat surgelé poulet frit, pommes de terre et légumes
+2706426|Chili au poulet
+2706425|Chili au poulet et haricots
+2706427|Chili blanc (poulet, haricots blancs)
+2706875|Foies de volaille hachés aux œufs et oignons
+2706547|Pain de viande de volaille
+2706548|Pain de viande de volaille sauce tomate
+2706703|Tourte au poulet (pot pie)
+2706678|Ragoût de poulet
+2706677|Ragoût de poulet aux pâtes
+2706424|Poulet mijoté sauce tomate à la mexicaine (tinga)
+2706878|Gésiers mijotés à la portoricaine
+2706446|Poulet farci à la portoricaine
+2706430|Dinde en sauce
+2707118|Plat surgelé dinde, farce, purée et légumes
+2707117|Plat surgelé allégé dinde, légumes et farce
+2708257|Chips de bretzel aromatisées
+2708258|Chips de bretzel sans gluten
+2708256|Chips de bretzel nature
+2708247|Bretzels
+2708248|Bretzels secs (apéritif)
+2708265|Bretzels secs fourrés au fromage
+2708260|Bretzels enrobés de chocolat
+2708259|Bretzels enrobés
+2708263|Bretzels enrobés sans gluten
+2708264|Bretzels fourrés
+2708252|Bretzels aromatisés
+2708255|Bretzels aromatisés sans gluten
+2708253|Bretzels multicéréales
+2708266|Bretzels fourrés au beurre de cacahuète
+2708254|Bretzels sans gluten
+2708250|Bretzels légèrement salés
+2708249|Bretzels salés
+2708251|Bretzels non salés
+2708261|Bretzels enrobés de chocolat blanc
+2708262|Bretzels enrobés de yaourt
+2708267|Bretzel moelleux
+2708284|Bretzel moelleux fourré au fromage
+2708277|Bretzel moelleux surgelé
+2708280|Bretzel moelleux surgelé cannelle-sucre
+2708281|Bretzel moelleux surgelé aromatisé
+2708278|Bretzel moelleux surgelé salé
+2708283|Bretzel moelleux surgelé au fromage
+2708282|Bretzel moelleux surgelé à la viande
+2708279|Bretzel moelleux surgelé non salé
+2708287|Bretzel moelleux sans gluten
+2708288|Bretzel moelleux sans gluten cannelle-sucre
+2708289|Bretzel moelleux sans gluten aromatisé
+2708286|Bretzel moelleux multicéréale
+2708268|Bretzel moelleux (boulangerie)
+2708273|Bretzel moelleux cannelle-sucre
+2708274|Bretzel moelleux aromatisé
+2708269|Bretzel moelleux salé au beurre
+2708271|Bretzel moelleux salé
+2708276|Bretzel moelleux gratiné au fromage
+2708275|Bretzel moelleux garni de viande
+2708270|Bretzel moelleux non salé au beurre
+2708272|Bretzel moelleux non salé
+2708213|Mélange apéritif (snack mix)
+2708291|Mélange apéritif nature (Chex Mix)
+2705697|Pudding à la banane
+2705700|Barfi (confiserie indienne au lait)
+2705684|Crème brûlée
+2705682|Crème aux œufs (crème renversée)
+2705699|Confiture de lait (dulce de leche)
+2705686|Firni (crème de riz indienne)
+2705683|Flan (crème caramel)
+2710316|Haupia (flan à la noix de coco)
+2709306|Soufflé au citron vert
+2707297|Meringues
+2705698|Mousse au chocolat
+2705680|Pudding au pain
+2705679|Crème dessert au chocolat
+2705689|Crème dessert au chocolat (préparation)
+2705691|Crème dessert au chocolat sans sucres (préparation)
+2705694|Crème dessert au chocolat prête à consommer
+2705695|Crème dessert au chocolat sans sucres prête à consommer
+2705681|Crème dessert (vanille, caramel…)
+2705688|Crème dessert vanille (préparation)
+2705690|Crème dessert vanille sans sucres (préparation)
+2705692|Crème dessert vanille prête à consommer
+2705693|Crème dessert vanille sans sucres prête à consommer
+2705685|Riz au lait
+2705687|Pudding au tapioca (préparation)
+2705696|Pudding au tapioca prêt à consommer
+2705701|Trifle (diplomate)
+2709154|Ramen au bœuf
+2709155|Ramen au poulet
+2709156|Ramen au poisson
+2709158|Ramen à la viande et à l'œuf
+2709153|Ramen
+2709157|Ramen végétarien
+2709159|Ramen végétarien à l'œuf
+2707282|Soupe à l'œuf (egg drop)
+2707136|Soupe aigre-piquante (chinoise)
+2707455|Soupe miso au tofu
+2707125|Phở sans viande
+2707124|Phở à la viande (soupe vietnamienne)
+2709152|Soupe de nouilles instantanées (ramen préparé)
+2710110|Soupe aux algues
+2709160|Soupe de wontons
+2708472|Céréales en flocons aromatisées
+2708446|Céréales anneaux sucrés
+2708464|Céréales anneaux miel et noisette (type Cheerios Honey)
+2708469|Céréales son de blé aromatisées
+2708451|Céréales riz soufflé au chocolat
+2708449|Céréales chocolatées soufflées (type Coco Pops)
+2708450|Céréales cannelle (type Croc Cannelle)
+2708474|Pétales de maïs givrés (type Frosties)
+2708463|Céréales carrés de maïs aromatisés
+2708447|Céréales croustillantes (crunch)
+2708473|Céréales soufflées aromatisées
+2708467|Céréales avoine givrée avec guimauves
+2708460|Céréales croustillantes aux fruits
+2708459|Céréales anneaux aux fruits (type Froot Loops)
+2708461|Granola (muesli croustillant)
+2708481|Céréales du petit-déjeuner
+2708484|Céréales au chocolat
+2708483|Céréales aux fruits
+2708486|Céréales au miel
+2708485|Céréales au beurre de cacahuète
+2708445|Céréales prêtes à consommer
+2708458|Céréales riz soufflé aromatisé
+2708471|Céréales en flocons (type Special K)
+2708475|Céréales anneaux
+2708468|Céréales anneaux multicéréales
+2708448|Céréales anneaux nature (type Cheerios)
+2708456|Céréales son de blé (type All-Bran flakes)
+2708453|Pétales de maïs (corn flakes)
+2708454|Céréales maïs soufflé
+2708452|Céréales carrés de maïs
+2708465|Céréales multicéréales
+2708462|Céréales grappes d'avoine
+2708466|Céréales carrés d'avoine
+2708482|Céréales nature
+2708478|Céréales soufflées nature
+2708487|Céréales allégées en sucres
+2708455|Riz soufflé nature (type Rice Krispies)
+2708470|Céréales carrés de riz
+2708457|Blé filamenté aromatisé
+2708479|Blé filamenté nature (shredded wheat)
+2708480|Flocons de blé
+2708476|Céréales carrés de blé
+2708418|Congee (soupe de riz)
+2708431|Riz complet et sauvage cuit
+2708430|Riz complet et sauvage cuit avec matière grasse
+2708427|Riz complet et sauvage cuit sans matière grasse
+2708409|Riz complet cuit
+2708413|Riz complet cuit avec matière grasse
+2708410|Riz complet cuit à l'huile
+2708411|Riz complet cuit au beurre
+2708412|Riz complet cuit à la margarine
+2708414|Riz complet cuit sans matière grasse
+2708402|Riz cuit
+2708416|Riz cuit au lait
+2708417|Riz sucré au miel
+2708429|Riz blanc et sauvage cuit
+2708428|Riz blanc et sauvage cuit avec matière grasse
+2708426|Riz blanc et sauvage cuit sans matière grasse
+2708432|Riz blanc à la portoricaine (avec matière grasse)
+2708403|Riz blanc cuit
+2708407|Riz blanc cuit avec matière grasse
+2708422|Riz gluant cuit
+2708405|Riz blanc cuit au beurre
+2708406|Riz blanc cuit à la margarine
+2708404|Riz blanc cuit à l'huile
+2708408|Riz blanc cuit nature (sans matière grasse)
+2708423|Riz sauvage cuit
+2708425|Riz sauvage cuit avec matière grasse
+2708424|Riz sauvage cuit sans matière grasse
+2708419|Riz jaune (safran, curcuma)
+2708421|Riz jaune avec matière grasse
+2708420|Riz jaune sans matière grasse
+2708950|Bibimbap coréen
+2706538|Biryani au poulet
+2706490|Biryani à la viande (agneau, bœuf)
+2708985|Biryani aux légumes
+2708345|Gâteau de riz gluant (mochi)
+2708348|Gâteau de riz gluant aux haricots
+2708984|Congee à l'œuf
+2708981|Congee à la viande ou aux fruits de mer
+2708982|Congee à la viande et aux légumes
+2708983|Congee aux légumes
+2709078|Riz cajun aux abats (dirty rice)
+2708957|Tteokbokki (gâteaux de riz épicés coréens)
+2709082|Mélange riz et pâtes aromatisé (type riz pilaf vermicelles)
+2709083|Mélange riz et pâtes aromatisé allégé en sel
+2709079|Riz aromatisé (préparation)
+2709080|Riz aromatisé au fromage
+2709081|Riz complet et sauvage aromatisé
+2709064|Feuilles de vigne farcies au riz (dolmas végétariens)
+2708346|Idli
+2706727|Jambalaya (riz, viande, épices)
+2706711|Paella aux fruits de mer
+2706723|Paella
+2709071|Croquette de riz (arancini)
+2709091|Riz aux fruits (dessert ou salade)
+2709089|Farce au riz
+2709077|Riz pilaf
+2708979|Riz au chorizo à la portoricaine
+2709090|Riz aux raisins secs
+2708977|Riz aux calamars à la portoricaine
+2708980|Riz aux haricots mijotés (arroz con habichuelas)
+2708978|Riz aux saucisses de Vienne à la portoricaine
+2709061|Riz complet carottes et légumes verts
+2709063|Riz complet carottes et légumes verts, avec matière grasse
+2709062|Riz complet carottes et légumes verts, sans matière grasse
+2709055|Riz complet carottes et tomates
+2709057|Riz complet carottes et tomates, avec matière grasse
+2709056|Riz complet carottes et tomates, sans matière grasse
+2709043|Riz complet aux carottes
+2709065|Riz complet aux légumes et tomate
+2709067|Riz complet aux légumes et tomate, avec matière grasse
+2709066|Riz complet aux légumes et tomate, sans matière grasse
+2709045|Riz complet aux carottes, avec matière grasse
+2709044|Riz complet aux carottes, sans matière grasse
+2709101|Riz complet sauce fromage ou crème
+2709103|Riz complet sauce fromage ou crème, avec matière grasse
+2709102|Riz complet sauce fromage ou crème, sans matière grasse
+2709037|Riz complet au maïs
+2709039|Riz complet au maïs, avec matière grasse
+2709038|Riz complet au maïs, sans matière grasse
+2709058|Riz complet légumes verts et tomate
+2709060|Riz complet légumes verts et tomate, avec matière grasse
+2709059|Riz complet légumes verts et tomate, sans matière grasse
+2709052|Riz complet aux légumes verts
+2709054|Riz complet aux légumes verts, avec matière grasse
+2709053|Riz complet aux légumes verts, sans matière grasse
+2709104|Riz complet en sauce brune
+2709106|Riz complet en sauce brune, avec matière grasse
+2709105|Riz complet en sauce brune, sans matière grasse
+2709068|Riz complet aux légumes
+2709070|Riz complet aux légumes, avec matière grasse
+2709069|Riz complet aux légumes, sans matière grasse
+2709046|Riz complet petits pois-carottes
+2709048|Riz complet petits pois-carottes, avec matière grasse
+2709047|Riz complet petits pois-carottes, sans matière grasse
+2709040|Riz complet aux petits pois
+2709042|Riz complet aux petits pois, avec matière grasse
+2709041|Riz complet aux petits pois, sans matière grasse
+2709049|Riz complet à la tomate
+2709051|Riz complet à la tomate, avec matière grasse
+2709050|Riz complet à la tomate, sans matière grasse
+2709122|Riz complet aux légumes en sauce
+2709124|Riz complet aux légumes en sauce, avec matière grasse
+2709123|Riz complet aux légumes en sauce, sans matière grasse
+2709119|Riz complet aux légumes sauce crème
+2709121|Riz complet aux légumes sauce crème, avec matière grasse
+2709120|Riz complet aux légumes sauce crème, sans matière grasse
+2709032|Riz au lait de coco
+2709020|Riz blanc carottes et légumes verts
+2709022|Riz blanc carottes et légumes verts, avec matière grasse
+2709021|Riz blanc carottes et légumes verts, sans matière grasse
+2709014|Riz blanc carottes et tomates
+2709016|Riz blanc carottes et tomates, avec matière grasse
+2709015|Riz blanc carottes et tomates, sans matière grasse
+2709002|Riz blanc aux carottes
+2709023|Riz blanc aux légumes et tomate (riz à la tomate, jollof)
+2709025|Riz blanc aux légumes et tomate, avec matière grasse
+2709024|Riz blanc aux légumes et tomate, sans matière grasse
+2709004|Riz blanc aux carottes, avec matière grasse
+2709003|Riz blanc aux carottes, sans matière grasse
+2709092|Riz blanc sauce fromage ou crème

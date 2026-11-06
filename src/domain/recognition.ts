@@ -13,7 +13,9 @@ import raw from './foodLabels.json';
 export type LabelTarget =
   | { kind: 'catalog'; id: string }
   | { kind: 'template'; id: string }
-  | { kind: 'food'; id: string };
+  | { kind: 'food'; id: string }
+  /** Plat composé (dishes.json) ; alternatives proposées en un geste si ce n'est pas le bon. */
+  | { kind: 'dish'; id: string; alternatives: string[] };
 
 export interface FoodLabel {
   id: string;

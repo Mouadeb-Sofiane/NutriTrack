@@ -9,6 +9,7 @@ import { fmtKcal, hasMeaningfulRange, mergeTotals } from '../domain/nutrition';
 import { mealTotals, sortWeights } from '../domain/stats';
 import { dailyBudget } from '../domain/energy';
 import { recipeNutrition } from '../domain/recipes';
+import { portionTips } from '../domain/portionTips';
 import { hasMeaningfulGap, scenarioTotals } from '../domain/estimates';
 import { quantityText } from './MealComposer';
 import { EstimateBadge } from '../ui/EstimatePanel';
@@ -33,6 +34,8 @@ export function Today({ route }: { route: Route }) {
   const weights = useLiveQuery(() => db.weights.toArray(), []) ?? [];
   const favorites = useLiveQuery(() => db.recipes.filter((r) => r.favorite).toArray(), []) ?? [];
   const [exerciseOpen, setExerciseOpen] = useState(false);
+  const [tipsOpen, setTipsOpen] = useState(false);
+  const recentMeals = useLiveQuery(() => db.meals.where('date').between(addDays(today(), -30), today(), true, true).toArray(), []) ?? [];
   const [showScenarios, setShowScenarios] = useState(false);
   const [openMeals, setOpenMeals] = useState<Set<string>>(new Set());
   const toggleMeal = (id: string) => setOpenMeals((s) => { const n = new Set(s); if (n.has(id)) n.delete(id); else n.add(id); return n; });
@@ -65,9 +68,9 @@ export function Today({ route }: { route: Route }) {
         {goals ? (
           <div className="flex items-center gap-4">
             <Ring value={totals.kcal} max={budget}>
-              <div className="text-[12px] font-medium text-muted">{remaining >= 0 ? 'Encore' : 'Au-delà de'}</div>
+              <div className="text-[12px] font-medium text-muted">{remaining >= 0 ? (profile?.goal === 'gain' ? 'Encore à atteindre' : 'Encore') : profile?.goal === 'gain' ? 'Surplus de' : 'Au-delà de'}</div>
               <div className="text-3xl font-extrabold tabular-nums leading-tight">{fmtKcal(Math.abs(remaining))}</div>
-              <div className="text-[12px] text-muted">kcal</div>
+              <div className="text-[12px] text-muted">kcal{budget > 0 ? ` · ${Math.round((totals.kcal / budget) * 100)} %` : ''}</div>
             </Ring>
             <div className="min-w-0 flex-1 space-y-2.5">
               <div>
@@ -117,7 +120,20 @@ export function Today({ route }: { route: Route }) {
           </div>
         )}
         {totals.missing.kcal > 0 && <p className="mt-3 text-[12.5px] text-warn">* {totals.missing.kcal} aliment(s) sans calories connues ne sont pas comptés.</p>}
-        {goals && remaining < 0 && <p className="mt-3 text-[12.5px] text-muted">Un jour au-dessus de l’objectif n’a rien de grave : c’est la tendance sur plusieurs semaines qui compte.</p>}
+        {goals && date === today() && portionTips(profile?.goal ?? 'maintain', remaining, recentMeals).length > 0 && (
+          <div className="mt-3 border-t border-line pt-3">
+            <button type="button" onClick={() => setTipsOpen(!tipsOpen)} aria-expanded={tipsOpen} className="text-left text-[13.5px] font-semibold text-brand">Idées pour ajuster mes portions (facultatif)</button>
+            {tipsOpen && (
+              <ul className="anim-fade mt-1.5 space-y-1 text-[13px]">
+                {portionTips(profile?.goal ?? 'maintain', remaining, recentMeals).map((t) => (
+                  <li key={t.text} className="flex justify-between gap-2"><span>{t.text}</span><span className="shrink-0 tabular-nums text-muted">{t.kcal > 0 ? '+' : '−'}{fmtKcal(Math.abs(t.kcal))} kcal</span></li>
+                ))}
+                <li className="pt-1 text-[12px] text-muted">De simples repères à partir de tes plats habituels : tes recettes ne sont pas modifiées.</li>
+              </ul>
+            )}
+          </div>
+        )}
+        {goals && remaining < 0 && <p className="mt-3 text-[12.5px] text-muted">{profile?.goal === 'gain' ? 'Objectif atteint : en prise de masse, un léger surplus est attendu.' : 'Un jour au-dessus de l’objectif n’a rien de grave : c’est la tendance sur plusieurs semaines qui compte.'}</p>}
       </Card>
 
       {favorites.length > 0 && (

@@ -152,3 +152,71 @@ describe('estimations enregistrées localement', () => {
     expect(m.items[0].nutrients.kcal).toBe(900);
   });
 });
+
+describe('historique des objectifs', () => {
+  it('garde l’objectif précédent pour les jours passés', async () => {
+    await repo.saveProfile({ goal: 'maintain' } as never);
+    await repo.saveGoals({ kcal: 2000, protein: null, carbs: null, fat: null, trackMacros: false, manual: false, updatedAt: '' });
+    await repo.saveProfile({ goal: 'gain' } as never);
+    await repo.saveGoals({ ...(await repo.getGoals())!, kcal: 3200, manual: true });
+    const g = (await repo.getGoals())!;
+    expect(g.kcal).toBe(3200);
+    const h = g.history!;
+    expect(h.at(-1)).toMatchObject({ kcal: 3200, goal: 'gain', manual: true });
+    // Les deux enregistrements ont eu lieu le même jour : seul le dernier vaut pour aujourd'hui,
+    // l'objectif initial reste valable pour les jours antérieurs.
+    expect(h[0]).toMatchObject({ from: '0000-01-01', kcal: 2000 });
+  });
+});
+
+describe('migration de la base locale', () => {
+  it('v1 → v2 : les données existantes sont conservées', async () => {
+    const Dexie = (await import('dexie')).default;
+    const name = `migr-${n++}`;
+    const old = new Dexie(name);
+    old.version(1).stores({ foods: 'id, name, barcode, favorite, updatedAt', meals: 'id, date, mealType, createdAt, *recipeIds', recipes: 'id, name, cuisine, favorite, parentId, updatedAt', weights: 'id, date', exercises: 'id, date', photos: 'id', portions: 'id, recipeId, foodId', kv: 'key' });
+    await old.table('meals').put({ ...baseMeal(), id: 'm-old', createdAt: 'x', updatedAt: 'x' });
+    await old.table('kv').put({ key: 'goals', value: { kcal: 2100 } });
+    old.close();
+    const upgraded = new NutriDB(name);
+    expect((await upgraded.meals.get('m-old'))?.items[0].name).toBe('Riz');
+    expect(((await upgraded.kv.get('goals'))?.value as { kcal: number }).kcal).toBe(2100);
+    expect(await upgraded.photoSigs.count()).toBe(0);
+  });
+});
+
+describe('export / import de recettes', () => {
+  it('aller-retour sans écraser ni dupliquer', async () => {
+    const { exportRecipes, importRecipes, parseRecipesFile } = await import('./backup');
+    const r = await repo.saveRecipe({ id: 'rx', name: 'Pâtes aux champignons', categories: [], servings: 2, assumptions: [], favorite: false, version: 1, createdAt: '', updatedAt: '', ingredients: [manualLine('i', 'Pâtes', { kcal: 700 })] });
+    const file = await exportRecipes(db);
+    const parsed = parseRecipesFile(JSON.stringify(file));
+    expect(parsed.ok).toBe(true);
+    if (!parsed.ok) return;
+    expect(await importRecipes(db, parsed.file)).toEqual({ added: 0, skipped: 1 }); // identique : ignorée
+    await repo.saveRecipe({ ...r, servings: 3 }); // modifiée localement
+    expect((await importRecipes(db, parsed.file)).added).toBe(1); // ajoutée comme copie
+    const all = await repo.allRecipes();
+    expect(all.map((x) => x.name).sort()).toEqual(['Pâtes aux champignons', 'Pâtes aux champignons (importée)']);
+    expect(parseRecipesFile('{"app":"autre"}').ok).toBe(false);
+  });
+});
+
+describe('conservation des photos', () => {
+  it('supprime les photos anciennes des repas, garde le repas et les photos de Mes plats', async () => {
+    const p1 = await repo.savePhoto(new Blob([new Uint8Array([1])]));
+    const p2 = await repo.savePhoto(new Blob([new Uint8Array([2])]));
+    const p3 = await repo.savePhoto(new Blob([new Uint8Array([3])]));
+    await repo.saveMeal({ ...baseMeal('2026-08-01'), photoId: p1 });
+    await repo.saveMeal({ ...baseMeal('2026-10-27'), photoId: p2 });
+    await repo.saveMeal({ ...baseMeal('2026-07-01'), photoId: p3 });
+    await repo.saveRecipe({ id: 'rp', name: 'Plat', categories: [], servings: 1, assumptions: [], favorite: false, version: 1, createdAt: '', updatedAt: '', ingredients: [], photoId: p3, manualTotal: { kcal: 500, protein: null, carbs: null, fat: null } });
+    expect(await repo.purgeMealPhotos(30, '2026-10-28')).toBe(2);
+    expect(await repo.getPhoto(p1)).toBeUndefined();
+    expect(await repo.getPhoto(p2)).toBeDefined(); // récente
+    expect(await repo.getPhoto(p3)).toBeDefined(); // jointe à Mes plats
+    const old = await repo.mealsOn('2026-08-01');
+    expect(old[0].photoId).toBeUndefined();
+    expect(old[0].items[0].nutrients.kcal).toBe(260); // le repas et ses valeurs restent
+  });
+});

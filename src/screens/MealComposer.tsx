@@ -14,6 +14,13 @@ import { useFeedback } from '../ui/feedback';
 import { compressImage } from '../ui/photo';
 import { PhotoView } from '../ui/PhotoView';
 import { FoodPickerSheet } from './add/FoodPicker';
+import { CompositionSheet, startFromDish, type CompositionStart } from './add/CompositionSheet';
+import { useFoodDb, type SearchRef } from '../data/searchIndex';
+import { compositionTotals, type Dish } from '../domain/dishes';
+import { repeatCount } from '../domain/photoMatch';
+import type { LocalRecognition } from '../vision/recognizer';
+import { useLiveQuery } from 'dexie-react-hooks';
+import { db } from '../data/db';
 import { QuickTextSheet } from './add/QuickTextSheet';
 import { CatalogSheet } from './add/CatalogSheet';
 import { FastFoodSheet } from './add/FastFoodSheet';
@@ -48,6 +55,15 @@ export function MealComposer({ route }: { route: Route }) {
   const [photoMass, setPhotoMass] = useState<MassRange | null>(null);
   const [quickText, setQuickText] = useState('');
   const [pickRecipe, setPickRecipe] = useState<string | undefined>(undefined);
+  /** Plat composé ou corrigé en cours d'édition. */
+  const [composition, setComposition] = useState<CompositionStart | null>(null);
+  /** Ligne du repas dont on modifie la composition (remplacée à la validation). */
+  const [recomposing, setRecomposing] = useState<string | null>(null);
+  const { dishes } = useFoodDb();
+  /** Dernière analyse locale de la photo (signature de l'image) et plats validés depuis cette photo. */
+  const photoResult = useRef<LocalRecognition | null>(null);
+  const photoSigs = useRef<{ name: string; dishId?: string; recipeId?: string; signature: number[] }[]>([]);
+  const photoHistory = useLiveQuery(() => db.photoSigs.toArray(), []);
   const cameraInput = useRef<HTMLInputElement>(null);
   const galleryInput = useRef<HTMLInputElement>(null);
   const originalPhoto = useRef<string | undefined>(undefined);
@@ -78,6 +94,14 @@ export function MealComposer({ route }: { route: Route }) {
   }, []);
 
   if (!draft) return null;
+  /** Résultat de recherche autre qu'un aliment simple. */
+  const pickOther = (ref: SearchRef) => {
+    setSheet(null);
+    if (ref.type === 'dish') setComposition(startFromDish(ref.dish));
+    else if (ref.type === 'recipe') { setPickRecipe(ref.recipe.id); setSheet('recipe'); }
+    else if (ref.type === 'catalog') { setInitialPick({ catalog: ref.entry.id }); setSheet('catalog'); }
+    else if (ref.type === 'recent') add([{ ...ref.item, id: newId('li') }], ref.item.estimate ? 'guided' : ref.item.recipeId ? 'recipe' : ref.item.source.kind === 'manual' ? 'manual' : 'database');
+  };
   const totals = sumItems(draft.items);
   const isEdit = !!draft.editingId;
   const set = (patch: Partial<typeof draft>) => draftStore.update((d) => ({ ...d, ...patch }));
@@ -162,6 +186,10 @@ export function MealComposer({ route }: { route: Route }) {
         if (dup && !(await confirm({ title: 'Repas déjà enregistré ?', text: `Un repas identique (${MEAL_LABEL[dup.mealType]}) a été enregistré il y a quelques minutes. L’enregistrer une seconde fois ?`, confirm: 'Enregistrer quand même', cancel: 'Annuler' }))) return;
       }
       await repo.saveMeal(entry);
+      if (!isEdit) await repo.recordPhotoSignatures(draft.date, photoSigs.current);
+      // Réglage « ne pas garder les photos » : supprimée dès que le repas est enregistré.
+      if ((await repo.getPrefs()).photoRetentionDays === 0 && entry.photoId) await repo.purgeMealPhotos(0, today());
+      photoSigs.current = [];
       if (isEdit && originalPhoto.current && originalPhoto.current !== draft.photoId) await repo.deletePhoto(originalPhoto.current);
       if (asRecipe && !isEdit) {
         const now = nowISO();
@@ -198,8 +226,8 @@ export function MealComposer({ route }: { route: Route }) {
     { kind: 'text', label: 'Écrire ce que j’ai mangé', desc: '« kebab avec frites et un coca »', icon: <IconText /> },
     { kind: 'catalog', label: 'Snacks & street food', desc: 'Chips, churros, glace…', icon: <IconCookie /> },
     { kind: 'fastfood', label: 'Menu fast-food', desc: 'Plat, frites, sauce, boisson', icon: <IconBurger /> },
-    { kind: 'search', label: 'Rechercher', desc: 'Aliment ou produit', icon: <IconSearch /> },
-    { kind: 'recipe', label: 'Mes recettes', desc: 'Plats enregistrés', icon: <IconBook /> },
+    { kind: 'search', label: 'Rechercher', desc: 'Aliment, plat, boisson', icon: <IconSearch /> },
+    { kind: 'recipe', label: 'Mes plats', desc: 'Recettes et plats enregistrés', icon: <IconBook /> },
     { kind: 'photo', label: 'Photo', desc: 'Photographier le plat', icon: <IconCamera /> },
     { kind: 'guided', label: 'Plat maison', desc: 'Estimation sans balance', icon: <IconWand /> },
     { kind: 'recent', label: 'Récents', desc: 'Dupliquer un repas', icon: <IconClock /> },
@@ -341,7 +369,12 @@ export function MealComposer({ route }: { route: Route }) {
         </p>
       )}
 
-      <FoodPickerSheet open={sheet === 'search'} initialFoodId={initialPick.food} photoMass={photoMass} onClose={closePicker} onAdd={(it) => addRecognized([it], 'database')} />
+      <FoodPickerSheet open={sheet === 'search'} initialFoodId={initialPick.food} photoMass={photoMass} onClose={closePicker} onAdd={(it) => addRecognized([it], 'database')} onPickOther={pickOther} onCreate={(name) => { setSheet(null); setComposition({ name: name || 'Mon plat', ingredients: [], estimated: false }); }} />
+      <CompositionSheet start={composition} dishes={dishes} onClose={() => { setComposition(null); setRecomposing(null); if (pendingLabel) { setPendingLabel(null); setPhotoSheetOpen(true); } }} onAdd={(it) => {
+        if (composition?.signature && !recomposing) photoSigs.current.push({ name: it.name, dishId: composition.dishId, signature: composition.signature });
+        if (recomposing) { draftStore.update((d) => ({ ...d, items: d.items.map((i) => (i.id === recomposing ? { ...it, id: recomposing } : i)), userCorrected: true })); setRecomposing(null); return; }
+        addRecognized([it], it.estimate ? 'guided' : 'manual', it.estimate?.assumptions.slice(1) ?? []);
+      }} />
       <RecipePickerSheet open={sheet === 'recipe'} initialRecipeId={pickRecipe ?? initialRecipe} onClose={() => { setPickRecipe(undefined); closePicker(); }} onAdd={(it) => addRecognized([it], 'recipe')} />
       <GuidedSheet open={sheet === 'guided'} initialTemplate={initialPick.template} photoMass={photoMass} onClose={closePicker} onAdd={(items, a) => addRecognized(items, 'guided', a)} />
       <ManualSheet open={sheet === 'manual'} onClose={() => setSheet(null)} onAdd={(it) => add([it], 'manual')} />
@@ -358,11 +391,34 @@ export function MealComposer({ route }: { route: Route }) {
           setPendingLabel(labelId);
           // Le poids couvre toute l'assiette : pour un 2e aliment de la même photo, on propose la moitié.
           setPhotoMass(mass ? { ...mass, defaultShare: addedLabels.length ? 0.5 : 1 } : null);
+          if (target.kind === 'dish') {
+            const d = dishes.find((x) => x.id === `dish:${target.id}`);
+            if (d) {
+              const label = getLabel(labelId);
+              const share = addedLabels.length ? 0.5 : 1;
+              const base = compositionTotals(d.ingredients).grams;
+              const factor = mass && base > 0 ? Math.min(3, Math.max(0.3, (mass.normal * share) / base)) : 1;
+              const alternatives = target.alternatives.map((a) => dishes.find((x) => x.id === `dish:${a}`)).filter((x): x is Dish => !!x);
+              const sig = photoResult.current?.signature;
+              const repeat = sig ? repeatCount(d.name, sig, photoHistory ?? []) : 0;
+              setComposition({
+                ...startFromDish(d, `Reconnu sur la photo : « ${label?.fr ?? d.name} » (à vérifier).${mass ? ` Poids estimé sur la photo ≈ ${Math.round(mass.normal * share)} g (haut ${Math.round(mass.high * share)} g)${Math.abs(base * factor - mass.normal * share) > 5 ? ` ; portion retenue ${Math.round(base * factor)} g (limite ×3 de la portion type)` : ''} : corrige-la si besoin.` : ''}`),
+                factor: Math.round(factor * 100) / 100, alternatives, signature: sig, repeat, photoId: draftStore.get()?.photoId,
+              });
+              setPhotoMass(null);
+              return;
+            }
+          }
           if (target.kind === 'catalog') { setInitialPick({ catalog: target.id }); setSheet('catalog'); }
           else if (target.kind === 'template') { setInitialPick({ template: target.id }); setSheet('guided'); }
           else { setInitialPick({ food: target.id }); setSheet('search'); }
         }}
-        onPickRecipe={(r) => { setPhotoSheetOpen(false); setPendingLabel(`recipe:${r.id}`); setPickRecipe(r.id); setSheet('recipe'); }} />
+        onPickRecipe={(r) => {
+          setPhotoSheetOpen(false); setPendingLabel(`recipe:${r.id}`); setPickRecipe(r.id); setSheet('recipe');
+          const sig = photoResult.current?.signature;
+          if (sig) photoSigs.current.push({ name: r.name, recipeId: r.id, signature: sig });
+        }}
+        onResult={(r) => { photoResult.current = r; }} />
       <RecentSheet open={sheet === 'recent'} onClose={() => setSheet(null)}
         onPickItem={(it) => add([{ ...it, id: newId('li') }], it.estimate ? 'guided' : it.recipeId ? 'recipe' : it.source.kind === 'manual' ? 'manual' : 'database')}
         onPick={(m) => {
@@ -374,6 +430,7 @@ export function MealComposer({ route }: { route: Route }) {
         onClose={() => setEditing(null)}
         onDelete={() => { draftStore.update((d) => ({ ...d, items: d.items.filter((i) => i.id !== editing?.id) })); setEditing(null); }}
         onReplace={(items) => { draftStore.update((d) => ({ ...d, name: d.name || (d.items.length === 1 ? editing?.name ?? '' : d.name), items: d.items.flatMap((i) => (i.id === editing?.id ? items : [i])), userCorrected: true, methods: d.methods.includes('mixed') ? d.methods : [...d.methods, 'mixed'] })); setEditing(null); }}
+        onRecompose={(it) => { setEditing(null); setRecomposing(it.id); setComposition({ name: it.name, ingredients: it.composition!, estimated: !!it.estimate, dishId: it.foodId, factor: it.compositionFactor, notes: it.estimate?.assumptions.slice(1) }); }}
         onSave={(it, corrected) => { draftStore.update((d) => ({ ...d, items: d.items.map((i) => (i.id === it.id ? it : i)), userCorrected: d.userCorrected || corrected })); setEditing(null); }}
       />
     </div>

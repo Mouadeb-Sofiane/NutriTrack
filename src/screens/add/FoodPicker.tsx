@@ -1,11 +1,12 @@
 /** Recherche d'aliments : table de référence + mes aliments (hors ligne) + Open Food Facts (en ligne). */
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { useLiveQuery } from 'dexie-react-hooks';
+import { useEffect, useRef, useState } from 'react';
 import type { Food, LineItem, Precision } from '../../domain/types';
-import { getReferenceFood, REFERENCE_FOODS, searchFoods } from '../../domain/referenceFoods';
+import { getReferenceFood } from '../../domain/referenceFoods';
+import { loadFoodDb } from '../../data/foodDb';
+import type { SearchRef } from '../../data/searchIndex';
+import { SearchPanel } from './SearchPanel';
 import { checkPer100, fmtG, fmtKcal, lineFromFood, PRECISION_LABEL } from '../../domain/nutrition';
 import { fetchByBarcode, OffError, searchProducts } from '../../data/openFoodFacts';
-import { db } from '../../data/db';
 import { newId } from '../../data/ids';
 import { nowISO } from '../../domain/dates';
 import { repo } from '../../state/app';
@@ -17,37 +18,32 @@ import { PhotoMassChoice, type PhotoMassState } from '../../ui/PhotoMassChoice';
 import { EstimatePanel } from '../../ui/EstimatePanel';
 import { foodLineFromPhoto, type MassRange } from '../../domain/photoMass';
 
-export function FoodPickerSheet({ open, onClose, onAdd, initialFoodId, photoMass }: { open: boolean; onClose: () => void; onAdd: (item: LineItem) => void; initialFoodId?: string; photoMass?: MassRange | null }) {
+export function FoodPickerSheet({ open, onClose, onAdd, initialFoodId, photoMass, onPickOther, onCreate }: {
+  open: boolean; onClose: () => void; onAdd: (item: LineItem) => void; initialFoodId?: string; photoMass?: MassRange | null;
+  /** Plat composé, recette, élément du catalogue ou récent : géré par l'écran parent. */
+  onPickOther?: (ref: SearchRef) => void;
+  /** Plat absent de la base : le composer avec ses ingrédients. */
+  onCreate?: (name: string) => void;
+}) {
   const [q, setQ] = useState('');
   const [selected, setSelected] = useState<Food | null>(null);
+  const [queue, setQueue] = useState<Food[]>([]);
   const [online, setOnline] = useState<Food[] | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [barcodeMode, setBarcodeMode] = useState(false);
-  const mine = useLiveQuery(() => db.foods.toArray(), []) ?? [];
+  const [mode, setMode] = useState<'local' | 'online' | 'barcode'>('local');
   const abort = useRef<AbortController | null>(null);
 
   useEffect(() => {
     if (!open) {
-      setQ(''); setSelected(null); setOnline(null); setError(null); setBarcodeMode(false);
+      setQ(''); setSelected(null); setQueue([]); setOnline(null); setError(null); setMode('local');
       abort.current?.abort();
     } else if (initialFoodId) {
       const f = getReferenceFood(initialFoodId);
       if (f) setSelected(f);
+      else if (initialFoodId.startsWith('us:')) loadFoodDb().then((all) => { const g = all.find((x) => x.id === initialFoodId); if (g) setSelected(g); });
     }
   }, [open, initialFoodId]);
-
-  const all = useMemo(() => {
-    const ids = new Set(mine.map((f) => f.id));
-    return [...mine, ...REFERENCE_FOODS.filter((f) => !ids.has(f.id))];
-  }, [mine]);
-  const results = useMemo(() => {
-    if (!q.trim()) {
-      const fav = mine.filter((f) => f.favorite);
-      return fav.length ? fav : mine.slice(-12).reverse();
-    }
-    return searchFoods(all, q, 40);
-  }, [q, all, mine]);
 
   const runOnline = async (barcode?: string) => {
     abort.current?.abort();
@@ -72,23 +68,38 @@ export function FoodPickerSheet({ open, onClose, onAdd, initialFoodId, photoMass
     }
   };
 
+  const pick = (ref: SearchRef) => {
+    if (ref.type === 'food') setSelected(ref.food);
+    else if (onPickOther) { onPickOther(ref); }
+  };
+  const combo = (refs: SearchRef[]) => {
+    const foods = refs.filter((r): r is Extract<SearchRef, { type: 'food' }> => r.type === 'food').map((r) => r.food);
+    if (foods.length === refs.length && foods.length) { setSelected(foods[0]); setQueue(foods.slice(1)); }
+    else pick(refs[0]);
+  };
+
   return (
-    <Sheet open={open} onClose={onClose} title={selected ? 'Quantité' : 'Rechercher un aliment'}>
+    <Sheet open={open} onClose={onClose} title={selected ? (queue.length ? `Quantité (puis ${queue[0].name})` : 'Quantité') : 'Rechercher un aliment ou un plat'}>
       {selected ? (
-        <QuantityPicker food={selected} photoMass={photoMass} onBack={() => setSelected(null)} onAdd={(it) => { onAdd(it); onClose(); }} />
+        <QuantityPicker key={selected.id} food={selected} photoMass={photoMass} onBack={() => { setSelected(null); setQueue([]); }} onAdd={(it) => {
+          onAdd(it);
+          if (queue.length) { setSelected(queue[0]); setQueue(queue.slice(1)); } else onClose();
+        }} />
+      ) : mode === 'local' ? (
+        <SearchPanel onPick={pick} onCombo={combo} onCreate={onCreate} extraActions={<>
+          <Chip onClick={() => setMode('online')}><IconSearch size={16} /> Produit en ligne</Chip>
+          <Chip onClick={() => setMode('barcode')}><IconBarcode size={16} /> Code-barres</Chip>
+        </>} />
       ) : (
         <div>
-          <div className="sticky top-0 z-10 -mx-4 bg-bg px-4 pb-2">
-            <div className="relative">
+          <Button variant="ghost" size="sm" onClick={() => { setMode('local'); setOnline(null); setError(null); }}>← Recherche hors ligne</Button>
+          {mode === 'barcode' ? <BarcodeInput onCode={(c) => runOnline(c)} /> : (
+            <div className="relative mt-2">
               <IconSearch className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-muted" size={20} />
-              <TextInput autoFocus value={q} onChange={(e) => { setQ(e.target.value); setOnline(null); setError(null); }} placeholder="Riz, poulet, yaourt, marque…" className="pl-11" enterKeyHint="search" onKeyDown={(e) => e.key === 'Enter' && q.trim().length > 1 && runOnline()} />
+              <TextInput autoFocus value={q} onChange={(e) => { setQ(e.target.value); setOnline(null); setError(null); }} placeholder="Nom ou marque du produit" className="pl-11" enterKeyHint="search" onKeyDown={(e) => e.key === 'Enter' && q.trim().length > 1 && runOnline()} />
+              <Button block className="mt-2" disabled={q.trim().length < 2} onClick={() => runOnline()}>Chercher sur Open Food Facts</Button>
             </div>
-            <div className="mt-2 flex gap-2 overflow-x-auto no-scrollbar">
-              <Chip onClick={() => runOnline()} active={false}><IconSearch size={16} /> Chercher en ligne</Chip>
-              <Chip onClick={() => setBarcodeMode((v) => !v)} active={barcodeMode}><IconBarcode size={16} /> Code-barres</Chip>
-            </div>
-          </div>
-          {barcodeMode && <BarcodeInput onCode={(c) => runOnline(c)} />}
+          )}
           {loading && <p className="py-4 text-center text-sm text-muted">Recherche sur Open Food Facts…</p>}
           {error && <Notice tone="warn" className="my-2">{error}</Notice>}
           {online && online.length > 0 && (
@@ -97,10 +108,6 @@ export function FoodPickerSheet({ open, onClose, onAdd, initialFoodId, photoMass
               <FoodList foods={online} onPick={setSelected} />
               <p className="mt-2 px-1 text-[12px] text-muted">Données collaboratives issues d’Open Food Facts (openfoodfacts.org), licence ODbL. Elles peuvent être incomplètes : vérifie avec l’emballage.</p>
             </>
-          )}
-          <h3 className="mb-1 mt-3 px-1 text-[13px] font-bold uppercase text-muted">{q.trim() ? 'Hors ligne' : mine.some((f) => f.favorite) ? 'Mes favoris' : 'Mes aliments'}</h3>
-          {results.length ? <FoodList foods={results} onPick={setSelected} /> : (
-            <p className="px-1 py-3 text-sm text-muted">{q.trim() ? 'Aucun aliment connu. Cherche en ligne ou utilise la saisie manuelle.' : 'Tape un nom pour chercher dans la table de référence et tes aliments.'}</p>
           )}
         </div>
       )}
@@ -179,14 +186,15 @@ export function QuantityPicker({ food, onAdd, onBack, photoMass }: { food: Food;
   const { toast } = useFeedback();
   const units = [
     { id: food.basis, label: food.basis },
+    { id: food.basis === 'g' ? 'kg' : 'L', label: food.basis === 'g' ? 'kg' : 'L' },
     ...(food.density ? [{ id: food.basis === 'g' ? 'ml' : 'g', label: food.basis === 'g' ? 'ml' : 'g' }] : []),
     ...food.servings.map((s) => ({ id: s.id, label: s.label })),
   ];
   const [unit, setUnit] = useState(food.servings[0]?.id ?? food.basis);
   const [count, setCount] = useState<number | null>(food.servings[0] ? 1 : 100);
   const [precision, setPrecision] = useState<Precision | null>(null);
-  const item = photoOn ? foodLineFromPhoto(food, photoMass!, pm.share, newId('li')) : count ? lineFromFood(food, { unit, count }, newId('li'), precision ?? undefined) : null;
-  const saved = food.id.startsWith('ref:') ? null : food;
+  const item = photoOn ? foodLineFromPhoto(food, photoMass!, pm.share, newId('li')) : count ? lineFromFood(food, unit === 'kg' || unit === 'L' ? { unit: unit === 'kg' ? 'g' : 'ml', count: count * 1000 } : { unit, count }, newId('li'), precision ?? undefined) : null;
+  const saved = food.id.startsWith('ref:') || food.id.startsWith('us:') ? null : food;
   const check = checkPer100(food.per100, food.basis);
 
   const saveToMine = async (favorite: boolean) => {
@@ -203,8 +211,8 @@ export function QuantityPicker({ food, onAdd, onBack, photoMass }: { food: Food;
           <SourceBadge source={food.source} />
           <span>Pour 100 {food.basis} : {fmtKcal(food.per100.kcal)} kcal · P {fmtG(food.per100.protein, 1)} · G {fmtG(food.per100.carbs, 1)} · L {fmtG(food.per100.fat, 1)}</span>
         </div>
-        {food.source.kind === 'reference' && <p className="mt-1.5 text-[12px] text-muted">Valeur moyenne indicative : un produit précis peut différer.</p>}
-        {food.source.url && <a href={food.source.url} target="_blank" rel="noreferrer" className="mt-1 inline-block text-[12.5px] font-medium text-brand">Voir la fiche Open Food Facts</a>}
+        {food.source.kind === 'reference' && <p className="mt-1.5 text-[12px] text-muted">{food.source.status === 'verified' ? 'Valeurs d’une table de composition officielle (moyenne) : un produit précis peut différer.' : 'Valeur moyenne indicative : un produit précis peut différer.'}</p>}
+        {food.source.url && <a href={food.source.url} target="_blank" rel="noreferrer" className="mt-1 inline-block text-[12.5px] font-medium text-brand">{food.source.kind === 'openfoodfacts' ? 'Voir la fiche Open Food Facts' : `Source : ${food.source.label ?? 'fiche officielle'}`}</a>}
         {check.warnings.map((w) => <Notice key={w} tone="warn" className="mt-2">{w}</Notice>)}
         {Object.values(food.per100).some((v) => v == null) && <Notice tone="warn" className="mt-2">Certaines valeurs sont absentes de la fiche : elles seront signalées comme manquantes.</Notice>}
       </div>
@@ -212,11 +220,11 @@ export function QuantityPicker({ food, onAdd, onBack, photoMass }: { food: Food;
       {!photoOn && <>
       <Field label="Unité">
         <div className="flex flex-wrap gap-2">
-          {units.map((u) => <Chip key={u.id} active={unit === u.id} onClick={() => { setUnit(u.id); setCount(u.id === 'g' || u.id === 'ml' ? 100 : 1); }}>{u.label}</Chip>)}
+          {units.map((u) => <Chip key={u.id} active={unit === u.id} onClick={() => { setUnit(u.id); setCount(u.id === 'g' || u.id === 'ml' ? 100 : u.id === 'kg' || u.id === 'L' ? 0.5 : 1); }}>{u.label}</Chip>)}
         </div>
       </Field>
-      <Field label={unit === 'g' || unit === 'ml' ? `Quantité (${unit})` : 'Nombre'} error={count != null && count <= 0 ? 'La quantité doit être positive.' : null}>
-        <NumberInput value={count} onChange={setCount} suffix={unit === 'g' || unit === 'ml' ? unit : '×'} autoFocus />
+      <Field label={['g', 'ml', 'kg', 'L'].includes(unit) ? `Quantité (${unit})` : 'Nombre'} error={count != null && count <= 0 ? 'La quantité doit être positive.' : null}>
+        <NumberInput value={count} onChange={setCount} suffix={['g', 'ml', 'kg', 'L'].includes(unit) ? unit : '×'} autoFocus />
       </Field>
       <Field label="Précision de la quantité">
         <Segmented<Precision>

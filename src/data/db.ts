@@ -4,7 +4,7 @@
  * éventuellement une fonction `.upgrade()` de migration.
  */
 import Dexie, { type EntityTable } from 'dexie';
-import type { ExerciseEntry, Food, MealEntry, PersonalPortion, PhotoRecord, Recipe, WeightEntry } from '../domain/types';
+import type { ExerciseEntry, Food, MealEntry, PersonalPortion, PhotoRecord, PhotoSignature, Recipe, WeightEntry } from '../domain/types';
 
 export interface KV {
   key: string;
@@ -20,6 +20,7 @@ export class NutriDB extends Dexie {
   photos!: EntityTable<PhotoRecord, 'id'>;
   portions!: EntityTable<PersonalPortion, 'id'>;
   kv!: EntityTable<KV, 'key'>;
+  photoSigs!: EntityTable<PhotoSignature, 'id'>;
 
   constructor(name = 'nutritrack') {
     super(name);
@@ -33,6 +34,8 @@ export class NutriDB extends Dexie {
       portions: 'id, recipeId, foodId',
       kv: 'key',
     });
+    // v2 : signatures des plats photographiés (aucune donnée existante modifiée).
+    this.version(2).stores({ photoSigs: 'id, normName, recipeId, createdAt' });
   }
 }
 

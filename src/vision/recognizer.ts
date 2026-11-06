@@ -5,7 +5,7 @@
 import { proposalsFromZones, scoreZones, zoneRects, type RecognitionResult } from '../domain/recognition';
 import { estimatePlateMass, type MassModel, type MassRange } from '../domain/photoMass';
 import massModel from './massModel.json';
-import { loadModelFiles, type VisionManifest } from './modelStore';
+import { loadModelFiles, refreshLabels, type VisionManifest } from './modelStore';
 import wasmUrl from 'onnxruntime-web/ort-wasm-simd-threaded.wasm?url';
 import mjsUrl from 'onnxruntime-web/ort-wasm-simd-threaded.mjs?url';
 
@@ -34,6 +34,7 @@ function call<T>(worker: Worker, msg: unknown, transfer: Transferable[] = []): P
 }
 
 async function start(): Promise<Engine> {
+  await refreshLabels();
   const files = await loadModelFiles();
   if (!files) throw new Error('Modèle non installé.');
   const worker = new Worker(new URL('./recognizer.worker.ts', import.meta.url), { type: 'module' });
@@ -87,6 +88,8 @@ export interface LocalRecognition extends RecognitionResult {
   zones: number;
   /** Poids estimé de l'assiette (normal / haut / bas), null si non calculable. */
   mass: MassRange | null;
+  /** Signature de l'image entière (vecteur normalisé) : sert à retrouver un plat déjà photographié. */
+  signature: number[];
 }
 
 /**
@@ -100,5 +103,9 @@ export async function recognize(photo: Blob, opts: { fast?: boolean } = {}): Pro
   const r = await call<{ embeddings: Float32Array }>(e.worker, { type: 'embed', pixels: data, count, size: e.manifest.input.size }, [data.buffer]);
   const zones = scoreZones(r.embeddings, count, e.labels, e.manifest.labels.ids, e.manifest.logitScale);
   const mass = estimatePlateMass(r.embeddings, count, massModel as unknown as MassModel);
-  return { ...proposalsFromZones(zones), ms: performance.now() - t0, zones: count, mass };
+  const dim = r.embeddings.length / count;
+  const v = Array.from(r.embeddings.subarray(0, dim));
+  const norm = Math.hypot(...v) || 1;
+  const signature = v.map((x) => Math.round((x / norm) * 1e4) / 1e4);
+  return { ...proposalsFromZones(zones), ms: performance.now() - t0, zones: count, mass, signature };
 }

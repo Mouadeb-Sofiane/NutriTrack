@@ -4,7 +4,7 @@ Application personnelle de suivi nutritionnel : calories, macronutriments, recet
 
 > Nom provisoire. Outil d'information et de suivi, **pas un dispositif médical** : les besoins caloriques et les valeurs des repas sont des estimations.
 
-## Ce qui fonctionne aujourd'hui (v0.4)
+## Ce qui fonctionne aujourd'hui (v0.6)
 
 | Fonction | État |
 |---|---|
@@ -33,6 +33,13 @@ Application personnelle de suivi nutritionnel : calories, macronutriments, recet
 | Export / restauration JSON (fusion sans doublons ou remplacement) | ✅ |
 | Hors ligne + installation sur l'écran d'accueil (PWA) | ✅ |
 | **Reconnaissance des photos sur le téléphone** (modèle libre OpenCLIP, 96 Mo téléchargés une fois, hors ligne, sans frais) : propositions de plats, plusieurs aliments par photo, **poids estimé en grammes (normal / haut)**, puis estimations moyenne et haute | ✅ testée sur 431 vraies photos (≈ 78 % bon plat en tête, 91–94 % dans les 3 premières) — voir [docs/reconnaissance-photo.md](docs/reconnaissance-photo.md). Identification manuelle si le modèle n'est pas installé. |
+| **Base alimentaire intégrée de 7 197 aliments** (USDA, noms en français, toutes préparations) + **194 plats composés du monde** (bouzelouf avec choix des parties, chorba, rechta, ndolé, mafé, thiéboudiène, biryani, pho, feijoada, hachis parmentier…) — voir [docs/base-alimentaire.md](docs/base-alimentaire.md) | ✅ hors ligne |
+| **Recherche intelligente** : fautes de frappe, accents, pluriels, synonymes et noms régionaux, filtres (aliments, plats, boissons, produits, mes recettes, récents), « pain beurre » → tartine beurrée, combinaisons proposées | ✅ |
+| **Éditeur de composition** : ajouter, retirer, remplacer un ingrédient, grammes, ajouts rapides (huile, beurre, crème, fromage, sucre…), portions simples (« un peu plus », « 2e portion », « pas terminé »), boissons personnalisables (café, lait, sucre) ; « Valider mon repas » ≠ « Enregistrer dans Mes plats » | ✅ |
+| **Mes plats enregistrés** : recherche tolérante par nom (« quiche » → les quiches), familles, favoris, plus utilisés, suggestion discrète de favori, retrait d'un élément des récents | ✅ |
+| **Vue mensuelle** : calendrier coloré selon l'objectif (prise de masse, maintien, perte), statistiques du mois, évolution par semaine, objectif historique de chaque jour | ✅ |
+| **Objectifs** : recommandé vs personnalisé expliqué (surplus/déficit), réévaluation à la demande d'après le poids et les apports réels, idées facultatives d'ajustement de portions | ✅ |
+| Base Ciqual (ANSES) | ⏳ site de l'ANSES en maintenance pendant le développement : prévue |
 | Thème sombre | ❌ prévu (couleurs déjà centralisées) |
 
 ## Utiliser l'application sur ton téléphone
@@ -71,7 +78,9 @@ npm run preview    # sert la version de production → http://localhost:4173
 
 ## Sources des données nutritionnelles
 
-- **Table de référence intégrée** (~100 aliments courants, hors ligne) : valeurs **moyennes indicatives**, arrondies, à l'ordre de grandeur des tables publiques CIQUAL (ANSES) et USDA. Je n'avais pas accès au réseau pour importer la table CIQUAL officielle : c'est une amélioration prévue (licence ouverte Etalab, attribution requise).
+- **USDA FoodData Central** (domaine public) : 7 197 aliments et plats intégrés, noms traduits en français, lien vers la fiche officielle. Détails, conversions et licences : [docs/base-alimentaire.md](docs/base-alimentaire.md).
+- **Plats composés** : compositions types calculées à partir des ingrédients USDA, toujours affichées comme **estimations** avec leurs hypothèses.
+- **Table de référence historique** (~120 aliments courants) : valeurs **moyennes indicatives**, arrondies. La table **Ciqual** (ANSES, licence ouverte Etalab) n'a pas pu être téléchargée (site en maintenance) : c'est la prochaine étape.
 - **Open Food Facts** : base collaborative et gratuite (licence ODbL, attribution affichée). Fiches parfois incomplètes ; seule la recherche (texte ou code-barres) est envoyée, aucune donnée personnelle. Limites publiées : ~10 recherches/min, ~100 lectures de produit/min.
 - **Recettes, saisies manuelles, estimations guidées** : toujours marquées comme telles.
 

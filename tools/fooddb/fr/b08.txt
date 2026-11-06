@@ -1,0 +1,400 @@
+2710487|Boisson à la chicorée
+2710470|Café-chicorée
+2710471|Café-chicorée décaféiné
+2710486|Succédané de café (boisson aux céréales)
+2710410|Café moka (café, lait, chocolat)
+2710413|Café moka décaféiné
+2710414|Café moka décaféiné au lait écrémé
+2710415|Café moka décaféiné au lait végétal
+2710411|Café moka au lait écrémé
+2710412|Café moka au lait végétal
+2710472|Cappuccino
+2710475|Cappuccino décaféiné
+2710476|Cappuccino décaféiné au lait écrémé
+2710477|Cappuccino décaféiné au lait végétal
+2710473|Cappuccino au lait écrémé
+2710474|Cappuccino au lait végétal
+2710381|Café cubain (sucré)
+2710443|Café moka glacé
+2710446|Café moka glacé décaféiné
+2710447|Café moka glacé décaféiné au lait écrémé
+2710448|Café moka glacé décaféiné au lait végétal
+2710444|Café moka glacé au lait écrémé
+2710445|Café moka glacé au lait végétal
+2710431|Latte glacé
+2710437|Latte glacé décaféiné
+2710440|Latte glacé décaféiné aromatisé (sirop)
+2710438|Latte glacé décaféiné au lait écrémé
+2710441|Latte glacé décaféiné écrémé aromatisé
+2710439|Latte glacé décaféiné au lait végétal
+2710442|Latte glacé décaféiné au lait végétal aromatisé
+2710434|Latte glacé aromatisé (sirop)
+2710432|Latte glacé au lait écrémé
+2710435|Latte glacé au lait écrémé aromatisé
+2710433|Latte glacé au lait végétal
+2710436|Latte glacé au lait végétal aromatisé
+2710386|Café latte
+2710392|Café latte décaféiné
+2710395|Café latte décaféiné aromatisé (sirop)
+2710393|Café latte décaféiné au lait écrémé
+2710396|Café latte décaféiné écrémé aromatisé
+2710394|Café latte décaféiné au lait végétal
+2710397|Café latte décaféiné au lait végétal aromatisé
+2710389|Café latte aromatisé (sirop)
+2710387|Café latte au lait écrémé
+2710390|Café latte au lait écrémé aromatisé
+2710388|Café latte au lait végétal
+2710391|Café latte au lait végétal aromatisé
+2710374|Café noir
+2710451|Café noir décaféiné
+2710373|Café
+2710377|Café turc
+2710478|Café en canette ou bouteille
+2710479|Café en canette léger
+2710375|Café filtre (noir, sans sucre)
+2710376|Café filtre mi-décaféiné
+2710452|Café filtre décaféiné
+2710380|Café filtre aromatisé
+2710384|Café au lait (café con leche)
+2710385|Café au lait décaféiné
+2710465|Café décaféiné avec lait ajouté
+2710463|Café décaféiné au lait et édulcorant
+2710461|Café décaféiné au lait et sucre
+2710469|Café décaféiné avec édulcorant
+2710467|Café décaféiné sucré
+2710378|Expresso
+2710379|Expresso décaféiné
+2710450|Café soluble à caféine réduite
+2710459|Café soluble décaféiné au lait et édulcorant
+2710455|Café soluble décaféiné au lait et sucre
+2710453|Café soluble décaféiné
+2710458|Café soluble au lait et édulcorant
+2710454|Café soluble au lait et sucre (type 3 en 1)
+2710456|Café soluble sucré
+2710449|Café soluble (préparé)
+2710382|Café macchiato
+2710383|Café macchiato sucré
+2710457|Moka soluble au lait et édulcorant
+2710464|Café avec lait ajouté
+2710462|Café au lait et édulcorant
+2710460|Café au lait et sucre
+2710468|Café avec édulcorant
+2710466|Café avec sucre
+2710398|Boisson glacée au café (type frappuccino)
+2710404|Boisson glacée au café décaféinée
+2710405|Boisson glacée au café décaféinée, lait écrémé
+2710408|Boisson glacée au café décaféinée, lait écrémé, chantilly
+2710406|Boisson glacée au café décaféinée, lait végétal
+2710409|Boisson glacée au café décaféinée, lait végétal, chantilly
+2710407|Boisson glacée au café décaféinée, chantilly
+2710399|Boisson glacée au café, lait écrémé
+2710402|Boisson glacée au café, lait écrémé, chantilly
+2710400|Boisson glacée au café, lait végétal
+2710403|Boisson glacée au café, lait végétal, chantilly
+2710401|Boisson glacée au café avec chantilly
+2710416|Boisson glacée moka
+2710422|Boisson glacée moka décaféinée
+2710423|Boisson glacée moka décaféinée, lait écrémé
+2710426|Boisson glacée moka décaféinée, lait écrémé, chantilly
+2710424|Boisson glacée moka décaféinée, lait végétal
+2710427|Boisson glacée moka décaféinée, lait végétal, chantilly
+2710425|Boisson glacée moka décaféinée, chantilly
+2710417|Boisson glacée moka, lait écrémé
+2710420|Boisson glacée moka, lait écrémé, chantilly
+2710418|Boisson glacée moka, lait végétal
+2710421|Boisson glacée moka, lait végétal, chantilly
+2710419|Boisson glacée moka avec chantilly
+2710428|Café glacé (filtre)
+2710429|Café glacé décaféiné
+2710430|Café glacé au lait et sucre
+2705860|Viande de bœuf séchée (jerky)
+2705850|Corned-beef
+2705859|Bœuf séché émincé, revenu
+2705858|Bœuf séché émincé (type viande des Grisons)
+2706218|Tranches de bœuf cuit (charcuterie)
+2706219|Tranches de bœuf cuit allégées en sel
+2706176|Saucisson de Bologne
+2706177|Saucisson de Bologne allégé
+2706178|Saucisson de Bologne allégé en sel
+2705884|Bacon canadien (lard de longe), cuit
+2706221|Tartinade de poulet
+2706208|Blanc de poulet en tranches (charcuterie)
+2706209|Blanc de poulet en tranches allégé en sel
+2705878|Jambon
+2706210|Pain de jambon (type luncheon meat)
+2706222|Tartinade de jambon
+2705880|Jambon en conserve
+2705881|Jambon haché
+2706206|Jambon en tranches
+2706207|Jambon en tranches allégé en sel
+2705879|Prosciutto (jambon cru)
+2706180|Fromage de tête
+2706213|Saucisse de foie (pâté de foie)
+2706205|Viande en tranches (luncheon meat)
+2706214|Pain de viande en tranches
+2706220|Pâté de viande en terrine (rillettes)
+2706182|Mortadelle
+2706183|Pastrami
+2706184|Pastrami allégé
+2706185|Pepperoni
+2706186|Pepperoni allégé
+2706187|Pepperoni allégé en sel
+2705865|Viande de porc séchée (jerky)
+2705883|Rouleau de porc
+2706195|Salami
+2706196|Salami allégé
+2706197|Salami allégé en sel
+2706211|Spam (viande en conserve)
+2706212|Spam allégé en sel
+2706217|Jambon de dinde en tranches
+2706215|Blanc de dinde en tranches
+2706216|Blanc de dinde en tranches allégé en sel
+2705916|Saucisse de cerf
+2705915|Viande de cerf séchée (jerky)
+2710009|Salade de haricots verts ou beurre
+2709812|Salade de brocoli, chou-fleur, fromage et bacon
+2709813|Salade de brocoli râpé
+2709816|Salade de chou
+2709661|Carottes râpées
+2709662|Carottes râpées aux pommes
+2709815|Coleslaw (salade de chou à la mayonnaise)
+2709814|Coleslaw de restauration rapide
+2709817|Coleslaw aux fruits
+2709818|Namasu (concombre et légumes au vinaigre)
+2709821|Salade de concombre au vinaigre
+2709820|Salade de concombre vinaigrette italienne
+2709819|Salade de concombre à la crème
+2705818|Salade caprese (mozzarella, tomate, basilic, vinaigrette)
+2710056|Salade de petits pois
+2710057|Salade de petits pois au fromage
+2709756|Salade tomates-concombre à la vinaigrette
+2707703|Biscotti à l'anis
+2707926|Barre biscuitée chocolat, noix et biscuit graham
+2707943|Lebkuchen (pain d'épices allemand)
+2707899|Biscuit (cookie)
+2707957|Pfeffernüsse (biscuit aux épices)
+2707958|Pizzelle (gaufrette italienne)
+2707900|Biscuit aux amandes
+2707968|Biscuits animaux
+2707969|Biscuits animaux glacés
+2707901|Biscuit à la compote de pommes
+2707908|Barre biscuitée au chocolat
+2707898|Pâte à cookies crue
+2707902|Biscotti
+2707903|Brownie
+2707906|Brownie allégé
+2707905|Brownie glacé ou fourré
+2707904|Brownie sans glaçage
+2707970|Sablé au beurre ou biscuit sucré
+2707978|Sablé fourré ou nappé au chocolat
+2707972|Sablé aux fruits ou noix
+2707979|Sablé fourré ou glacé (sans chocolat)
+2707907|Blondie (brownie caramel)
+2707923|Biscuit fourré chocolat-vanille
+2707909|Cookie aux pépites de chocolat
+2707912|Cookie fourré aux pépites de chocolat
+2707910|Cookie aux pépites de chocolat maison ou de boulangerie
+2707911|Cookie aux pépites de chocolat allégé
+2707985|Cookie aux pépites de chocolat allégé en sucres
+2707915|Biscuit au chocolat
+2707920|Biscuit fourré au chocolat (type Oreo)
+2707921|Biscuit fourré au chocolat allégé
+2707924|Gaufrette au chocolat
+2707914|Biscuit chocolat, avoine et coco sans cuisson
+2707913|Biscuit chocolat au riz soufflé
+2707922|Biscuit fourré au chocolat double crème
+2707918|Biscuit nappé de chocolat
+2707927|Rocher à la noix de coco
+2707931|Cornet à glace (gaufrette)
+2707929|Biscuit fourré aux figues
+2707930|Biscuit chinois (fortune cookie)
+2707928|Barre biscuitée fourrée aux fruits
+2707932|Biscuit au gingembre
+2707991|Biscuit sans gluten
+2707925|Biscuit graham chocolat-guimauve (s'more)
+2707933|Biscuit au granola
+2707934|Biscuit à la cuillère
+2707935|Carré au citron
+2707936|Macaron à la noix de coco (congolais)
+2707940|Barre guimauve-cacahuète sans cuisson
+2707917|Biscuit guimauve enrobé de chocolat (type whoopie)
+2707916|Tête de nègre / guimauve enrobée de chocolat
+2707937|Guimauve à la noix de coco
+2707939|Barre guimauve, riz soufflé et pépites de chocolat
+2707938|Barre guimauve et riz soufflé
+2707941|Meringue
+2707942|Biscuit à la mélasse
+2707944|Biscuit multicéréale riche en fibres
+2707945|Biscuit à l'avoine
+2707948|Biscuit à l'avoine fourré crème
+2707950|Biscuit à l'avoine fourré beurre de cacahuète et gelée
+2707947|Biscuit à l'avoine allégé
+2707986|Biscuit à l'avoine allégé en sucres
+2707951|Biscuit avoine, chocolat et beurre de cacahuète sans cuisson
+2707949|Biscuit à l'avoine et pépites de chocolat
+2707946|Biscuit à l'avoine et raisins secs
+2707952|Biscuit au beurre de cacahuète
+2707955|Biscuit fourré au beurre de cacahuète
+2707954|Barre beurre de cacahuète et riz soufflé
+2707990|Biscuit au beurre de cacahuète sans sucres
+2707953|Biscuit beurre de cacahuète et chocolat
+2707959|Biscuit au potiron
+2707960|Biscuit aux raisins secs
+2707961|Biscuit fourré aux raisins secs
+2707984|Rugelach
+2707962|Boule au rhum (sans cuisson)
+2707987|Biscuit fourré allégé en sucres
+2707963|Biscuit fourré (autres parfums)
+2707964|Sablé (shortbread)
+2707965|Sablé allégé
+2707966|Sablé fourré ou glacé
+2707988|Biscuit sans sucres
+2707973|Gaufrette fourrée
+2707919|Gaufrette enrobée de chocolat
+2707989|Gaufrette sans sucres
+2707980|Biscuit japonais pour le thé
+2707974|Barre au caramel au beurre (toffee)
+2707975|Biscuit fourré vanille
+2707976|Biscuit fourré vanille double crème
+2707977|Biscuit fourré vanille allégé
+2707981|Gaufrette à la vanille
+2707982|Gaufrette à la vanille allégée
+2707983|Biscuit vanille caramel, coco et chocolat
+2707956|Biscuit fourré beurre de cacahuète enrobé de chocolat
+2707992|Biscuits à la portoricaine
+2708137|Crackers cubains
+2708133|Biscuits graham
+2708134|Biscuits graham (oursons)
+2708135|Biscuits graham enrobés de chocolat
+2708138|Biscuits graham allégés
+2708139|Biscuits graham fourrés
+2707971|Biscuit Marie
+2707967|Pocky (bâtonnets nappés)
+2709913|Maïs, cuit
+2709922|Maïs en conserve au beurre
+2709921|Maïs en conserve à l'huile
+2709916|Maïs en conserve avec matière grasse
+2709912|Maïs en conserve sans matière grasse
+2709927|Maïs en conserve allégé en sel, au beurre
+2709926|Maïs en conserve allégé en sel, à l'huile
+2709925|Maïs en conserve allégé en sel, avec matière grasse
+2709924|Maïs en conserve allégé en sel, sans matière grasse
+2709923|Maïs à la crème
+2709918|Maïs frais cuit au beurre
+2709917|Maïs frais cuit à l'huile
+2709914|Maïs frais cuit avec matière grasse
+2709910|Maïs frais cuit sans matière grasse
+2709920|Maïs surgelé cuit au beurre
+2709919|Maïs surgelé cuit à l'huile
+2709915|Maïs surgelé cuit avec matière grasse
+2709911|Maïs surgelé cuit sans matière grasse
+2709783|Maïs cru
+2705750|Ricotta
+2705778|Cottage cheese avec gélatine aromatisée
+2705779|Cottage cheese avec gélatine et fruits
+2705780|Cottage cheese avec gélatine et légumes
+2705747|Cottage cheese (fromage blanc granuleux)
+2705748|Cottage cheese crémeux
+2705753|Caillé égoutté (cottage sec)
+2705756|Cottage cheese allégé
+2705759|Cottage cheese allégé sans lactose
+2705758|Cottage cheese allégé pauvre en sel
+2705757|Cottage cheese allégé aux fruits
+2705754|Caillé égoutté salé
+2705751|Cottage cheese aux fruits
+2705752|Cottage cheese aux légumes
+2705749|Fromage frais fermier
+2705755|Fromage blanc portoricain (queso blanco)
+2708292|Chips de bagel
+2707690|Gressins
+2707799|Gressins sans gluten
+2707691|Gressins allégés en sel
+2707745|Gressins complets
+2708132|Crackers
+2708140|Biscuit petit-déjeuner
+2708148|Crackers au beurre (Ritz)
+2708147|Crackers au beurre aromatisés
+2708146|Crackers au beurre
+2708149|Crackers au beurre allégés
+2708141|Crackers au beurre allégés en sel
+2708150|Crackers au fromage
+2708151|Crackers au fromage (Cheez-It)
+2708152|Crackers au fromage (Goldfish)
+2708153|Crackers au fromage allégés
+2708154|Crackers au fromage allégés en sel
+2708155|Crackers au fromage complets
+2708156|Pain croustillant suédois (knäckebröd)
+2708157|Galettes craquantes (flatbread)
+2708189|Crackers sans gluten aromatisés
+2708188|Crackers sans gluten
+2708158|Pain azyme (matsa)
+2708142|Pain azyme allégé en sel
+2708159|Crackers au lait
+2708170|Crackers multicéréales
+2708136|Crackers à l'avoine
+2708163|Crackers de riz
+2708164|Crackers de riz aux fruits secs
+2708171|Crackers fourrés
+2708176|Crackers fourrés au fromage
+2708177|Crackers fourrés au fromage (Ritz)
+2708172|Crackers fourrés au beurre de cacahuète
+2708173|Crackers fourrés au beurre de cacahuète (Ritz)
+2708174|Crackers fourrés au beurre de cacahuète allégés
+2708178|Crackers à l'eau
+2708184|Crackers au blé
+2708186|Crackers au blé aromatisés (Wheat Thins)
+2708185|Crackers au blé (Wheat Thins)
+2708187|Crackers au blé allégés
+2708144|Crackers au blé allégés en sel
+2708175|Crackers complets fourrés au beurre de cacahuète
+2708179|Crackers wonton
+2708180|Crackers de blé tressé
+2708182|Crackers de blé tressé aromatisés (Triscuit)
+2708181|Crackers de blé tressé (Triscuit)
+2708183|Crackers de blé tressé allégés
+2708145|Crackers de blé tressé allégés en sel
+2707697|Croûtons
+2707702|Pain grillé Melba (biscottes fines)
+2708354|Nouilles frites (chow mein)
+2708215|Chips de pita
+2708165|Galette de maïs soufflé
+2708162|Galette de riz soufflé
+2708166|Feuille de riz
+2707705|Biscotte (zwieback)
+2705599|Blanchisseur à café (creamer)
+2705600|Blanchisseur à café liquide
+2705602|Blanchisseur à café liquide 0 %
+2705603|Blanchisseur à café liquide 0 % aromatisé
+2705604|Blanchisseur à café liquide 0 % sans sucres aromatisé
+2705601|Blanchisseur à café liquide aromatisé
+2705605|Blanchisseur à café liquide sans sucres aromatisé
+2705606|Blanchisseur à café en poudre
+2705608|Blanchisseur à café en poudre 0 %
+2705607|Blanchisseur à café en poudre aromatisé
+2705610|Blanchisseur à café au soja
+2705609|Blanchisseur à café en poudre sans sucres aromatisé
+2705592|Crème (sans précision)
+2705594|Mélange lait-crème (half and half)
+2705596|Mélange lait-crème 0 %
+2705595|Mélange lait-crème aromatisé
+2705597|Crème entière liquide
+2705593|Crème légère
+2705775|Fromage frais à tartiner
+2705769|Fromage frais à tartiner 0 %
+2705762|Fromage frais à tartiner léger
+2705761|Fromage frais à tartiner aromatisé
+2705760|Fromage frais à tartiner nature (type Philadelphia)
+2705598|Crème fouettée (chantilly)
+2705616|Crème aigre 0 %
+2705617|Crème aigre d'imitation
+2705615|Crème aigre légère
+2705614|Crème aigre
+2705611|Nappage fouetté
+2705612|Nappage fouetté 0 %
+2705613|Nappage fouetté sans sucres
+2706980|Sandwich bacon, laitue, tomate (BLT), pain complet
+2706979|Sandwich bacon, laitue, tomate (BLT)
+2707042|Sandwich à la mortadelle, pain complet
+2707043|Sandwich mortadelle et fromage, pain complet
+2707040|Sandwich à la mortadelle
+2707041|Sandwich mortadelle et fromage

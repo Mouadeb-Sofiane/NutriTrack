@@ -1,9 +1,10 @@
 /** Accès aux données : toutes les écritures passent par ici (validation + horodatage). */
 import type { NutriDB } from './db';
 import type { ExerciseEntry, Food, Goals, LineItem, MealEntry, PersonalPortion, Preferences, Profile, Recipe, WeightEntry } from '../domain/types';
-import { nowISO, isISODate } from '../domain/dates';
+import { nowISO, isISODate, toISODate } from '../domain/dates';
 import { cleanNutrients, isValidNumber } from '../domain/nutrition';
 import { newId } from './ids';
+import { normalize } from '../domain/referenceFoods';
 
 export class ValidationError extends Error {}
 
@@ -42,7 +43,17 @@ export function createRepo(db: NutriDB) {
     async getGoals() { return getKV<Goals>('goals'); },
     async saveGoals(g: Goals) {
       if (!isValidNumber(g.kcal) || g.kcal <= 0) throw new ValidationError("L'objectif calorique doit être un nombre positif.");
-      await setKV('goals', { ...g, updatedAt: nowISO() });
+      const prev = await getKV<Goals>('goals');
+      const mode = (await getKV<Profile>('profile'))?.goal ?? 'maintain';
+      const from = toISODate(new Date());
+      // Historique : on conserve l'objectif en vigueur avant aujourd'hui pour les jours passés.
+      let history = [...(g.history ?? prev?.history ?? [])];
+      // Première mise à jour : l'objectif précédent couvre tout le passé (son mode exact n'était pas mémorisé).
+      if (!history.length && prev) history.push({ from: '0000-01-01', kcal: Math.round(prev.kcal), goal: mode, manual: prev.manual });
+      history = history.filter((h) => h.from !== from);
+      const last = history.sort((a, b) => a.from.localeCompare(b.from)).at(-1);
+      if (!last || last.kcal !== g.kcal || last.goal !== mode || last.manual !== g.manual) history.push({ from: history.length ? from : '0000-01-01', kcal: Math.round(g.kcal), goal: mode, manual: g.manual });
+      await setKV('goals', { ...g, history: history.slice(-200), updatedAt: nowISO() });
     },
     async getPrefs() { return { ...DEFAULT_PREFS, ...(await getKV<Preferences>('prefs')) }; },
     async savePrefs(p: Partial<Preferences>) {
@@ -142,6 +153,36 @@ export function createRepo(db: NutriDB) {
     },
     async getPhoto(id: string) { return db.photos.get(id); },
     async deletePhoto(id: string) { await db.photos.delete(id); },
+
+    /** Supprime les photos de repas plus anciennes que `days` jours (le repas et ses valeurs restent). */
+    async purgeMealPhotos(days: number, todayISO: string): Promise<number> {
+      const limit = new Date(`${todayISO}T00:00:00`);
+      limit.setDate(limit.getDate() - days);
+      const cutoff = `${limit.getFullYear()}-${String(limit.getMonth() + 1).padStart(2, '0')}-${String(limit.getDate()).padStart(2, '0')}`;
+      const old = await db.meals.where('date').below(days === 0 ? '9999-12-31' : cutoff).filter((m) => !!m.photoId).toArray();
+      const keep = new Set((await db.recipes.toArray()).map((r) => r.photoId).filter(Boolean));
+      for (const m of old) {
+        if (!keep.has(m.photoId)) await db.photos.delete(m.photoId!);
+        await db.meals.put({ ...m, photoId: undefined });
+      }
+      return old.length;
+    },
+
+    /* Plats photographiés : signature de l'image (pas la photo) + nom validé. */
+    async recordPhotoSignatures(date: string, list: { name: string; dishId?: string; recipeId?: string; signature: number[] }[]) {
+      if (!list.length) return;
+      const now = nowISO();
+      await db.photoSigs.bulkPut(list.map((x) => ({ id: newId('sig'), date, name: x.name, normName: normalize(x.name), dishId: x.dishId, recipeId: x.recipeId, signature: x.signature, createdAt: now })));
+      // Une recette réutilisée depuis une photo apprend cette nouvelle image (max. 8 conservées).
+      for (const x of list) {
+        if (!x.recipeId) continue;
+        const r = await db.recipes.get(x.recipeId);
+        if (r) await db.recipes.put({ ...r, photoSignatures: [...(r.photoSignatures ?? []), x.signature].slice(-8) });
+      }
+      // On ne garde que les 300 dernières signatures.
+      const count = await db.photoSigs.count();
+      if (count > 300) await db.photoSigs.orderBy('createdAt').limit(count - 300).delete();
+    },
 
     /* Portions personnelles */
     async savePortion(p: Omit<PersonalPortion, 'id' | 'createdAt'> & Partial<Pick<PersonalPortion, 'id'>>) {

@@ -1,0 +1,400 @@
+168405|Jeunes gousses de niébé, crues
+168408|Cresson alénois, cuit
+168407|Cresson alénois, cru
+169225|Concombre épluché, cru
+168409|Concombre avec peau, cru
+169227|Pissenlit (feuilles), cuit
+169226|Pissenlit (feuilles), cru
+170077|Oseille sauvage (patience), cuite
+170076|Oseille sauvage (patience), crue
+168417|Feuilles de moringa, cuites
+168416|Feuilles de moringa (nebeday), crues
+170484|Gousses de moringa, cuites
+170483|Gousses de moringa, crues
+168411|Edamame (fèves de soja) surgelés, cuits
+169229|Aubergine, cuite à l'eau
+169892|Aubergine marinée
+169228|Aubergine, crue
+168412|Chicorée frisée (scarole), crue
+169398|Épazote, crue
+170078|Eppaw, cru
+169385|Fenouil (bulbe), cru
+169405|Crosses de fougère, crues
+169399|Épilobe (feuilles), cru
+168581|Champignons noirs séchés
+169230|Ail, cru
+169765|Gingembre mariné édulcoré
+169231|Gingembre frais
+168415|Courge éponge (luffa), cuite
+168414|Courge éponge (luffa), crue
+169233|Calebasse (gourde), cuite
+169232|Calebasse (gourde), crue
+169393|Feuilles de vigne en conserve
+168575|Feuilles de vigne, crues
+168569|Cœurs de palmier en conserve
+167714|Cœurs de palmier, crus
+169235|Dolique lablab frais, cuit
+169234|Dolique lablab frais, cru
+169236|Topinambour, cru
+169237|Oreille de Judas (champignon), crue
+168420|Corète potagère (feuilles de jute, mloukhia), cuite
+168419|Corète potagère (feuilles de jute, mloukhia), crue
+169238|Chou kale, cuit
+169240|Chou kale surgelé, cuit
+168421|Chou kale, cru
+169241|Kanpyo (lanières de courge séchée)
+168425|Chou-rave, cuit
+168424|Chou-rave, cru
+169245|Chénopode blanc, cuit
+169244|Chénopode blanc, cru
+168426|Poireau, cuit
+169246|Poireau, cru
+170485|Poireau lyophilisé
+168573|Citronnelle, crue
+168428|Lentilles germées sautées
+168427|Lentilles germées, crues
+168429|Laitue beurre, crue
+169247|Laitue romaine, crue
+169249|Laitue feuille de chêne verte, crue
+169248|Laitue iceberg, crue
+168431|Laitue feuille de chêne rouge, crue
+169136|Haricots de Lima frais en conserve
+169135|Haricots de Lima frais, cuits
+169956|Petits haricots de Lima surgelés, cuits
+169955|Petits haricots de Lima surgelés
+169954|Haricots de Lima fordhook surgelés, cuits
+169953|Haricots de Lima fordhook surgelés
+168396|Haricots de Lima frais, crus
+168430|Racine de lotus, cuite
+169250|Racine de lotus, crue
+169400|Épinard de Malabar (baselle), cuit
+169957|Pousses de soja (germes de haricot mungo), crues
+169376|Champignon de Paris exposé aux UV, cru
+168422|Girolles, crues
+168557|Champignon brun (crimini) exposé aux UV, cru
+168434|Champignon brun (crimini), cru
+169254|Champignons de Paris en conserve, égouttés
+169382|Champignons enoki, crus
+169403|Champignons maitake, crus
+168423|Morilles, crues
+168580|Pleurotes, crus
+169377|Portobello exposé aux UV, grillé
+170143|Portobello exposé aux UV, cru
+169243|Portobello, grillé
+169255|Portobello, cru
+168437|Shiitakés, cuits
+168436|Shiitakés séchés
+169242|Shiitakés, crus
+168435|Shiitakés sautés
+168582|Champignons de paille en conserve, égouttés
+169252|Champignons de Paris, cuits à l'eau
+169402|Champignons de Paris, cuits au micro-ondes
+169251|Champignons de Paris, crus
+169253|Champignons de Paris sautés
+169257|Feuilles de moutarde, cuites
+169259|Feuilles de moutarde surgelées, cuites
+169256|Feuilles de moutarde, crues
+168439|Komatsuna (épinard moutarde), cuit
+168438|Komatsuna (épinard moutarde), cru
+168441|Tétragone (épinard de Nouvelle-Zélande), cuite
+168440|Tétragone (épinard de Nouvelle-Zélande), crue
+169388|Nopal (raquette de cactus), cuit
+168571|Nopal (raquette de cactus), cru
+169261|Gombo, cuit
+169263|Gombo surgelé, cuit
+169260|Gombo, cru
+170415|Rondelles d'oignon panées surgelées, cuites au four
+170003|Oignons en conserve
+170001|Oignon, cuit à l'eau
+170002|Oignon déshydraté en flocons
+170411|Oignon haché surgelé, cuit
+170410|Oignon haché surgelé
+170413|Petits oignons surgelés, cuits
+170412|Petits oignons surgelés
+170000|Oignon, cru
+170005|Oignon nouveau (cébette), cru
+170008|Oignon doux, cru
+170007|Ciboule, crue
+170004|Oignon jaune revenu
+170006|Tiges d'oignon vert
+170486|Persil lyophilisé
+170416|Persil frais
+170009|Panais, cuit
+170417|Panais, cru
+170424|Petits pois-carottes en conserve
+170018|Petits pois-carottes surgelés, cuits
+170019|Petits pois aux oignons en conserve
+170021|Petits pois aux oignons surgelés, cuits
+170011|Pois gourmands, cuits
+170418|Pois gourmands surgelés, cuits
+170010|Pois gourmands, crus
+170013|Petits pois en conserve, égouttés
+170015|Petits pois en conserve, égouttés et rincés
+170421|Petits pois en conserve (avec le jus)
+170014|Petits pois cuisinés en conserve
+170420|Petits pois, cuits à l'eau
+170017|Petits pois surgelés, cuits
+170419|Petits pois, crus
+170422|Pois germés, crus
+168418|Oreille de Judas séchée
+169394|Piment banane, cru
+169396|Piment ancho séché
+168577|Piments verts en conserve
+168570|Piments séchés au soleil
+170426|Piments forts verts en conserve
+170497|Piment fort vert, cru
+170107|Piments forts rouges en conserve
+170106|Piment fort rouge, cru
+169766|Piments forts au vinaigre
+168578|Piment hongrois, cru
+170080|Piments jalapeño en conserve
+168576|Piment jalapeño, cru
+168579|Piment pasilla séché
+169395|Piment serrano, cru
+170429|Poivron vert en conserve
+170428|Poivron vert, cuit
+170023|Poivron vert haché surgelé, cuit
+170022|Poivron vert haché surgelé
+170427|Poivron vert, cru
+170024|Poivron vert sauté
+168546|Poivron rouge en conserve
+170110|Poivron rouge, cuit
+169373|Poivron rouge lyophilisé
+168548|Poivron rouge haché surgelé, cuit
+168547|Poivron rouge haché surgelé
+170108|Poivron rouge, cru
+168550|Poivron rouge sauté
+169383|Poivron jaune, cru
+169386|Relish pour hamburger
+168560|Relish pour hot-dog
+168561|Relish sucrée aux cornichons
+169397|Pickles sucrés (chou-fleur, oignon, moutarde)
+168558|Cornichons à l'aneth
+169379|Cornichons aigres (malossol)
+169378|Cornichons sucrés
+170430|Pois d'Angole frais, cuits
+170025|Pois d'Angole frais, crus
+168559|Piment doux (pimiento) en conserve
+170431|Poi (pâte de taro)
+170433|Pousses de phytolaque, cuites
+170432|Pousses de phytolaque, crues
+168446|Fécule (farine) de pomme de terre
+170092|Galettes de pommes de terre (latkes)
+170048|Croquettes de pommes de terre surgelées, cuites au four
+169269|Salade de pommes de terre maison
+170030|Pomme de terre (russet) cuite au four avec peau
+170448|Gratin de pommes de terre en sachet, préparé (lait entier et beurre)
+170447|Préparation pour gratin de pommes de terre, en sachet
+170442|Gratin de pommes de terre au fromage maison (au beurre)
+170524|Gratin de pommes de terre au fromage maison (à la margarine)
+170093|Pomme de terre au four avec peau
+170033|Pomme de terre au four (chair)
+170034|Peau de pomme de terre au four
+170438|Pomme de terre cuite en robe des champs (chair)
+170439|Peau de pomme de terre cuite en robe des champs
+170440|Pomme de terre épluchée, bouillie
+170444|Pommes de terre en conserve, égouttées
+170443|Pommes de terre en conserve (avec le jus)
+170026|Pomme de terre avec peau, crue
+170523|Frites surgelées, avant cuisson
+170118|Frites surgelées, cuites au four
+169265|Frites épaisses surgelées, avant cuisson
+169266|Frites épaisses surgelées, cuites au four
+169268|Frites extrudées surgelées, cuites au four
+169267|Frites extrudées surgelées, avant cuisson
+170049|Pommes de terre entières surgelées, cuites
+170044|Galettes de pommes de terre râpées (rösti) surgelées, poêlées
+170043|Galettes de pommes de terre râpées (rösti) surgelées
+170046|Pommes de terre rissolées au beurre surgelées, préparées
+170045|Pommes de terre rissolées au beurre surgelées
+170036|Pommes de terre râpées rissolées maison (rösti)
+167605|Pommes de terre râpées réfrigérées, poêlées
+167604|Pommes de terre râpées réfrigérées
+170445|Purée de pommes de terre en flocons (sans lait), sèche
+170041|Purée de pommes de terre en granulés (avec lait), sèche
+170039|Purée de pommes de terre en granulés (sans lait), sèche
+170446|Purée en flocons préparée au lait entier et beurre
+169372|Purée en flocons préparée au lait entier et margarine
+170042|Purée en granulés préparée à l'eau et margarine
+170040|Purée en granulés préparée au lait entier et beurre
+170493|Purée de pommes de terre maison au lait entier
+168555|Purée de pommes de terre maison au lait entier et beurre
+170037|Purée de pommes de terre maison au lait et margarine
+168554|Purée en granulés préparée au lait et margarine
+169768|Purée de pommes de terre prête à consommer
+170094|Pomme de terre au micro-ondes avec peau
+170441|Pomme de terre au micro-ondes (chair)
+170035|Peau de pomme de terre au micro-ondes
+170454|Pommes de terre sautées aux poivrons surgelées, préparées
+170498|Pommes de terre sautées aux poivrons et oignons maison
+170032|Peau de pomme de terre, crue
+170435|Pomme de terre rouge au four avec peau
+170029|Pomme de terre rouge avec peau, crue
+170450|Gratin de pommes de terre à la crème en sachet, préparé
+170449|Préparation pour gratin de pommes de terre à la crème, en sachet
+170038|Gratin de pommes de terre à la crème maison (au beurre)
+170525|Gratin de pommes de terre à la crème maison (à la margarine)
+170434|Pomme de terre blanche au four avec peau
+170028|Pomme de terre blanche avec peau, crue
+169271|Fleurs de courge, cuites
+169270|Fleurs de courge, crues
+168447|Feuilles de courge, cuites
+169272|Feuilles de courge, crues
+169273|Préparation pour tarte au potiron en conserve
+168450|Purée de potiron en conserve
+168449|Potiron, cuit
+168448|Potiron, cru
+169275|Pourpier, cuit
+169274|Pourpier, cru
+168564|Trévise (radicchio), crue
+170095|Graines de radis germées, crues
+168452|Radis blanc (daikon), cuit
+168453|Radis blanc (daikon) séché
+168451|Radis blanc (daikon), cru
+169276|Radis rose, cru
+170081|Radis blanc long, cru
+168455|Rutabaga, cuit
+168454|Rutabaga, cru
+169277|Salsifis, cru
+169278|Salsifis, cuit
+169279|Choucroute en conserve (crue)
+170090|Agar-agar séché
+169280|Agar-agar (algue), cru
+168456|Mousse d'Irlande (algue), crue
+168457|Varech (kombu), cru
+168458|Algue nori, crue
+170495|Spiruline séchée
+170091|Spiruline fraîche
+170496|Algue wakamé, crue
+169281|Fleurs de sesbania, cuites à la vapeur
+168459|Fleurs de sesbania, crues
+170082|Échalote lyophilisée
+170499|Échalote, crue
+169283|Fèves de soja fraîches (edamame), cuites
+169282|Fèves de soja fraîches (edamame), crues
+169284|Germes de soja (graines germées), crus
+170494|Soufflé aux épinards
+169286|Épinards en conserve, égouttés
+169285|Épinards en conserve (avec le jus)
+168463|Épinards, cuits
+169288|Épinards surgelés, cuits
+168462|Épinards, crus
+170488|Courge d'été (courgette, pâtisson), cuite
+170487|Courge d'été (courgette, pâtisson), crue
+168466|Courge jaune en conserve, égouttée
+168465|Courge jaune, cuite
+168468|Courge jaune surgelée, cuite
+168464|Courge jaune, crue
+169290|Pâtisson, cuit
+169289|Pâtisson, cru
+169292|Courgette avec peau, cuite
+168470|Courgette surgelée, cuite
+169291|Courgette avec peau, crue
+168471|Courgettes à l'italienne en conserve
+169293|Courge poivrée, cuite au four
+169294|Courge poivrée, cuite à l'eau, en purée
+168472|Courge poivrée, crue
+170490|Courge d'hiver, cuite au four
+170489|Courge d'hiver, crue
+169296|Courge butternut, cuite au four
+168474|Courge butternut surgelée, cuite
+169295|Courge butternut, crue
+168476|Courge hubbard, cuite au four
+169297|Courge hubbard en purée
+168475|Courge hubbard, crue
+169299|Courge spaghetti, cuite
+169298|Courge spaghetti, crue
+168565|Mini-courgettes, crues
+168478|Succotash (maïs et haricots de Lima) à la crème en conserve
+168479|Succotash (maïs et haricots de Lima) en conserve
+168477|Succotash (maïs et haricots de Lima), cuit
+168481|Succotash surgelé, cuit
+169300|Succotash, cru
+169304|Feuilles de patate douce, cuites à la vapeur
+169303|Feuilles de patate douce, crues
+169305|Purée de patate douce en conserve
+170084|Patate douce au sirop, égouttée
+170083|Patate douce au sirop
+168485|Patate douce en conserve sous vide
+168483|Patate douce cuite au four (chair)
+168484|Patate douce épluchée, bouillie
+170088|Patate douce confite maison
+169307|Patate douce surgelée, cuite au four
+168488|Feuilles de taro, cuites à la vapeur
+168487|Feuilles de taro, crues
+169309|Pousses de taro, cuites
+168489|Pousses de taro, crues
+168486|Taro (dachine), cuit
+169308|Taro (dachine), cru
+170455|Taro de Tahiti, cuit
+169310|Taro de Tahiti, cru
+168566|Tomatillos, crus
+170461|Tomate en poudre
+170054|Sauce tomate en conserve
+170085|Sauce tomate à l'espagnole en conserve
+170057|Sauce tomate aux herbes et fromage
+170055|Sauce tomate aux champignons
+170056|Sauce tomate aux oignons
+170462|Sauce tomate aux oignons, poivrons et céleri
+170463|Sauce tomate avec morceaux
+170501|Tomates concassées en conserve
+170456|Tomate verte, crue
+170502|Tomate orange, crue
+170051|Tomates pelées au jus en conserve
+170052|Tomates cuisinées (étuvées) en conserve
+170053|Tomates aux piments verts en conserve
+170050|Tomate, cuite
+170089|Tomates étuvées
+170457|Tomate, crue
+168567|Tomates séchées
+169384|Tomates séchées à l'huile, égouttées
+170096|Tomate jaune, crue
+170464|Fougère arborescente, cuite
+170062|Navets et fanes de navet surgelés, cuits
+170467|Fanes de navet en conserve
+170466|Fanes de navet, cuites
+170469|Fanes de navet surgelées, cuites
+170061|Fanes de navet, crues
+170058|Navet, cuit
+170060|Navets surgelés, cuits
+170465|Navet, cru
+170063|Cocktail de jus de légumes
+170065|Macédoine de légumes en conserve, égouttée
+170064|Macédoine de légumes en conserve (avec le jus)
+170472|Mélange de légumes surgelés, cuits
+170474|Baselle (épinard de Malabar), crue
+168583|Racine de wasabi, crue
+169302|Liseron d'eau (kangkong), cuit
+169301|Liseron d'eau (kangkong), cru
+170066|Châtaigne d'eau chinoise, crue
+170067|Châtaignes d'eau en conserve
+170068|Cresson de fontaine, cru
+170475|Courge cireuse (melon d'hiver), cuite
+170069|Courge cireuse (melon d'hiver), crue
+170478|Feuilles de pois carré, crues
+170070|Tubercule de pois carré, cru
+170477|Pois carré frais, cuit
+170476|Pois carré frais, cru
+170072|Igname, cuite (à l'eau ou au four)
+170071|Igname, crue
+170074|Jicama (pois patate), cuit
+170073|Jicama (pois patate), cru
+169223|Haricot kilomètre, cuit
+169222|Haricot kilomètre, cru
+169401|Malanga (chou caraïbe), cru
+167717|Pâte à tartiner à l'extrait de levure
+2709319|Cidre doux (jus de pomme non filtré)
+2709320|Jus de pomme 100 %
+2709321|Jus de pomme 100 % enrichi en calcium
+2709219|Garniture de pommes pour tarte
+2709220|Pomme au four
+2709294|Pomme d'amour (pomme caramélisée)
+2709215|Pomme, crue
+2709218|Compote de pommes aromatisée
+2709216|Compote de pommes
+2709217|Compote de pommes sans sucre ajouté
+2707466|Éclats de bacon
+2705890|Poitrine de porc fraîche, cuite
+2705885|Bacon, cuit
+2705886|Bacon allégé en sel, cuit
+2705856|Bacon de bœuf, cuit

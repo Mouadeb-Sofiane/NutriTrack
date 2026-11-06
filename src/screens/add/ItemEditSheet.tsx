@@ -12,7 +12,7 @@ import { getEntry } from '../../domain/catalog';
 import { EstimatePanel } from '../../ui/EstimatePanel';
 import { EntryPicker } from './CatalogSheet';
 
-export function ItemEditSheet({ item, onClose, onSave, onDelete, onReplace }: { item: LineItem | null; onClose: () => void; onSave: (it: LineItem, corrected: boolean) => void; onDelete: () => void; onReplace?: (items: LineItem[]) => void }) {
+export function ItemEditSheet({ item, onClose, onSave, onDelete, onReplace, onRecompose }: { item: LineItem | null; onClose: () => void; onSave: (it: LineItem, corrected: boolean) => void; onDelete: () => void; onReplace?: (items: LineItem[]) => void; onRecompose?: (it: LineItem) => void }) {
   const [expanded, setExpanded] = useState<LineItem[] | null>(null);
   useEffect(() => {
     setExpanded(null);
@@ -66,6 +66,9 @@ export function ItemEditSheet({ item, onClose, onSave, onDelete, onReplace }: { 
           <div className="mb-1.5 text-sm font-semibold">Valeur retenue</div>
           <EstimatePanel estimate={draft.estimate} onChoose={(c, v) => setDraft(chooseEstimate(draft, c, v))} />
         </div>
+      )}
+      {item.composition && onRecompose && (
+        <Button variant="secondary" block className="mb-4" onClick={() => onRecompose(item)}>Modifier la composition ({item.composition.filter((i) => i.enabled).length} ingrédients)</Button>
       )}
       {expanded && onReplace && (
         <div className="mb-4">

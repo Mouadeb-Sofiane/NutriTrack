@@ -1,0 +1,400 @@
+2709758|Velouté de tomate à la crème
+2710109|Velouté de légumes
+2707547|Soupe à l'arachide (soupe de cacahuète, maafé en soupe)
+2707126|Pepperpot (soupe épicée des Caraïbes)
+2709556|Soupe de pommes de terre
+2709557|Soupe de pommes de terre à la viande
+2709718|Soupe de potiron (velouté)
+2707465|Tranches de « bacon » végétal
+2707467|Saucisse ou galette végétale de petit-déjeuner
+2707468|« Poulet » végétal
+2707469|« Poulet » végétal pané frit
+2707452|Dessert glacé non lacté
+2707470|Saucisse végétarienne (hot-dog)
+2707471|Tranches végétales type charcuterie
+2709163|Steak végétal (céréales et protéines végétales), frit
+2707472|Boulettes végétales
+2707545|Purée de soja grillé (soy nut butter)
+2707435|Tofu
+2707437|Fromage de soja (tofu fermenté)
+2707449|Tofu pané frit
+2707448|Tofu frit
+2707451|Protéines de soja texturées, sèches
+2707478|Filet végétarien
+2707473|Galette végétale (veggie burger), sans pain
+2707450|Vermicelles de soja
+2706457|Sauce de poisson (nuoc-mâm, nam pla)
+2707441|Sauce hoisin
+2707439|Miso
+2707438|Sauce miso
+2707440|Natto
+2707150|Sauce d'huître
+2707442|Sauce soja
+2707443|Sauce soja allégée en sel
+2707445|Sauce teriyaki
+2707446|Sauce teriyaki allégée en sel
+2709620|Épinards cuits
+2709627|Épinards en conserve au beurre
+2709626|Épinards en conserve à l'huile
+2709623|Épinards en conserve avec matière grasse
+2709617|Épinards en conserve sans matière grasse
+2709628|Épinards à la crème
+2709619|Épinards frais au beurre
+2709618|Épinards frais à l'huile
+2709621|Épinards frais avec matière grasse
+2709615|Épinards frais sans matière grasse
+2709625|Épinards surgelés au beurre
+2709624|Épinards surgelés à l'huile
+2709622|Épinards surgelés avec matière grasse
+2709616|Épinards surgelés sans matière grasse
+2709614|Épinards crus
+2710756|Boisson énergisante
+2710746|Boisson énergisante (Full Throttle)
+2710747|Boisson énergisante (Monster)
+2710748|Boisson énergisante (Mountain Dew AMP)
+2710751|Boisson énergisante (NOS)
+2710750|Boisson énergisante (No Fear Motherload)
+2710749|Boisson énergisante (No Fear)
+2710762|Boisson énergisante à la canneberge (Ocean Spray)
+2710752|Boisson énergisante (Red Bull)
+2710753|Boisson énergisante (Rockstar)
+2710754|Boisson énergisante aux jus (SoBe)
+2710755|Boisson énergisante (Vault)
+2710767|Boisson énergisante (XS Gold Plus)
+2710766|Boisson énergisante (XS)
+2710776|Solution de réhydratation glucosée 5 %
+2710775|Solution de réhydratation électrolytique
+2710769|Boisson pour le sport (Gatorade)
+2710770|Boisson pour le sport (Powerade)
+2710771|Boisson pour le sport
+2706797|Poulet aux amandes
+2706738|Bœuf au brocoli (chinois)
+2706488|Bœuf et nouilles sauce soja
+2706497|Bœuf et riz sauce soja
+2706744|Bœuf sauté aux légumes sauce soja
+2706737|Bœuf sauté aux légumes verts sauce soja
+2707197|Omelette chinoise au bœuf (egg foo yung)
+2706386|Bœuf sauce soja
+2706392|Bœuf à l'aigre-douce
+2706609|Bœuf, nouilles et légumes sauce soja
+2706608|Bœuf, nouilles et légumes verts sauce soja
+2706604|Bœuf, pommes de terre et légumes sauce soja
+2706603|Bœuf, pommes de terre et légumes verts sauce soja
+2706629|Bœuf, riz et légumes sauce soja
+2706628|Bœuf, riz et légumes verts sauce soja
+2706745|Bœuf, tofu et légumes sauce soja
+2706739|Bœuf, tofu et légumes verts sauce soja
+2707194|Omelette chinoise au poulet (egg foo yung)
+2707115|Plat surgelé poulet sauce soja, riz et légumes
+2706536|Poulet et nouilles sauce soja
+2706542|Poulet et riz sauce soja
+2706791|Poulet sauté aux légumes sauce soja
+2706790|Poulet sauté aux légumes verts sauce soja
+2706433|Poulet teriyaki
+2706696|Poulet, riz et légumes sauce soja
+2706695|Poulet, riz et légumes verts sauce soja
+2710064|Chop suey végétarien sans nouilles
+2707193|Omelette chinoise (egg foo yung)
+2706866|Poisson aux légumes sauce soja
+2706865|Poisson aux légumes verts sauce soja
+2706794|Poulet du général Tao
+2710041|Haricots verts sautés à la sichuanaise
+2706741|Bœuf du Hunan
+2706743|Bœuf kung pao
+2706763|Porc kung pao
+2706857|Crevettes kung pao
+2706796|Poulet kung pao
+2706795|Moo goo gai pan (poulet sauté aux champignons)
+2706764|Porc moo shu, sans crêpe
+2706443|Poulet à l'orange
+2706765|Porc aux oignons sauce soja
+2706778|Porc sauté aux légumes sauce soja
+2706777|Porc sauté aux légumes verts sauce soja
+2706761|Porc aux légumes à l'hawaïenne
+2706762|Porc au cresson sauce soja
+2707195|Omelette chinoise au porc (egg foo yung)
+2706408|Porc ou jambon sauce soja
+2706650|Porc, riz et légumes sauce soja
+2706649|Porc, riz et légumes verts sauce soja
+2706760|Porc, tofu et légumes verts sauce soja
+2706770|Porc, tofu et légumes sauce soja
+2706444|Poulet au sésame
+2706860|Fruits de mer et légumes sauce soja
+2706859|Fruits de mer et légumes verts sauce soja
+2706557|Crevettes et nouilles sauce soja
+2706854|Crevettes sautées aux légumes sauce soja
+2706853|Crevettes sautées aux légumes verts sauce soja
+2707196|Omelette chinoise aux crevettes (egg foo yung)
+2706462|Crevettes teriyaki
+2706387|Bœuf teriyaki
+2706751|Bœuf sauté aux légumes sauce soja (wok)
+2706435|Poulet à l'aigre-douce
+2706436|Poulet à l'aigre-douce sans légumes
+2706401|Porc à l'aigre-douce
+2706655|Porc à l'aigre-douce avec riz
+2706456|Crevettes à l'aigre-douce
+2706740|Bœuf sichuanais
+2707109|Plat surgelé allégé poulet teriyaki, riz et légumes
+2707477|Tofu sauté aux légumes sauce soja
+2707476|Tofu sauté aux légumes verts sauce soja
+2709284|Fraises en conserve
+2709285|Fraises surgelées
+2709283|Fraises
+2709855|Haricots verts cuits
+2709864|Haricots verts en conserve au beurre
+2709863|Haricots verts en conserve à l'huile
+2709858|Haricots verts en conserve avec matière grasse
+2709854|Haricots verts en conserve sans matière grasse
+2709868|Haricots verts en conserve allégés en sel, au beurre
+2709867|Haricots verts en conserve allégés en sel, à l'huile
+2709866|Haricots verts en conserve allégés en sel, avec matière grasse
+2709865|Haricots verts en conserve allégés en sel, sans matière grasse
+2709860|Haricots verts frais au beurre
+2709859|Haricots verts frais à l'huile
+2709856|Haricots verts frais avec matière grasse
+2709852|Haricots verts frais sans matière grasse
+2709862|Haricots verts surgelés au beurre
+2709861|Haricots verts surgelés à l'huile
+2709857|Haricots verts surgelés avec matière grasse
+2709853|Haricots verts surgelés sans matière grasse
+2709769|Haricots verts crus
+2709870|Haricots beurre cuits
+2710262|Mélange sucre et édulcorant
+2710271|Édulcorant aspartame en poudre
+2710268|Édulcorant liquide
+2710266|Édulcorant au fruit du moine en poudre
+2710267|Édulcorant en poudre
+2710270|Édulcorant saccharine liquide
+2710269|Édulcorant saccharine en poudre
+2710265|Stévia liquide
+2710264|Stévia en poudre
+2710263|Édulcorant sucralose en poudre
+2710282|Sirop d'agave
+2710281|Miel
+2710283|Mélasse
+2710257|Sucre
+2710260|Sucre roux (cassonade)
+2710261|Sucre à la cannelle
+2710259|Sucre glace
+2710258|Sucre blanc en poudre ou en morceaux
+2710706|Eau
+2710707|Eau du robinet
+2710512|Boisson thé glacé et limonade (Arnold Palmer)
+2710514|Boisson thé glacé et limonade sans sucres
+2710513|Boisson thé glacé et limonade allégée
+2710508|Bubble tea (thé aux perles de tapioca)
+2710507|Infusion de gingembre
+2710505|Infusion de camomille
+2710502|Tisane (infusion)
+2710503|Infusion d'hibiscus (bissap chaud)
+2710488|Thé noir chaud (sans sucre)
+2710489|Thé noir décaféiné
+2710490|Thé vert chaud (sans sucre)
+2710491|Thé vert décaféiné
+2710492|Thé oolong
+2710506|Thé au lait
+2710527|Thé glacé noir en bouteille (sucré)
+2710528|Thé glacé noir décaféiné en bouteille
+2710530|Thé glacé noir décaféiné sans sucres
+2710532|Thé glacé noir décaféiné non sucré
+2710529|Thé glacé noir sans sucres (édulcoré)
+2710531|Thé glacé noir non sucré en bouteille
+2710533|Thé glacé vert en bouteille (sucré)
+2710534|Thé glacé vert sans sucres
+2710535|Thé glacé vert non sucré
+2710519|Thé glacé noir décaféiné infusé, édulcoré
+2710518|Thé glacé noir décaféiné infusé, sucré
+2710520|Thé glacé noir décaféiné infusé, non sucré
+2710516|Thé glacé noir infusé, édulcoré
+2710515|Thé glacé noir infusé, sucré
+2710517|Thé glacé noir infusé, non sucré
+2710525|Thé glacé vert décaféiné infusé, édulcoré
+2710524|Thé glacé vert décaféiné infusé, sucré
+2710526|Thé glacé vert décaféiné infusé, non sucré
+2710522|Thé glacé vert infusé, édulcoré
+2710521|Thé glacé vert infusé, sucré
+2710523|Thé glacé vert infusé, non sucré
+2710497|Thé glacé instantané décaféiné, édulcoré
+2710495|Thé glacé instantané décaféiné, sucré
+2710498|Thé glacé instantané décaféiné, non sucré
+2710496|Thé glacé instantané, édulcoré
+2710494|Thé glacé instantané sucré
+2710493|Thé glacé instantané non sucré
+2710501|Thé vert glacé instantané, édulcoré
+2710500|Thé vert glacé instantané, sucré
+2710499|Thé vert glacé instantané, non sucré
+2710509|Kombucha
+2709750|Sauce barbecue
+2709753|Sauce cocktail
+2709741|Sauce rouge pour enchiladas
+2709733|Ketchup
+2709734|Ketchup allégé en sel
+2709736|Salsa
+2709737|Pico de gallo
+2709738|Salsa rouge
+2709739|Salsa rouge maison
+2709752|Sauce pour steak (type A1)
+2709740|Sauce taco
+2709735|Sauce tomate pimentée (chili sauce)
+2709727|Tomates séchées
+2709720|Tomates cuites
+2709722|Tomates en conserve, cuites
+2709724|Tomates en conserve allégées en sel
+2709721|Tomates fraîches cuites (concassée)
+2709719|Tomate crue
+2707428|Chips de haricots
+2708200|Soufflés au fromage (maïs)
+2708203|Soufflés au fromage (Cheetos)
+2708201|Soufflés au fromage allégés
+2708161|Chips de riz
+2708197|Chips de maïs aromatisées
+2708199|Chips de maïs aromatisées (Fritos)
+2708196|Chips de maïs nature
+2708198|Chips de maïs (Fritos)
+2708205|Chips de maïs allégées en sel
+2708195|Maïs grillé (corn nuts)
+2708293|Chips de crackers
+2708290|Chips multicéréales (Sun Chips)
+2708245|Anneaux saveur oignon
+2709563|Chips de banane plantain
+2708243|Chips de maïs soufflé aromatisées
+2708242|Chips de maïs soufflé nature
+2708244|Chips de maïs soufflé sucrées
+2708246|Chips de crevettes
+2707434|Chips de soja
+2709710|Chips de patate douce
+2709569|Chips de taro
+2708207|Tortilla chips ranch (Doritos)
+2708204|Tortilla chips aromatisées
+2708211|Tortilla chips allégées non salées
+2708206|Tortilla chips goût fromage (Doritos)
+2708208|Tortilla chips aromatisées (Doritos)
+2708202|Tortilla chips nature
+2708210|Tortilla chips allégées aromatisées
+2708209|Tortilla chips allégées nature
+2708212|Tortilla chips allégées en sel
+2709447|Chips de légumes
+2707818|Galette de maïs pour gordita ou sope
+2707826|Coquille à taco en maïs
+2707827|Coquille à taco en blé
+2707822|Tortilla
+2707823|Tortilla de maïs
+2707824|Tortilla de blé (wrap)
+2707825|Tortilla complète
+2706143|Coquelet cuit, peau consommée
+2706144|Coquelet cuit, sans la peau
+2706145|Coquelet rôti, avec peau
+2706146|Coquelet rôti, sans peau
+2706147|Pigeon (tourterelle), cuit
+2706148|Pigeon frit
+2706141|Canard laqué (Pékin)
+2706137|Canard cuit, peau consommée
+2706138|Canard cuit, sans la peau
+2706139|Canard rôti, avec peau
+2706140|Canard rôti, sans peau
+2706142|Oie sauvage rôtie
+2705928|Autruche
+2706150|Faisan cuit
+2706149|Caille cuite
+2706118|Dinde mijotée, avec peau
+2706104|Dinde, cuite
+2706131|Dos de dinde
+2706132|Dinde en conserve
+2706112|Dinde viande brune rôtie, avec peau
+2706111|Dinde viande brune rôtie, sans peau
+2706122|Pilon de dinde cuit, avec peau
+2706121|Pilon de dinde cuit, sans peau
+2706124|Pilon de dinde rôti, avec peau
+2706123|Pilon de dinde rôti, sans peau
+2706133|Dinde hachée
+2706114|Dinde rôtie, avec peau
+2706113|Dinde rôtie, sans peau
+2706108|Escalope de dinde panée, avec peau
+2706107|Escalope de dinde panée
+2706110|Blanc de dinde rôti, avec peau
+2706109|Blanc de dinde rôti, sans peau
+2706106|Blanc de dinde, avec peau
+2706105|Blanc de dinde, sans peau
+2706116|Dinde panée frite, avec peau
+2706115|Dinde panée frite, sans peau
+2706119|Dinde fumée, avec peau
+2706120|Dinde fumée, sans peau
+2706117|Dinde mijotée, sans peau
+2706127|Cou de dinde
+2706134|Nuggets de dinde
+2706130|Croupion de dinde
+2706125|Haut de cuisse de dinde, avec peau
+2706126|Haut de cuisse de dinde, sans peau
+2706129|Aile de dinde, avec peau
+2706128|Aile de dinde, sans peau
+2707687|Farce au pain
+2707688|Farce au pain et à l'œuf
+2708733|Quiche au fromage (sans viande)
+2707812|Farce au pain de maïs
+2708746|Farce de maïs au poulet et légumes
+2708719|Crêpe à la viande (crêpe farcie)
+2708748|Farce au poulet et légumes
+2708749|Farce à la viande et légumes
+2708747|Farce aux huîtres
+2708709|Empanada
+2708711|Empanada au bœuf
+2708712|Empanada bœuf et légumes
+2708713|Empanada au poulet
+2708714|Empanada poulet et légumes
+2708710|Empanada sans viande
+2708723|Knish (chausson à la pomme de terre)
+2708727|Feuilleté œuf et fromage
+2708728|Feuilleté à la viande ou volaille (bourek, friand)
+2708720|Pierogi (raviolis polonais)
+2708731|Quiche à la viande, au poulet ou au poisson (quiche lorraine)
+2708730|Samoussa
+2708729|Spanakopita (feuilleté épinards-feta)
+2708732|Quiche aux épinards
+2710045|Piment jalapeño farci
+2709131|Taboulé (libanais)
+2708743|Chausson à l'œuf
+2708734|Chausson garni (type hot pocket)
+2708736|Chausson garni au bœuf
+2708740|Chausson garni au poulet
+2708737|Chausson garni au jambon
+2708735|Chausson garni sans viande
+2708739|Chausson pizza
+2708738|Chausson pizza à la viande
+2708742|Chausson garni allégé
+2708741|Chausson aux fruits de mer
+2709130|Vada (beignet salé indien)
+2710039|Artichauts farcis
+2709654|Gratin de brocoli aux nouilles
+2709655|Gratin de brocoli au riz
+2709632|Chana saag (pois chiches aux épinards)
+2709832|Salade Cobb, sans sauce
+2710046|Gratin de maïs
+2710050|Aubergines à la parmigiana
+2710051|Aubergines au fromage et à la tomate
+2709830|Salade grecque, sans sauce
+2710040|Gratin de haricots verts
+2709828|Salade tiède au bacon
+2710052|Champignons farcis
+2709631|Palak paneer (épinards au fromage indien)
+2710028|Ratatouille
+2707430|Sambar (ragoût de légumes et lentilles)
+2709829|Salade en couches (sept étages)
+2709630|Gratin épinards-fromage
+2709831|Salade d'épinards, sans sauce
+2709629|Soufflé aux épinards
+2710059|Gratin de courgettes tomate-fromage
+2710061|Gratin de courgettes sauce fromage
+2710060|Courgettes au riz et sauce tomate
+2710062|Soufflé de courgettes
+2709696|Soufflé de courge
+2710063|Ragoût de légumes
+2709072|Poivron farci à la viande
+2709073|Poivron farci riz et viande (dolma)
+2709074|Poivron farci au riz (sans viande)
+2709075|Tomate farcie riz et viande
+2709076|Tomate farcie au riz (sans viande)
+2709723|Tomates gratinées
+2710067|Curry de légumes
+2710068|Curry de légumes avec riz
+2707479|Ragoût végétarien
+2709682|Jus de betterave

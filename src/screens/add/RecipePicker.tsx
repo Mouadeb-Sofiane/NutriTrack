@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
-import type { LineItem, PersonalPortion, Recipe } from '../../domain/types';
+import type { LineItem, MealEntry, PersonalPortion, Recipe } from '../../domain/types';
 import { describeConsumption, fractionLabel, lineFromRecipe, PORTION_SIZE_LABEL, recipeNutrition, type Consumption, type PortionSize } from '../../domain/recipes';
 import { fmtG, fmtKcal } from '../../domain/nutrition';
-import { normalize } from '../../domain/referenceFoods';
+import { filterRecipes, FAVORITE_AFTER_USES, recipeUsage } from '../../domain/savedDishes';
+import { repo, useApp } from '../../state/app';
 import { db } from '../../data/db';
 import { newId } from '../../data/ids';
 import { navigate } from '../../state/router';
@@ -20,15 +21,19 @@ export function RecipePickerSheet({ open, onClose, onAdd, initialRecipeId }: { o
     if (initialRecipeId) db.recipes.get(initialRecipeId).then((r) => r && setPicked(r));
   }, [open, initialRecipeId]);
 
+  const meals = useLiveQuery(() => (open ? db.meals.toArray() : Promise.resolve([] as MealEntry[])), [open]) ?? [];
+  const usage = useMemo(() => recipeUsage(meals), [meals]);
   const list = useMemo(() => {
-    const nq = normalize(q);
-    return recipes
-      .filter((r) => !nq || normalize(`${r.name} ${r.cuisine ?? ''} ${r.categories.join(' ')} ${r.ingredients.map((i) => i.name).join(' ')}`).includes(nq))
-      .sort((a, b) => Number(b.favorite) - Number(a.favorite) || b.updatedAt.localeCompare(a.updatedAt));
-  }, [recipes, q]);
+    if (q.trim()) return filterRecipes(recipes, q);
+    return [...recipes].sort((a, b) => Number(b.favorite) - Number(a.favorite) || (usage.get(b.id) ?? 0) - (usage.get(a.id) ?? 0) || b.updatedAt.localeCompare(a.updatedAt));
+  }, [recipes, q, usage]);
+  const { prefs } = useApp();
+  const [later, setLater] = useState(false);
+  // Suggestion discrète : plat souvent utilisé mais pas encore favori (une seule à la fois).
+  const suggestFav = !q.trim() && !later ? recipes.find((r) => !r.favorite && (usage.get(r.id) ?? 0) >= FAVORITE_AFTER_USES && !(prefs.noSaveSuggest ?? []).includes(`fav:${r.id}`)) : undefined;
 
   return (
-    <Sheet open={open} onClose={onClose} title={picked ? picked.name : 'Mes recettes'}>
+    <Sheet open={open} onClose={onClose} title={picked ? picked.name : 'Mes plats enregistrés'}>
       {picked ? (
         <ConsumptionPicker recipe={picked} onBack={initialRecipeId ? undefined : () => setPicked(null)} onAdd={(it) => { onAdd(it); onClose(); }} />
       ) : recipes.length === 0 ? (
@@ -37,8 +42,18 @@ export function RecipePickerSheet({ open, onClose, onAdd, initialRecipeId }: { o
         <>
           <div className="relative mb-2">
             <IconSearch className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-muted" size={20} />
-            <TextInput value={q} onChange={(e) => setQ(e.target.value)} placeholder="Nom, ingrédient, cuisine…" className="pl-11" />
+            <TextInput value={q} onChange={(e) => setQ(e.target.value)} placeholder="Quiche, pâtes, couscous…" className="pl-11" aria-label="Rechercher dans mes plats" />
           </div>
+          {suggestFav && (
+            <div className="mb-2 rounded-2xl bg-surface p-3 text-[13.5px]">
+              Tu utilises souvent « {suggestFav.name} » ({usage.get(suggestFav.id)} fois). L’ajouter à tes favoris ?
+              <div className="mt-2 flex flex-wrap gap-2">
+                <Button size="sm" onClick={() => repo.saveRecipe({ ...suggestFav, favorite: true }, { bumpVersion: false })}>Ajouter aux favoris</Button>
+                <Button size="sm" variant="secondary" onClick={() => setLater(true)}>Plus tard</Button>
+                <Button size="sm" variant="ghost" onClick={() => repo.savePrefs({ noSaveSuggest: [...(prefs.noSaveSuggest ?? []), `fav:${suggestFav.id}`] })}>Ne plus proposer</Button>
+              </div>
+            </div>
+          )}
           <ul className="divide-y divide-line overflow-hidden rounded-2xl bg-surface">
             {list.map((r) => {
               const n = recipeNutrition(r);
@@ -47,7 +62,7 @@ export function RecipePickerSheet({ open, onClose, onAdd, initialRecipeId }: { o
                   <button type="button" onClick={() => setPicked(r)} className="flex w-full items-center gap-3 px-3.5 py-3 text-left active:bg-bg">
                     <div className="min-w-0 flex-1">
                       <div className="truncate font-medium">{r.name}{r.favorite && <IconStar filled size={13} className="ml-1 inline text-accent" />}</div>
-                      <div className="text-[12.5px] text-muted">{n.basis === 'none' ? 'Valeurs inconnues' : `~${fmtKcal(n.perServing.kcal)} kcal / portion`}{r.cuisine ? ` · ${r.cuisine}` : ''}</div>
+                      <div className="text-[12.5px] text-muted">{n.basis === 'none' ? 'Valeurs inconnues' : `~${fmtKcal(n.perServing.kcal)} kcal / portion`}{r.cuisine ? ` · ${r.cuisine}` : ''}{usage.get(r.id) ? ` · ${usage.get(r.id)} fois` : ''}</div>
                     </div>
                     {n.basis !== 'none' && <PrecisionBadge precision={n.precision} />}
                   </button>

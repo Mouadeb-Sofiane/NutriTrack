@@ -1,0 +1,400 @@
+173068|Bœuf haché nourri à l'herbe 15 % MG, cru
+174728|Foie de bœuf, bouilli
+173081|Cœur de bœuf, bouilli
+174723|Cœur de bœuf, cru
+173084|Rognons de bœuf, bouillis
+174727|Rognons de bœuf, crus
+174729|Foie de bœuf, cru
+174737|Langue de bœuf, bouillie
+174738|Langue de bœuf, crue
+173095|Tripes de bœuf, bouillies
+173096|Tripes de bœuf, crues
+170609|Bœuf (moyenne des morceaux, maigre et gras), cuit
+174757|Bœuf (moyenne des morceaux, maigre et gras), cru
+170208|Bœuf maigre (moyenne des morceaux, sans gras visible), cuit
+174760|Bœuf maigre (moyenne des morceaux, sans gras visible), cru
+168608|Bœuf haché nourri à l'herbe, cru
+169473|Bœuf haché 30 % MG, émietté, poêlé
+169474|Bœuf haché 30 % MG, en pain de viande, cuit au four
+168650|Steak haché 30 % MG, poêlé
+168651|Steak haché 30 % MG, grillé
+168652|Bœuf haché 30 % MG, cru
+174040|Bœuf haché 25 % MG, émietté, poêlé
+171801|Bœuf haché 25 % MG, en pain de viande, cuit au four
+174038|Steak haché 25 % MG, grillé
+174039|Steak haché 25 % MG, poêlé
+174037|Bœuf haché 25 % MG, cru
+171799|Bœuf haché 20 % MG, émietté, poêlé
+171800|Bœuf haché 20 % MG, en pain de viande, cuit au four
+171797|Steak haché 20 % MG, grillé
+171798|Steak haché 20 % MG, poêlé
+174036|Bœuf haché 20 % MG, cru
+174034|Bœuf haché 15 % MG, émietté, poêlé
+174035|Bœuf haché 15 % MG, en pain de viande, cuit au four
+174032|Steak haché 15 % MG, grillé
+174033|Steak haché 15 % MG, poêlé
+171794|Bœuf haché 10 % MG, émietté, poêlé
+171795|Bœuf haché 10 % MG, en pain de viande, cuit au four
+174031|Steak haché 10 % MG, grillé
+171793|Steak haché 10 % MG, poêlé
+174030|Bœuf haché 10 % MG, cru
+174755|Bœuf haché 7 % MG, émietté, poêlé
+174754|Bœuf haché 7 % MG, en pain de viande, cuit au four
+174752|Steak haché 7 % MG, grillé
+173110|Bœuf haché 7 % MG, cru
+174753|Steak haché 7 % MG, poêlé
+174028|Bœuf haché 5 % MG, émietté, poêlé
+174029|Bœuf haché 5 % MG, en pain de viande, cuit au four
+171791|Steak haché 5 % MG, grillé
+171792|Steak haché 5 % MG, poêlé
+171790|Bœuf haché 5 % MG, cru
+174756|Bœuf haché 3 % MG, émietté, poêlé
+173114|Bœuf haché 3 % MG, en pain de viande, cuit au four
+173112|Steak haché 3 % MG, grillé
+173111|Bœuf haché 3 % MG, cru
+173113|Steak haché 3 % MG, poêlé
+169447|Steak haché surgelé, grillé
+172161|Bœuf haché (taux de gras non précisé), cuit
+173991|Filet de bœuf (rôti), cuit au four
+173987|Filet de bœuf, cru
+170237|Filet de bœuf (steak), grillé
+173988|Filet de bœuf (steak), cru
+168623|Cervelle de bœuf, poêlée
+168624|Cervelle de bœuf, mijotée
+168622|Cervelle de bœuf, crue
+169448|Cœur de bœuf, mijoté
+168625|Cœur de bœuf, cru
+169450|Rognons de bœuf, mijotés
+169449|Rognons de bœuf, crus
+168626|Foie de bœuf, braisé
+168627|Foie de bœuf, poêlé
+169451|Foie de bœuf, cru
+168629|Poumon de bœuf, braisé
+168628|Poumon de bœuf, cru
+168630|Viande de bœuf séparée mécaniquement, crue
+169453|Pancréas de bœuf, braisé
+169452|Pancréas de bœuf, cru
+170597|Rate de bœuf, braisée
+169454|Rate de bœuf, crue
+170193|Graisse de rognon de bœuf (suif), crue
+170195|Ris de bœuf (thymus), braisé
+170194|Ris de bœuf (thymus), cru
+170598|Langue de bœuf, mijotée
+170196|Langue de bœuf, crue
+174769|Tripes de bœuf, mijotées
+170599|Tripes de bœuf, crues
+170683|Amarante (grain), cuite
+170682|Amarante (grain), crue
+170684|Farine d'arrow-root
+169739|Farine d'orge
+169740|Farine de malt d'orge
+170283|Orge mondé
+170285|Orge perlé, cuit
+170284|Orge perlé, cru
+170286|Sarrasin (grain)
+170687|Farine de sarrasin complète
+170686|Kasha (sarrasin grillé), cuit
+170685|Kasha (sarrasin grillé), sec
+170287|Boulgour, cuit
+170688|Boulgour, sec
+170289|Son de maïs
+169694|Farine de maïs nixtamalisée (masa), blanche
+169696|Farine de maïs nixtamalisée (masa), blanche
+168921|Farine de maïs violet complète
+169748|Farine de maïs blanc complète
+170290|Farine de maïs jaune complète
+169695|Farine de maïs jaune dégermée
+169749|Farine de maïs nixtamalisée (masa), jaune
+168920|Maïs blanc (grain sec)
+170288|Maïs jaune (grain sec)
+168922|Semoule de maïs (polenta) blanche, dégermée
+168867|Semoule de maïs (polenta) jaune, dégermée
+172015|Semoule de maïs (polenta) blanche, dégermée
+168929|Semoule de maïs (polenta) jaune, dégermée
+168923|Semoule de maïs blanche avec levure
+168924|Semoule de maïs blanche avec levure et farine de blé
+168925|Semoule de maïs blanche dégermée avec levure
+169750|Semoule de maïs blanche complète
+169697|Semoule de maïs jaune complète
+168868|Semoule de maïs jaune avec levure
+168869|Semoule de maïs jaune avec levure et farine de blé
+168870|Semoule de maïs jaune dégermée avec levure
+169698|Fécule de maïs (maïzena)
+169700|Semoule de couscous, cuite
+169699|Semoule de couscous, sèche
+169701|Maïs blanc lessivé (hominy), en conserve
+169752|Maïs jaune lessivé (hominy), en conserve
+168904|Pâtes aux légumes, cuites
+168903|Pâtes aux légumes, sèches
+172023|Farine de millet
+168871|Millet, cuit
+169702|Millet, cru
+168905|Nouilles chinoises frites (chow mein)
+168919|Nouilles aux œufs, cuites (eau salée)
+169762|Nouilles aux œufs, cuites (eau salée)
+169731|Nouilles aux œufs, sèches
+169755|Nouilles aux œufs, sèches
+169732|Nouilles aux œufs, cuites
+169734|Nouilles aux œufs et aux épinards, cuites
+169733|Nouilles aux œufs et aux épinards, sèches
+168926|Nouilles aux œufs, cuites
+169735|Nouilles frites croustillantes (restaurant chinois)
+168907|Nouilles soba (sarrasin), cuites
+168906|Nouilles soba (sarrasin), sèches
+168909|Nouilles somen, cuites
+168908|Nouilles somen, sèches
+168873|Son d'avoine, cuit
+168872|Son d'avoine, cru
+169741|Farine d'avoine
+169751|Pâtes, cuites (eau salée)
+169737|Pâtes, cuites
+172014|Pâtes, cuites (eau salée)
+168928|Pâtes, cuites
+169736|Pâtes, sèches
+168927|Pâtes, sèches
+169727|Pâtes fraîches, crues
+169728|Pâtes fraîches, cuites
+169729|Pâtes fraîches aux épinards, crues
+169730|Pâtes fraîches aux épinards, cuites
+173265|Pâtes sans gluten (maïs et riz), cuites
+168900|Pâtes sans gluten (maïs), cuites
+168899|Pâtes sans gluten (maïs), sèches
+168901|Pâtes maison aux œufs, cuites
+168902|Pâtes maison sans œufs, cuites
+168916|Pâtes semi-complètes, cuites
+168915|Pâtes semi-complètes, sèches
+168917|Quinoa, cuit
+168874|Quinoa, cru
+169713|Son de riz
+168898|Farine de riz complet
+169714|Farine de riz blanc
+168914|Nouilles de riz, cuites
+169742|Nouilles de riz, sèches
+169711|Riz gluant, cuit
+168883|Riz gluant, cru
+169708|Riz étuvé long grain, cuit
+169707|Riz étuvé long grain, cru
+169759|Riz étuvé long grain, cuit
+169758|Riz étuvé long grain, cru
+169709|Riz précuit (instantané), sec
+169710|Riz précuit (instantané), préparé
+168878|Riz blanc long grain, cuit
+168877|Riz blanc long grain, cru
+169756|Riz blanc long grain, cru
+169757|Riz blanc long grain, cuit sans sel
+168930|Riz blanc grain moyen, cuit
+168880|Riz blanc grain moyen, cuit
+168879|Riz blanc grain moyen, cru
+169760|Riz blanc grain moyen, cru
+168932|Riz blanc grain rond, cuit
+168882|Riz blanc grain rond, cuit
+168881|Riz blanc grain rond, cru
+168931|Riz blanc grain rond, cru
+169712|Riz blanc vapeur (restaurant chinois)
+168885|Farine de seigle complète
+168887|Farine de seigle blanche
+168886|Farine de seigle bise
+168884|Seigle (grain)
+169715|Semoule de blé dur
+168933|Semoule de blé dur
+173262|Farine de sorgho raffinée
+168943|Farine de sorgho complète
+169716|Sorgho (grain)
+168934|Spaghetti enrichis en protéines, cuits
+168937|Spaghetti enrichis en protéines, secs
+168912|Spaghetti aux épinards, cuits
+168911|Spaghetti aux épinards, secs
+169746|Épeautre, cuit
+169745|Épeautre, cru
+169717|Tapioca (perles), sec
+168918|Teff, cuit
+169747|Teff, cru
+169718|Triticale (grain)
+168888|Farine de triticale complète
+168147|Gluten de blé (seitan en poudre)
+169722|Son de blé
+168894|Farine de blé blanche (type 55)
+169754|Farine de blé blanche enrichie en calcium
+168936|Farine de blé blanche (type 55)
+168895|Farine de blé avec levure incorporée
+169761|Farine de blé blanche (type 55)
+168896|Farine de blé à pain (type 65)
+169723|Farine de blé pour pâtisserie (type 45)
+169724|Farine pour tortillas
+168944|Farine de blé tendre complète
+168913|Farine de blé à pain (type 65)
+168892|Germe de blé
+169721|Blé dur (grain)
+168889|Blé dur de printemps (grain)
+168890|Blé dur d'hiver (grain)
+169719|Blé blanc dur (grain)
+169744|Blé khorasan (kamut), cuit
+169743|Blé khorasan (kamut), cru
+168891|Blé tendre rouge (grain)
+169720|Blé tendre blanc (grain)
+169725|Blé germé
+168897|Riz sauvage, cuit
+169726|Riz sauvage, cru
+169073|Poudre chocolatée pour petit-déjeuner, non reconstituée
+169897|Poudre chocolatée sans sucre pour petit-déjeuner, non reconstituée
+173412|Beurre anhydre (huile de beurre)
+171314|Beurre clarifié (ghee, smen)
+173410|Beurre demi-sel
+173430|Beurre doux
+170856|Préparation fromagère américaine à tartiner
+171252|Fromage fondu américain (préparation)
+171291|Fromage fondu américain (préparation)
+171253|Fromage fondu type suisse (préparation)
+173455|Fromage fondu américain allégé
+171289|Fromage fondu américain en tranches
+172200|Sauce au fromage maison
+170896|Fromage à tartiner type cheddar allégé
+169081|Fromage à tartiner au fromage frais
+171254|Fromage fondu à tartiner américain
+172198|Substitut de mozzarella (végétal)
+170863|Fromage américain 0 %
+171288|Mélange de fromages râpés type mexicain
+172216|Mélange de fromages râpés type mexicain allégé
+170897|Fromage type emmental 0 %
+172175|Fromage à pâte persillée (bleu)
+172176|Fromage brick (pâte demi-ferme)
+172177|Brie
+172178|Camembert
+173413|Fromage au carvi
+171295|Cheddar 0 %
+170899|Cheddar affiné en tranches
+173415|Chester (cheshire)
+173416|Colby
+172179|Cottage cheese
+172180|Cottage cheese aux fruits
+173417|Cottage cheese 1 % MG
+167703|Cottage cheese 1 % MG sans lactose
+168114|Cottage cheese 1 % MG sans sel ajouté
+167716|Cottage cheese 1 % MG aux légumes
+172182|Cottage cheese 2 % MG
+172181|Cottage cheese 0 % (caillé égoutté)
+169078|Cottage cheese aux légumes
+173418|Fromage frais à tartiner (type cream cheese)
+172207|Fromage frais à tartiner 0 %
+169079|Fromage frais à tartiner allégé
+172222|Queso seco (fromage sec mexicain)
+173419|Édam
+173420|Feta
+170843|Fontina
+172223|Queso fresco (fromage frais mexicain)
+171240|Gjetost (fromage brun norvégien)
+172197|Fromage de chèvre à pâte dure
+173433|Fromage de chèvre demi-sec
+173435|Fromage de chèvre frais
+171241|Gouda
+171242|Gruyère
+171243|Limbourg
+173439|Cheddar allégé
+173440|Cheddar pauvre en sel
+172201|Queso añejo (fromage affiné mexicain)
+173437|Queso asadero
+173438|Queso chihuahua
+170898|Queso cotija
+170844|Monterey Jack
+168098|Monterey Jack allégé
+171244|Mozzarella à pizza demi-écrémée
+170900|Mozzarella râpée demi-écrémée
+169051|Mozzarella 0 %
+170847|Mozzarella au lait demi-écrémé
+170845|Mozzarella au lait entier
+170846|Mozzarella à pizza au lait entier
+171245|Munster
+169050|Munster allégé
+171246|Neufchâtel
+173452|Parmesan râpé allégé
+171247|Parmesan râpé
+170848|Parmesan (morceau)
+173431|Parmesan en copeaux
+170853|Fromage fondu américain
+169080|Fromage fondu américain allégé
+171290|Fromage fondu américain
+170854|Fromage fondu au piment
+170855|Fromage fondu type suisse
+170849|Port-Salut
+170850|Provolone
+172215|Provolone allégé
+171248|Ricotta au lait demi-écrémé
+170851|Ricotta au lait entier
+171249|Pecorino romano
+171250|Roquefort
+171251|Emmental (fromage suisse)
+168141|Emmental allégé
+170852|Tilsit
+172224|Queso blanco (fromage blanc mexicain)
+173453|Substitut de crème aromatisé, liquide (type coffee creamer)
+172214|Substitut de crème aromatisé, en poudre
+168097|Substitut de crème liquide allégé
+171261|Substitut de crème liquide (huile végétale et soja)
+171262|Substitut de crème liquide (huile de coprah)
+171263|Substitut de crème en poudre (blanchisseur à café)
+167688|Substitut de crème en poudre allégé
+171255|Mélange lait-crème (half and half)
+170859|Crème liquide entière 36 % (à fouetter)
+170857|Crème liquide légère 20 % (crème de table)
+170858|Crème liquide à fouetter 30 %
+172212|Mélange lait-crème 0 %
+171308|Mélange lait-crème allégé
+171257|Crème aigre (sour cream)
+171256|Crème aigre allégée
+170860|Crème chantilly en bombe
+170865|Préparation pour nappage fouetté, en poudre
+170866|Nappage fouetté préparé avec du lait
+170867|Nappage fouetté en bombe (non laitier)
+170868|Nappage fouetté surgelé (non laitier)
+173461|Confiture de lait (dulce de leche)
+173462|Substitut d'œuf liquide 0 %
+173429|Substitut d'œuf en poudre
+172189|Œuf de cane, cru
+172190|Œuf d'oie, cru
+172191|Œuf de caille, cru
+172192|Œuf de dinde, cru
+172204|Blanc d'œuf en poudre
+173426|Blanc d'œuf déshydraté en flocons
+173427|Blanc d'œuf en poudre stabilisé
+170895|Blanc d'œuf déshydraté stabilisé
+172183|Blanc d'œuf, cru
+172203|Blanc d'œuf pasteurisé, surgelé
+173423|Œuf au plat
+173424|Œuf dur
+172185|Omelette nature
+172186|Œuf poché
+172187|Œufs brouillés
+172188|Œuf entier en poudre
+173425|Œuf entier en poudre stabilisé
+171287|Œuf entier, cru
+170893|Œuf entier pasteurisé salé, surgelé
+173428|Jaune d'œuf en poudre
+172184|Jaune d'œuf, cru
+173421|Jaune d'œuf pasteurisé, surgelé
+173436|Jaune d'œuf pasteurisé salé, surgelé
+173422|Jaune d'œuf pasteurisé sucré, surgelé
+171258|Lait de poule (eggnog)
+169904|Œufs brouillés surgelés (préparation)
+173467|Crème glacée 0 % sans sucres ajoutés
+171305|Barre glacée enrobée de chocolat et noisettes
+171294|Barre glacée enrobage croustillant
+172228|Cône glacé enrobé de chocolat et noisettes
+172227|Glace en sandwich de cookies
+172226|Sandwich glacé (biscuit et glace vanille)
+172229|Sandwich glacé allégé, vanille
+172230|Sandwich glacé allégé sans sucres ajoutés
+171306|Cône glacé type sundae
+173466|Bâtonnet glacé enrobé de chocolat
+171293|Glace italienne allégée, chocolat
+170911|Cône glacé allégé, cacahuètes et sauce chocolat
+173465|Glace italienne, chocolat
+171307|Bâtonnet glacé orange-vanille allégé
+170890|Barre glacée au lait demi-écrémé
+170883|Milk-shake épais au chocolat
+170884|Milk-shake épais à la vanille
+171264|Substitut de lait (huile de coprah)
+171274|Babeurre en poudre
+170874|Babeurre (lait ribot) écrémé
+167697|Babeurre (lait ribot) demi-écrémé
+172225|Babeurre (lait fermenté) entier
+171275|Lait concentré sucré
