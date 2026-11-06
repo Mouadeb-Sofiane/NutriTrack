@@ -71,7 +71,7 @@ function ProfileEditor({ profile, goals, onClose }: { profile: ProfileT; goals: 
     if (suggested && (!goals || suggested.kcal !== goals.kcal)) {
       const ok = await confirm({
         title: 'Nouvelle proposition d’objectif',
-        text: `Avec ces informations, l’objectif proposé est de ${fmtKcal(suggested.kcal)} kcal/jour${goals ? ` (actuellement ${fmtKcal(goals.kcal)} kcal)` : ''}. Veux-tu l’appliquer ?`,
+        text: `Avec ces informations, l’objectif proposé est de ${fmtKcal(suggested.kcal)} kcal/jour${goals ? ` (actuellement ${fmtKcal(goals.kcal)} kcal${goals.manual ? ', ton objectif personnalisé' : ''})` : ''}. Veux-tu l’appliquer ?${goals?.manual ? ' Si tu refuses, ton objectif personnalisé est conservé tel quel.' : ''}`,
         confirm: 'Appliquer',
         cancel: 'Garder mon objectif actuel',
       });
