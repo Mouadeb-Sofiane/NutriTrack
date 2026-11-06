@@ -9,12 +9,14 @@ import { REFERENCE_FOODS } from '../domain/referenceFoods';
 import { CATALOG, type CatalogEntry } from '../domain/catalog';
 import { buildIndex, search, searchCombo, type SearchDoc, type SearchKind } from '../domain/search';
 import { loadFoodDb } from './foodDb';
+import { loadDishes, type Dish } from '../domain/dishes';
 
 export type SearchRef =
   | { type: 'food'; food: Food }
   | { type: 'catalog'; entry: CatalogEntry }
   | { type: 'recipe'; recipe: Recipe }
-  | { type: 'recent'; item: LineItem; date: string };
+  | { type: 'recent'; item: LineItem; date: string }
+  | { type: 'dish'; dish: Dish };
 
 function foodKind(f: Food): SearchKind {
   if (f.kind === 'dish') return 'dish';
@@ -68,12 +70,32 @@ export function recentDocs(items: { item: LineItem; date: string }[]): SearchDoc
   }));
 }
 
-/** Base USDA : chargée une fois, partagée entre les écrans. */
-export function useFoodDb(): { foods: Food[]; loading: boolean; error: boolean } {
-  const [state, setState] = useState<{ foods: Food[]; loading: boolean; error: boolean }>({ foods: [], loading: true, error: false });
+export function dishDocs(dishes: Dish[]): SearchDoc<SearchRef>[] {
+  return dishes.map((d) => ({
+    id: d.id,
+    kind: 'dish',
+    name: d.name,
+    synonyms: d.synonyms,
+    category: d.group,
+    // Plats composés : priorité sur les variantes génériques de la base (« hachis » → hachis parmentier).
+    boost: 1,
+    ref: { type: 'dish', dish: d },
+  }));
+}
+
+interface DbState { foods: Food[]; dishes: Dish[]; loading: boolean; error: boolean }
+let loaded: DbState | null = null;
+
+/** Base USDA et plats composés : chargés une fois, partagés entre les écrans. */
+export function useFoodDb(): DbState {
+  const [state, setState] = useState<DbState>(loaded ?? { foods: [], dishes: [], loading: true, error: false });
   useEffect(() => {
+    if (loaded) return;
     let alive = true;
-    loadFoodDb().then((foods) => alive && setState({ foods, loading: false, error: false }), () => alive && setState({ foods: [], loading: false, error: true }));
+    Promise.all([loadFoodDb(), loadDishes()]).then(
+      ([foods, dishes]) => { loaded = { foods, dishes, loading: false, error: false }; if (alive) setState(loaded); },
+      () => alive && setState({ foods: [], dishes: [], loading: false, error: true }),
+    );
     return () => { alive = false; };
   }, []);
   return state;
@@ -94,9 +116,10 @@ export function useSearch(mine: Food[], recipes: Recipe[], recent: { item: LineI
     return buildIndex<SearchRef>([
       ...foodDocs(REFERENCE_FOODS.filter((f) => !mineIds.has(f.id)), 0.5),
       ...catalogDocs(),
+      ...dishDocs(db.dishes),
       ...foodDocs(db.foods.filter((f) => !mineIds.has(f.id))),
     ]);
-  }, [db.foods, mineKey]);
+  }, [db.foods, db.dishes, mineKey]);
   const userIndex = useMemo(() => buildIndex<SearchRef>([...foodDocs(mine, 0.8), ...recipeDocs(recipes), ...recentDocs(recent)]), [mine, recipes, recent]);
   const run = useMemo(() => (query: string, opts: { limit?: number; kinds?: SearchKind[] } = {}) => {
     const limit = opts.limit ?? 40;
@@ -111,6 +134,6 @@ export function useSearch(mine: Food[], recipes: Recipe[], recent: { item: LineI
       return true;
     }).slice(0, limit);
   }, [baseIndex, userIndex]);
-  const combo = useMemo(() => (query: string) => searchCombo(baseIndex, query, { kinds: ['food', 'drink', 'product', 'dish'] }), [baseIndex]);
-  return { search: run, combo, dbLoading: db.loading, dbError: db.error, dbSize: db.foods.length };
+  const combo = useMemo(() => (query: string) => searchCombo(baseIndex, query, { kinds: ['food', 'drink', 'product'] }), [baseIndex]);
+  return { search: run, combo, dbLoading: db.loading, dbError: db.error, dbSize: db.foods.length, dishes: db.dishes };
 }
