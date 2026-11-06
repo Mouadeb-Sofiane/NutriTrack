@@ -4,10 +4,10 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../data/db';
 import { repo, useApp } from '../state/app';
 import { href, navigate, type Route } from '../state/router';
-import { normalize } from '../domain/referenceFoods';
 import { recipeNutrition } from '../domain/recipes';
+import { filterRecipes, groupByFamily, recipeUsage } from '../domain/savedDishes';
 import { checkPer100, fmtG, fmtKcal } from '../domain/nutrition';
-import type { Food, Nutrients } from '../domain/types';
+import type { Food, Nutrients, Recipe } from '../domain/types';
 import { newId } from '../data/ids';
 import { CUISINES } from './labels';
 import { Button, Card, Chip, EmptyState, Field, IconButton, Notice, NumberInput, PrecisionBadge, Segmented, SourceBadge, TextInput } from '../ui/kit';
@@ -24,7 +24,7 @@ export function Library({ route }: { route: Route }) {
     <div className="mx-auto max-w-lg px-4 pb-28">
       <header className="safe-top pt-4">
         <h1 className="mb-3 text-2xl font-extrabold">Repas & recettes</h1>
-        <Segmented<Tab> value={tab} onChange={(t) => navigate('meals', { tab: t }, { replace: true })} options={[{ value: 'recipes', label: 'Recettes' }, { value: 'foods', label: 'Mes aliments' }, { value: 'portions', label: 'Portions' }]} />
+        <Segmented<Tab> value={tab} onChange={(t) => navigate('meals', { tab: t }, { replace: true })} options={[{ value: 'recipes', label: 'Mes plats' }, { value: 'foods', label: 'Mes aliments' }, { value: 'portions', label: 'Portions' }]} />
       </header>
       {tab === 'recipes' && <Recipes />}
       {tab === 'foods' && <MyFoods />}
@@ -40,23 +40,49 @@ function Recipes() {
   const [cuisine, setCuisine] = useState<string | null>(null);
   const [favOnly, setFavOnly] = useState(false);
   const [maxKcal, setMaxKcal] = useState<number | null>(null);
+  const [mostUsed, setMostUsed] = useState(false);
+  const meals = useLiveQuery(() => db.meals.toArray(), []);
+  const usage = useMemo(() => recipeUsage(meals ?? []), [meals]);
   const used = useMemo(() => [...new Set((recipes ?? []).flatMap((r) => [r.cuisine, ...r.categories]).filter(Boolean) as string[])].sort(), [recipes]);
 
   const list = useMemo(() => {
-    const nq = normalize(q);
-    return (recipes ?? [])
+    const filtered = (recipes ?? [])
       .filter((r) => !favOnly || r.favorite)
       .filter((r) => !cuisine || r.cuisine === cuisine || r.categories.includes(cuisine))
+      .filter((r) => !mostUsed || (usage.get(r.id) ?? 0) > 0)
       .filter((r) => {
         if (!maxKcal) return true;
         const n = recipeNutrition(r);
         return n.basis !== 'none' && n.perServing.kcal <= maxKcal;
-      })
-      .filter((r) => !nq || normalize(`${r.name} ${r.description ?? ''} ${r.cuisine ?? ''} ${r.categories.join(' ')} ${r.ingredients.map((i) => i.name).join(' ')}`).includes(nq))
-      .sort((a, b) => Number(b.favorite) - Number(a.favorite) || a.name.localeCompare(b.name, 'fr'));
-  }, [recipes, q, cuisine, favOnly, maxKcal]);
+      });
+    // Recherche tolérante (nom d'abord) : le classement de la recherche est conservé.
+    if (q.trim()) return filterRecipes(filtered, q);
+    if (mostUsed) return filtered.sort((a, b) => (usage.get(b.id) ?? 0) - (usage.get(a.id) ?? 0));
+    return filtered.sort((a, b) => Number(b.favorite) - Number(a.favorite) || a.name.localeCompare(b.name, 'fr'));
+  }, [recipes, q, cuisine, favOnly, maxKcal, mostUsed, usage]);
+  // Sans recherche ni filtre : regroupement par famille (Quiches, Pâtes…).
+  const grouped = !q.trim() && !favOnly && !cuisine && !maxKcal && !mostUsed && list.length >= 4 ? groupByFamily(list) : null;
 
   if (!recipes) return null;
+  const renderRecipe = (r: Recipe) => {
+    const n = recipeNutrition(r);
+    const used = usage.get(r.id) ?? 0;
+    return (
+                <Card key={r.id} onClick={() => navigate(`recipe/${r.id}`)} className="!p-3">
+                  <div className="flex items-center gap-3">
+                    {r.photoId ? <PhotoView id={r.photoId} className="h-14 w-14 shrink-0 rounded-2xl" /> : <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-soft text-xl">🍲</div>}
+                    <div className="min-w-0 flex-1">
+                      <div className="truncate font-semibold">{r.name}{r.favorite && <IconStar filled size={14} className="ml-1 inline text-accent" />}</div>
+                      <div className="truncate text-[12.5px] text-muted">{[r.cuisine, ...r.categories, used ? `utilisé ${used} fois` : ''].filter(Boolean).join(' · ') || `${r.servings} portion${r.servings > 1 ? 's' : ''}`}</div>
+                      <div className="mt-0.5 flex items-center gap-1.5 text-[13px]">
+                        {n.basis === 'none' ? <span className="text-warn">Valeurs à compléter</span> : <><span className="font-semibold tabular-nums">~{fmtKcal(n.perServing.kcal)} kcal</span><span className="text-muted">/ portion</span><PrecisionBadge precision={n.precision} /></>}
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+    );
+  };
+
   return (
     <div className="mt-4">
       <div className="mb-3 grid grid-cols-2 gap-2">
@@ -69,31 +95,21 @@ function Recipes() {
         <>
           <div className="relative mb-2">
             <IconSearch className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-muted" size={20} />
-            <TextInput value={q} onChange={(e) => setQ(e.target.value)} placeholder="Nom, ingrédient, cuisine…" className="pl-11" />
+            <TextInput value={q} onChange={(e) => setQ(e.target.value)} placeholder="Rechercher dans mes plats (quiche, pâtes…)" className="pl-11" aria-label="Rechercher dans mes plats" />
           </div>
           <div className="-mx-4 mb-3 flex gap-2 overflow-x-auto px-4 no-scrollbar">
             <Chip active={favOnly} onClick={() => setFavOnly(!favOnly)}><IconStar size={15} filled={favOnly} /> Favoris</Chip>
+            <Chip active={mostUsed} onClick={() => setMostUsed(!mostUsed)}>Les plus utilisés</Chip>
             <Chip active={maxKcal === 500} onClick={() => setMaxKcal(maxKcal === 500 ? null : 500)}>≤ 500 kcal/portion</Chip>
             {[...new Set([...used, ...prefs.customCuisines])].map((c) => <Chip key={c} active={cuisine === c} onClick={() => setCuisine(cuisine === c ? null : c)}>{c}</Chip>)}
           </div>
           <div className="space-y-2">
-            {list.map((r) => {
-              const n = recipeNutrition(r);
-              return (
-                <Card key={r.id} onClick={() => navigate(`recipe/${r.id}`)} className="!p-3">
-                  <div className="flex items-center gap-3">
-                    {r.photoId ? <PhotoView id={r.photoId} className="h-14 w-14 shrink-0 rounded-2xl" /> : <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-soft text-xl">🍲</div>}
-                    <div className="min-w-0 flex-1">
-                      <div className="truncate font-semibold">{r.name}{r.favorite && <IconStar filled size={14} className="ml-1 inline text-accent" />}</div>
-                      <div className="truncate text-[12.5px] text-muted">{[r.cuisine, ...r.categories].filter(Boolean).join(' · ') || `${r.servings} portion${r.servings > 1 ? 's' : ''}`}</div>
-                      <div className="mt-0.5 flex items-center gap-1.5 text-[13px]">
-                        {n.basis === 'none' ? <span className="text-warn">Valeurs à compléter</span> : <><span className="font-semibold tabular-nums">~{fmtKcal(n.perServing.kcal)} kcal</span><span className="text-muted">/ portion</span><PrecisionBadge precision={n.precision} /></>}
-                      </div>
-                    </div>
-                  </div>
-                </Card>
-              );
-            })}
+            {(grouped ?? [{ family: '', recipes: list }]).map((g) => (
+              <div key={g.family} className="space-y-2">
+                {g.family && <h3 className="mt-3 px-1 text-[13px] font-bold uppercase text-muted">{g.family} ({g.recipes.length})</h3>}
+                {g.recipes.map(renderRecipe)}
+              </div>
+            ))}
             {!list.length && <p className="py-6 text-center text-sm text-muted">Aucune recette ne correspond aux filtres.</p>}
           </div>
         </>

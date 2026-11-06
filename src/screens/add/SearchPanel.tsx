@@ -11,6 +11,8 @@ import { recipeNutrition } from '../../domain/recipes';
 import { Button, Chip, Notice, TextInput, cx } from '../../ui/kit';
 import { IconSearch, IconStar } from '../../ui/icons';
 import type { MealEntry } from '../../domain/types';
+import { useApp } from '../../state/app';
+import { itemSignature } from '../../domain/estimates';
 
 export const KIND_LABEL: Record<SearchKind, string> = {
   food: 'Aliment',
@@ -70,7 +72,11 @@ export function SearchPanel({ onPick, onCombo, onCreate, kinds, initialFilter = 
   const mine = useLiveQuery(() => db.foods.toArray(), []);
   const recipes = useLiveQuery(() => db.recipes.toArray(), []);
   const meals = useLiveQuery(() => db.meals.orderBy('createdAt').reverse().limit(60).toArray(), []) ?? NO_MEALS;
-  const recent = useMemo(() => recentDistinctItems(meals, 30), [meals]);
+  const { prefs } = useApp();
+  const recent = useMemo(() => {
+    const hidden = new Set(prefs.hiddenRecent ?? []);
+    return recentDistinctItems(meals, 40).filter(({ item }) => !hidden.has(itemSignature(item))).slice(0, 30);
+  }, [meals, prefs.hiddenRecent]);
   const { search, combo, dbLoading, dbError } = useSearch(mine ?? [], recipes ?? [], recent);
   const filters = kinds ? FILTERS.filter((f) => f.id === 'all' || f.kinds?.some((k) => kinds.includes(k))) : FILTERS;
   const activeKinds = filter === 'all' ? kinds : FILTERS.find((f) => f.id === filter)?.kinds;
