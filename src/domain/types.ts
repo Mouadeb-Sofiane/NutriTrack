@@ -43,6 +43,8 @@ export interface SourceInfo {
   label?: string;
   url?: string;
   retrievedAt?: ISODateTime;
+  /** Statut de la donnée : issue d'une table officielle, estimée, ou saisie par l'utilisateur. */
+  status?: 'verified' | 'estimated' | 'user';
 }
 
 export type BaseUnit = 'g' | 'ml';
@@ -68,9 +70,17 @@ export interface Food {
   servings: ServingSize[];
   source: SourceInfo;
   favorite: boolean;
+  /** Aliment simple, plat composé, boisson ou produit commercial (recherche et filtres). */
+  kind?: FoodKind;
+  /** Synonymes, noms régionaux ou nom d'origine (recherche uniquement). */
+  aliases?: string;
+  /** Nutriments complémentaires pour 100 g/ml, quand la source les fournit. */
+  extra?: { fiber?: number | null; sugars?: number | null };
   createdAt: ISODateTime;
   updatedAt: ISODateTime;
 }
+
+export type FoodKind = 'food' | 'dish' | 'drink' | 'product';
 
 export type QuantityUnit = 'g' | 'ml' | 'serving' | 'portion' | 'none';
 
@@ -100,6 +110,13 @@ export interface LineItem {
    * la valeur RETENUE par l'utilisateur (moyenne par défaut).
    */
   estimate?: EstimateInfo;
+  /**
+   * Composition détaillée (plat composé ou corrigé) : COPIE des ingrédients au moment de
+   * l'enregistrement, pour revoir ou réajuster le plat sans dépendre de la base.
+   */
+  composition?: import('./dishes').CompositionIngredient[];
+  /** Facteur de portion appliqué à la composition (1 = portion type). */
+  compositionFactor?: number;
 }
 
 export type EstimateChoice = 'mean' | 'high' | 'custom';

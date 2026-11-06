@@ -94,7 +94,8 @@ function tokenScore(q: string, list: string[], last: boolean): number {
     if (t === q) return 3;
     // Préfixe : surtout utile pour le dernier mot en cours de saisie.
     if (t.startsWith(q) && q.length >= 2) best = Math.max(best, last ? 2.4 : 1.8);
-    else if (tol && t.length >= 3) {
+    else if (tol && t.length >= 3 && t[0] === q[0]) {
+      // Fautes de frappe : on suppose la première lettre juste (évite « couscous » ≈ « roucou »).
       const d = editDistance(q, t.length > q.length + 2 && last ? t.slice(0, q.length) : t, tol);
       if (d <= tol) best = Math.max(best, d === 1 ? 1.5 : 1);
     }

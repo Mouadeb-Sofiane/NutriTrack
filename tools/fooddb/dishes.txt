@@ -1,0 +1,865 @@
+# Plats composés de NutriTrack : compositions TYPES d'une portion, calculées à partir des
+# ingrédients de la base (valeurs USDA). Ce sont des ESTIMATIONS : chaque famille cuisine
+# autrement. L'utilisateur peut modifier, retirer, ajouter un ingrédient et ses quantités.
+#
+# Format :
+#   ## id | Nom | Région | synonymes séparés par des virgules
+#   > hypothèse affichée à l'utilisateur
+#   - Libellé = Nom exact dans la base : grammes [opt] [#groupe]
+#     (« Libellé = » est facultatif ; « opt » = ingrédient facultatif décoché par défaut ;
+#      #fat = matière grasse de cuisson, #parts = parties au choix, #side = accompagnement)
+# Les grammes sont ceux d'une portion habituelle, ingrédients cuits (sauf mention).
+
+=== Quotidien
+## tartine-beurre | Tartine de pain beurrée | France | pain beurre, pain avec beurre, tartine beurre, pain au beurre
+- Pain baguette = Baguette (pain français) : 60
+- Beurre = Beurre doux : 10 #fat
+## tartine-confiture | Tartine beurre et confiture | France | pain confiture, pain avec confiture, tartine confiture
+- Pain baguette = Baguette (pain français) : 60
+- Beurre = Beurre doux : 8 #fat
+- Confiture : 20
+## tartine-miel | Tartine de pain au miel | France | pain miel, pain avec miel, tartine miel
+- Pain baguette = Baguette (pain français) : 60
+- Miel : 15
+- Beurre = Beurre doux : 5 opt #fat
+## tartine-pate-tartiner | Tartine de pâte à tartiner chocolat-noisette | France | pain nutella, pain pâte à tartiner, tartine chocolat
+- Pain baguette = Baguette (pain français) : 60
+- Pâte à tartiner = Pâte à tartiner chocolat-noisette : 20
+## tartine-fromage | Tartine de pain au fromage | France | pain fromage, pain avec fromage
+- Pain baguette = Baguette (pain français) : 60
+- Fromage (type emmental) = Emmental : 30
+## pain-huile-olive | Pain trempé dans l'huile d'olive | Méditerranée | pain huile d'olive, pain avec huile
+- Pain = Baguette (pain français) : 60
+- Huile d'olive : 10 #fat
+## cafe-au-lait-sucre | Café au lait sucré | France | café au lait, café lait sucre, café crème sucré
+> 100 ml de café, 100 ml de lait demi-écrémé, 2 morceaux de sucre : ajuste selon ta tasse.
+- Café = Café filtre (noir, sans sucre) : 100
+- Lait demi-écrémé = Lait demi-écrémé (2 %) : 100
+- Sucre (2 morceaux) = Sucre blanc en poudre ou en morceaux : 10
+## cafe-sucre | Café noir sucré | France | café sucre, café avec sucre, expresso sucré
+- Café = Café filtre (noir, sans sucre) : 100
+- Sucre (1 morceau) = Sucre blanc en poudre ou en morceaux : 5
+## the-menthe | Thé à la menthe (préparation maghrébine) | Maghreb | thé marocain, thé algérien, atay, thé à la menthe sucré, thé vert menthe
+> Verre de 150 ml ; le sucre varie beaucoup d'une maison à l'autre.
+- Thé vert = Thé vert chaud (sans sucre) : 150
+- Menthe fraîche = Menthe verte (nanah) fraîche : 3
+- Sucre = Sucre blanc en poudre ou en morceaux : 15
+## the-sucre | Thé sucré | Monde | thé sucre, thé avec sucre
+- Thé = Thé noir chaud (sans sucre) : 200
+- Sucre = Sucre blanc en poudre ou en morceaux : 8
+## the-miel | Thé au miel | Monde | thé miel, thé avec miel
+- Thé = Thé noir chaud (sans sucre) : 200
+- Miel : 10
+## chocolat-chaud-maison | Chocolat chaud maison | France | chocolat chaud, cacao
+- Lait demi-écrémé = Lait demi-écrémé (2 %) : 200
+- Poudre chocolatée = Poudre chocolatée pour petit-déjeuner, non reconstituée : 20
+## bol-cereales | Bol de céréales au lait | Monde | céréales lait, bol de céréales
+- Céréales = Pétales de maïs (corn flakes) : 40
+- Lait demi-écrémé = Lait demi-écrémé (2 %) : 200
+## porridge-fruits | Porridge au lait et à la banane | Monde | porridge, flocons d'avoine lait
+- Flocons d'avoine cuits au lait = Porridge au lait : 250
+- Banane : 60
+- Miel : 10 opt
+## yaourt-miel | Yaourt nature au miel | Monde | yaourt miel
+- Yaourt nature = Yaourt nature au lait entier : 125
+- Miel : 10
+## omelette-2-oeufs | Omelette de 2 œufs au beurre | France | omelette nature, omelette 2 oeufs
+- Œufs = Œuf entier, cru : 110
+- Beurre = Beurre doux : 6 #fat
+## oeufs-plat-2 | Deux œufs au plat | France | oeufs au plat, œuf au plat
+- Œufs = Œuf entier, cru : 110
+- Huile = Huile de tournesol : 6 #fat
+## sandwich-jambon-beurre | Jambon-beurre | France | sandwich jambon beurre, parisien
+- Baguette = Baguette (pain français) : 125
+- Jambon = Jambon en tranches : 50
+- Beurre = Beurre doux : 12 #fat
+## croque-monsieur | Croque-monsieur | France | croque monsieur, croque
+- Pain de mie = Pain blanc (pain de mie) : 60
+- Jambon = Jambon en tranches : 30
+- Fromage râpé = Emmental : 30
+- Béchamel = Sauce blanche (béchamel) : 30 opt
+- Beurre = Beurre doux : 8 #fat
+
+=== France
+## hachis-parmentier | Hachis parmentier | France | parmentier, hachis, hachis parmentier maison, purée viande hachée
+> Assiette moyenne : purée maison au lait et au beurre, bœuf haché 15 % revenu avec oignon.
+- Purée de pommes de terre = Purée de pommes de terre maison au lait entier : 200
+- Viande hachée de bœuf = Bœuf haché 15 % MG, émietté, poêlé : 100
+- Oignon revenu = Oignon jaune revenu : 20
+- Beurre = Beurre doux : 10 #fat
+- Fromage râpé = Emmental : 15 opt
+## gratin-dauphinois | Gratin dauphinois | France | gratin de pommes de terre, gratin dauphinois maison, pommes de terre à la crème
+- Pommes de terre = Pomme de terre épluchée, bouillie : 200
+- Crème entière = Crème liquide entière 36 % (à fouetter) : 40
+- Lait entier : 40
+- Beurre = Beurre doux : 5 #fat
+## gratin-pates | Gratin de pâtes au jambon | France | gratin de pâtes, pâtes au four, gratin de macaronis
+- Pâtes cuites = Pâtes, cuites : 200
+- Jambon = Jambon en tranches : 40
+- Béchamel = Sauce blanche (béchamel) : 80
+- Fromage râpé = Emmental : 25
+## quiche-lorraine | Quiche lorraine | France | quiche, quiche lardons
+> Une part (1/6 d'une quiche de 26 cm).
+- Pâte brisée = Fond de tarte (pâte cuite) : 50
+- Œufs = Œuf entier, cru : 35
+- Crème = Crème liquide entière 36 % (à fouetter) : 35
+- Lait entier : 20
+- Lardons = Bacon cuit au four : 25
+- Fromage râpé = Emmental : 10 opt
+## quiche-poireaux | Quiche aux poireaux | France | quiche poireaux, flamiche, tarte aux poireaux
+- Pâte brisée = Fond de tarte (pâte cuite) : 50
+- Poireaux = Poireau, cuit : 50
+- Œufs = Œuf entier, cru : 35
+- Crème = Crème liquide entière 36 % (à fouetter) : 30
+- Lait entier : 20
+- Fromage râpé = Emmental : 10
+- Beurre = Beurre doux : 4 #fat
+## quiche-thon | Quiche au thon | France | quiche thon, tarte au thon
+- Pâte brisée = Fond de tarte (pâte cuite) : 50
+- Thon = Thon au naturel sans sel, égoutté : 40
+- Œufs = Œuf entier, cru : 35
+- Crème = Crème liquide entière 36 % (à fouetter) : 30
+- Lait entier : 20
+- Fromage râpé = Emmental : 10
+- Tomate = Tomate, crue : 20 opt
+## quiche-legumes | Quiche aux légumes | France | quiche légumes, tarte salée légumes
+- Pâte brisée = Fond de tarte (pâte cuite) : 50
+- Légumes (courgette, poivron) = Courgette avec peau, cuite : 50
+- Œufs = Œuf entier, cru : 35
+- Crème = Crème liquide entière 36 % (à fouetter) : 30
+- Fromage râpé = Emmental : 10
+## blanquette-veau | Blanquette de veau | France | blanquette, blanquette à l'ancienne
+- Veau = Veau maigre (moyenne des morceaux), cuit : 140
+- Sauce (crème, beurre, farine) = Crème liquide légère 20 % (crème de table) : 40
+- Beurre = Beurre doux : 8 #fat
+- Farine = Farine de blé blanche (type 55) : 6
+- Carottes = Carottes, cuites à l'eau : 40
+- Champignons = Champignons de Paris, cuits à l'eau : 30
+- Riz = Riz blanc long grain, cuit : 150 #side
+## boeuf-bourguignon | Bœuf bourguignon | France | bourguignon, bœuf au vin
+- Bœuf = Bœuf maigre (moyenne des morceaux, sans gras visible), cuit : 160
+- Lardons = Bacon cuit au four : 15
+- Carottes = Carottes, cuites à l'eau : 60
+- Champignons = Champignons de Paris sautés : 30
+- Sauce au vin = Vin rouge : 40
+- Huile = Huile de tournesol : 6 #fat
+- Pommes de terre vapeur = Pomme de terre épluchée, bouillie : 150 opt #side
+## pot-au-feu | Pot-au-feu | France | pot au feu, potée de bœuf
+- Bœuf (paleron, macreuse) = Bœuf (moyenne des morceaux, maigre et gras), cuit : 150
+- Pommes de terre = Pomme de terre épluchée, bouillie : 150
+- Carottes = Carottes, cuites à l'eau : 80
+- Navets = Navet, cuit : 50
+- Poireaux = Poireau, cuit : 40
+## poulet-roti-frites | Poulet rôti et frites | France | poulet frites, poulet rôti
+- Cuisse de poulet rôtie avec peau = Cuisse de poulet entière avec peau, rôtie : 180
+- Frites = Frites maison (bain d'huile) : 150 #side
+## steak-frites | Steak-frites | France | steak frites, entrecôte frites
+- Steak de bœuf = Faux-filet (sirloin) : 150
+- Frites = Frites maison (bain d'huile) : 150 #side
+- Beurre = Beurre doux : 5 opt #fat
+## steak-hache-pates | Steak haché et pâtes | France | steak haché pâtes, pâtes steak
+- Steak haché 15 % = Steak haché 15 % MG, poêlé : 100
+- Pâtes cuites = Pâtes, cuites : 200 #side
+- Beurre = Beurre doux : 5 opt #fat
+## pates-champignons-creme | Pâtes aux champignons à la crème | France | pâtes champignons, pâtes à la crème champignons, tagliatelles champignons
+> Pour 2 portions : 200 g de pâtes sèches, 150 g de champignons, 100 ml de crème légère, 10 g de beurre, 30 g de parmesan.
+- Pâtes cuites = Pâtes, cuites : 220
+- Champignons sautés = Champignons de Paris, crus : 75
+- Crème légère = Crème liquide légère 20 % (crème de table) : 50
+- Beurre = Beurre doux : 5 #fat
+- Parmesan : 15 opt
+## pates-carbonara | Pâtes à la carbonara (version française à la crème) | France | carbonara, spaghetti carbonara
+- Pâtes cuites = Pâtes, cuites : 220
+- Lardons = Bacon cuit au four : 40
+- Crème = Crème liquide entière 36 % (à fouetter) : 40
+- Œuf = Jaune d'œuf, cru : 15 opt
+- Parmesan : 10
+## pates-bolognaise | Pâtes à la bolognaise | Italie | spaghetti bolognaise, bolo, pâtes viande hachée
+- Pâtes cuites = Pâtes, cuites : 220
+- Sauce bolognaise : 150
+- Parmesan : 8 opt
+## pates-thon-tomate | Pâtes au thon et à la tomate | France | pâtes thon, pâtes thon tomate
+- Pâtes cuites = Pâtes, cuites : 220
+- Thon = Thon au naturel sans sel, égoutté : 60
+- Sauce tomate = Sauce tomate pour pâtes : 100
+- Huile d'olive : 5 #fat
+## pates-saumon | Pâtes au saumon à la crème | France | pâtes saumon, tagliatelles saumon
+- Pâtes cuites = Pâtes, cuites : 220
+- Saumon = Saumon d'élevage, cuit : 70
+- Crème = Crème liquide légère 20 % (crème de table) : 50
+## gratin-chou-fleur | Gratin de chou-fleur | France | chou-fleur gratiné, gratin chou fleur
+- Chou-fleur = Chou-fleur, cuit à l'eau : 200
+- Béchamel = Sauce blanche (béchamel) : 80
+- Fromage râpé = Emmental : 20
+## ratatouille-maison | Ratatouille maison | France | ratatouille
+- Légumes (courgette, aubergine, poivron, tomate) = Ratatouille : 250
+## tartiflette | Tartiflette | France | tartiflette reblochon
+- Pommes de terre = Pomme de terre épluchée, bouillie : 200
+- Reblochon (fromage à pâte molle) = Brie : 60
+- Lardons = Bacon cuit au four : 30
+- Oignon revenu = Oignon jaune revenu : 30
+- Crème = Crème liquide entière 36 % (à fouetter) : 20 opt
+## raclette | Raclette (assiette) | Suisse/France | raclette
+- Pommes de terre = Pomme de terre cuite en robe des champs (chair) : 250
+- Fromage à raclette = Gruyère : 120
+- Charcuterie = Jambon en tranches : 60
+- Cornichons = Cornichons à l'aneth : 20
+## fondue-savoyarde | Fondue savoyarde | Suisse/France | fondue au fromage
+- Fondue au fromage : 180
+- Pain = Baguette (pain français) : 100
+## soupe-legumes | Soupe de légumes maison | France | soupe, potage, velouté de légumes
+- Soupe de légumes : 300
+- Crème = Crème liquide légère 20 % (crème de table) : 15 opt
+## lentilles-saucisse | Petit salé aux lentilles | France | lentilles saucisse, petit salé
+- Lentilles cuites = Lentilles, cuites : 200
+- Saucisse de Morteau ou de Toulouse = Saucisse de porc (chipolata, saucisse de Toulouse) : 80
+- Lard = Poitrine de porc, cuite : 40 opt
+- Carottes = Carottes, cuites à l'eau : 40
+## choucroute | Choucroute garnie | France | choucroute alsacienne
+- Choucroute : 200
+- Saucisses = Saucisse de Francfort (knack) : 100
+- Poitrine fumée = Poitrine de porc, cuite : 50
+- Pommes de terre = Pomme de terre épluchée, bouillie : 150
+## cassoulet | Cassoulet | France | cassoulet toulousain
+- Haricots blancs = Haricots blancs cuisinés, avec matière grasse : 200
+- Saucisse de Toulouse = Saucisse de porc (chipolata, saucisse de Toulouse) : 70
+- Confit de canard = Cuisse de canard avec peau, rôtie : 80
+- Poitrine = Poitrine de porc, cuite : 30
+## coq-au-vin | Coq au vin | France | coq au vin
+- Poulet = Haut de cuisse de poulet sans peau, mijoté : 180
+- Lardons = Bacon cuit au four : 15
+- Champignons = Champignons de Paris sautés : 40
+- Vin rouge : 40
+- Huile = Huile de tournesol : 5 #fat
+## crepe-sucre | Crêpe au sucre | France | crêpe sucrée, crêpe sucre
+- Crêpe nature : 60
+- Sucre = Sucre blanc en poudre ou en morceaux : 8
+- Beurre = Beurre doux : 4 opt #fat
+## galette-complete | Galette complète (sarrasin, jambon, œuf, fromage) | France | galette bretonne, complète, galette sarrasin
+- Galette de sarrasin = Crêpe nature : 60
+- Jambon = Jambon en tranches : 40
+- Œuf = Œuf au plat : 50
+- Fromage râpé = Emmental : 30
+- Beurre = Beurre doux : 6 #fat
+## salade-nicoise | Salade niçoise | France | niçoise
+- Salade et tomates = Salade composée tomates et carottes, sans sauce : 150
+- Thon = Thon au naturel sans sel, égoutté : 50
+- Œuf dur : 50
+- Olives = Olives noires : 15
+- Huile d'olive : 10 #fat
+## endives-jambon | Endives au jambon | France | endives jambon béchamel, chicons au gratin
+- Endives = Endive, crue : 200
+- Jambon = Jambon en tranches : 60
+- Béchamel = Sauce blanche (béchamel) : 100
+- Fromage râpé = Emmental : 20
+## gateau-chocolat | Gâteau au chocolat maison | France | moelleux au chocolat, fondant
+- Gâteau au chocolat sans glaçage : 80
+## far-breton | Far breton | France | far
+- Flan pâtissier (tarte au flan) : 120
+- Pruneaux : 20
+## tarte-pommes | Tarte aux pommes (fine, française) | France | tarte aux pommes, tarte pomme
+- Pâte = Fond de tarte (pâte cuite) : 40
+- Pommes = Pomme crue sans peau : 70
+- Sucre = Sucre blanc en poudre ou en morceaux : 8
+- Beurre = Beurre doux : 4 #fat
+
+=== Maghreb
+## couscous-agneau | Couscous à l'agneau et aux légumes | Maghreb | couscous, couscous royal agneau, kesksou, seksu, couscous maison
+> Assiette garnie : semoule beurrée, bouillon de légumes, agneau mi-gras, pois chiches.
+- Semoule cuite = Semoule de couscous, cuite : 200
+- Agneau = Agneau (moyenne des morceaux, maigre et gras), cuit : 100
+- Légumes (carottes, navets, courgettes) = Carottes, cuites à l'eau : 80
+- Courgettes = Courgette avec peau, cuite : 60
+- Pois chiches = Pois chiches, cuits : 40
+- Beurre ou smen dans la semoule = Beurre clarifié (ghee, smen) : 8 #fat
+- Huile du bouillon = Huile d'olive : 6 #fat
+## couscous-poulet | Couscous au poulet | Maghreb | couscous poulet
+- Semoule cuite = Semoule de couscous, cuite : 200
+- Poulet = Haut de cuisse de poulet sans peau, mijoté : 120
+- Légumes = Carottes, cuites à l'eau : 80
+- Courgettes = Courgette avec peau, cuite : 60
+- Pois chiches = Pois chiches, cuits : 40
+- Beurre = Beurre doux : 8 #fat
+- Huile = Huile d'olive : 5 #fat
+## couscous-royal | Couscous royal (agneau, poulet, merguez) | Maghreb | couscous royal, couscous merguez
+- Semoule cuite = Semoule de couscous, cuite : 220
+- Agneau = Agneau (moyenne des morceaux, maigre et gras), cuit : 60
+- Poulet = Haut de cuisse de poulet sans peau, mijoté : 60
+- Merguez = Saucisse de bœuf : 60
+- Légumes = Carottes, cuites à l'eau : 80
+- Pois chiches = Pois chiches, cuits : 40
+- Beurre = Beurre doux : 8 #fat
+## bouzelouf | Bouzelouf (tête de mouton en sauce) | Maghreb | bouzellouf, bouzelouf, bouzelouf mchermel, ras el kebch, rass, tête de mouton, tête d'agneau, bouzelouf sauce rouge
+> Estimation : la tête de mouton n'a pas de fiche officielle. Les joues et la viande de tête sont assimilées à de l'agneau cuit (maigre et gras) ; la langue et la cervelle ont leurs propres valeurs (abats d'agneau, USDA).
+> Coche les parties réellement mangées et ajuste les quantités : la cervelle est bien plus grasse que les joues.
+- Joues et viande de tête = Agneau (moyenne des morceaux, maigre et gras), cuit : 100 #parts
+- Langue = Langue d'agneau (ou de mouton), braisée : 60 #parts
+- Cervelle = Cervelle d'agneau, braisée : 50 opt #parts
+- Sauce tomate au cumin et à l'ail = Tomates concassées en conserve : 80
+- Pois chiches = Pois chiches, cuits : 40 opt
+- Huile d'olive : 10 #fat
+- Pain (kesra ou baguette) = Baguette (pain français) : 60 opt #side
+## chorba-frik | Chorba frik (soupe algérienne) | Maghreb | chorba, chorba frik, jari, shorba, chorba algérienne
+- Bouillon tomate et légumes = Soupe de légumes : 250
+- Agneau = Agneau (moyenne des morceaux, maigre et gras), cuit : 40
+- Frik (blé vert concassé) = Boulgour, cuit : 50
+- Pois chiches = Pois chiches, cuits : 20
+- Huile d'olive : 6 #fat
+## harira | Harira (soupe marocaine) | Maghreb | harira, hrira
+- Bouillon tomate = Soupe de légumes : 220
+- Lentilles = Lentilles, cuites : 40
+- Pois chiches = Pois chiches, cuits : 40
+- Viande = Agneau maigre (moyenne des morceaux), cuit : 30
+- Vermicelles = Pâtes, cuites : 20
+- Farine (tedouira) = Farine de blé blanche (type 55) : 6
+- Huile = Huile d'olive : 5 #fat
+## tajine-poulet-olives | Tajine de poulet aux olives et citron confit | Maghreb | tajine poulet, tagine poulet olives, djaj mhamer
+- Poulet = Haut de cuisse de poulet sans peau, mijoté : 180
+- Oignons = Oignon jaune revenu : 50
+- Olives vertes : 25
+- Huile d'olive : 12 #fat
+- Pain = Baguette (pain français) : 60 opt #side
+## tajine-agneau-pruneaux | Tajine d'agneau aux pruneaux | Maghreb | tajine agneau, tagine pruneaux, lham lahlou, mrouzia
+- Agneau = Agneau (moyenne des morceaux, maigre et gras), cuit : 150
+- Pruneaux : 40
+- Oignons = Oignon jaune revenu : 40
+- Amandes : 10 opt
+- Miel ou sucre = Miel : 10
+- Huile d'olive : 10 #fat
+## tajine-kefta | Tajine de kefta aux œufs | Maghreb | kefta, tajine kefta, boulettes sauce tomate
+- Boulettes de viande hachée = Bœuf haché 20 % MG, émietté, poêlé : 120
+- Sauce tomate = Tomates concassées en conserve : 120
+- Œuf = Œuf poché : 50
+- Huile d'olive : 8 #fat
+## loubia | Loubia (haricots blancs en sauce) | Maghreb | loubia, lobia, haricots blancs sauce tomate
+- Haricots blancs = Haricots blancs, cuits : 200
+- Sauce tomate au cumin = Tomates concassées en conserve : 80
+- Viande (facultative) = Agneau maigre (moyenne des morceaux), cuit : 40 opt
+- Huile = Huile d'olive : 10 #fat
+## doubara | Doubara (pois chiches épicés de Biskra) | Maghreb | doubara, dubara
+- Pois chiches = Pois chiches, cuits : 220
+- Sauce tomate pimentée = Tomates concassées en conserve : 60
+- Huile d'olive : 10 #fat
+- Cumin et piment = Cumin (graines) : 2
+## karantika | Karantika (garantita, flan de pois chiches) | Maghreb | karantika, garantita, calentica
+- Farine de pois chiches (besan) : 35
+- Œuf = Œuf entier, cru : 15
+- Huile = Huile de tournesol : 8 #fat
+- Eau (absorbée) = Eau : 100
+## rechta | Rechta (nouilles fraîches sauce blanche au poulet) | Maghreb | rechta, rechta algéroise
+- Nouilles fraîches = Pâtes fraîches, cuites : 200
+- Poulet = Haut de cuisse de poulet sans peau, mijoté : 100
+- Bouillon et navets = Navet, cuit : 60
+- Pois chiches = Pois chiches, cuits : 30
+- Beurre ou smen = Beurre clarifié (ghee, smen) : 8 #fat
+## chakhchoukha | Chakhchoukha (galette émiettée en sauce) | Maghreb | chakhchoukha, chekhchoukha, chakhchoukha de biskra
+- Galette émiettée (rougag) = Farine de blé blanche (type 55) : 80
+- Sauce rouge = Tomates concassées en conserve : 100
+- Agneau = Agneau (moyenne des morceaux, maigre et gras), cuit : 80
+- Pois chiches = Pois chiches, cuits : 30
+- Smen ou huile = Beurre clarifié (ghee, smen) : 10 #fat
+## trida | Trida (carrés de pâte en sauce) | Maghreb | trida, tridda
+- Pâte (farine) cuite = Pâtes maison sans œufs, cuites : 200
+- Sauce rouge = Tomates concassées en conserve : 80
+- Poulet ou agneau = Haut de cuisse de poulet sans peau, mijoté : 80
+- Pois chiches = Pois chiches, cuits : 30
+- Huile = Huile d'olive : 8 #fat
+## tlitli | Tlitli (plombs de pâte au poulet) | Maghreb | tlitli, t'litli
+- Plombs de pâte = Pâtes, cuites : 200
+- Poulet = Haut de cuisse de poulet sans peau, mijoté : 100
+- Sauce rouge = Tomates concassées en conserve : 80
+- Pois chiches = Pois chiches, cuits : 30
+- Huile = Huile d'olive : 8 #fat
+- Œuf dur : 50 opt
+## mhadjeb | Mhadjeb (crêpe feuilletée farcie) | Maghreb | mhadjeb, m'hadjeb, mahjouba, mahdjouba
+> Une pièce moyenne.
+- Pâte (semoule, farine) = Semoule de blé dur : 45
+- Farce tomate-oignon = Tomates concassées en conserve : 50
+- Oignon revenu = Oignon jaune revenu : 25
+- Huile de cuisson = Huile de tournesol : 10 #fat
+## msemen | Msemen (crêpe feuilletée) | Maghreb | msemen, msemmen, rghaif
+- Pâte frite (farine et eau) : 70
+- Beurre ou huile = Beurre doux : 8 #fat
+## bourek | Bourek à la viande | Maghreb | bourek, brick viande, brik, bourek viande hachée
+> Une pièce frite.
+- Feuille de brick et friture = Pâte frite (farine et eau) : 20
+- Viande hachée = Bœuf haché 15 % MG, émietté, poêlé : 30
+- Oignon = Oignon jaune revenu : 10
+- Huile absorbée = Huile de tournesol : 6 #fat
+- Fromage = Emmental : 8 opt
+## brick-oeuf-thon | Brick à l'œuf et au thon | Maghreb | brik à l'œuf, brick thon, brik tunisienne
+- Feuille de brick frite = Pâte frite (farine et eau) : 25
+- Œuf = Œuf au plat : 50
+- Thon = Thon au naturel sans sel, égoutté : 20
+- Huile absorbée = Huile de tournesol : 8 #fat
+## maakouda | Maakouda (beignets de pomme de terre) | Maghreb | maakouda, maqouda, makouda
+- Purée de pommes de terre = Pomme de terre épluchée, bouillie : 100
+- Œuf = Œuf entier, cru : 25
+- Huile de friture absorbée = Huile de tournesol : 12 #fat
+## mloukhia | Mloukhia (ragoût de corète) | Maghreb | mloukhia, mouloukhia, mloukhiya, molokhia
+- Corète = Corète potagère (feuilles de jute, mloukhia), cuite : 80
+- Bœuf = Bœuf (moyenne des morceaux, maigre et gras), cuit : 100
+- Huile d'olive : 20 #fat
+## chakchouka | Chakchouka (poivrons, tomates et œufs) | Maghreb | chakchouka, shakshuka, tchektchouka
+- Poivrons et tomates = Poivron rouge, cuit : 120
+- Tomates = Tomates concassées en conserve : 100
+- Œufs = Œuf poché : 100
+- Huile d'olive : 12 #fat
+## dolma-courgettes | Dolma (courgettes farcies à la viande) | Maghreb | dolma, dolma courgettes, courgettes farcies
+- Courgettes = Courgette avec peau, cuite : 150
+- Farce viande et riz = Bœuf haché 15 % MG, émietté, poêlé : 70
+- Riz = Riz blanc long grain, cuit : 30
+- Sauce blanche ou rouge = Tomates concassées en conserve : 60
+- Huile = Huile d'olive : 8 #fat
+## mechoui | Méchoui (agneau rôti) | Maghreb | méchoui, mechoui, agneau rôti
+- Agneau rôti = Agneau (moyenne des morceaux, maigre et gras), cuit : 200
+## merguez-frites | Merguez-frites | Maghreb | merguez frites, sandwich merguez
+- Merguez = Saucisse de bœuf : 100
+- Frites = Frites maison (bain d'huile) : 150 #side
+- Pain = Baguette (pain français) : 80 opt #side
+## bouzgene-lham-lahlou | Lham lahlou (viande sucrée aux pruneaux) | Maghreb | lham lahlou, tajine el aïn
+- Agneau = Agneau maigre (moyenne des morceaux), cuit : 100
+- Pruneaux et abricots secs = Pruneaux : 50
+- Sucre = Sucre blanc en poudre ou en morceaux : 15
+- Beurre = Beurre doux : 8 #fat
+## pastilla | Pastilla au poulet | Maghreb | pastilla, bastilla, bstilla
+- Feuilles de brick = Pâte frite (farine et eau) : 40
+- Poulet = Haut de cuisse de poulet sans peau, mijoté : 80
+- Amandes : 20
+- Œufs = Œuf entier, cru : 25
+- Beurre = Beurre doux : 15 #fat
+- Sucre et cannelle = Sucre glace : 10
+## makroud | Makroud (gâteau de semoule aux dattes) | Maghreb | makroud, maqrout, makrout
+> Une pièce de 40 g, frite et miellée.
+- Gâteau de semoule = Semoule de blé dur : 18
+- Pâte de dattes = Dattes deglet nour : 10
+- Huile et miel = Miel : 8
+- Huile absorbée = Huile de tournesol : 4 #fat
+## zlabia | Zlabia | Maghreb | zlabia, zalabia, jalebi
+- Pâte frite = Pâte frite (farine et eau) : 30
+- Sirop de sucre (sirop simple) = Sirop de sucre (sirop simple) : 20
+## kesra | Kesra (galette de semoule) | Maghreb | kesra, matlouh, khobz eddar, galette
+> Un quart de galette.
+- Semoule = Semoule de blé dur : 50
+- Huile = Huile d'olive : 4 #fat
+- Eau (absorbée) = Eau : 20
+## salade-mechouia | Salade méchouia | Maghreb | mechouia, slata mechouia
+- Poivrons et tomates grillés = Poivron rouge, cuit : 120
+- Tomates = Tomate, cuite : 60
+- Huile d'olive : 12 #fat
+- Thon = Thon au naturel sans sel, égoutté : 30 opt
+- Œuf dur : 50 opt
+## lablabi | Lablabi (soupe de pois chiches tunisienne) | Maghreb | lablabi, leblebi
+- Pois chiches = Pois chiches, cuits : 150
+- Bouillon = Bouillon : 200
+- Pain rassis = Baguette (pain français) : 40
+- Huile d'olive : 10 #fat
+- Œuf = Œuf poché : 50 opt
+
+=== Afrique subsaharienne
+## thieboudienne | Thiéboudiène (riz au poisson) | Sénégal | thieboudienne, thiéboudienne, ceebu jën, tiep, riz au poisson
+- Riz cuit dans la sauce = Riz blanc cuit à l'huile : 250
+- Poisson = Poisson blanc au four : 100
+- Légumes (chou, carotte, manioc, aubergine) = Carottes, cuites à l'eau : 80
+- Manioc = Manioc cuit : 40
+- Huile = Huile de tournesol : 12 #fat
+## yassa-poulet | Poulet yassa | Sénégal | yassa, yassa poulet, poulet au citron et oignons
+- Poulet = Haut de cuisse de poulet sans peau, rôti : 160
+- Oignons confits = Oignon jaune revenu : 100
+- Huile = Huile de tournesol : 12 #fat
+- Riz = Riz blanc long grain, cuit : 200 #side
+## mafe | Mafé (sauce arachide) | Afrique de l'Ouest | mafé, maafe, tigadèguèna, sauce arachide, domoda
+- Bœuf ou poulet = Bœuf (moyenne des morceaux, maigre et gras), cuit : 120
+- Pâte d'arachide = Beurre de cacahuète lisse, sans sel : 30
+- Sauce tomate = Tomates concassées en conserve : 60
+- Légumes = Carottes, cuites à l'eau : 50
+- Huile = Huile de tournesol : 6 #fat
+- Riz = Riz blanc long grain, cuit : 200 #side
+## attieke-poisson | Attiéké poisson braisé | Côte d'Ivoire | attiéké, attieke, garba, attiéké poisson
+> L'attiéké (semoule de manioc fermentée) est assimilé à du manioc cuit faute de fiche dédiée.
+- Attiéké = Manioc cuit : 200
+- Poisson braisé = Tilapia grillé (braisé) : 150
+- Oignon et tomate = Tomate, crue : 40
+- Huile = Huile de tournesol : 10 #fat
+## alloco | Alloco (bananes plantains frites) | Côte d'Ivoire | alloco, aloko, dodo, plantain frit, kelewele
+- Banane plantain mûre, frite (alloco) : 200
+## foufou-sauce-graine | Foutou / foufou et sauce graine | Afrique de l'Ouest | foufou, fufu, foutou, sauce graine, sauce palme
+- Foufou = Foufou (fufu) : 250
+- Sauce graine (noix de palme) = Huile de palme : 20 #fat
+- Viande ou poisson fumé = Poisson fumé : 60
+- Gombo = Gombo, cuit : 40 opt
+## ndole | Ndolé | Cameroun | ndolé, ndole
+> Les feuilles de ndolé (amères) sont assimilées aux feuilles amères cuites (USDA).
+- Feuilles de ndolé = Feuilles cuites (melon amer, jute, radis) : 120
+- Pâte d'arachide = Beurre de cacahuète lisse, sans sel : 30
+- Viande de bœuf = Bœuf (moyenne des morceaux, maigre et gras), cuit : 70
+- Crevettes = Crevettes séchées : 15
+- Huile = Huile de tournesol : 12 #fat
+- Plantain ou miondo = Banane plantain verte, bouillie : 150 #side
+## eru | Eru (okok) | Cameroun | eru, okok, eru waterleaf
+- Feuilles d'eru = Feuilles cuites (patate douce, courge, haricot : saka-saka, brèdes) : 120
+- Huile de palme : 25 #fat
+- Viande ou peau de bœuf = Bœuf (moyenne des morceaux, maigre et gras), cuit : 60
+- Poisson fumé : 30
+- Garri ou foufou = Foufou (fufu) : 200 #side
+## poulet-dg | Poulet DG | Cameroun | poulet dg, poulet directeur général
+- Poulet = Haut de cuisse de poulet sans peau, frit : 150
+- Plantains frits = Banane plantain mûre, frite (alloco) : 120
+- Légumes (carotte, poivron, haricots verts) = Carottes, cuites à l'eau : 60
+- Huile = Huile de tournesol : 10 #fat
+## pondu | Pondu / saka-saka (feuilles de manioc) | Congo | pondu, saka-saka, sakasaka, mpondu, ravitoto
+> Feuilles de manioc assimilées aux feuilles cuites (patate douce, courge…) de l'USDA.
+- Feuilles de manioc = Feuilles cuites (patate douce, courge, haricot : saka-saka, brèdes) : 150
+- Huile de palme : 20 #fat
+- Poisson salé ou fumé = Poisson fumé : 40
+- Oignon = Oignon jaune revenu : 20
+## chikwangue | Chikwangue (pain de manioc) | Congo | chikwangue, kwanga, bobolo, miondo
+- Chikwangue = Manioc cuit : 150
+## ugali | Ugali (pâte de maïs) | Afrique de l'Est | ugali, sadza, nshima, pap, sima
+- Pâte de maïs = Bouillie de maïs sans matière grasse : 250
+## injera-wot | Injera et doro wot | Éthiopie | injera, doro wat, wot, wat
+- Injera = Injera (galette éthiopienne de teff) : 150
+- Poulet en sauce berbéré = Haut de cuisse de poulet sans peau, mijoté : 100
+- Œuf dur : 50
+- Beurre épicé (niter kibbeh) = Beurre clarifié (ghee, smen) : 15 #fat
+- Oignons = Oignon jaune revenu : 50
+## jollof | Riz jollof | Afrique de l'Ouest | jollof, jollof rice, riz au gras, benachin
+- Riz à la tomate = Riz blanc aux légumes et tomate (riz à la tomate, jollof) : 250
+- Huile = Huile de tournesol : 10 #fat
+- Poulet = Haut de cuisse de poulet sans peau, frit : 100 opt
+## egusi | Soupe egusi | Nigeria | egusi, egusi soup, sauce pistache
+- Graines de pastèque (egusi) = Graines de pastèque décortiquées (egusi) : 40
+- Légumes-feuilles = Épinards, cuits : 80
+- Viande = Bœuf (moyenne des morceaux, maigre et gras), cuit : 60
+- Huile de palme : 20 #fat
+- Foufou = Foufou (fufu) : 200 #side
+## sauce-gombo | Sauce gombo | Afrique de l'Ouest | sauce gombo, okra soup, gombo sauce, soupe gombo
+- Gombo = Gombo, cuit : 120
+- Viande ou poisson = Poisson fumé : 60
+- Huile de palme : 15 #fat
+- Foufou ou riz = Riz blanc long grain, cuit : 200 #side
+## kedjenou | Kedjenou de poulet | Côte d'Ivoire | kedjenou, kédjénou
+- Poulet = Haut de cuisse de poulet sans peau, mijoté : 160
+- Tomates, aubergines, oignons = Tomate, cuite : 80
+- Huile = Huile de tournesol : 5 #fat
+- Attiéké ou riz = Riz blanc long grain, cuit : 200 #side
+## beignets-haricots | Beignets-haricots (accra de niébé) | Afrique centrale | akara, accra niébé, koki, puff puff haricot
+- Niébé = Niébé (haricot à œil noir, cornille), cuit : 80
+- Huile absorbée = Huile de tournesol : 15 #fat
+## puff-puff | Puff-puff (beignets sucrés) | Afrique de l'Ouest | puff puff, beignets africains, mikate, bofrot
+> 3 beignets.
+- Pâte frite = Beignet nature : 90
+- Sucre = Sucre blanc en poudre ou en morceaux : 5
+## mbongo-tchobi | Mbongo tchobi (poisson à la sauce noire) | Cameroun | mbongo, mbongo tchobi
+- Poisson = Poisson blanc vapeur : 150
+- Sauce noire (épices, huile) = Huile de palme : 15 #fat
+- Plantain = Banane plantain verte, bouillie : 150 #side
+## pilau | Pilau (riz épicé est-africain) | Afrique de l'Est | pilau, pilaf swahili
+- Riz épicé = Riz blanc cuit à l'huile : 250
+- Bœuf = Bœuf (moyenne des morceaux, maigre et gras), cuit : 80
+
+=== Europe
+## lasagnes-bolognaise | Lasagnes à la bolognaise | Italie | lasagnes, lasagne, lasagnes maison
+- Lasagnes à la viande maison : 350
+## risotto-champignons | Risotto aux champignons | Italie | risotto
+- Riz arborio cuit = Riz blanc grain rond, cuit : 220
+- Champignons = Champignons de Paris sautés : 60
+- Parmesan : 15
+- Beurre = Beurre doux : 10 #fat
+- Vin blanc : 20
+## pizza-margherita | Pizza margherita (part ou entière) | Italie | margherita, pizza tomate mozzarella
+- Pizza = Pizza surgelée au fromage, pâte fine : 300
+## paella | Paella (poulet et fruits de mer) | Espagne | paella, paëlla, paella valenciana
+- Paella : 350
+## tortilla-espagnole | Tortilla espagnole | Espagne | tortilla de patatas, omelette aux pommes de terre
+- Omelette aux pommes de terre et oignons (tortilla) : 200
+## moussaka | Moussaka | Grèce | moussaka, mousaka
+- Gratin d'aubergines à la viande (type moussaka) : 300
+- Béchamel = Sauce blanche (béchamel) : 60
+## souvlaki | Souvlaki (brochettes et pita) | Grèce | souvlaki, souvlakia
+- Porc grillé = Steak de porc (échine) : 100
+- Pita = Pain pita : 70
+- Tzatziki : 40
+## pierogi-plat | Pierogi (assiette) | Pologne | pierogi, pierogis, pierogui
+- Pierogi (raviolis polonais) : 250
+- Crème aigre : 30 opt
+- Oignon revenu = Oignon jaune revenu : 20 opt
+## borscht-plat | Bortsch | Europe de l'Est | borscht, borsch, bortch, barszcz
+- Bortsch (soupe de betterave) : 350
+- Crème aigre : 30
+## pelmeni | Pelmeni | Russie | pelmeni, pelmenis, raviolis russes
+- Pâte = Pâtes maison aux œufs, cuites : 120
+- Farce porc-bœuf = Bœuf haché 20 % MG, émietté, poêlé : 80
+- Crème aigre : 30 opt
+- Beurre = Beurre doux : 8 #fat
+## blini | Blinis (crêpes russes) | Russie | blini, blinis, bliny
+- Pancakes nature : 100
+- Crème aigre : 20 opt
+## goulash | Goulasch | Hongrie | goulash, goulasch, gulyás
+- Bœuf = Bœuf maigre (moyenne des morceaux, sans gras visible), cuit : 150
+- Oignons = Oignon jaune revenu : 50
+- Paprika et tomate = Tomates concassées en conserve : 60
+- Pommes de terre = Pomme de terre épluchée, bouillie : 100
+- Huile = Huile de tournesol : 8 #fat
+## sarmale | Sarmale (choux farcis roumains) | Roumanie | sarmale, sarma, golabki, choux farcis
+- Chou farci au bœuf et riz (sarma, golabki) : 300
+## fish-and-chips | Fish and chips | Royaume-Uni | fish and chips, poisson frit frites
+- Poisson pané frit = Poisson blanc frit : 180
+- Frites = Frites maison (bain d'huile) : 180 #side
+- Sauce tartare : 30 opt
+## full-breakfast | Petit-déjeuner anglais | Royaume-Uni | full english, english breakfast
+- Œufs au plat = Œuf au plat : 100
+- Bacon = Bacon de porc fumé, cuit : 30
+- Saucisse = Saucisse de porc (chipolata, saucisse de Toulouse) : 50
+- Haricots à la tomate = Haricots à la sauce tomate (baked beans) : 100
+- Pain grillé = Pain blanc grillé (toast) : 30
+## schnitzel | Schnitzel (escalope panée) | Allemagne/Autriche | schnitzel, escalope viennoise, wiener schnitzel
+- Escalope panée frite = Escalope de dinde panée : 150
+- Pommes de terre sautées : 150 #side
+## currywurst | Currywurst | Allemagne | currywurst
+- Saucisse = Bratwurst (saucisse allemande) : 120
+- Sauce curry-ketchup = Ketchup : 40
+- Frites = Frites maison (bain d'huile) : 120 opt #side
+## bacalhau | Bacalhau à brás | Portugal | bacalhau, morue à brás
+- Morue = Morue séchée salée : 60
+- Pommes de terre paille = Allumettes de pommes de terre (pommes paille) : 60
+- Œufs = Œufs brouillés : 80
+- Huile d'olive : 10 #fat
+## carbonara-italienne | Spaghetti alla carbonara (œuf, guanciale) | Italie | carbonara italienne
+- Pâtes cuites = Pâtes, cuites : 220
+- Guanciale ou pancetta = Bacon cuit au four : 30
+- Jaunes d'œufs = Jaune d'œuf, cru : 30
+- Pecorino = Pecorino romano : 15
+
+=== Moyen-Orient et Asie centrale
+## shawarma-poulet | Shawarma au poulet (sandwich) | Moyen-Orient | shawarma, chawarma, shawerma
+- Pain pita ou galette = Pain pita : 80
+- Poulet mariné grillé = Haut de cuisse de poulet sans peau, rôti : 110
+- Sauce à l'ail (toum) : 25
+- Crudités = Tomate, crue : 40
+- Huile = Huile d'olive : 5 #fat
+## kebab-sandwich | Kebab (sandwich galette) | Turquie/Europe | kebab, döner, doner, grec, sandwich grec
+- Pain = Pain pita : 100
+- Viande à la broche = Agneau (moyenne des morceaux, maigre et gras), cuit : 120
+- Sauce blanche = Mayonnaise : 25
+- Crudités = Laitue (salade verte) : 30
+- Frites = Frites maison (bain d'huile) : 100 opt #side
+## falafel-assiette | Assiette de falafels | Moyen-Orient | falafel, falafels, taameya
+- Falafels : 150
+- Houmous nature : 60
+- Pain pita : 60 #side
+- Crudités = Salade composée tomates et carottes, sans sauce : 60
+## houmous-pita | Houmous et pain pita | Moyen-Orient | houmous, hummus, humus
+- Houmous nature : 80
+- Pain pita : 60
+## mujadara | Mujadara (riz aux lentilles et oignons frits) | Levant | mujadara, moujadara, mjaddara
+- Riz aux lentilles = Riz blanc aux lentilles (mujadara, khichdi) : 250
+- Oignons frits = Oignon jaune revenu : 40
+- Huile d'olive : 8 #fat
+## mansaf | Mansaf | Jordanie | mansaf
+- Agneau = Agneau (moyenne des morceaux, maigre et gras), cuit : 150
+- Riz = Riz blanc cuit au beurre : 200
+- Sauce au jameed (yaourt) = Yaourt nature au lait entier : 100
+- Pignons et amandes = Pignons de pin : 10
+## kabsa | Kabsa (riz épicé au poulet) | Golfe | kabsa, machboos, majboos
+- Riz épicé = Riz blanc cuit à l'huile : 250
+- Poulet = Haut de cuisse de poulet sans peau, rôti : 140
+- Raisins secs = Raisins secs blonds : 10 opt
+## plov | Plov (riz pilaf ouzbek) | Asie centrale | plov, osh, palov, pilaf ouzbek
+- Riz = Riz blanc cuit à l'huile : 220
+- Agneau = Agneau (moyenne des morceaux, maigre et gras), cuit : 100
+- Carottes = Carottes, cuites à l'eau : 60
+- Huile (abondante) = Huile de tournesol : 12 #fat
+## dolmas | Dolmas (feuilles de vigne farcies) | Moyen-Orient | dolmas, dolmades, yaprak, warak enab
+- Feuilles de vigne farcies au riz (dolmas végétariens) : 150
+## kofta | Kofta grillées | Moyen-Orient | kofta, kefta grillée, köfte
+- Viande hachée épicée = Agneau haché, grillé : 150
+- Pain pita : 60 opt #side
+## taboule-libanais | Taboulé libanais | Liban | taboulé, tabbouleh
+- Taboulé (libanais) : 200
+## fattoush | Fattouche | Liban | fattoush, fattouche
+- Crudités = Salade composée tomates et carottes, sans sauce : 150
+- Pain pita grillé = Pain pita : 30
+- Huile d'olive : 12 #fat
+## kebab-iranien | Chelow kebab (kebab iranien et riz) | Iran | chelo kabab, koobideh, kebab koubideh
+- Brochette de viande hachée = Agneau haché, grillé : 150
+- Riz au beurre = Riz blanc cuit au beurre : 250
+- Tomate grillée = Tomate, cuite : 50
+## ghormeh-sabzi | Ghormeh sabzi | Iran | ghormeh sabzi, khoresh
+- Agneau = Agneau maigre (moyenne des morceaux), cuit : 100
+- Herbes cuites = Épinards, cuits : 80
+- Haricots rouges = Haricots rouges, cuits à l'eau : 50
+- Huile = Huile de tournesol : 10 #fat
+- Riz = Riz blanc long grain, cuit : 200 #side
+## manti | Manti (raviolis turcs) | Turquie | manti, mantı
+- Raviolis à la viande = Raviolis à la viande, sans sauce : 200
+- Sauce yaourt à l'ail = Yaourt nature au lait entier : 80
+- Beurre pimenté = Beurre doux : 10 #fat
+## baklava-piece | Baklava (2 pièces) | Moyen-Orient | baklawa, baklava
+- Baklava : 60
+## kunafa | Knafeh | Levant | kunafa, knafeh, kanafeh
+- Pâte de cheveux d'ange et beurre = Pâte frite (farine et eau) : 40
+- Fromage (akawi) = Mozzarella au lait entier : 40
+- Sirop = Sirop de sucre (sirop simple) : 25
+- Beurre = Beurre clarifié (ghee, smen) : 10 #fat
+
+=== Asie
+## butter-chicken | Butter chicken (poulet au beurre) | Inde | butter chicken, murgh makhani, poulet tikka masala
+- Poulet = Haut de cuisse de poulet sans peau, mijoté : 140
+- Sauce tomate = Tomates concassées en conserve : 80
+- Crème = Crème liquide entière 36 % (à fouetter) : 30
+- Beurre ou ghee = Beurre clarifié (ghee, smen) : 12 #fat
+- Riz basmati = Riz blanc long grain, cuit : 200 #side
+- Naan = Pain naan : 90 opt #side
+## dal-riz | Dal et riz | Inde | dal, dhal, daal, lentilles indiennes
+- Dal (lentilles cuisinées à l'indienne) : 200
+- Riz = Riz blanc long grain, cuit : 200 #side
+- Ghee = Beurre clarifié (ghee, smen) : 5 opt #fat
+## chana-masala | Chana masala | Inde | chana masala, chole, curry de pois chiches
+- Pois chiches = Pois chiches, cuits : 180
+- Sauce tomate-oignon = Tomates concassées en conserve : 80
+- Huile = Huile de tournesol : 10 #fat
+## dosa-sambar | Masala dosa et sambar | Inde du Sud | dosa, masala dosa, sambar
+- Dosa fourré (masala dosa) : 180
+- Sambar (ragoût de légumes et lentilles) : 150
+## idli-sambar | Idli et sambar | Inde du Sud | idli, idly
+- Idli : 120
+- Sambar (ragoût de légumes et lentilles) : 150
+## nasi-goreng | Nasi goreng | Indonésie | nasi goreng, riz frit indonésien
+- Riz frit = Riz frit au poulet : 300
+- Œuf au plat : 50
+## pad-thai-plat | Pad thaï | Thaïlande | pad thai, phad thai
+- Pad thaï au poulet : 350
+## pho-plat | Phở au bœuf | Vietnam | pho, phở, soupe pho
+- Phở à la viande (soupe vietnamienne) : 500
+## banh-mi | Bánh mì | Vietnam | banh mi, bánh mì, sandwich vietnamien
+- Baguette = Baguette (pain français) : 90
+- Porc grillé = Steak de porc (échine) : 60
+- Pâté = Pâté de foie : 15
+- Légumes marinés = Carotte, crue : 30
+- Mayonnaise : 10
+## bo-bun | Bò bún | Vietnam | bo bun, bún bò
+- Vermicelles de riz = Nouilles de riz, cuites : 150
+- Bœuf sauté = Bœuf maigre (moyenne des morceaux, sans gras visible), cuit : 80
+- Crudités = Salade composée tomates et carottes, sans sauce : 60
+- Nems = Nem au bœuf ou au porc : 60 opt
+- Cacahuètes : 10
+- Sauce nuoc-mâm = Sauce de poisson (nuoc-mâm, nam pla) : 15
+## ramen-plat | Ramen au porc | Japon | ramen, rāmen
+- Ramen à la viande et à l'œuf : 550
+## sushi-plateau | Plateau de sushis (12 pièces) | Japon | sushi, sushis, makis, plateau sushi
+- Sushi : 300
+- Sauce soja : 10
+## bibimbap-plat | Bibimbap | Corée | bibimbap
+- Bibimbap coréen : 450
+## kimchi-jjigae | Kimchi jjigae | Corée | kimchi jjigae, ragoût de kimchi
+- Kimchi (chou fermenté) : 120
+- Porc = Poitrine de porc, cuite : 60
+- Tofu : 80
+- Bouillon : 200
+- Riz = Riz blanc grain rond, cuit : 200 #side
+## dumplings-vapeur | Raviolis chinois vapeur (6 pièces) | Chine | dumplings, jiaozi, raviolis chinois, dim sum
+- Raviolis chinois vapeur (dim sum) : 150
+- Sauce soja : 10
+## baozi | Baozi (brioches vapeur) | Chine | baozi, bao, bao zi
+- Bao (brioche vapeur farcie à la viande) : 160
+## nouilles-sautees | Nouilles sautées au poulet | Chine | nouilles sautées, chow mein, lo mein
+- Lo mein au poulet : 350
+## riz-cantonais | Riz cantonais | Chine | riz cantonais, riz frit
+- Riz cantonais (riz frit) : 300
+## curry-vert | Curry vert thaï au poulet | Thaïlande | curry vert, green curry, gaeng keow wan
+- Poulet = Blanc de poulet sans peau, mijoté : 120
+- Lait de coco = Lait de coco en conserve : 120
+- Légumes = Aubergine, cuite à l'eau : 60
+- Riz jasmin = Riz blanc long grain, cuit : 200 #side
+## adobo | Adobo de poulet | Philippines | adobo, chicken adobo
+- Adobo philippin avec riz : 400
+## rendang | Rendang de bœuf | Indonésie/Malaisie | rendang
+- Bœuf = Bœuf (moyenne des morceaux, maigre et gras), cuit : 130
+- Lait de coco = Lait de coco en conserve : 60
+- Riz = Riz blanc long grain, cuit : 200 #side
+## biryani-poulet | Biryani au poulet | Inde/Pakistan | biryani, biriyani, briyani
+- Biryani au poulet : 350
+## nihari | Nihari | Pakistan | nihari
+- Bœuf = Bœuf (moyenne des morceaux, maigre et gras), cuit : 150
+- Sauce épicée et ghee = Beurre clarifié (ghee, smen) : 15 #fat
+- Naan = Pain naan : 90 #side
+
+=== Amériques et Caraïbes
+## tacos-boeuf | Tacos au bœuf (3) | Mexique | tacos, taco, tacos mexicains
+- Taco tortilla de maïs, bœuf et fromage : 300
+## enchiladas | Enchiladas au poulet (2) | Mexique | enchiladas, enchilada
+- Enchilada au poulet : 300
+## tamales | Tamales (2) | Mexique/Amérique centrale | tamales, tamal
+- Tamal au porc : 250
+## mole-poulet | Poulet au mole | Mexique | mole, mole poblano
+- Poulet sauce mole : 300
+## arepa | Arepa garnie | Venezuela/Colombie | arepa, arepas
+- Galette de maïs = Arepa dominicaine (gâteau de maïs) : 100
+- Garniture (bœuf effiloché) = Bœuf barbecue effiloché, sans sauce : 60
+- Fromage = Queso fresco : 30
+## empanadas | Empanadas au bœuf (2) | Amérique latine | empanadas, empanada
+- Empanada au bœuf : 200
+## ceviche-plat | Ceviche | Pérou | ceviche, cebiche
+- Ceviche : 250
+## feijoada | Feijoada | Brésil | feijoada
+- Haricots noirs = Haricots noirs, cuits : 200
+- Porc et saucisses = Saucisse de porc (chipolata, saucisse de Toulouse) : 60
+- Viande de porc = Poitrine de porc, cuite : 40
+- Riz = Riz blanc long grain, cuit : 150 #side
+- Farofa (farine de manioc grillée) = Manioc cuit : 30 opt
+## pao-de-queijo | Pão de queijo (4 petits pains au fromage) | Brésil | pão de queijo, pao de queijo
+> Recette type : fécule de manioc, fromage, œuf, lait, huile.
+- Fécule de manioc = Tapioca (perles), sec : 35
+- Fromage = Parmesan râpé (sec) : 20
+- Œuf = Œuf entier, cru : 10
+- Lait entier : 15
+- Huile = Huile de tournesol : 5 #fat
+## asado | Asado (grillade argentine) | Argentine | asado, parrillada
+- Bœuf grillé = Entrecôte (ribeye) : 250
+- Chorizo : 60 opt
+## bandeja-paisa | Bandeja paisa | Colombie | bandeja paisa
+- Riz = Riz blanc long grain, cuit : 150
+- Haricots rouges = Haricots rouges, cuits à l'eau : 120
+- Bœuf haché = Bœuf haché 15 % MG, émietté, poêlé : 80
+- Chicharrón = Couennes de porc frites (chicharrón) : 40
+- Œuf au plat : 50
+- Plantain frit = Banane plantain mûre, frite (alloco) : 60
+- Avocat : 40
+## griot | Griot (porc frit haïtien) et banane pesée | Haïti | griot, griyo, banane pesée
+- Porc frit = Poitrine de porc, cuite : 150
+- Banane pesée = Banane plantain verte, frite (tostones) : 100
+- Pikliz = Légumes au vinaigre (achards, torshi) : 30
+## riz-djon-djon | Riz djon-djon | Haïti | diri djon djon, riz noir
+- Riz = Riz blanc cuit à l'huile : 250
+## jerk-chicken | Poulet jerk | Jamaïque | jerk chicken, poulet jerk
+- Poulet grillé épicé = Haut de cuisse de poulet sans peau, rôti : 180
+- Riz et pois = Haricots rouges et riz blanc : 200 #side
+## ackee-saltfish | Ackee et morue | Jamaïque | ackee and saltfish
+> L'ackee n'a pas de fiche USDA : assimilé à de l'avocat (fruit gras) — estimation grossière.
+- Ackee = Avocat : 100
+- Morue salée dessalée = Morue séchée salée : 50
+- Huile = Huile de tournesol : 8 #fat
+## ropa-vieja | Ropa vieja | Cuba | ropa vieja
+- Bœuf effiloché en sauce = Bœuf barbecue effiloché, sans sauce : 150
+- Sauce tomate et poivrons = Sauce tomate aux oignons, poivrons et céleri : 80
+- Riz = Riz blanc long grain, cuit : 150 #side
+## colombo | Colombo de poulet | Antilles | colombo, kolombo
+- Poulet = Haut de cuisse de poulet sans peau, mijoté : 160
+- Légumes (aubergine, pomme de terre) = Pomme de terre épluchée, bouillie : 80
+- Huile = Huile de tournesol : 8 #fat
+- Riz = Riz blanc long grain, cuit : 200 #side
+## accras-morue | Accras de morue (6) | Antilles | accras, acras, accra
+- Beignets de morue (accras) : 120
+## rougail-saucisse | Rougail saucisse | La Réunion | rougail, rougail saucisses
+- Saucisses fumées = Saucisse de porc (chipolata, saucisse de Toulouse) : 120
+- Sauce tomate-oignon = Tomates concassées en conserve : 80
+- Huile = Huile de tournesol : 8 #fat
+- Riz = Riz blanc long grain, cuit : 200 #side
+- Grains (lentilles ou haricots) = Haricots rouges, cuits à l'eau : 80 opt #side
+## poutine | Poutine | Canada | poutine
+- Frites = Frites maison (bain d'huile) : 200
+- Fromage en grains = Cottage cheese crémeux : 60
+- Sauce brune = Sauce brune (gravy) : 80
+## mac-and-cheese | Mac and cheese | États-Unis | mac and cheese, macaroni au fromage
+- Macaroni au fromage (mac and cheese) : 300

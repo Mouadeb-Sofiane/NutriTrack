@@ -1,0 +1,400 @@
+2709094|Riz blanc sauce fromage ou crème, avec matière grasse
+2709093|Riz blanc sauce fromage ou crème, sans matière grasse
+2708996|Riz blanc au maïs
+2708998|Riz blanc au maïs, avec matière grasse
+2708997|Riz blanc au maïs, sans matière grasse
+2709017|Riz blanc légumes verts et tomate
+2709019|Riz blanc légumes verts et tomate, avec matière grasse
+2709018|Riz blanc légumes verts et tomate, sans matière grasse
+2709011|Riz blanc aux légumes verts
+2709013|Riz blanc aux légumes verts, avec matière grasse
+2709012|Riz blanc aux légumes verts, sans matière grasse
+2709095|Riz blanc en sauce brune
+2709097|Riz blanc en sauce brune, avec matière grasse
+2709096|Riz blanc en sauce brune, sans matière grasse
+2709029|Riz blanc aux lentilles (mujadara, khichdi)
+2709030|Riz blanc aux lentilles, avec matière grasse
+2709031|Riz blanc aux lentilles, sans matière grasse
+2709026|Riz blanc aux légumes
+2709028|Riz blanc aux légumes, avec matière grasse
+2709027|Riz blanc aux légumes, sans matière grasse
+2709005|Riz blanc petits pois-carottes
+2709007|Riz blanc petits pois-carottes, avec matière grasse
+2709006|Riz blanc petits pois-carottes, sans matière grasse
+2708999|Riz blanc aux petits pois
+2709001|Riz blanc aux petits pois, avec matière grasse
+2709000|Riz blanc aux petits pois, sans matière grasse
+2709008|Riz blanc à la tomate
+2709010|Riz blanc à la tomate, avec matière grasse
+2709009|Riz blanc à la tomate, sans matière grasse
+2709113|Riz blanc aux légumes en sauce
+2709115|Riz blanc aux légumes en sauce, avec matière grasse
+2709114|Riz blanc aux légumes en sauce, sans matière grasse
+2709110|Riz blanc aux légumes sauce crème
+2709112|Riz blanc aux légumes sauce crème, avec matière grasse
+2709111|Riz blanc aux légumes sauce crème, sans matière grasse
+2708973|Paella aux fruits de mer à la portoricaine
+2709088|Riz à l'espagnole au bœuf haché
+2709087|Riz à l'espagnole (tomate, oignon)
+2709085|Riz à l'espagnole, avec matière grasse
+2709086|Riz à l'espagnole, sans matière grasse
+2708976|Riz mijoté à la portoricaine (arroz guisado)
+2707689|Gressins
+2707692|Gressins moelleux
+2707693|Gressins moelleux (restauration)
+2707694|Gressins moelleux surgelés
+2707696|Gressins moelleux gratinés au fromage
+2707695|Gressins moelleux au parmesan (restauration)
+2707661|Petit pain viennois ou baguette individuelle
+2707664|Bolillo (petit pain mexicain)
+2707595|Petit pain
+2707597|Petit pain au son
+2707660|Petit pain au fromage
+2707658|Petit pain allégé
+2707659|Petit pain brioché aux œufs
+2707662|Pain à l'ail
+2707800|Petit pain sans gluten
+2707596|Petit pain croustillant
+2707782|Petit pain multicéréale
+2707784|Pain à burger multicéréale
+2707783|Pain à hot-dog multicéréale
+2707773|Petit pain aux flocons d'avoine
+2707767|Petit pain au seigle noir
+2707766|Petit pain au seigle
+2707665|Petit pain au levain
+2707746|Petit pain au blé
+2707748|Pain à burger au blé
+2707747|Pain à hot-dog au blé
+2707657|Pain à burger (bun)
+2707655|Petit pain blanc croustillant
+2707663|Pain long pour sandwich (sub)
+2707656|Pain à hot-dog
+2707654|Petit pain blanc moelleux
+2707752|Petit pain au blé blanc complet
+2707754|Pain à burger au blé blanc complet
+2707753|Pain à hot-dog au blé blanc complet
+2707749|Petit pain complet
+2707751|Pain à burger complet
+2707750|Pain à hot-dog complet
+2710181|Huile d'amande
+2710208|Sauce salade à l'avocat
+2710198|Sauce salade bacon et tomate
+2710197|Sauce au roquefort (bleu)
+2710229|Sauce au roquefort 0 %
+2710216|Sauce au roquefort légère
+2710199|Sauce César
+2710230|Sauce César 0 %
+2710219|Sauce César légère
+2710188|Huile de colza
+2710182|Huile de coco
+2710200|Sauce pour coleslaw
+2710183|Huile de maïs
+2710184|Huile de coton
+2710209|Sauce italienne crémeuse
+2710231|Sauce italienne crémeuse 0 %
+2710217|Sauce italienne crémeuse légère
+2710185|Huile de lin
+2710201|Sauce « French » ou Catalina
+2710232|Sauce « French » 0 %
+2710218|Sauce « French » légère
+2710214|Sauce salade aux fruits
+2710202|Vinaigrette miel-moutarde
+2710233|Vinaigrette miel-moutarde 0 %
+2710223|Vinaigrette miel-moutarde légère
+2710234|Vinaigrette italienne 0 %
+2710224|Vinaigrette italienne légère
+2710203|Vinaigrette (huile et vinaigre)
+2710228|Sauce ou marinade coréenne
+2710186|Huile d'olive
+2710187|Huile d'arachide
+2710210|Sauce aux graines de pavot
+2710212|Sauce ranch
+2710236|Sauce ranch 0 %
+2710225|Sauce ranch légère
+2710206|Sauce russe
+2710189|Huile de carthame
+2710195|Sauce salade (sans précision)
+2710237|Sauce salade 0 %
+2710215|Sauce salade légère
+2710211|Sauce au sésame
+2710226|Sauce au sésame légère
+2710190|Huile de sésame
+2710191|Huile de soja
+2710192|Huile de tournesol
+2710213|Sauce mille-îles
+2710238|Sauce mille-îles 0 %
+2710227|Sauce mille-îles légère
+2710180|Huile végétale
+2710193|Huile de noix
+2710194|Huile de germe de blé
+2708160|Petits crackers salés (oyster crackers)
+2708167|Crackers salés (saltines)
+2708169|Crackers salés multicéréales
+2708168|Crackers salés allégés
+2708143|Crackers allégés en sel
+2706171|Saucisse de bœuf
+2706172|Saucisse de bœuf au fromage
+2706173|Boudin noir
+2706174|Bratwurst (saucisse allemande)
+2706175|Bratwurst au fromage
+2706179|Chorizo
+2706189|Saucisse italienne
+2706181|Knackwurst (saucisse fumée)
+2706204|Saucisse marinée
+2706188|Saucisse polonaise (kiełbasa)
+2706194|Saucisse porc et bœuf
+2706191|Saucisse de porc (chipolata, saucisse de Toulouse)
+2706192|Saucisse de porc allégée
+2706193|Saucisse de porc allégée en sel
+2706190|Saucisse
+2706198|Scrapple (pâté de porc et maïs), cuit
+2706199|Saucisse de Thuringe
+2706202|Saucisse volaille et porc
+2706200|Saucisse de volaille (merguez de volaille)
+2706201|Saucisse de volaille allégée en sel
+2706203|Saucisses de Vienne en conserve
+2708717|Beignets de morue (accras)
+2706720|Morue à la biscayenne (portoricaine)
+2706463|Ceviche
+2706561|Galette de palourdes
+2706564|Palourdes gratinées (clams casino)
+2706871|Salade de morue (serenata portoricaine)
+2706719|Morue aux légumes féculents (portoricaine)
+2706824|Salade de crabe
+2706843|Salade de surimi
+2706549|Galette de crabe (crab cake)
+2706464|Crabes sauce tomate à la portoricaine
+2706576|Poisson et nouilles sauce champignons
+2706574|Poisson et riz sauce crème
+2706575|Poisson et riz sauce champignons
+2706573|Poisson et riz sauce tomate (thiéboudiène simplifié)
+2706864|Poisson aux légumes sauce tomate
+2706863|Poisson aux légumes verts sauce tomate
+2706460|Curry de poisson
+2706461|Curry de poisson avec riz
+2707119|Plat surgelé poisson sauce beurre citron, féculent et légumes
+2706867|Brochettes de poisson aux légumes
+2706448|Mousse ou timbale de poisson
+2706447|Poisson sauce crème (blanquette de poisson)
+2706459|Poisson sauce tomate
+2706550|Galette de poisson
+2706716|Poisson, nouilles et légumes sauce fromage
+2706715|Poisson, nouilles et légumes verts sauce fromage
+2706552|Galette de saumon
+2706844|Tempura de poisson, tofu et légumes
+2706562|Sole farcie au crabe
+2706868|Poisson frit en sauce à la portoricaine
+2706551|Carpe farcie (gefilte fish)
+2706726|Gumbo avec riz
+2706879|Gumbo sans riz
+2706873|Lau lau (porc et poisson en feuilles de taro)
+2707141|Gumbo au homard
+2706825|Salade de homard
+2706563|Homard farci au four
+2706869|Homard en sauce à la portoricaine
+2706850|Salade de saumon salé tomate (lomi)
+2706870|Salade de poulpe
+2706849|Huîtres Rockefeller
+2706826|Salade de saumon
+2706848|Salade de fruits de mer, œufs, tomates, sans sauce
+2706847|Salade de fruits de mer et œufs, sans sauce
+2706846|Salade composée aux fruits de mer, sans sauce
+2706845|Salade verte aux fruits de mer, sans sauce
+2706838|Salade de fruits de mer
+2706569|Soufflé aux fruits de mer
+2706451|Fruits de mer thermidor
+2706577|Fruits de mer et pâtes sauce tomate
+2706862|Fruits de mer et légumes sauce champignons
+2706861|Fruits de mer et légumes verts sauce champignons
+2706558|Crevettes et nouilles sauce fromage
+2706556|Crevettes et pâtes sauce crème
+2706554|Crevettes et nouilles en sauce
+2706555|Crevettes et nouilles sauce champignons
+2706559|Crevettes et pâtes sauce tomate
+2706553|Crevettes et nouilles sans sauce
+2706852|Crevettes sautées aux légumes
+2707120|Plat surgelé allégé crevettes, légumes et nouilles
+2706851|Crevettes sautées aux légumes verts
+2706856|Crevettes à la créole sans riz
+2706713|Crevettes à la créole avec riz
+2706841|Salade de crevettes, œufs, tomates, sans sauce
+2706842|Salade de crevettes et œufs, sans sauce
+2707142|Gumbo aux crevettes
+2706465|Crevettes à l'ail (camarones al ajillo)
+2706837|Salade de crevettes
+2706855|Brochettes de crevettes aux légumes
+2706567|Toasts aux crevettes
+2706566|Crevettes farcies au crabe
+2706455|Crevettes sauce homard
+2706565|Galette de crevettes
+2706717|Bouillabaisse
+2706466|Ragoût de poisson (court-bouillon)
+2706578|Saumon mijoté à la portoricaine
+2706572|Thon et riz sauce champignons
+2706560|Galette de thon
+2706858|Gratin de thon aux légumes sauce champignons
+2706570|Gratin de pâtes au thon sauce crème
+2706571|Gratin de pâtes au thon sauce champignons
+2706718|Gratin de pâtes au thon, légumes et champignons
+2706714|Gratin de pâtes au thon et légumes sauce crème
+2706839|Salade de thon au fromage
+2706840|Salade de thon aux œufs
+2706834|Salade de thon vinaigrette italienne
+2706836|Salade de thon sauce 0 %
+2706832|Salade de thon sauce crémeuse
+2706835|Salade de thon vinaigrette légère
+2706833|Salade de thon sauce crémeuse légère
+2706829|Thon mayonnaise légère
+2706831|Thon sauce type mayonnaise légère
+2706828|Thon mayonnaise
+2706830|Thon sauce type mayonnaise
+2706450|Thon sauce crème
+2707022|Sandwich galette de crabe
+2707026|Sandwich au poisson
+2707029|Sandwich au poisson pané, pain complet
+2707030|Sandwich au poisson pané et fromage, pain complet
+2707027|Burger au poisson pané (type Filet-O-Fish)
+2707028|Burger au poisson pané et fromage
+2707031|Sandwich au poisson grillé
+2707032|Wrap au poisson
+2707024|Sandwich aux fruits de mer frits
+2707023|Sandwich galette de saumon
+2707033|Sandwich aux sardines
+2707039|Sandwich salade de fruits de mer
+2707036|Sandwich thon mayonnaise, pain complet
+2707037|Sandwich thon mayonnaise et fromage, pain complet
+2707034|Sandwich thon mayonnaise
+2707035|Sandwich thon mayonnaise et fromage
+2707038|Wrap thon mayonnaise
+2706337|Ormeau
+2706333|Calamars cuits
+2706334|Calamars frits (à la romaine)
+2706339|Palourdes
+2706340|Palourdes grillées
+2706343|Palourdes en conserve
+2706341|Palourdes frites
+2706338|Palourdes crues
+2706342|Palourdes cuites à la vapeur
+2706344|Crabe
+2706345|Crabe en conserve
+2706346|Crabe à carapace molle
+2706348|Écrevisses cuites
+2706347|Écrevisses frites
+2706368|Escargots (cuits)
+2706330|Cuisses de grenouille
+2706349|Homard
+2706350|Moules
+2706331|Poulpe
+2706352|Huîtres gratinées
+2706355|Huîtres en conserve
+2706354|Huîtres frites
+2706351|Huîtres crues
+2706353|Huîtres à la vapeur
+2706356|Saint-Jacques gratinées
+2706359|Saint-Jacques frites
+2706357|Saint-Jacques grillées
+2706358|Saint-Jacques pochées
+2706452|Sauce cocktail pour fruits de mer
+2706336|Fruits de mer
+2706449|Cocktail de crevettes
+2706458|Crevettes scampi (beurre à l'ail)
+2706360|Crevettes
+2706361|Crevettes grillées au four
+2706365|Crevettes panées au four
+2706367|Crevettes en conserve
+2706366|Crevettes séchées
+2706364|Crevettes frites (en beignets)
+2706362|Crevettes grillées
+2706363|Crevettes cuites à l'eau
+2706335|Tortue
+2710607|Atole (boisson chaude à la farine de maïs)
+2710605|Atole à l'avoine
+2710608|Atole au chocolat (champurrado)
+2710504|Boisson au maïs
+2710604|Boisson à l'avoine (frescavena)
+2710147|Smoothie fruits et légumes protéiné
+2710150|Smoothie fruits et légumes en bouteille
+2710151|Smoothie fruits et légumes sans lait
+2710148|Smoothie fruits et légumes au lait végétal
+2710149|Smoothie fruits et légumes au lait végétal protéiné
+2710146|Smoothie fruits et légumes au lait ou yaourt
+2709337|Smoothie aux jus de fruits sans lait
+2705516|Smoothie aux jus de fruits avec lait
+2705513|Smoothie aux fruits
+2709339|Smoothie aux fruits en bouteille
+2709338|Smoothie aux fruits allégé
+2705514|Smoothie fruits entiers et yaourt ou lait
+2705515|Smoothie fruits et lait protéiné
+2709334|Smoothie fruits entiers sans lait
+2709335|Smoothie fruits entiers sans lait protéiné
+2709336|Smoothie fruits entiers au lait végétal
+2710603|Horchata au lait
+2710602|Horchata à l'eau (boisson au riz)
+2705512|Licuado ou batido (milk-shake aux fruits)
+2710152|Smoothie de légumes
+2710536|Soda
+2710559|Soda au chocolat
+2710541|Cola
+2710562|Cola au chocolat
+2710543|Cola sans caféine
+2710561|Cola aromatisé (vanille, cerise)
+2710549|Soda crème (cream soda)
+2710553|Soda aux fruits avec caféine
+2710551|Soda aux fruits (orange, citron) sans caféine
+2710555|Ginger ale
+2710545|Soda type Dr Pepper
+2710547|Soda type Dr Pepper sans caféine
+2710557|Root beer
+2707130|Soupe de mariage italienne (boulettes, légumes verts)
+2707138|Chaudrée de palourdes à la tomate (Manhattan)
+2709151|Soupe aux boulettes de matsa
+2709144|Soupe
+2709147|Soupe à l'orge
+2707453|Soupe de haricots
+2707454|Soupe de haricots en conserve
+2707456|Soupe de haricots en conserve allégée en sel
+2707457|Soupe de haricots à la viande
+2710115|Soupe au bœuf (bouillon de pot-au-feu)
+2707127|Soupe au bœuf en conserve
+2710105|Bortsch (soupe de betterave)
+2707132|Bouillon
+2707134|Soupe de poulet
+2709149|Soupe de poulet aux vermicelles
+2709148|Soupe de poulet aux vermicelles en conserve
+2707133|Soupe de poulet en conserve
+2709150|Soupe de poulet en conserve allégée en sel
+2707143|Soupe de poisson ou de crevettes
+2709311|Soupe de fruits
+2710106|Gaspacho
+2707462|Soupe de lentilles
+2707460|Soupe de lentilles en conserve
+2707461|Soupe de lentilles en conserve allégée en sel
+2707463|Soupe de lentilles à la viande (chorba aux lentilles)
+2707123|Soupe aux boulettes de viande
+2710114|Minestrone
+2707464|Soupe mulligatawny (soupe indienne au curry)
+2709145|Soupe aux vermicelles
+2707131|Soupe au porc ou au jambon
+2707129|Pozole (soupe de maïs et porc)
+2709146|Soupe au riz
+2709161|Sopa de fideo (soupe de vermicelles à la tomate)
+2707135|Caldo de pollo (bouillon de poulet aux légumes)
+2707128|Caldo de res (bouillon de bœuf aux légumes)
+2707459|Soupe de pois cassés
+2707458|Soupe de pois cassés au lard
+2709757|Soupe de tomate
+2709759|Soupe de tomate en conserve
+2709760|Soupe de tomate en brique allégée en sel
+2709162|Soupe tortilla (mexicaine)
+2710113|Soupe de légumes
+2710111|Soupe de légumes en conserve
+2710112|Soupe de légumes en conserve allégée en sel
+2710116|Soupe de légumes à la viande (chorba, harira simplifiée)
+2708975|Riz en soupe au poulet et pommes de terre (asopao)
+2708974|Riz en soupe au poulet (asopao de pollo)
+2710108|Soupe à l'oignon gratinée
+2707139|Chaudrée de palourdes à la crème (clam chowder)
+2707140|Bisque
+2709659|Velouté brocoli-cheddar
+2707137|Velouté de poulet
+2710107|Velouté de champignons

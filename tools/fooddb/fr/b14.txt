@@ -1,0 +1,400 @@
+2708327|Gaufre au chocolat
+2708321|Gaufre au chocolat (restauration)
+2708316|Gaufre au chocolat surgelée
+2708328|Gaufre à la cannelle
+2708326|Gaufre aux fruits
+2708322|Gaufre aux fruits (restauration)
+2708315|Gaufre aux fruits surgelée
+2708330|Gaufre sans gluten
+2708325|Gaufre nature
+2708320|Gaufre nature (restauration)
+2708313|Gaufre nature surgelée
+2708314|Gaufre nature allégée
+2708324|Gaufre (cantine)
+2708329|Gaufre complète
+2708323|Gaufre complète (restauration)
+2708317|Gaufre complète surgelée
+2708319|Gaufre complète aux fruits surgelée
+2708318|Gaufre complète allégée
+2708795|Cannelloni ricotta-épinards, sans sauce
+2708930|Pâtes aromatisées (préparation)
+2708721|Gnocchi au fromage
+2708722|Gnocchi de pommes de terre
+2708756|Lasagnes au poulet ou à la dinde
+2708750|Lasagnes à la viande (bolognaise)
+2708755|Lasagnes à la viande et aux épinards
+2708751|Lasagnes à la viande en conserve
+2708754|Lasagnes à la viande surgelées
+2708753|Lasagnes à la viande maison
+2708758|Lasagnes sans viande
+2708759|Lasagnes aux légumes
+2708757|Lasagnes poulet et épinards
+2708947|Salade de pâtes au fromage
+2708946|Salade de pâtes au poulet
+2708943|Salade de pâtes au crabe
+2708941|Salade de pâtes aux œufs
+2708948|Salade de pâtes à la viande
+2708944|Salade de pâtes aux crevettes
+2708942|Salade de pâtes au thon
+2708945|Salade de pâtes thon et œuf
+2708936|Salade de pâtes vinaigrette italienne
+2708940|Salade de pâtes sauce 0 %
+2708938|Salade de pâtes sauce crémeuse
+2708937|Salade de pâtes vinaigrette légère
+2708939|Salade de pâtes sauce crémeuse légère
+2708933|Salade de pâtes mayonnaise légère
+2708935|Salade de pâtes sauce type mayonnaise légère
+2708932|Salade de pâtes mayonnaise
+2708934|Salade de pâtes sauce type mayonnaise
+2708810|Macaronis au thon à la portoricaine
+2708775|Manicotti au fromage, sans sauce
+2708777|Manicotti au fromage sauce bolognaise
+2708776|Manicotti au fromage sauce tomate
+2708778|Manicotti légumes-fromage sauce tomate
+2708949|Pudding de nouilles (kugel)
+2709140|Plat surgelé allégé nouilles aux légumes sauce tomate
+2708859|Pâtes à la crème et aux légumes maison
+2708860|Pâtes à la crème et aux légumes (plat préparé)
+2708858|Pâtes à la crème et aux légumes (restaurant)
+2708862|Pâtes à la crème et à la viande maison (carbonara)
+2708863|Pâtes à la crème et à la viande (plat préparé)
+2708861|Pâtes à la crème et à la viande (restaurant)
+2708868|Pâtes à la crème et au poulet maison
+2708869|Pâtes à la crème et au poulet (plat préparé)
+2708867|Pâtes à la crème et au poulet (restaurant)
+2708874|Pâtes à la crème et aux fruits de mer maison
+2708875|Pâtes à la crème et aux fruits de mer (plat préparé)
+2708873|Pâtes à la crème et aux fruits de mer (restaurant)
+2708856|Pâtes à la crème maison
+2708865|Pâtes à la crème, viande et légumes maison
+2708866|Pâtes à la crème, viande et légumes (plat préparé)
+2708864|Pâtes à la crème, viande et légumes (restaurant)
+2708871|Pâtes à la crème, poulet et légumes maison
+2708872|Pâtes à la crème, poulet et légumes (plat préparé)
+2708870|Pâtes à la crème, poulet et légumes (restaurant)
+2708857|Pâtes à la crème (plat préparé)
+2708855|Pâtes à la crème (restaurant)
+2708877|Pâtes à la crème, fruits de mer et légumes maison
+2708878|Pâtes à la crème, fruits de mer et légumes (plat préparé)
+2708876|Pâtes à la crème, fruits de mer et légumes (restaurant)
+2708828|Pâtes en sauce
+2708927|Pâtes sauce tomate aux haricots ou lentilles
+2708826|Pâtes sauce tomate et fromage
+2708838|Pâtes à la bolognaise maison
+2708839|Pâtes à la bolognaise (plat préparé)
+2708837|Pâtes à la bolognaise (restaurant)
+2708844|Pâtes sauce tomate au poulet maison
+2708845|Pâtes sauce tomate au poulet (plat préparé)
+2708843|Pâtes sauce tomate au poulet (restaurant)
+2708850|Pâtes sauce tomate aux fruits de mer maison
+2708851|Pâtes sauce tomate aux fruits de mer (plat préparé)
+2708849|Pâtes sauce tomate aux fruits de mer (restaurant)
+2708834|Pâtes sauce tomate et légumes maison
+2708835|Pâtes sauce tomate et légumes (plat préparé)
+2708833|Pâtes sauce tomate et légumes (restaurant)
+2708825|Pâtes sauce tomate, fromage et viande
+2708831|Pâtes sauce tomate maison
+2708841|Pâtes bolognaise aux légumes maison
+2708842|Pâtes bolognaise aux légumes (plat préparé)
+2708840|Pâtes bolognaise aux légumes (restaurant)
+2708847|Pâtes sauce tomate, poulet et légumes maison
+2708848|Pâtes sauce tomate, poulet et légumes (plat préparé)
+2708846|Pâtes sauce tomate, poulet et légumes (restaurant)
+2708832|Pâtes sauce tomate (plat préparé)
+2708830|Pâtes sauce tomate (restaurant)
+2708853|Pâtes sauce tomate, fruits de mer et légumes maison
+2708854|Pâtes sauce tomate, fruits de mer et légumes (plat préparé)
+2708852|Pâtes sauce tomate, fruits de mer et légumes (restaurant)
+2708827|Pâtes aux légumes, sans sauce
+2708910|Pâtes complètes à la crème et viande maison
+2708911|Pâtes complètes à la crème et viande (plat préparé)
+2708909|Pâtes complètes à la crème et viande (restaurant)
+2708916|Pâtes complètes à la crème et poulet maison
+2708917|Pâtes complètes à la crème et poulet (plat préparé)
+2708915|Pâtes complètes à la crème et poulet (restaurant)
+2708922|Pâtes complètes à la crème et fruits de mer maison
+2708923|Pâtes complètes à la crème et fruits de mer (plat préparé)
+2708921|Pâtes complètes à la crème et fruits de mer (restaurant)
+2708907|Pâtes complètes à la crème et légumes maison
+2708908|Pâtes complètes à la crème et légumes (plat préparé)
+2708906|Pâtes complètes à la crème et légumes (restaurant)
+2708904|Pâtes complètes à la crème maison
+2708913|Pâtes complètes crème, viande et légumes maison
+2708914|Pâtes complètes crème, viande et légumes (plat préparé)
+2708912|Pâtes complètes crème, viande et légumes (restaurant)
+2708919|Pâtes complètes crème, poulet et légumes maison
+2708920|Pâtes complètes crème, poulet et légumes (plat préparé)
+2708918|Pâtes complètes crème, poulet et légumes (restaurant)
+2708905|Pâtes complètes à la crème (plat préparé)
+2708903|Pâtes complètes à la crème (restaurant)
+2708925|Pâtes complètes crème, fruits de mer et légumes maison
+2708926|Pâtes complètes crème, fruits de mer et légumes (plat préparé)
+2708924|Pâtes complètes crème, fruits de mer et légumes (restaurant)
+2708883|Pâtes complètes sauce tomate et légumes maison
+2708884|Pâtes complètes sauce tomate et légumes (plat préparé)
+2708882|Pâtes complètes sauce tomate et légumes (restaurant)
+2708886|Pâtes complètes bolognaise maison
+2708887|Pâtes complètes bolognaise (plat préparé)
+2708885|Pâtes complètes bolognaise (restaurant)
+2708892|Pâtes complètes sauce tomate et poulet maison
+2708893|Pâtes complètes sauce tomate et poulet (plat préparé)
+2708891|Pâtes complètes sauce tomate et poulet (restaurant)
+2708898|Pâtes complètes sauce tomate et fruits de mer maison
+2708899|Pâtes complètes sauce tomate et fruits de mer (plat préparé)
+2708897|Pâtes complètes sauce tomate et fruits de mer (restaurant)
+2708880|Pâtes complètes sauce tomate maison
+2708889|Pâtes complètes bolognaise aux légumes maison
+2708890|Pâtes complètes bolognaise aux légumes (plat préparé)
+2708888|Pâtes complètes bolognaise aux légumes (restaurant)
+2708895|Pâtes complètes tomate, poulet et légumes maison
+2708896|Pâtes complètes tomate, poulet et légumes (plat préparé)
+2708894|Pâtes complètes tomate, poulet et légumes (restaurant)
+2708881|Pâtes complètes sauce tomate (plat préparé)
+2708879|Pâtes complètes sauce tomate (restaurant)
+2708901|Pâtes complètes tomate, fruits de mer et légumes maison
+2708902|Pâtes complètes tomate, fruits de mer et légumes (plat préparé)
+2708900|Pâtes complètes tomate, fruits de mer et légumes (restaurant)
+2708760|Raviolis, sans sauce
+2708762|Raviolis à la crème
+2708761|Raviolis sauce tomate
+2708774|Raviolis ricotta-épinards sauce tomate
+2708772|Raviolis ricotta-épinards, sans sauce
+2708773|Raviolis ricotta-épinards à la crème
+2708767|Raviolis au fromage, sans sauce
+2708771|Raviolis au fromage à la crème
+2708770|Raviolis au fromage sauce bolognaise
+2708768|Raviolis au fromage sauce tomate
+2708769|Raviolis au fromage sauce tomate en conserve
+2708763|Raviolis à la viande, sans sauce
+2708766|Raviolis à la viande à la crème
+2708764|Raviolis à la viande sauce tomate
+2708765|Raviolis à la viande en conserve
+2709141|Plat surgelé spaghetti aux boulettes
+2709142|Plat surgelé allégé spaghetti bolognaise
+2708782|Conchiglioni farcis ricotta-épinards, sans sauce
+2708779|Conchiglioni farcis au fromage, sans sauce
+2708781|Conchiglioni farcis au fromage sauce bolognaise
+2708780|Conchiglioni farcis au fromage sauce tomate
+2708783|Conchiglioni farcis au poulet sauce tomate
+2708784|Conchiglioni farcis aux fruits de mer sauce tomate
+2708787|Tortellini au fromage sauce tomate
+2708788|Tortellini au fromage sauce tomate en conserve
+2708789|Salade de tortellini au fromage vinaigrette
+2708792|Tortellini au fromage, sans sauce
+2708791|Tortellini au fromage à la crème
+2708790|Tortellini à la viande, sans sauce
+2708785|Tortellini à la viande sauce tomate
+2708786|Tortellini à la viande en conserve
+2708794|Tortellini aux épinards, sans sauce
+2708793|Tortellini aux épinards sauce tomate
+2709745|Sauce tomate pour pâtes
+2709746|Sauce tomate aux légumes
+2706470|Sauce bolognaise
+2706471|Sauce bolognaise aux légumes
+2706422|Sauce tomate au poulet
+2706423|Sauce tomate au poulet et légumes
+2706453|Sauce tomate aux fruits de mer
+2706454|Sauce tomate aux fruits de mer et légumes
+2709748|Sauce tomate pour pâtes 0 %
+2709747|Sauce tomate pour pâtes allégée en sel
+2709749|Sauce tomate à la crème et vodka
+2708361|Orge, cuit
+2708362|Kasha (sarrasin), cuit
+2708440|Boulgour, cuit
+2708439|Boulgour cuit avec matière grasse
+2708438|Boulgour cuit sans matière grasse
+2708441|Semoule de couscous nature, cuite
+2708355|Vermicelles de soja, cuits
+2708377|Millet, cuit
+2708352|Nouilles, cuites
+2708353|Nouilles complètes, cuites
+2708357|Pâtes, cuites
+2708359|Pâtes sans gluten, cuites
+2708351|Pâtes aux légumes, cuites
+2708358|Pâtes complètes, cuites
+2708399|Quinoa, cuit
+2708401|Quinoa cuit avec matière grasse
+2708400|Quinoa cuit sans matière grasse
+2708356|Nouilles de riz, cuites
+2709245|Nectarine
+2709250|Pêches en conserve
+2709251|Pêches au sirop
+2709252|Pêches au jus
+2709253|Pêches surgelées
+2709249|Pêche
+2707565|Sandwich purée d'amande et confiture, pain complet
+2707564|Sandwich purée d'amande et confiture
+2707563|Sandwich à la purée d'amande, pain complet
+2707562|Sandwich à la purée d'amande
+2709137|Tartine de confiture (sandwich)
+2709139|Sandwich à la confiture, pain complet
+2709138|Sandwich à la confiture, pain de mie
+2707567|Tartine de pâte à tartiner chocolat-noisette, pain complet
+2707566|Tartine de pâte à tartiner chocolat-noisette, pain de mie
+2707554|Sandwich beurre de cacahuète et confiture
+2707561|Sandwich beurre de cacahuète et confiture sans croûte (surgelé)
+2707558|Sandwich beurre de cacahuète allégé et confiture, pain complet
+2707557|Sandwich beurre de cacahuète allégé et confiture
+2707560|Sandwich beurre de cacahuète et confiture allégée, pain complet
+2707559|Sandwich beurre de cacahuète et confiture allégée
+2707556|Sandwich beurre de cacahuète et confiture, pain complet
+2707555|Sandwich beurre de cacahuète et confiture, pain de mie
+2707549|Sandwich au beurre de cacahuète
+2707553|Sandwich beurre de cacahuète allégé, pain complet
+2707552|Sandwich beurre de cacahuète allégé
+2707551|Sandwich au beurre de cacahuète, pain complet
+2707550|Sandwich au beurre de cacahuète, pain de mie
+2709255|Nashi (poire asiatique)
+2709256|Poires en conserve
+2709257|Poires au sirop
+2709258|Poires au jus
+2709254|Poire
+2709261|Ananas en conserve
+2709262|Ananas au sirop
+2709263|Ananas au jus
+2709264|Ananas surgelé
+2709260|Ananas
+2708684|Calzone au fromage
+2708685|Calzone viande et fromage
+2708686|Mini-rouleaux de pizza
+2708673|Pizza haricots et légumes, pâte épaisse
+2708672|Pizza haricots et légumes, pâte fine
+2708630|Pizza fromage et légumes, pâte moyenne
+2708631|Pizza fromage et légumes, pâte épaisse
+2708629|Pizza fromage et légumes, pâte fine
+2708668|Pizza garnie viande et légumes, pâte moyenne
+2708667|Pizza garnie viande et légumes, pâte épaisse
+2708666|Pizza garnie viande et légumes, pâte fine
+2708658|Pizza extra viande, pâte moyenne
+2708659|Pizza extra viande, pâte épaisse
+2708657|Pizza extra viande, pâte fine
+2708670|Pizza viande et fruits (hawaïenne), pâte moyenne
+2708671|Pizza viande et fruits (hawaïenne), pâte épaisse
+2708669|Pizza viande et fruits (hawaïenne), pâte fine
+2708661|Pizza surgelée viande et légumes, pâte moyenne
+2708662|Pizza surgelée viande et légumes, pâte épaisse
+2708660|Pizza surgelée viande et légumes, pâte fine
+2708647|Pizza surgelée à la viande, pâte moyenne
+2708648|Pizza surgelée à la viande, pâte épaisse
+2708646|Pizza surgelée à la viande, pâte fine
+2708636|Pizza surgelée au pepperoni (chorizo), pâte moyenne
+2708637|Pizza surgelée au pepperoni (chorizo), pâte épaisse
+2708635|Pizza surgelée au pepperoni (chorizo), pâte fine
+2708642|Pizza au pepperoni, bord farci
+2708698|Pizza fromage et légumes sans gluten, pâte épaisse
+2708697|Pizza fromage et légumes sans gluten, pâte fine
+2708692|Pizza fromage et légumes, pâte complète épaisse
+2708691|Pizza fromage et légumes, pâte complète fine
+2708625|Pizza surgelée fromage et légumes, pâte épaisse
+2708613|Pizza surgelée au fromage, pâte épaisse
+2708612|Pizza surgelée au fromage, pâte fine
+2708694|Pizza au fromage sans gluten, pâte épaisse
+2708693|Pizza au fromage sans gluten, pâte fine
+2708618|Pizza au fromage, bord farci
+2708688|Pizza au fromage, pâte complète épaisse
+2708687|Pizza au fromage, pâte complète fine
+2708633|Pizza fromage et fruits, pâte moyenne
+2708634|Pizza fromage et fruits, pâte épaisse
+2708632|Pizza fromage et fruits, pâte fine
+2708624|Pizza surgelée fromage et légumes, pâte fine
+2708623|Pizza extra fromage, pâte épaisse
+2708622|Pizza extra fromage, pâte fine
+2708675|Pizza sans fromage, pâte épaisse
+2708674|Pizza sans fromage (marinara), pâte fine
+2708653|Pizza à la viande, bord farci
+2708696|Pizza à la viande sans gluten, pâte épaisse
+2708695|Pizza à la viande sans gluten, pâte fine
+2708690|Pizza à la viande, pâte complète épaisse
+2708689|Pizza à la viande, pâte complète fine
+2705787|Garniture de pizza au fromage
+2705790|Garniture de pizza viande et légumes
+2705789|Garniture de pizza à la viande
+2705788|Garniture de pizza aux légumes
+2708677|Pizza blanche au fromage, pâte épaisse
+2708676|Pizza blanche au fromage (crème), pâte fine
+2708683|Pizza blanche viande et légumes, pâte épaisse
+2708682|Pizza blanche viande et légumes, pâte fine
+2708681|Pizza blanche à la viande, pâte épaisse
+2708680|Pizza blanche à la viande (type flammekueche), pâte fine
+2708679|Pizza blanche aux légumes, pâte épaisse
+2708678|Pizza blanche aux légumes, pâte fine
+2705410|Boisson à l'amande
+2705408|Boisson à l'amande au chocolat
+2705407|Boisson à l'amande sucrée
+2705409|Boisson à l'amande sans sucre
+2705478|Lait chocolaté au lait végétal (type Nesquik)
+2707571|Crème de coco sucrée
+2705413|Boisson au lait de coco
+2707568|Lait de coco pour la cuisine
+2705486|Chocolat chaud (poudre) au lait végétal
+2705494|Chocolat chaud allégé en sucres au lait végétal
+2705475|Chocolat chaud au lait végétal
+2705490|Chocolat chaud allégé en sucres, lait végétal
+2705403|Boisson végétale
+2705412|Boisson à l'avoine
+2705411|Boisson au riz
+2705406|Boisson au soja chocolat
+2705404|Boisson au soja sucrée
+2705405|Boisson au soja sans sucre
+2707570|Yaourt végétal à l'amande
+2707569|Yaourt végétal au coco
+2707444|Yaourt au soja
+2708216|Pop-corn
+2708219|Pop-corn à l'air chaud, sans beurre
+2708220|Pop-corn à l'air chaud, au beurre
+2708239|Pop-corn caramélisé
+2708240|Pop-corn caramélisé aux cacahuètes
+2708241|Pop-corn enrobé de chocolat
+2708223|Pop-corn micro-ondes
+2708227|Pop-corn micro-ondes au beurre
+2708229|Pop-corn micro-ondes au fromage
+2708228|Pop-corn micro-ondes allégé aromatisé
+2708230|Pop-corn micro-ondes sucré-salé
+2708226|Pop-corn micro-ondes pauvre en sel
+2708224|Pop-corn micro-ondes nature
+2708225|Pop-corn micro-ondes nature allégé
+2708218|Pop-corn de cinéma sans beurre
+2708217|Pop-corn de cinéma au beurre
+2708221|Pop-corn éclaté à l'huile, sans beurre
+2708222|Pop-corn éclaté à l'huile, au beurre
+2708231|Pop-corn prêt à consommer
+2708235|Pop-corn prêt à consommer au beurre
+2708236|Pop-corn prêt à consommer au fromage
+2708237|Pop-corn prêt à consommer allégé
+2708238|Pop-corn sucré-salé prêt à consommer
+2708234|Pop-corn prêt à consommer pauvre en sel
+2708232|Pop-corn salé prêt à consommer
+2708233|Pop-corn nature allégé prêt à consommer
+2706400|Porc barbecue, sans sauce
+2705902|Couennes de porc frites (chicharrón)
+2705862|Porc, cuit
+2705901|Poitrine de porc, cuite
+2705897|Os de porc (viande)
+2705864|Carnitas (porc confit effiloché)
+2705866|Côte de porc
+2705869|Côte de porc panée
+2705870|Côte de porc panée, gras consommé
+2705871|Côte de porc panée, maigre seulement
+2705867|Côte de porc, gras consommé
+2705868|Côte de porc, maigre seulement
+2705895|Grattons (rillons)
+2705896|Oreilles de porc
+2705863|Porc haché, cuit
+2705900|Jarret de porc
+2705898|Pieds de porc
+2705899|Pieds de porc au vinaigre
+2705894|Travers de porc (ribs)
+2705882|Rôti de porc
+2705873|Steak de porc (échine)
+2705876|Steak de porc pané
+2705874|Steak de porc, gras consommé
+2705875|Steak de porc, maigre seulement
+2705877|Filet mignon de porc
+2705893|Travers (ribs)
+2709421|Chips de pommes de terre
+2709435|Chips au four aromatisées
+2709434|Chips au four nature
+2709423|Chips saveur barbecue
+2709425|Chips saveur fromage
+2709439|Chips légèrement salées
+2709426|Chips aromatisées
